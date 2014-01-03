@@ -1,0 +1,17 @@
+PODS:
+  - Kiwi/ARC (2.2.3)
+  - Kiwi/NonARC (2.2.3)
+  - Kiwi/XCTest (2.2.3):
+    - Kiwi/ARC
+    - Kiwi/NonARC
+  - ParseKit (0.7)
+
+DEPENDENCIES:
+  - Kiwi/XCTest
+  - ParseKit
+
+SPEC CHECKSUMS:
+  Kiwi: 04c51e880831d291748ec702d42c4101f7eb95c9
+  ParseKit: b7a059d743342b674bf905792fd66f1027bd3d8d
+
+COCOAPODS: 0.25.0

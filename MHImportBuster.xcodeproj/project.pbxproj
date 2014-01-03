@@ -1,0 +1,827 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D63FE4FF2BB4BD8A5050BF9 /* libPods-MHImportBuster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC86188A4B074F55AA6C93E6 /* libPods-MHImportBuster.a */; };
+		71DA3DA040434EAFB76A3464 /* libPods-MHImportBusterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */; };
+		AD5427CA1876C37E00A2BC8E /* MHImportBuster.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FCC1876B5BD00E4137F /* MHImportBuster.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD6A1FC01876B5BD00E4137F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */; };
+		AD6A1FCA1876B5BD00E4137F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD6A1FC81876B5BD00E4137F /* InfoPlist.strings */; };
+		AD6A1FD51876B5BD00E4137F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FD41876B5BD00E4137F /* XCTest.framework */; };
+		AD6A1FD61876B5BD00E4137F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */; };
+		AD6A1FD91876B5BD00E4137F /* MHImportBuster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; };
+		AD6A1FDF1876B5BD00E4137F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD6A1FDD1876B5BD00E4137F /* InfoPlist.strings */; };
+		AD6A20031876B68D00E4137F /* NSMutableIndexSet+NSArray.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FEB1876B68D00E4137F /* NSMutableIndexSet+NSArray.h */; };
+		AD6A20041876B68D00E4137F /* NSMutableIndexSet+NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A1FEC1876B68D00E4137F /* NSMutableIndexSet+NSArray.m */; };
+		AD6A20051876B68D00E4137F /* NSString+Files.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FED1876B68D00E4137F /* NSString+Files.h */; };
+		AD6A20061876B68D00E4137F /* NSString+Files.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A1FEE1876B68D00E4137F /* NSString+Files.m */; };
+		AD6A20071876B68D00E4137F /* MHFile.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FF01876B68D00E4137F /* MHFile.h */; };
+		AD6A20081876B68D00E4137F /* MHFile.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A1FF11876B68D00E4137F /* MHFile.m */; };
+		AD6A20091876B68D00E4137F /* MHFileHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FF21876B68D00E4137F /* MHFileHandle.h */; };
+		AD6A200A1876B68D00E4137F /* MHFileHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A1FF31876B68D00E4137F /* MHFileHandle.m */; };
+		AD6A200D1876B68D00E4137F /* MHImportStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FF61876B68D00E4137F /* MHImportStatement.h */; };
+		AD6A200E1876B68D00E4137F /* MHImportStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A1FF71876B68D00E4137F /* MHImportStatement.m */; };
+		AD6A20131876B68D00E4137F /* MHStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FFC1876B68D00E4137F /* MHStatement.h */; };
+		AD6A20141876B68D00E4137F /* MHStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A1FFD1876B68D00E4137F /* MHStatement.m */; };
+		AD6A20151876B68D00E4137F /* MHStatementParser.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FFE1876B68D00E4137F /* MHStatementParser.h */; };
+		AD6A20161876B68D00E4137F /* MHStatementParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A1FFF1876B68D00E4137F /* MHStatementParser.m */; };
+		AD6A20171876B68D00E4137F /* MHStatements.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A20001876B68D00E4137F /* MHStatements.h */; };
+		AD6A20181876B68D00E4137F /* MHBlocks.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A20011876B68D00E4137F /* MHBlocks.h */; };
+		AD6A20191876B68D00E4137F /* MHImportBusterErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A20021876B68D00E4137F /* MHImportBusterErrors.h */; };
+		AD6A20261876B73200E4137F /* MHFileHandleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A201A1876B73200E4137F /* MHFileHandleSpec.m */; };
+		AD6A20271876B73200E4137F /* MHFileSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A201B1876B73200E4137F /* MHFileSpec.m */; };
+		AD6A202A1876B73200E4137F /* MHImportStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A20201876B73200E4137F /* MHImportStatementSpec.m */; };
+		AD6A202D1876B73200E4137F /* MHStatementParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A20231876B73200E4137F /* MHStatementParserSpec.m */; };
+		AD6A202E1876B73200E4137F /* MHStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A20241876B73200E4137F /* MHStatementSpec.m */; };
+		AD6A202F1876B8AE00E4137F /* NSString+Files.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A1FEE1876B68D00E4137F /* NSString+Files.m */; };
+		AD8ECFDD1876C4BF000A8462 /* BBXcode.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8ECFDC1876C4BF000A8462 /* BBXcode.m */; };
+		AD93D21B1876C0FB004C4F1F /* MHImportBuster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; };
+		ADB1CF7E1876C0B000D935C7 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB1CF7D1876C0B000D935C7 /* AppKit.framework */; };
+		ADB1CF801876C0B000D935C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB1CF7F1876C0B000D935C7 /* Foundation.framework */; };
+		ADB1CF861876C0B000D935C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADB1CF841876C0B000D935C7 /* InfoPlist.strings */; };
+		ADB1CF891876C0B000D935C7 /* MHImportBusterPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = ADB1CF881876C0B000D935C7 /* MHImportBusterPlugin.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD6A1FD71876B5BD00E4137F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD6A1FB31876B5BD00E4137F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD6A1FBB1876B5BD00E4137F;
+			remoteInfo = MHImportBuster;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E6C46054B3049289C35CE1F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHImportBusterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHImportBuster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AD6A1FC21876B5BD00E4137F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AD6A1FC31876B5BD00E4137F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AD6A1FC41876B5BD00E4137F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		AD6A1FC71876B5BD00E4137F /* MHImportBuster-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MHImportBuster-Info.plist"; sourceTree = "<group>"; };
+		AD6A1FC91876B5BD00E4137F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AD6A1FCB1876B5BD00E4137F /* MHImportBuster-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MHImportBuster-Prefix.pch"; sourceTree = "<group>"; };
+		AD6A1FCC1876B5BD00E4137F /* MHImportBuster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHImportBuster.h; sourceTree = "<group>"; };
+		AD6A1FD31876B5BD00E4137F /* MHImportBusterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHImportBusterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD6A1FD41876B5BD00E4137F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AD6A1FDC1876B5BD00E4137F /* MHImportBusterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MHImportBusterTests-Info.plist"; sourceTree = "<group>"; };
+		AD6A1FDE1876B5BD00E4137F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AD6A1FEB1876B68D00E4137F /* NSMutableIndexSet+NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableIndexSet+NSArray.h"; sourceTree = "<group>"; };
+		AD6A1FEC1876B68D00E4137F /* NSMutableIndexSet+NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableIndexSet+NSArray.m"; sourceTree = "<group>"; };
+		AD6A1FED1876B68D00E4137F /* NSString+Files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Files.h"; sourceTree = "<group>"; };
+		AD6A1FEE1876B68D00E4137F /* NSString+Files.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Files.m"; sourceTree = "<group>"; };
+		AD6A1FF01876B68D00E4137F /* MHFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFile.h; sourceTree = "<group>"; };
+		AD6A1FF11876B68D00E4137F /* MHFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFile.m; sourceTree = "<group>"; };
+		AD6A1FF21876B68D00E4137F /* MHFileHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHFileHandle.h; sourceTree = "<group>"; };
+		AD6A1FF31876B68D00E4137F /* MHFileHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFileHandle.m; sourceTree = "<group>"; };
+		AD6A1FF61876B68D00E4137F /* MHImportStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHImportStatement.h; sourceTree = "<group>"; };
+		AD6A1FF71876B68D00E4137F /* MHImportStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHImportStatement.m; sourceTree = "<group>"; };
+		AD6A1FFC1876B68D00E4137F /* MHStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHStatement.h; sourceTree = "<group>"; };
+		AD6A1FFD1876B68D00E4137F /* MHStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHStatement.m; sourceTree = "<group>"; };
+		AD6A1FFE1876B68D00E4137F /* MHStatementParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHStatementParser.h; sourceTree = "<group>"; };
+		AD6A1FFF1876B68D00E4137F /* MHStatementParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHStatementParser.m; sourceTree = "<group>"; };
+		AD6A20001876B68D00E4137F /* MHStatements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHStatements.h; sourceTree = "<group>"; };
+		AD6A20011876B68D00E4137F /* MHBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBlocks.h; sourceTree = "<group>"; };
+		AD6A20021876B68D00E4137F /* MHImportBusterErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHImportBusterErrors.h; sourceTree = "<group>"; };
+		AD6A201A1876B73200E4137F /* MHFileHandleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFileHandleSpec.m; sourceTree = "<group>"; };
+		AD6A201B1876B73200E4137F /* MHFileSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFileSpec.m; sourceTree = "<group>"; };
+		AD6A201E1876B73200E4137F /* MHImportBusterTests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MHImportBusterTests-Prefix.pch"; sourceTree = "<group>"; };
+		AD6A201F1876B73200E4137F /* MHImportBusterTestsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHImportBusterTestsHelper.h; sourceTree = "<group>"; };
+		AD6A20201876B73200E4137F /* MHImportStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHImportStatementSpec.m; sourceTree = "<group>"; };
+		AD6A20231876B73200E4137F /* MHStatementParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHStatementParserSpec.m; sourceTree = "<group>"; };
+		AD6A20241876B73200E4137F /* MHStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHStatementSpec.m; sourceTree = "<group>"; };
+		AD6A20251876B73200E4137F /* MHTestTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTestTokens.h; sourceTree = "<group>"; };
+		AD8ECFDB1876C4BF000A8462 /* BBXcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBXcode.h; sourceTree = "<group>"; };
+		AD8ECFDC1876C4BF000A8462 /* BBXcode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBXcode.m; sourceTree = "<group>"; };
+		ADB1CF7C1876C0B000D935C7 /* MHImportBusterPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHImportBusterPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB1CF7D1876C0B000D935C7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		ADB1CF7F1876C0B000D935C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		ADB1CF831876C0B000D935C7 /* MHImportBusterPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MHImportBusterPlugin-Info.plist"; sourceTree = "<group>"; };
+		ADB1CF851876C0B000D935C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		ADB1CF871876C0B000D935C7 /* MHImportBusterPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHImportBusterPlugin.h; sourceTree = "<group>"; };
+		ADB1CF881876C0B000D935C7 /* MHImportBusterPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHImportBusterPlugin.m; sourceTree = "<group>"; };
+		ADB1CF8A1876C0B000D935C7 /* MHImportBusterPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MHImportBusterPlugin-Prefix.pch"; sourceTree = "<group>"; };
+		B2B4EF003AF34CC69EAEF205 /* Pods-MHImportBusterTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBusterTests.xcconfig"; path = "Pods/Pods-MHImportBusterTests.xcconfig"; sourceTree = "<group>"; };
+		CC86188A4B074F55AA6C93E6 /* libPods-MHImportBuster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHImportBuster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0FACE9357C24C5DAC2071C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBuster.xcconfig"; path = "Pods/Pods-MHImportBuster.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD6A1FB81876B5BD00E4137F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD6A1FC01876B5BD00E4137F /* Cocoa.framework in Frameworks */,
+				1D63FE4FF2BB4BD8A5050BF9 /* libPods-MHImportBuster.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD6A1FD01876B5BD00E4137F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD6A1FD61876B5BD00E4137F /* Cocoa.framework in Frameworks */,
+				AD6A1FD51876B5BD00E4137F /* XCTest.framework in Frameworks */,
+				AD6A1FD91876B5BD00E4137F /* MHImportBuster.framework in Frameworks */,
+				71DA3DA040434EAFB76A3464 /* libPods-MHImportBusterTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB1CF791876C0AF00D935C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB1CF7E1876C0B000D935C7 /* AppKit.framework in Frameworks */,
+				ADB1CF801876C0B000D935C7 /* Foundation.framework in Frameworks */,
+				AD93D21B1876C0FB004C4F1F /* MHImportBuster.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD6A1FB21876B5BD00E4137F = {
+			isa = PBXGroup;
+			children = (
+				AD6A1FC51876B5BD00E4137F /* MHImportBuster */,
+				AD6A1FDA1876B5BD00E4137F /* MHImportBusterTests */,
+				ADB1CF811876C0B000D935C7 /* MHImportBusterPlugin */,
+				AD6A1FBE1876B5BD00E4137F /* Frameworks */,
+				AD6A1FBD1876B5BD00E4137F /* Products */,
+				E0FACE9357C24C5DAC2071C3 /* Pods.xcconfig */,
+				B2B4EF003AF34CC69EAEF205 /* Pods-MHImportBusterTests.xcconfig */,
+				E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		AD6A1FBD1876B5BD00E4137F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */,
+				AD6A1FD31876B5BD00E4137F /* MHImportBusterTests.xctest */,
+				ADB1CF7C1876C0B000D935C7 /* MHImportBusterPlugin.xcplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD6A1FBE1876B5BD00E4137F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */,
+				AD6A1FD41876B5BD00E4137F /* XCTest.framework */,
+				ADB1CF7D1876C0B000D935C7 /* AppKit.framework */,
+				ADB1CF7F1876C0B000D935C7 /* Foundation.framework */,
+				AD6A1FC11876B5BD00E4137F /* Other Frameworks */,
+				1E6C46054B3049289C35CE1F /* libPods.a */,
+				50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */,
+				CC86188A4B074F55AA6C93E6 /* libPods-MHImportBuster.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD6A1FC11876B5BD00E4137F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A1FC21876B5BD00E4137F /* Foundation.framework */,
+				AD6A1FC31876B5BD00E4137F /* CoreData.framework */,
+				AD6A1FC41876B5BD00E4137F /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		AD6A1FC51876B5BD00E4137F /* MHImportBuster */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A1FEA1876B68D00E4137F /* Categories */,
+				AD6A1FEF1876B68D00E4137F /* Classes */,
+				AD6A20011876B68D00E4137F /* MHBlocks.h */,
+				AD6A20021876B68D00E4137F /* MHImportBusterErrors.h */,
+				AD6A1FCC1876B5BD00E4137F /* MHImportBuster.h */,
+				AD6A1FC61876B5BD00E4137F /* Supporting Files */,
+			);
+			path = MHImportBuster;
+			sourceTree = "<group>";
+		};
+		AD6A1FC61876B5BD00E4137F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A1FC71876B5BD00E4137F /* MHImportBuster-Info.plist */,
+				AD6A1FC81876B5BD00E4137F /* InfoPlist.strings */,
+				AD6A1FCB1876B5BD00E4137F /* MHImportBuster-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD6A1FDA1876B5BD00E4137F /* MHImportBusterTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A201F1876B73200E4137F /* MHImportBusterTestsHelper.h */,
+				AD6A20201876B73200E4137F /* MHImportStatementSpec.m */,
+				AD6A20231876B73200E4137F /* MHStatementParserSpec.m */,
+				AD6A20241876B73200E4137F /* MHStatementSpec.m */,
+				AD6A201A1876B73200E4137F /* MHFileHandleSpec.m */,
+				AD6A201B1876B73200E4137F /* MHFileSpec.m */,
+				AD6A20251876B73200E4137F /* MHTestTokens.h */,
+				AD6A1FDB1876B5BD00E4137F /* Supporting Files */,
+			);
+			path = MHImportBusterTests;
+			sourceTree = "<group>";
+		};
+		AD6A1FDB1876B5BD00E4137F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A201E1876B73200E4137F /* MHImportBusterTests-Prefix.pch */,
+				AD6A1FDC1876B5BD00E4137F /* MHImportBusterTests-Info.plist */,
+				AD6A1FDD1876B5BD00E4137F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AD6A1FEA1876B68D00E4137F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A1FEB1876B68D00E4137F /* NSMutableIndexSet+NSArray.h */,
+				AD6A1FEC1876B68D00E4137F /* NSMutableIndexSet+NSArray.m */,
+				AD6A1FED1876B68D00E4137F /* NSString+Files.h */,
+				AD6A1FEE1876B68D00E4137F /* NSString+Files.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		AD6A1FEF1876B68D00E4137F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A1FF01876B68D00E4137F /* MHFile.h */,
+				AD6A1FF11876B68D00E4137F /* MHFile.m */,
+				AD6A1FF21876B68D00E4137F /* MHFileHandle.h */,
+				AD6A1FF31876B68D00E4137F /* MHFileHandle.m */,
+				AD6A1FF61876B68D00E4137F /* MHImportStatement.h */,
+				AD6A1FF71876B68D00E4137F /* MHImportStatement.m */,
+				AD6A1FFC1876B68D00E4137F /* MHStatement.h */,
+				AD6A1FFD1876B68D00E4137F /* MHStatement.m */,
+				AD6A1FFE1876B68D00E4137F /* MHStatementParser.h */,
+				AD6A1FFF1876B68D00E4137F /* MHStatementParser.m */,
+				AD6A20001876B68D00E4137F /* MHStatements.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AD8ECFD91876C4BF000A8462 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				AD8ECFDA1876C4BF000A8462 /* Benoit */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		AD8ECFDA1876C4BF000A8462 /* Benoit */ = {
+			isa = PBXGroup;
+			children = (
+				AD8ECFDB1876C4BF000A8462 /* BBXcode.h */,
+				AD8ECFDC1876C4BF000A8462 /* BBXcode.m */,
+			);
+			path = Benoit;
+			sourceTree = "<group>";
+		};
+		ADB1CF811876C0B000D935C7 /* MHImportBusterPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				AD8ECFD91876C4BF000A8462 /* External */,
+				ADB1CF871876C0B000D935C7 /* MHImportBusterPlugin.h */,
+				ADB1CF881876C0B000D935C7 /* MHImportBusterPlugin.m */,
+				ADB1CF821876C0B000D935C7 /* Supporting Files */,
+			);
+			path = MHImportBusterPlugin;
+			sourceTree = "<group>";
+		};
+		ADB1CF821876C0B000D935C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ADB1CF831876C0B000D935C7 /* MHImportBusterPlugin-Info.plist */,
+				ADB1CF841876C0B000D935C7 /* InfoPlist.strings */,
+				ADB1CF8A1876C0B000D935C7 /* MHImportBusterPlugin-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AD6A1FB91876B5BD00E4137F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5427CA1876C37E00A2BC8E /* MHImportBuster.h in Headers */,
+				AD6A20151876B68D00E4137F /* MHStatementParser.h in Headers */,
+				AD6A20171876B68D00E4137F /* MHStatements.h in Headers */,
+				AD6A20191876B68D00E4137F /* MHImportBusterErrors.h in Headers */,
+				AD6A20181876B68D00E4137F /* MHBlocks.h in Headers */,
+				AD6A20051876B68D00E4137F /* NSString+Files.h in Headers */,
+				AD6A20091876B68D00E4137F /* MHFileHandle.h in Headers */,
+				AD6A20071876B68D00E4137F /* MHFile.h in Headers */,
+				AD6A20031876B68D00E4137F /* NSMutableIndexSet+NSArray.h in Headers */,
+				AD6A200D1876B68D00E4137F /* MHImportStatement.h in Headers */,
+				AD6A20131876B68D00E4137F /* MHStatement.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AD6A1FBB1876B5BD00E4137F /* MHImportBuster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD6A1FE41876B5BD00E4137F /* Build configuration list for PBXNativeTarget "MHImportBuster" */;
+			buildPhases = (
+				91F8557A81DF432F8CB0BB89 /* Check Pods Manifest.lock */,
+				AD6A1FB71876B5BD00E4137F /* Sources */,
+				AD6A1FB81876B5BD00E4137F /* Frameworks */,
+				AD6A1FB91876B5BD00E4137F /* Headers */,
+				AD6A1FBA1876B5BD00E4137F /* Resources */,
+				BB779327726B4FA4B9A1508E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MHImportBuster;
+			productName = MHImportBuster;
+			productReference = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AD6A1FD21876B5BD00E4137F /* MHImportBusterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD6A1FE71876B5BD00E4137F /* Build configuration list for PBXNativeTarget "MHImportBusterTests" */;
+			buildPhases = (
+				686549F6AF7E4E0EA8AE4381 /* Check Pods Manifest.lock */,
+				AD6A1FCF1876B5BD00E4137F /* Sources */,
+				AD6A1FD01876B5BD00E4137F /* Frameworks */,
+				AD6A1FD11876B5BD00E4137F /* Resources */,
+				8D10B0C463784E8491566C69 /* Copy Pods Resources */,
+				AD6A20311876BB1F00E4137F /* Copy Test Files to Bundle */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD6A1FD81876B5BD00E4137F /* PBXTargetDependency */,
+			);
+			name = MHImportBusterTests;
+			productName = MHImportBusterTests;
+			productReference = AD6A1FD31876B5BD00E4137F /* MHImportBusterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ADB1CF7B1876C0AF00D935C7 /* MHImportBusterPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADB1CF8D1876C0B000D935C7 /* Build configuration list for PBXNativeTarget "MHImportBusterPlugin" */;
+			buildPhases = (
+				ADB1CF781876C0AF00D935C7 /* Sources */,
+				ADB1CF791876C0AF00D935C7 /* Frameworks */,
+				ADB1CF7A1876C0AF00D935C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MHImportBusterPlugin;
+			productName = MHImportBusterPlugin;
+			productReference = ADB1CF7C1876C0B000D935C7 /* MHImportBusterPlugin.xcplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD6A1FB31876B5BD00E4137F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Marko Hlebar";
+				TargetAttributes = {
+					AD6A1FD21876B5BD00E4137F = {
+						TestTargetID = AD6A1FBB1876B5BD00E4137F;
+					};
+				};
+			};
+			buildConfigurationList = AD6A1FB61876B5BD00E4137F /* Build configuration list for PBXProject "MHImportBuster" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AD6A1FB21876B5BD00E4137F;
+			productRefGroup = AD6A1FBD1876B5BD00E4137F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD6A1FBB1876B5BD00E4137F /* MHImportBuster */,
+				AD6A1FD21876B5BD00E4137F /* MHImportBusterTests */,
+				ADB1CF7B1876C0AF00D935C7 /* MHImportBusterPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD6A1FBA1876B5BD00E4137F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD6A1FCA1876B5BD00E4137F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD6A1FD11876B5BD00E4137F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD6A1FDF1876B5BD00E4137F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB1CF7A1876C0AF00D935C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB1CF861876C0B000D935C7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		686549F6AF7E4E0EA8AE4381 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8D10B0C463784E8491566C69 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MHImportBusterTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91F8557A81DF432F8CB0BB89 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AD6A20311876BB1F00E4137F /* Copy Test Files to Bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Test Files to Bundle";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -a ${SOURCE_ROOT}/MHImportBusterTests/TestFiles/ ${TARGET_BUILD_DIR}/${PRODUCT_NAME}.xctest/Contents/Resources/";
+		};
+		BB779327726B4FA4B9A1508E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MHImportBuster-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD6A1FB71876B5BD00E4137F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD6A20141876B68D00E4137F /* MHStatement.m in Sources */,
+				AD6A20161876B68D00E4137F /* MHStatementParser.m in Sources */,
+				AD6A200E1876B68D00E4137F /* MHImportStatement.m in Sources */,
+				AD6A20081876B68D00E4137F /* MHFile.m in Sources */,
+				AD6A20061876B68D00E4137F /* NSString+Files.m in Sources */,
+				AD6A20041876B68D00E4137F /* NSMutableIndexSet+NSArray.m in Sources */,
+				AD6A200A1876B68D00E4137F /* MHFileHandle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD6A1FCF1876B5BD00E4137F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD6A202D1876B73200E4137F /* MHStatementParserSpec.m in Sources */,
+				AD6A202A1876B73200E4137F /* MHImportStatementSpec.m in Sources */,
+				AD6A202E1876B73200E4137F /* MHStatementSpec.m in Sources */,
+				AD6A20271876B73200E4137F /* MHFileSpec.m in Sources */,
+				AD6A20261876B73200E4137F /* MHFileHandleSpec.m in Sources */,
+				AD6A202F1876B8AE00E4137F /* NSString+Files.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADB1CF781876C0AF00D935C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADB1CF891876C0B000D935C7 /* MHImportBusterPlugin.m in Sources */,
+				AD8ECFDD1876C4BF000A8462 /* BBXcode.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD6A1FD81876B5BD00E4137F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD6A1FBB1876B5BD00E4137F /* MHImportBuster */;
+			targetProxy = AD6A1FD71876B5BD00E4137F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AD6A1FC81876B5BD00E4137F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD6A1FC91876B5BD00E4137F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AD6A1FDD1876B5BD00E4137F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD6A1FDE1876B5BD00E4137F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		ADB1CF841876C0B000D935C7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADB1CF851876C0B000D935C7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD6A1FE21876B5BD00E4137F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AD6A1FE31876B5BD00E4137F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AD6A1FE51876B5BD00E4137F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
+				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		AD6A1FE61876B5BD00E4137F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
+				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		AD6A1FE81876B5BD00E4137F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2B4EF003AF34CC69EAEF205 /* Pods-MHImportBusterTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MHImportBuster.framework/Versions/A/MHImportBuster";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MHImportBusterTests/MHImportBusterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AD6A1FE91876B5BD00E4137F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2B4EF003AF34CC69EAEF205 /* Pods-MHImportBusterTests.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MHImportBuster.framework/Versions/A/MHImportBuster";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
+				INFOPLIST_FILE = "MHImportBusterTests/MHImportBusterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		ADB1CF8B1876C0B000D935C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBusterPlugin/MHImportBusterPlugin-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MHImportBusterPlugin/MHImportBusterPlugin-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Debug;
+		};
+		ADB1CF8C1876C0B000D935C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBusterPlugin/MHImportBusterPlugin-Prefix.pch";
+				INFOPLIST_FILE = "MHImportBusterPlugin/MHImportBusterPlugin-Info.plist";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xcplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD6A1FB61876B5BD00E4137F /* Build configuration list for PBXProject "MHImportBuster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD6A1FE21876B5BD00E4137F /* Debug */,
+				AD6A1FE31876B5BD00E4137F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD6A1FE41876B5BD00E4137F /* Build configuration list for PBXNativeTarget "MHImportBuster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD6A1FE51876B5BD00E4137F /* Debug */,
+				AD6A1FE61876B5BD00E4137F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD6A1FE71876B5BD00E4137F /* Build configuration list for PBXNativeTarget "MHImportBusterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD6A1FE81876B5BD00E4137F /* Debug */,
+				AD6A1FE91876B5BD00E4137F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADB1CF8D1876C0B000D935C7 /* Build configuration list for PBXNativeTarget "MHImportBusterPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADB1CF8B1876C0B000D935C7 /* Debug */,
+				ADB1CF8C1876C0B000D935C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD6A1FB31876B5BD00E4137F /* Project object */;
+}
