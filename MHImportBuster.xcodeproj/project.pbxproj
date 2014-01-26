@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1D63FE4FF2BB4BD8A5050BF9 /* libPods-MHImportBuster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC86188A4B074F55AA6C93E6 /* libPods-MHImportBuster.a */; };
 		71DA3DA040434EAFB76A3464 /* libPods-MHImportBusterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */; };
+		9623786F1895374B0012DEF1 /* MHImportBuster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; };
+		96C7C375188F0ECF0017C5A7 /* BBXcode.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8ECFDC1876C4BF000A8462 /* BBXcode.m */; };
+		96C7C376188F0F0F0017C5A7 /* MHImportBuster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; };
+		96C7C377188F0F0F0017C5A7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3D6CED187736C000DF605A /* Carbon.framework */; };
 		AD5427CA1876C37E00A2BC8E /* MHImportBuster.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FCC1876B5BD00E4137F /* MHImportBuster.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD6A1FC01876B5BD00E4137F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */; };
 		AD6A1FCA1876B5BD00E4137F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD6A1FC81876B5BD00E4137F /* InfoPlist.strings */; };
@@ -39,8 +43,6 @@
 		AD6A202D1876B73200E4137F /* MHStatementParserSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A20231876B73200E4137F /* MHStatementParserSpec.m */; };
 		AD6A202E1876B73200E4137F /* MHStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A20241876B73200E4137F /* MHStatementSpec.m */; };
 		AD6A202F1876B8AE00E4137F /* NSString+Files.m in Sources */ = {isa = PBXBuildFile; fileRef = AD6A1FEE1876B68D00E4137F /* NSString+Files.m */; };
-		AD8ECFDD1876C4BF000A8462 /* BBXcode.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8ECFDC1876C4BF000A8462 /* BBXcode.m */; };
-		AD93D21B1876C0FB004C4F1F /* MHImportBuster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; };
 		ADB1CF7E1876C0B000D935C7 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB1CF7D1876C0B000D935C7 /* AppKit.framework */; };
 		ADB1CF801876C0B000D935C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADB1CF7F1876C0B000D935C7 /* Foundation.framework */; };
 		ADB1CF861876C0B000D935C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADB1CF841876C0B000D935C7 /* InfoPlist.strings */; };
@@ -57,9 +59,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9623786E1895372A0012DEF1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9623786F1895374B0012DEF1 /* MHImportBuster.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1E6C46054B3049289C35CE1F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHImportBusterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD3D6CED187736C000DF605A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHImportBuster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AD6A1FC21876B5BD00E4137F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -139,9 +155,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C7C377188F0F0F0017C5A7 /* Carbon.framework in Frameworks */,
 				ADB1CF7E1876C0B000D935C7 /* AppKit.framework in Frameworks */,
 				ADB1CF801876C0B000D935C7 /* Foundation.framework in Frameworks */,
-				AD93D21B1876C0FB004C4F1F /* MHImportBuster.framework in Frameworks */,
+				96C7C376188F0F0F0017C5A7 /* MHImportBuster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +192,7 @@
 		AD6A1FBE1876B5BD00E4137F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD3D6CED187736C000DF605A /* Carbon.framework */,
 				AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */,
 				AD6A1FD41876B5BD00E4137F /* XCTest.framework */,
 				ADB1CF7D1876C0B000D935C7 /* AppKit.framework */,
@@ -384,6 +402,7 @@
 				ADB1CF781876C0AF00D935C7 /* Sources */,
 				ADB1CF791876C0AF00D935C7 /* Frameworks */,
 				ADB1CF7A1876C0AF00D935C7 /* Resources */,
+				9623786E1895372A0012DEF1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -564,7 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB1CF891876C0B000D935C7 /* MHImportBusterPlugin.m in Sources */,
-				AD8ECFDD1876C4BF000A8462 /* BBXcode.m in Sources */,
+				96C7C375188F0ECF0017C5A7 /* BBXcode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,13 +698,17 @@
 			baseConfigurationReference = E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
+				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -695,13 +718,17 @@
 			baseConfigurationReference = E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
+				INSTALL_PATH = "@rpath";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -762,6 +789,7 @@
 				);
 				INFOPLIST_FILE = "MHImportBusterPlugin/MHImportBusterPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -777,6 +805,7 @@
 				GCC_PREFIX_HEADER = "MHImportBusterPlugin/MHImportBusterPlugin-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBusterPlugin/MHImportBusterPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};

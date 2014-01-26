@@ -8,6 +8,7 @@
 
 #import "MHImportBusterPlugin.h"
 #import "BBXcode.h"
+#import <Carbon/Carbon.h>
 #import <MHImportBuster/MHImportBuster.h>
 
 static MHImportBusterPlugin *sharedPlugin;
@@ -18,6 +19,23 @@ static MHImportBusterPlugin *sharedPlugin;
 @end
 
 @implementation MHImportBusterPlugin
+
+OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void *userData) {
+    
+    EventHotKeyID hkRef;
+    GetEventParameter(anEvent,kEventParamDirectObject,typeEventHotKeyID,NULL,sizeof(hkRef),NULL,&hkRef);
+    switch (hkRef.id) {
+        case 1:
+            NSLog(@"Event 1 was triggered!");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RemoveDuplicateImports" object:nil];
+            break;
+        case 2:
+            NSLog(@"Event 2 was triggered!");
+            break;
+    }
+    return noErr;
+}
+
 
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
@@ -46,8 +64,30 @@ static MHImportBusterPlugin *sharedPlugin;
             [actionMenuItem setTarget:self];
             [[menuItem submenu] addItem:actionMenuItem];
         }
+        
+//        [self loadKeyboardHandler];
     }
     return self;
+}
+
+-(void) loadKeyboardHandler {
+    EventHotKeyRef myHotKeyRef;
+    EventHotKeyID myHotKeyID;
+    EventTypeSpec eventType;
+    
+    eventType.eventClass=kEventClassKeyboard;
+    eventType.eventKind=kEventHotKeyPressed;
+    InstallApplicationEventHandler(&myHotKeyHandler,1,&eventType,NULL,NULL);
+
+    myHotKeyID.signature='mhk1';
+    myHotKeyID.id=1;
+
+    RegisterEventHotKey(49, cmdKey+shiftKey, myHotKeyID, GetApplicationEventTarget(), 0, &myHotKeyRef);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(removeDuplicateImports)
+                                                 name:@"RemoveDuplicateImports"
+                                               object:nil];
 }
 
 // Sample Action, for menu item:

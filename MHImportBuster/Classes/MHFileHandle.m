@@ -63,7 +63,7 @@
 #pragma mark - Setup
 
 - (void) dealloc {
-//    [_fileHandle synchronizeFile];
+    [_fileHandle synchronizeFile];
     [_fileHandle closeFile];
 }
 

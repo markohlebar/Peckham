@@ -49,10 +49,6 @@
     NSMutableArray *importStatements = [self.statements filteredArrayUsingPredicate:predicate].mutableCopy;
     NSSet *countedSet = [NSSet setWithArray:importStatements];
     
-    for (MHImportStatement *statement in importStatements) {
-        NSLog(@"%@", statement.value);
-    }
-    
     NSMutableIndexSet *linesOfCodeToDelete = [NSMutableIndexSet indexSet];
     NSMutableArray *linesToAdd = [NSMutableArray array];
     

@@ -36,9 +36,9 @@ static NSArray *MHLOCTestTokens = nil;
 @end
 
 
-SPEC_BEGIN(MHLOCSpec)
+SPEC_BEGIN(MHStatementSpec)
 
-describe(@"MHLOC", ^{
+describe(@"MHStatement", ^{
 
     __block PKToken *token = [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"#import" floatValue:0];
     __block MHStatement *statement = nil;
@@ -47,7 +47,7 @@ describe(@"MHLOC", ^{
         statement = [MHStatementTest statement];
     });
     
-    it(@"Should be able to instantiate with a token", ^{
+    it(@"Should be able to instantiate", ^{
         [[statement should] beNonNil];
     });
     
