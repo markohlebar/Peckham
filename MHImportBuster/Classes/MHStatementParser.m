@@ -14,125 +14,124 @@
 
 @implementation MHStatementParser
 {
-    NSArray *_registeredLOCClasses;
+	NSArray *_registeredStatementClasses;
 }
 
-+(instancetype) parseFileAtPath:(NSString *)filePath
++ (instancetype)parseFileAtPath:(NSString *)filePath
                         success:(MHArrayBlock)successBlock
                           error:(MHErrorBlock)errorBlock {
-    MHStatementParser *parser = [[MHStatementParser alloc] initWithFilePath:filePath];
-    [parser parse:successBlock
-            error:errorBlock];
-    return parser;
+	if ([filePath isValidFilePath]) {
+		NSData *data = [NSData dataWithContentsOfFile:filePath];
+		NSString *text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+		return [MHStatementParser parseText:text
+		                            success:successBlock
+		                              error:errorBlock];
+	}
+	else {
+		if (errorBlock) {
+			errorBlock(MHImportBusterError(MHImportBusterFileDoesntExistAtPath, nil));
+		}
+	}
+
+	return nil;
 }
 
--(id) initWithFilePath:(NSString*) filePath {
-    NSParameterAssert(filePath);
-    self = [super init];
-    if (self) {
-        _filePath = filePath.copy;
-        
-        _registeredLOCClasses = @[
-                                  [MHFrameworkImportStatement class],
-                                  [MHProjectImportStatement class]
-                                  ];
-    }
-    return self;
++ (instancetype)parseText:(NSString *)text
+                  success:(MHArrayBlock)successBlock
+                    error:(MHErrorBlock)errorBlock {
+	MHStatementParser *parser = [[MHStatementParser alloc] init];
+	[parser parseText:text
+	          success:successBlock
+	            error:errorBlock];
+	return parser;
 }
 
--(void) parse:(MHArrayBlock) successBlock
-        error:(MHErrorBlock) errorBlock {
-    NSParameterAssert(successBlock);
-    NSParameterAssert(errorBlock);
-    
-    _successBlock = [successBlock copy];
-    _errorBlock = [errorBlock copy];
-    
-    if ([_filePath isValidFilePath]) {
-        [self tryParsingFile];
-    }
-    else {
-        if(_errorBlock) {
-            _errorBlock(MHImportBusterError(MHImportBusterFileDoesntExistAtPath, nil));
-        }
-    }
+- (id)init {
+	self = [super init];
+	if (self) {
+		_registeredStatementClasses = @[
+		        [MHFrameworkImportStatement class],
+		        [MHProjectImportStatement class],
+		        [MHClassMethodStatement class],
+		        [MHInstanceMethodStatement class]
+		    ];
+	}
+	return self;
 }
 
--(void) tryParsingFile {    
-    //TODO: This will probably work OK for small files, consider reading line by line with NSFileHandle
-    NSData *data = [NSData dataWithContentsOfFile:_filePath];
-    NSString *interface = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSArray *linesOfCode = [interface componentsSeparatedByString:@"\n"];
-    
-    PKTokenizer *tokenizer = [self tokenizer];
-    NSMutableArray *statements = [NSMutableArray array];
-    NSMutableArray *tokens = [NSMutableArray array];
-    NSMutableSet *lineNumbers = [NSMutableSet set];
-    
-    NSInteger lineNumber = 0;
-    for (NSString *line in linesOfCode) {
-        tokenizer.string = line;
-        [tokenizer enumerateTokensUsingBlock:^(PKToken *token, BOOL *stop) {
-    
-            //if this is the first token in the list or there is more than 1. 
-            if ([self isCannonicalToken:token] || tokens.count >= 1) {
-                [tokens addObject:token];
-                [lineNumbers addObject:[NSNumber numberWithInteger:lineNumber]];
-                
-                for (Class class in _registeredLOCClasses) {
-                    if ([class containsCannonicalTokens:tokens]) {
-                        
-                        MHStatement *statement = [class statement];
-                        [statement feedTokens:tokens];
-                        [statement addLineNumber:lineNumber];
-                        
-                        [statements addObject:statement];
-                        //clear tokens
-                        [tokens removeAllObjects];
-                        [lineNumbers removeAllObjects];
-                    }
-                }
-            }
-        }];
-        
-        lineNumber++;
-    }
-    
-    if (_successBlock) {
-        _successBlock(statements);
-    }
+- (void)parseText:(NSString *)text
+          success:(MHArrayBlock)successBlock
+            error:(MHErrorBlock)errorBlock {
+	NSParameterAssert(successBlock);
+	NSParameterAssert(errorBlock);
+
+	__block PKTokenizer *tokenizer = [self tokenizer];
+	NSMutableArray *statements = [NSMutableArray array];
+	NSMutableArray *tokens = [NSMutableArray array];
+	NSMutableSet *lineNumbers = [NSMutableSet set];
+
+	__block NSInteger lineNumber = 0;
+
+	[text enumerateLinesUsingBlock: ^(NSString *line, BOOL *stop) {
+	    tokenizer.string = line;
+	    [tokenizer enumerateTokensUsingBlock: ^(PKToken *token, BOOL *stop) {
+	        //if this is the first token in the list or there is more than 1.
+	        if ([self isCannonicalToken:token] || tokens.count >= 1) {
+	            [tokens addObject:token];
+	            [lineNumbers addObject:[NSNumber numberWithInteger:lineNumber]];
+
+	            for (Class class in _registeredStatementClasses) {
+	                if ([class containsCannonicalTokens:tokens]) {
+	                    MHStatement *statement = [class statement];
+	                    [statement feedTokens:tokens];
+	                    [statement addLineNumber:lineNumber];
+
+	                    [statements addObject:statement];
+	                    //clear tokens
+	                    [tokens removeAllObjects];
+	                    [lineNumbers removeAllObjects];
+					}
+				}
+			}
+		}];
+	    lineNumber++;
+	}];
+
+	if (successBlock) {
+		successBlock(statements);
+	}
 }
 
--(PKTokenizer *) tokenizer {
-    PKTokenizer *tokenizer = [PKTokenizer tokenizer];
-    //sets the parsing of #import "header.h" not to behave as quoted string
-    [tokenizer setTokenizerState:(PKTokenizerState*)tokenizer.symbolState
-                            from:'"'
-                              to:'"'];
-    //sets the parsing of anything that starts with a # as a word
-    [tokenizer setTokenizerState:(PKTokenizerState*)tokenizer.wordState
-                            from:'#'
-                              to:'#'];
-    return tokenizer;
+- (PKTokenizer *)tokenizer {
+	PKTokenizer *tokenizer = [PKTokenizer tokenizer];
+	//sets the parsing of #import "header.h" not to behave as quoted string
+	[tokenizer setTokenizerState:(PKTokenizerState *)tokenizer.symbolState
+	                        from:'"'
+	                          to:'"'];
+	//sets the parsing of anything that starts with a # as a word
+	[tokenizer setTokenizerState:(PKTokenizerState *)tokenizer.wordState
+	                        from:'#'
+	                          to:'#'];
+	return tokenizer;
 }
 
--(BOOL) isCannonicalToken:(PKToken*) token {
-    for (Class registeredClass in _registeredLOCClasses) {
-        if([registeredClass isPrimaryCannonicalToken:token]) {
-            return YES;
-        }
-    }
-    return NO;
+- (BOOL)isCannonicalToken:(PKToken *)token {
+	for (Class registeredClass in _registeredStatementClasses) {
+		if ([registeredClass isPrimaryCannonicalToken:token]) {
+			return YES;
+		}
+	}
+	return NO;
 }
 
--(Class) LOCClassForToken:(PKToken*) token {
-    Class class = nil;
-    for (Class registeredClass in _registeredLOCClasses) {
-        if([registeredClass isPrimaryCannonicalToken:token]) {
-            class = registeredClass;
-        }
-    }
-    return class;
+- (Class)LOCClassForToken:(PKToken *)token {
+	Class class = nil;
+	for (Class registeredClass in _registeredStatementClasses) {
+		if ([registeredClass isPrimaryCannonicalToken:token]) {
+			class = registeredClass;
+		}
+	}
+	return class;
 }
 
 @end

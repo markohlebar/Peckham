@@ -59,4 +59,26 @@ static NSArray* (^projectTokensNoSubpath) () = ^NSArray* () {
              ];
 };
 
+static NSArray* (^classMethodTokens) () = ^NSArray* () {
+    return @[
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"+" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"(" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"void" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@")" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"classMethod" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"{" floatValue:0]
+             ];
+};
+
+static NSArray* (^instanceMethodTokens) () = ^NSArray* () {
+    return @[
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"-" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"(" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"void" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@")" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"instanceMethod" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"{" floatValue:0]
+             ];
+};
+
 #endif

@@ -10,7 +10,7 @@
 #import "MHStatementParser.h"
 
 
-SPEC_BEGIN(MHLOCParserSpec)
+SPEC_BEGIN(MHStatementParserSpec)
 
 describe(@"Fake file", ^{
     __block MHStatementParser *parser = nil;
@@ -42,33 +42,27 @@ describe(@"Fake file", ^{
 
 describe(@"Existing file", ^{
     __block MHStatementParser *parser = nil;
-    __block NSString *filePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MyClass" ofType:@"h"];
+    __block NSString *filePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MyClass" ofType:@"m"];
     
     __block NSNumber *isSuccessInvoked = @NO;
     __block NSNumber *isErrorInvoked = @NO;
     __block NSArray *outArray = nil;
 
-    
     MHArrayBlock successBlock = ^(NSArray *array){
         outArray = array;
-        isSuccessInvoked = @YES;
+         isSuccessInvoked = @YES;
     };
     MHErrorBlock errorBlock = ^(NSError *error){
         isErrorInvoked = @YES;
     };
     beforeEach(^{
         parser = [MHStatementParser parseFileAtPath:filePath
-                                      success:successBlock
-                                        error:errorBlock];
+                                            success:successBlock
+                                              error:errorBlock];
     });
     
     it(@"Should be able to initialize with a file path", ^{
         [[parser should] beNonNil];
-    });
-    
-    it(@"Should assign property file path after initialization", ^{
-        [[parser.filePath should] beNonNil];
-        [[parser.filePath should] equal:filePath];
     });
     
     it(@"Should eventually invoke a successBlock with array", ^{

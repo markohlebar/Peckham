@@ -11,5 +11,6 @@
 
 #import "MHStatement.h"
 #import "MHImportStatement.h"
+#import "MHMethodStatement.h"
 
 #endif

@@ -7,18 +7,23 @@
 //
 
 #import "MHImportBusterPlugin.h"
-#import "BBXcode.h"
 #import <Carbon/Carbon.h>
 #import <MHImportBuster/MHImportBuster.h>
+#import "MHXcodeDocumentNavigator.h"
+#import "XCFXcodePrivate.h"
 
 static MHImportBusterPlugin *sharedPlugin;
 
-@interface MHImportBusterPlugin()
+@interface MHImportBusterPlugin() <MHDocumentObserverDelegate>
 
 @property (nonatomic, strong) NSBundle *bundle;
 @end
 
 @implementation MHImportBusterPlugin
+{
+    MHDocumentObserver *_documentObserver;
+    MHDocumentLOCObserver *_locObserver;
+}
 
 OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void *userData) {
     
@@ -66,6 +71,13 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
         }
         
 //        [self loadKeyboardHandler];
+        
+//        _documentObserver = [[MHDocumentObserver alloc] init];
+        
+        _locObserver = [[MHDocumentLOCObserver alloc] init];
+        _locObserver.delegate = self;
+        _locObserver.maxLinesOfCode = 150;
+        
     }
     return self;
 }
@@ -90,14 +102,28 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
                                                object:nil];
 }
 
+#pragma mark - MHDocumentObserverDelegate 
+
+-(void) documentObserverDidReachConstraint:(MHDocumentObserver *)documentObserver {
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Constraint reached"
+                                     defaultButton:@"Continue"
+                                   alternateButton:@""
+                                       otherButton:@""
+                         informativeTextWithFormat:documentObserver.constraintDescription];
+    [alert runModal];
+}
+
 // Sample Action, for menu item:
 - (void)removeDuplicateImports
 {
-    if (![[BBXcode currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
+    if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
         return;
     }
     
-    IDESourceCodeEditor *editor = [BBXcode currentEditor];
+    //TODO: produce a separate document for each filePath. note when any changes occur
+    //on the observers. 
+    
+    IDESourceCodeEditor *editor = [MHXcodeDocumentNavigator currentEditor];
     IDESourceCodeDocument *document = [editor sourceCodeDocument];
     NSString *filePath = [[document fileURL] path];
     

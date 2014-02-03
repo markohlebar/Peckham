@@ -6,4 +6,6 @@
 //  Copyright (c) 2014 Marko Hlebar. All rights reserved.
 //
 
+#import "MHDocumentObserver.h"
+#import "MHDocumentLOCObserver.h"
 #import "MHFile.h"
