@@ -30,16 +30,19 @@
 }
 
 - (void)textDidChangeNotification:(NSNotification*) notification {
+//    if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
+//        return;
+//    }
+//    
     NSTextView *textView = notification.object;
     [self textDidChange:textView.textStorage.string];
     
-    IDESourceCodeDocument *document = [MHXcodeDocumentNavigator currentSourceCodeDocument];
-    DVTSourceTextStorage *textStorage = (DVTSourceTextStorage*)textView.textStorage;
-    
-    [textStorage replaceCharactersInRange:NSMakeRange(0, 10)
-                               withString:@"blablablabla"
-                          withUndoManager:[document undoManager]];
-    
+//    IDESourceCodeDocument *document = [MHXcodeDocumentNavigator currentSourceCodeDocument];
+//    DVTSourceTextStorage *textStorage = (DVTSourceTextStorage*)textView.textStorage;
+//    
+//    [textStorage replaceCharactersInRange:NSMakeRange(0, 10)
+//                               withString:@"blablablabla"
+//                          withUndoManager:[document undoManager]];    
 }
 
 - (void)textDidChange:(NSString *)text {
