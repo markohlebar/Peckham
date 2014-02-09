@@ -91,12 +91,12 @@
 	return [token isEqual:[[self class] cannonicalTokens][0]];
 }
 
-- (BOOL)isEqual:(id)object {
-	return [self isEqualValue:object];
+-(BOOL) isEqual:(id)object {
+    return [self isEqualValue:object];
 }
 
-- (NSUInteger)hash {
-	return [self.value hash];
+-(NSUInteger) hash {
+    return [self.value hash];
 }
 
 - (BOOL)isEqualValue:(MHStatement *)otherStatement {

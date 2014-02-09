@@ -74,9 +74,9 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
         
 //        _documentObserver = [[MHDocumentObserver alloc] init];
         
-        _locObserver = [[MHDocumentLOCObserver alloc] init];
-        _locObserver.delegate = self;
-        _locObserver.maxLinesOfCode = 150;
+//        _locObserver = [[MHDocumentLOCObserver alloc] init];
+//        _locObserver.delegate = self;
+//        _locObserver.maxLinesOfCode = 150;
         
     }
     return self;

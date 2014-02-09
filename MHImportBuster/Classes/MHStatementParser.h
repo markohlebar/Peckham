@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface MHStatementParser : NSObject
-@property (nonatomic, copy, readonly) MHArrayBlock successBlock;
-@property (nonatomic, copy, readonly) MHErrorBlock errorBlock;
+
+@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly, strong) NSArray *statementClasses;
 
 + (instancetype)parseFileAtPath:(NSString *)filePath
                         success:(MHArrayBlock)successBlock
                           error:(MHErrorBlock)errorBlock;
+- (NSArray*)parseText:(NSString *)text error:(NSError **)error statementClasses:(NSArray *)statementClasses;
+- (NSArray*)parseText:(NSString *)text error:(NSError **)error;
 
-+ (instancetype)parseText:(NSString *)text
-                  success:(MHArrayBlock)successBlock
-                    error:(MHErrorBlock)errorBlock;
 @end

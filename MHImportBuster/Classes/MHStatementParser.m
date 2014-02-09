@@ -14,7 +14,7 @@
 
 @implementation MHStatementParser
 {
-	NSArray *_registeredStatementClasses;
+    NSArray *_registeredStatementClasses;
 }
 
 + (instancetype)parseFileAtPath:(NSString *)filePath
@@ -32,7 +32,6 @@
 			errorBlock(MHImportBusterError(MHImportBusterFileDoesntExistAtPath, nil));
 		}
 	}
-
 	return nil;
 }
 
@@ -40,38 +39,35 @@
                   success:(MHArrayBlock)successBlock
                     error:(MHErrorBlock)errorBlock {
 	MHStatementParser *parser = [[MHStatementParser alloc] init];
-	[parser parseText:text
-	          success:successBlock
-	            error:errorBlock];
+    NSError *error = nil;
+    NSArray *statements = [parser parseText:text error:&error];
+    if (!error) {
+        successBlock(statements);
+    }
+    else {
+        errorBlock(error);
+    }
 	return parser;
 }
 
 - (id)init {
 	self = [super init];
 	if (self) {
-		_registeredStatementClasses = @[
-		        [MHFrameworkImportStatement class],
-		        [MHProjectImportStatement class],
-		        [MHClassMethodStatement class],
-		        [MHInstanceMethodStatement class]
-		    ];
+        
 	}
 	return self;
 }
 
-- (void)parseText:(NSString *)text
-          success:(MHArrayBlock)successBlock
-            error:(MHErrorBlock)errorBlock {
-	NSParameterAssert(successBlock);
-	NSParameterAssert(errorBlock);
-
-	__block PKTokenizer *tokenizer = [self tokenizer];
+- (NSArray*)parseText:(NSString *)text error:(NSError **)error statementClasses:(NSArray *)statementClasses {
+    _registeredStatementClasses = statementClasses;
+    
+    __block PKTokenizer *tokenizer = [MHStatementParser tokenizer];
 	NSMutableArray *statements = [NSMutableArray array];
 	NSMutableArray *tokens = [NSMutableArray array];
 	NSMutableSet *lineNumbers = [NSMutableSet set];
-
+    
 	__block NSInteger lineNumber = 0;
-
+    
 	[text enumerateLinesUsingBlock: ^(NSString *line, BOOL *stop) {
 	    tokenizer.string = line;
 	    [tokenizer enumerateTokensUsingBlock: ^(PKToken *token, BOOL *stop) {
@@ -79,13 +75,13 @@
 	        if ([self isCannonicalToken:token] || tokens.count >= 1) {
 	            [tokens addObject:token];
 	            [lineNumbers addObject:[NSNumber numberWithInteger:lineNumber]];
-
+                
 	            for (Class class in _registeredStatementClasses) {
 	                if ([class containsCannonicalTokens:tokens]) {
 	                    MHStatement *statement = [class statement];
 	                    [statement feedTokens:tokens];
 	                    [statement addLineNumber:lineNumber];
-
+                        
 	                    [statements addObject:statement];
 	                    //clear tokens
 	                    [tokens removeAllObjects];
@@ -96,13 +92,27 @@
 		}];
 	    lineNumber++;
 	}];
-
-	if (successBlock) {
-		successBlock(statements);
-	}
+    
+    return statements;
+    
 }
 
-- (PKTokenizer *)tokenizer {
+- (NSArray*)parseText:(NSString *)text error:(NSError **)error {
+   return [self parseText:text
+                    error:error
+         statementClasses:[MHStatementParser allStatementClasses]];
+}
+
++ (NSArray*) allStatementClasses {
+    return @[
+             [MHFrameworkImportStatement class],
+             [MHProjectImportStatement class],
+             [MHClassMethodStatement class],
+             [MHInstanceMethodStatement class]
+             ];
+}
+
++ (PKTokenizer *)tokenizer {
 	PKTokenizer *tokenizer = [PKTokenizer tokenizer];
 	//sets the parsing of #import "header.h" not to behave as quoted string
 	[tokenizer setTokenizerState:(PKTokenizerState *)tokenizer.symbolState

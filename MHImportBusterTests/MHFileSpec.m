@@ -92,11 +92,11 @@ describe(@"Duplicate imports tests", ^{
         deleteFile(tempFilePath);
     });
     
-    it(@"Should be able to remove duplicate imports", ^{
-        [file removeDuplicateImports];
-        BOOL result = compareFiles(cannonicalFilePath, tempFilePath);
-        [[theValue(result) should] beYes];
-    });
+//    it(@"Should be able to remove duplicate imports", ^{
+//        [file removeDuplicateImports];
+//        BOOL result = compareFiles(cannonicalFilePath, tempFilePath);
+//        [[theValue(result) should] beYes];
+//    });
 });
 
 SPEC_END
