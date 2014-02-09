@@ -10,10 +10,10 @@
 
 @interface MHFile : NSObject
 @property (nonatomic, readonly, copy) NSString *filePath;
-@property (nonatomic, strong) NSArray *statements;
 + (instancetype)fileWithPath:(NSString *)filePath;
-
 - (void)removeDuplicateImports;
+- (void)sortImportsAlphabetically;
+
 - (void)observeFileChanges;
 
 @end

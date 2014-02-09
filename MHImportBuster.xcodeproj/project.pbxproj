@@ -16,11 +16,16 @@
 		9628390718A63A11007EE520 /* DVTSourceTextStorage+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 9628390518A63A11007EE520 /* DVTSourceTextStorage+Operations.h */; };
 		9628390818A63A11007EE520 /* DVTSourceTextStorage+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390618A63A11007EE520 /* DVTSourceTextStorage+Operations.m */; };
 		9628390C18A63D35007EE520 /* DVTSourceTextStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */; };
-		9637A056189ECBC300FAD45A /* MHXcodeDocumentNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9637A039189ECBA100FAD45A /* MHXcodeDocumentNavigator.m */; };
 		964561C8189554E100026306 /* MHDocumentObserverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 964561C7189554E100026306 /* MHDocumentObserverSpec.m */; };
 		964561CC1895750000026306 /* MHDocumentLOCObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 964561CA1895750000026306 /* MHDocumentLOCObserver.h */; };
 		964561CD1895750000026306 /* MHDocumentLOCObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 964561CB1895750000026306 /* MHDocumentLOCObserver.m */; };
 		964561D11895777A00026306 /* MHDocumentLOCObserverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 964561D01895777A00026306 /* MHDocumentLOCObserverSpec.m */; };
+		964B0A9518A79AD000E36C8E /* MHXcodeDocumentNavigator.h in Headers */ = {isa = PBXBuildFile; fileRef = 964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */; };
+		964B0A9618A79AD000E36C8E /* MHXcodeDocumentNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */; };
+		964B0A9718A79AD000E36C8E /* XCFXcodePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 964B0A9418A79AD000E36C8E /* XCFXcodePrivate.h */; };
+		964B0A9A18A79B8300E36C8E /* MHConcreteSourceOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 964B0A9818A79B8300E36C8E /* MHConcreteSourceOperation.h */; };
+		964B0A9B18A79B8300E36C8E /* MHConcreteSourceOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B0A9918A79B8300E36C8E /* MHConcreteSourceOperation.m */; };
+		964B0A9D18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B0A9C18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m */; };
 		96580BF8189D258B00466993 /* MHMethodStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96580BF7189D258B00466993 /* MHMethodStatementSpec.m */; };
 		9658B95E18A643D700A768B0 /* NSObject+MHLogMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */; };
 		9658B95F18A643D700A768B0 /* NSObject+MHLogMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */; };
@@ -35,6 +40,19 @@
 		96C7C377188F0F0F0017C5A7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3D6CED187736C000DF605A /* Carbon.framework */; };
 		96D864D118A6343C0065CD9A /* NSView+Dumping.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D864CF18A6343C0065CD9A /* NSView+Dumping.h */; };
 		96D864D218A6343C0065CD9A /* NSView+Dumping.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D864D018A6343C0065CD9A /* NSView+Dumping.m */; };
+		96D89DE918A7A4980087D248 /* MHRemoveDuplicateImportsOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89DE818A7A4980087D248 /* MHRemoveDuplicateImportsOperationSpec.m */; };
+		96D89DEC18A7A5290087D248 /* MHSourceOperationMockFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89DEB18A7A5290087D248 /* MHSourceOperationMockFactory.m */; };
+		96D89DEF18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D89DED18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.h */; };
+		96D89DF018A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89DEE18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.m */; };
+		96D89DF218A7AD8F0087D248 /* MHSortImportsAlphabeticallyOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89DF118A7AD8F0087D248 /* MHSortImportsAlphabeticallyOperationSpec.m */; };
+		96D89DF718A7B03C0087D248 /* MHImportStatement+Sorting.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D89DF518A7B03C0087D248 /* MHImportStatement+Sorting.h */; };
+		96D89DF818A7B03C0087D248 /* MHImportStatement+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89DF618A7B03C0087D248 /* MHImportStatement+Sorting.m */; };
+		96D89DFB18A7B9470087D248 /* MHImportStatement_SortingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89DFA18A7B9470087D248 /* MHImportStatement_SortingSpec.m */; };
+		96D89DFE18A7BE580087D248 /* PKToken+Factory.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D89DFC18A7BE580087D248 /* PKToken+Factory.h */; };
+		96D89DFF18A7BE580087D248 /* PKToken+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89DFD18A7BE580087D248 /* PKToken+Factory.m */; };
+		96D89E0118A7BEC20087D248 /* PKToken_FactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89E0018A7BEC20087D248 /* PKToken_FactorySpec.m */; };
+		96FB646A18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 96FB646818A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h */; };
+		96FB646B18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FB646918A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.m */; };
 		AD5427CA1876C37E00A2BC8E /* MHImportBuster.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FCC1876B5BD00E4137F /* MHImportBuster.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD6A1FC01876B5BD00E4137F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */; };
 		AD6A1FCA1876B5BD00E4137F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD6A1FC81876B5BD00E4137F /* InfoPlist.strings */; };
@@ -100,13 +118,17 @@
 		9628390518A63A11007EE520 /* DVTSourceTextStorage+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTSourceTextStorage+Operations.h"; sourceTree = "<group>"; };
 		9628390618A63A11007EE520 /* DVTSourceTextStorage+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DVTSourceTextStorage+Operations.m"; sourceTree = "<group>"; };
 		9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVTSourceTextStorageSpec.m; sourceTree = "<group>"; };
-		9637A038189ECBA100FAD45A /* MHXcodeDocumentNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHXcodeDocumentNavigator.h; sourceTree = "<group>"; };
-		9637A039189ECBA100FAD45A /* MHXcodeDocumentNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHXcodeDocumentNavigator.m; sourceTree = "<group>"; };
-		9637A03A189ECBA100FAD45A /* XCFXcodePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCFXcodePrivate.h; sourceTree = "<group>"; };
 		964561C7189554E100026306 /* MHDocumentObserverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentObserverSpec.m; sourceTree = "<group>"; };
 		964561CA1895750000026306 /* MHDocumentLOCObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDocumentLOCObserver.h; sourceTree = "<group>"; };
 		964561CB1895750000026306 /* MHDocumentLOCObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentLOCObserver.m; sourceTree = "<group>"; };
 		964561D01895777A00026306 /* MHDocumentLOCObserverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentLOCObserverSpec.m; sourceTree = "<group>"; };
+		964B0A8F18A799A000E36C8E /* MHSourceOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHSourceOperation.h; sourceTree = "<group>"; };
+		964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHXcodeDocumentNavigator.h; sourceTree = "<group>"; };
+		964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHXcodeDocumentNavigator.m; sourceTree = "<group>"; };
+		964B0A9418A79AD000E36C8E /* XCFXcodePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCFXcodePrivate.h; sourceTree = "<group>"; };
+		964B0A9818A79B8300E36C8E /* MHConcreteSourceOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHConcreteSourceOperation.h; sourceTree = "<group>"; };
+		964B0A9918A79B8300E36C8E /* MHConcreteSourceOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConcreteSourceOperation.m; sourceTree = "<group>"; };
+		964B0A9C18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConcreteSourceOperationSpec.m; sourceTree = "<group>"; };
 		96580BF7189D258B00466993 /* MHMethodStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMethodStatementSpec.m; sourceTree = "<group>"; };
 		9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MHLogMethods.h"; sourceTree = "<group>"; };
 		9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MHLogMethods.m"; sourceTree = "<group>"; };
@@ -118,6 +140,20 @@
 		96C21B83189CE00A00484D57 /* MHMethodStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMethodStatement.m; sourceTree = "<group>"; };
 		96D864CF18A6343C0065CD9A /* NSView+Dumping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+Dumping.h"; sourceTree = "<group>"; };
 		96D864D018A6343C0065CD9A /* NSView+Dumping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+Dumping.m"; sourceTree = "<group>"; };
+		96D89DE818A7A4980087D248 /* MHRemoveDuplicateImportsOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHRemoveDuplicateImportsOperationSpec.m; sourceTree = "<group>"; };
+		96D89DEA18A7A5290087D248 /* MHSourceOperationMockFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHSourceOperationMockFactory.h; path = Operations/MHSourceOperationMockFactory.h; sourceTree = "<group>"; };
+		96D89DEB18A7A5290087D248 /* MHSourceOperationMockFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHSourceOperationMockFactory.m; path = Operations/MHSourceOperationMockFactory.m; sourceTree = "<group>"; };
+		96D89DED18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHSortImportsAlphabeticallyOperation.h; sourceTree = "<group>"; };
+		96D89DEE18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHSortImportsAlphabeticallyOperation.m; sourceTree = "<group>"; };
+		96D89DF118A7AD8F0087D248 /* MHSortImportsAlphabeticallyOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHSortImportsAlphabeticallyOperationSpec.m; path = Operations/MHSortImportsAlphabeticallyOperationSpec.m; sourceTree = "<group>"; };
+		96D89DF518A7B03C0087D248 /* MHImportStatement+Sorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MHImportStatement+Sorting.h"; sourceTree = "<group>"; };
+		96D89DF618A7B03C0087D248 /* MHImportStatement+Sorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MHImportStatement+Sorting.m"; sourceTree = "<group>"; };
+		96D89DFA18A7B9470087D248 /* MHImportStatement_SortingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHImportStatement_SortingSpec.m; sourceTree = "<group>"; };
+		96D89DFC18A7BE580087D248 /* PKToken+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKToken+Factory.h"; sourceTree = "<group>"; };
+		96D89DFD18A7BE580087D248 /* PKToken+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKToken+Factory.m"; sourceTree = "<group>"; };
+		96D89E0018A7BEC20087D248 /* PKToken_FactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKToken_FactorySpec.m; path = Categories/PKToken_FactorySpec.m; sourceTree = "<group>"; };
+		96FB646818A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHRemoveDuplicateImportsOperation.h; sourceTree = "<group>"; };
+		96FB646918A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHRemoveDuplicateImportsOperation.m; sourceTree = "<group>"; };
 		AD3D6CED187736C000DF605A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHImportBuster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -208,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				9611424418A650C100E03589 /* NSString_MHNSRangeSpec.m */,
+				96D89DFA18A7B9470087D248 /* MHImportStatement_SortingSpec.m */,
+				96D89E0018A7BEC20087D248 /* PKToken_FactorySpec.m */,
 			);
 			name = "Category Tests";
 			sourceTree = "<group>";
@@ -251,6 +289,38 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		964B0A9018A79AD000E36C8E /* External */ = {
+			isa = PBXGroup;
+			children = (
+				964B0A9118A79AD000E36C8E /* Benoit */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		964B0A9118A79AD000E36C8E /* Benoit */ = {
+			isa = PBXGroup;
+			children = (
+				964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */,
+				964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */,
+				964B0A9418A79AD000E36C8E /* XCFXcodePrivate.h */,
+			);
+			path = Benoit;
+			sourceTree = "<group>";
+		};
+		96542C6918A798B900246A79 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				964B0A8F18A799A000E36C8E /* MHSourceOperation.h */,
+				964B0A9818A79B8300E36C8E /* MHConcreteSourceOperation.h */,
+				964B0A9918A79B8300E36C8E /* MHConcreteSourceOperation.m */,
+				96FB646818A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h */,
+				96FB646918A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.m */,
+				96D89DED18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.h */,
+				96D89DEE18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		96580BF6189D198200466993 /* Statements */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +333,54 @@
 				AD6A1FFD1876B68D00E4137F /* MHStatement.m */,
 			);
 			name = Statements;
+			sourceTree = "<group>";
+		};
+		96D89DE718A7A4570087D248 /* Operations Tests */ = {
+			isa = PBXGroup;
+			children = (
+				96D89DEA18A7A5290087D248 /* MHSourceOperationMockFactory.h */,
+				96D89DEB18A7A5290087D248 /* MHSourceOperationMockFactory.m */,
+				964B0A9C18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m */,
+				96D89DE818A7A4980087D248 /* MHRemoveDuplicateImportsOperationSpec.m */,
+				96D89DF118A7AD8F0087D248 /* MHSortImportsAlphabeticallyOperationSpec.m */,
+			);
+			name = "Operations Tests";
+			sourceTree = "<group>";
+		};
+		96D89DF318A7B0080087D248 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A1FEB1876B68D00E4137F /* NSMutableIndexSet+NSArray.h */,
+				AD6A1FEC1876B68D00E4137F /* NSMutableIndexSet+NSArray.m */,
+				AD6A1FED1876B68D00E4137F /* NSString+Files.h */,
+				AD6A1FEE1876B68D00E4137F /* NSString+Files.m */,
+				96D864CF18A6343C0065CD9A /* NSView+Dumping.h */,
+				96D864D018A6343C0065CD9A /* NSView+Dumping.m */,
+				9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */,
+				9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */,
+				9611423F18A6504400E03589 /* NSString+MHNSRange.h */,
+				9611424018A6504400E03589 /* NSString+MHNSRange.m */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		96D89DF418A7B0180087D248 /* Statements */ = {
+			isa = PBXGroup;
+			children = (
+				96D89DF518A7B03C0087D248 /* MHImportStatement+Sorting.h */,
+				96D89DF618A7B03C0087D248 /* MHImportStatement+Sorting.m */,
+			);
+			name = Statements;
+			sourceTree = "<group>";
+		};
+		96D89DF918A7B91D0087D248 /* Statements Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AD6A20201876B73200E4137F /* MHImportStatementSpec.m */,
+				96580BF7189D258B00466993 /* MHMethodStatementSpec.m */,
+				AD6A20241876B73200E4137F /* MHStatementSpec.m */,
+			);
+			name = "Statements Tests";
 			sourceTree = "<group>";
 		};
 		AD6A1FB21876B5BD00E4137F = {
@@ -318,6 +436,7 @@
 		AD6A1FC51876B5BD00E4137F /* MHImportBuster */ = {
 			isa = PBXGroup;
 			children = (
+				964B0A9018A79AD000E36C8E /* External */,
 				AD6A1FEA1876B68D00E4137F /* Categories */,
 				AD6A1FEF1876B68D00E4137F /* Classes */,
 				AD6A20011876B68D00E4137F /* MHBlocks.h */,
@@ -341,14 +460,13 @@
 		AD6A1FDA1876B5BD00E4137F /* MHImportBusterTests */ = {
 			isa = PBXGroup;
 			children = (
+				96D89DF918A7B91D0087D248 /* Statements Tests */,
+				96D89DE718A7A4570087D248 /* Operations Tests */,
 				9611424318A6509800E03589 /* Category Tests */,
 				AD6A1FDB1876B5BD00E4137F /* Supporting Files */,
 				9628390A18A63D08007EE520 /* DVT */,
 				964561D21895778700026306 /* Helper */,
-				AD6A20201876B73200E4137F /* MHImportStatementSpec.m */,
-				96580BF7189D258B00466993 /* MHMethodStatementSpec.m */,
 				AD6A20231876B73200E4137F /* MHStatementParserSpec.m */,
-				AD6A20241876B73200E4137F /* MHStatementSpec.m */,
 				AD6A201B1876B73200E4137F /* MHFileSpec.m */,
 				964561C7189554E100026306 /* MHDocumentObserverSpec.m */,
 				964561D01895777A00026306 /* MHDocumentLOCObserverSpec.m */,
@@ -369,17 +487,11 @@
 		AD6A1FEA1876B68D00E4137F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				96D89DF418A7B0180087D248 /* Statements */,
+				96D89DF318A7B0080087D248 /* Foundation */,
 				9628390918A63BBA007EE520 /* DVT */,
-				AD6A1FEB1876B68D00E4137F /* NSMutableIndexSet+NSArray.h */,
-				AD6A1FEC1876B68D00E4137F /* NSMutableIndexSet+NSArray.m */,
-				AD6A1FED1876B68D00E4137F /* NSString+Files.h */,
-				AD6A1FEE1876B68D00E4137F /* NSString+Files.m */,
-				96D864CF18A6343C0065CD9A /* NSView+Dumping.h */,
-				96D864D018A6343C0065CD9A /* NSView+Dumping.m */,
-				9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */,
-				9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */,
-				9611423F18A6504400E03589 /* NSString+MHNSRange.h */,
-				9611424018A6504400E03589 /* NSString+MHNSRange.m */,
+				96D89DFC18A7BE580087D248 /* PKToken+Factory.h */,
+				96D89DFD18A7BE580087D248 /* PKToken+Factory.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -387,6 +499,7 @@
 		AD6A1FEF1876B68D00E4137F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				96542C6918A798B900246A79 /* Operations */,
 				96580BF6189D198200466993 /* Statements */,
 				964561C91895587200026306 /* Document Observers */,
 				AD6A1FF01876B68D00E4137F /* MHFile.h */,
@@ -397,28 +510,9 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		AD8ECFD91876C4BF000A8462 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				AD8ECFDA1876C4BF000A8462 /* Benoit */,
-			);
-			path = External;
-			sourceTree = "<group>";
-		};
-		AD8ECFDA1876C4BF000A8462 /* Benoit */ = {
-			isa = PBXGroup;
-			children = (
-				9637A03A189ECBA100FAD45A /* XCFXcodePrivate.h */,
-				9637A038189ECBA100FAD45A /* MHXcodeDocumentNavigator.h */,
-				9637A039189ECBA100FAD45A /* MHXcodeDocumentNavigator.m */,
-			);
-			path = Benoit;
-			sourceTree = "<group>";
-		};
 		ADB1CF811876C0B000D935C7 /* MHImportBusterPlugin */ = {
 			isa = PBXGroup;
 			children = (
-				AD8ECFD91876C4BF000A8462 /* External */,
 				ADB1CF871876C0B000D935C7 /* MHImportBusterPlugin.h */,
 				ADB1CF881876C0B000D935C7 /* MHImportBusterPlugin.m */,
 				ADB1CF821876C0B000D935C7 /* Supporting Files */,
@@ -445,15 +539,21 @@
 			files = (
 				9611424118A6504400E03589 /* NSString+MHNSRange.h in Headers */,
 				AD5427CA1876C37E00A2BC8E /* MHImportBuster.h in Headers */,
+				96D89DFE18A7BE580087D248 /* PKToken+Factory.h in Headers */,
+				964B0A9718A79AD000E36C8E /* XCFXcodePrivate.h in Headers */,
 				96C21B84189CE00A00484D57 /* MHMethodStatement.h in Headers */,
+				96FB646A18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h in Headers */,
 				AD6A20151876B68D00E4137F /* MHStatementParser.h in Headers */,
 				AD6A20171876B68D00E4137F /* MHStatements.h in Headers */,
 				AD6A20191876B68D00E4137F /* MHImportBusterErrors.h in Headers */,
 				AD6A20181876B68D00E4137F /* MHBlocks.h in Headers */,
 				AD6A20051876B68D00E4137F /* NSString+Files.h in Headers */,
+				96D89DEF18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.h in Headers */,
 				968AD40E18986746009E6FE6 /* MHDocumentMethodLOCObserver.h in Headers */,
 				9628390718A63A11007EE520 /* DVTSourceTextStorage+Operations.h in Headers */,
 				AD6A20071876B68D00E4137F /* MHFile.h in Headers */,
+				964B0A9518A79AD000E36C8E /* MHXcodeDocumentNavigator.h in Headers */,
+				964B0A9A18A79B8300E36C8E /* MHConcreteSourceOperation.h in Headers */,
 				9658B95E18A643D700A768B0 /* NSObject+MHLogMethods.h in Headers */,
 				AD6A20031876B68D00E4137F /* NSMutableIndexSet+NSArray.h in Headers */,
 				AD6A200D1876B68D00E4137F /* MHImportStatement.h in Headers */,
@@ -461,6 +561,7 @@
 				AD6A20131876B68D00E4137F /* MHStatement.h in Headers */,
 				964561CC1895750000026306 /* MHDocumentLOCObserver.h in Headers */,
 				96D864D118A6343C0065CD9A /* NSView+Dumping.h in Headers */,
+				96D89DF718A7B03C0087D248 /* MHImportStatement+Sorting.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,21 +769,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964B0A9B18A79B8300E36C8E /* MHConcreteSourceOperation.m in Sources */,
 				96D864D218A6343C0065CD9A /* NSView+Dumping.m in Sources */,
 				AD6A20141876B68D00E4137F /* MHStatement.m in Sources */,
-				9637A056189ECBC300FAD45A /* MHXcodeDocumentNavigator.m in Sources */,
 				9628390818A63A11007EE520 /* DVTSourceTextStorage+Operations.m in Sources */,
+				96D89DF018A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.m in Sources */,
 				964561CD1895750000026306 /* MHDocumentLOCObserver.m in Sources */,
 				9611424218A6504400E03589 /* NSString+MHNSRange.m in Sources */,
+				96D89DFF18A7BE580087D248 /* PKToken+Factory.m in Sources */,
+				96D89DF818A7B03C0087D248 /* MHImportStatement+Sorting.m in Sources */,
 				9658B95F18A643D700A768B0 /* NSObject+MHLogMethods.m in Sources */,
 				AD6A20161876B68D00E4137F /* MHStatementParser.m in Sources */,
 				AD6A200E1876B68D00E4137F /* MHImportStatement.m in Sources */,
 				9699F6FC18954F7400AC7432 /* MHDocumentObserver.m in Sources */,
 				AD6A20081876B68D00E4137F /* MHFile.m in Sources */,
 				AD6A20061876B68D00E4137F /* NSString+Files.m in Sources */,
+				96FB646B18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.m in Sources */,
 				968AD40F18986746009E6FE6 /* MHDocumentMethodLOCObserver.m in Sources */,
 				96C21B85189CE00A00484D57 /* MHMethodStatement.m in Sources */,
 				AD6A20041876B68D00E4137F /* NSMutableIndexSet+NSArray.m in Sources */,
+				964B0A9618A79AD000E36C8E /* MHXcodeDocumentNavigator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,13 +798,19 @@
 			files = (
 				AD6A202D1876B73200E4137F /* MHStatementParserSpec.m in Sources */,
 				AD6A202A1876B73200E4137F /* MHImportStatementSpec.m in Sources */,
+				96D89DE918A7A4980087D248 /* MHRemoveDuplicateImportsOperationSpec.m in Sources */,
 				AD6A202E1876B73200E4137F /* MHStatementSpec.m in Sources */,
 				AD6A20271876B73200E4137F /* MHFileSpec.m in Sources */,
 				9611424518A650C100E03589 /* NSString_MHNSRangeSpec.m in Sources */,
 				964561D11895777A00026306 /* MHDocumentLOCObserverSpec.m in Sources */,
 				964561C8189554E100026306 /* MHDocumentObserverSpec.m in Sources */,
 				96580BF8189D258B00466993 /* MHMethodStatementSpec.m in Sources */,
+				96D89DF218A7AD8F0087D248 /* MHSortImportsAlphabeticallyOperationSpec.m in Sources */,
+				96D89DFB18A7B9470087D248 /* MHImportStatement_SortingSpec.m in Sources */,
+				96D89DEC18A7A5290087D248 /* MHSourceOperationMockFactory.m in Sources */,
+				964B0A9D18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m in Sources */,
 				AD6A202F1876B8AE00E4137F /* NSString+Files.m in Sources */,
+				96D89E0118A7BEC20087D248 /* PKToken_FactorySpec.m in Sources */,
 				9628390C18A63D35007EE520 /* DVTSourceTextStorageSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

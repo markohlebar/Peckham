@@ -15,6 +15,8 @@
 #import "NSObject+MHLogMethods.h"
 
 #import "DVTSourceTextStorage+Operations.h"
+#import "MHRemoveDuplicateImportsOperation.h"
+#import "MHSortImportsAlphabeticallyOperation.h"
 
 @implementation MHFile
 + (instancetype)fileWithPath:(NSString *)filePath {
@@ -43,41 +45,20 @@
     if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
         return;
     }
-    
     NSTextView *textView = [MHXcodeDocumentNavigator currentSourceCodeTextView];
     DVTSourceTextStorage *textStorage = (DVTSourceTextStorage*)textView.textStorage;
-    _statements = [[MHStatementParser new] parseText:textStorage.string
-                                               error:nil];
-    
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self isKindOfClass:%@", [MHImportStatement class]];
-	NSMutableArray *importStatements = [self.statements filteredArrayUsingPredicate:predicate].mutableCopy;
-	NSSet *countedSet = [NSSet setWithArray:importStatements];
-
-	NSMutableIndexSet *linesOfCodeToDelete = [NSMutableIndexSet indexSet];
-	NSMutableArray *linesToAdd = [NSMutableArray array];
-
-	for (MHImportStatement *statement in countedSet) {
-		NSInteger count = 2; //[countedSet countForObject:statement];
-		if (count > 1) {
-			[linesToAdd addObject:statement];
-			BOOL isFirstImportStatement = YES;
-			for (MHImportStatement *importStatement in importStatements) {
-				if ([importStatement isEqual:statement]) {
-					//Dont add the first statement to the delete list.
-					if (isFirstImportStatement) {
-						isFirstImportStatement = NO;
-						continue;
-					}
-					[linesOfCodeToDelete addIndexes:importStatement.codeLineNumbers];
-				}
-			}
-		}
-	}
-    
-    [textStorage mhDeleteLines:linesOfCodeToDelete];
+    NSOperation *operation = [MHRemoveDuplicateImportsOperation operationWithSource:textStorage];
+    [operation start];
 }
 
 - (void)sortImportsAlphabetically {
+    if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
+        return;
+    }
+    NSTextView *textView = [MHXcodeDocumentNavigator currentSourceCodeTextView];
+    DVTSourceTextStorage *textStorage = (DVTSourceTextStorage*)textView.textStorage;
+    NSOperation *operation = [MHSortImportsAlphabeticallyOperation operationWithSource:textStorage];
+    [operation start];
 }
 
 @end

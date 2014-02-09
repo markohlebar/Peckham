@@ -38,12 +38,6 @@ describe(@"Interface tests", ^{
     it(@"Should have a file path", ^{
         [[file.filePath should] equal:filePath];
     });
-    
-    it(@"Should have 1 LOC if an array with 1 LOC is set", ^{
-        file.statements = [NSMutableArray arrayWithObject:[MHStatement mock]];
-        [[file.statements should] haveCountOf:1];
-    });
-    
 });
 
 describe(@"Implementation tests", ^{

@@ -14,42 +14,41 @@
 @implementation NSTextStorage (MHOperations)
 
 - (void)mhInsertString:(NSString *)string atLine:(NSUInteger)lineNumber {
-    NSRange range = [self.string mhRangeOfLine:lineNumber];
-    range.length = 0;
-    if (range.location != NSNotFound) {
-        [self mhReplaceCharactersInRange:range withString:string];
-    }
+	NSRange range = [self.string mhRangeOfLine:lineNumber];
+	range.length = 0;
+	if (range.location != NSNotFound) {
+		[self mhReplaceCharactersInRange:range withString:string];
+	}
 }
 
 - (void)mhDeleteLine:(NSInteger)lineNumber {
-    NSRange range = [self.string mhRangeOfLine:lineNumber];
-    if (range.location != NSNotFound) {
-        [self mhReplaceCharactersInRange:range withString:@""];
-    }
+	NSRange range = [self.string mhRangeOfLine:lineNumber];
+	if (range.location != NSNotFound) {
+		[self mhReplaceCharactersInRange:range withString:@""];
+	}
 }
 
 - (void)mhDeleteLines:(NSIndexSet *)lineNumbers {
-    __block NSInteger offset = 0;
-    [lineNumbers enumerateIndexesUsingBlock:^(NSUInteger index, BOOL *stop) {
-        NSInteger indexToDelete = index - offset;
-        [self mhDeleteLine:indexToDelete];
-        offset++;
-    }];
+	__block NSInteger offset = 0;
+	[lineNumbers enumerateIndexesUsingBlock: ^(NSUInteger index, BOOL *stop) {
+	    NSInteger indexToDelete = index - offset;
+	    [self mhDeleteLine:indexToDelete];
+	    offset++;
+	}];
 }
 
-- (void)mhReplaceCharactersInRange:(NSRange) range withString:(NSString*) string {
-    if ([self isKindOfClass:NSClassFromString(@"DVTTextStorage")]) {
+- (void)mhReplaceCharactersInRange:(NSRange)range withString:(NSString *)string {
+    if ([self respondsToSelector:@selector(replaceCharactersInRange:withString:withUndoManager:)]) {
         IDESourceCodeDocument *document = [MHXcodeDocumentNavigator currentSourceCodeDocument];
-        DVTSourceTextStorage *storage = (DVTSourceTextStorage*)self;
-        [storage replaceCharactersInRange:range
-                               withString:string
-                          withUndoManager:document.undoManager];
+		DVTSourceTextStorage *storage = (DVTSourceTextStorage *)self;
+		[storage replaceCharactersInRange:range
+		                       withString:string
+		                  withUndoManager:document.undoManager];
     }
-    else {
-        [self replaceCharactersInRange:range
-                            withString:string];
-    }
+	else {
+		[self replaceCharactersInRange:range
+		                    withString:string];
+	}
 }
-
 
 @end

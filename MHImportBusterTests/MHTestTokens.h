@@ -19,6 +19,34 @@ static void (^tokenFeedBlock)(MHStatement *loc, NSArray* tokens) = ^(MHStatement
     });
 };
 
+static NSArray* (^frameworkTokensWithStrings) (NSString*, NSString*) = ^NSArray* (NSString *subpath, NSString *header) {
+    return @[
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"#import" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"<" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:subpath floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"/" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:header floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"." floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"h" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@">" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"\n" floatValue:0],
+             ];
+};
+
+static NSArray* (^projectTokensWithStrings) (NSString*, NSString*) = ^NSArray* (NSString *subpath, NSString *header) {
+    return @[
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"#import" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"\"" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:subpath floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"/" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:header floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"." floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"h" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"\"" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"\n" floatValue:0],
+             ];
+};
+
 static NSArray* (^frameworkTokens) () = ^NSArray* () {
     return @[
              [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"#import" floatValue:0],

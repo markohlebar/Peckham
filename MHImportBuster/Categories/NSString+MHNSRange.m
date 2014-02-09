@@ -10,6 +10,10 @@
 
 @implementation NSString (MHNSRange)
 - (NSRange)mhRangeOfLine:(NSInteger) lineNumber {
+    //special case when length of the string is 0
+    if (lineNumber == 0 && self.length == 0) {
+        return NSMakeRange(0, 0);
+    }
     __block NSInteger currentLineNumber = 0;
     __block BOOL foundLine = NO;
     __block NSRange range = NSMakeRange(0, 0);

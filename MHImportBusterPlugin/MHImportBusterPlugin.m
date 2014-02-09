@@ -68,6 +68,11 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
             NSMenuItem *actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Remove Duplicate Imports" action:@selector(removeDuplicateImports) keyEquivalent:@""];
             [actionMenuItem setTarget:self];
             [[menuItem submenu] addItem:actionMenuItem];
+            
+            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
+            actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Sort Imports" action:@selector(sortImports) keyEquivalent:@""];
+            [actionMenuItem setTarget:self];
+            [[menuItem submenu] addItem:actionMenuItem];
         }
         
 //        [self loadKeyboardHandler];
@@ -129,6 +134,19 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
     
     MHFile *file = [MHFile fileWithPath:filePath];
     [file removeDuplicateImports];
+}
+
+-(void) sortImports {
+    if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
+        return;
+    }
+    
+    IDESourceCodeEditor *editor = [MHXcodeDocumentNavigator currentEditor];
+    IDESourceCodeDocument *document = [editor sourceCodeDocument];
+    NSString *filePath = [[document fileURL] path];
+    
+    MHFile *file = [MHFile fileWithPath:filePath];
+    [file sortImportsAlphabetically];
 }
 
 - (void)dealloc
