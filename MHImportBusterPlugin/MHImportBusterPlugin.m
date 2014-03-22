@@ -6,11 +6,12 @@
 //    Copyright (c) 2014 Marko Hlebar. All rights reserved.
 //
 
-#import "MHImportBusterPlugin.h"
 #import <Carbon/Carbon.h>
 #import <MHImportBuster/MHImportBuster.h>
+#import "MHImportBusterPlugin.h"
 #import "MHXcodeDocumentNavigator.h"
 #import "XCFXcodePrivate.h"
+#import "MHXcodeIssuesParser.h"
 
 static MHImportBusterPlugin *sharedPlugin;
 
@@ -73,7 +74,14 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
             actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Sort Imports" action:@selector(sortImports) keyEquivalent:@""];
             [actionMenuItem setTarget:self];
             [[menuItem submenu] addItem:actionMenuItem];
+            
+            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
+            actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Find Missing Imports" action:@selector(findMissingImports) keyEquivalent:@""];
+            [actionMenuItem setTarget:self];
+            [[menuItem submenu] addItem:actionMenuItem];
         }
+        
+        [self addIssuesObserver];
         
 //        [self loadKeyboardHandler];
         
@@ -85,6 +93,36 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
         
     }
     return self;
+}
+
+-(void) addIssuesObserver {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(coalesceIssues:)
+                                                 name:@"IDEIssueManagerDidCoalesceIssuesNotification"
+                                               object:nil];
+}
+
+-(void) coalesceIssues:(NSNotification *)notification {
+//    NSLog(@"Coalescing:\n\n%@", notification.userInfo);
+    [MHXcodeIssuesParser parseDictionary:notification.userInfo];
+    
+    [self addImport];
+}
+
+-(void) findMissingImports {
+    NSTask *task = [[NSTask alloc] init];
+    
+    task.launchPath = @"/Users/mhlebar/Documents/clang-llvm/build/bin/loop-convert";
+//    task.arguments = @[
+//                       [NSString stringWithFormat:@"--style=%@", style],
+//                       @"-i",
+    task.arguments = @[
+                       [self currentFilePath],
+                       @"--"
+                       ];
+    
+    [task launch];
+    [task waitUntilExit];
 }
 
 -(void) loadKeyboardHandler {
@@ -118,35 +156,42 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
     [alert runModal];
 }
 
-// Sample Action, for menu item:
-- (void)removeDuplicateImports
-{
+- (NSString *)currentFilePath {
     if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
-        return;
+        return nil;
     }
     
     //TODO: produce a separate document for each filePath. note when any changes occur
-    //on the observers. 
+    //on the observers.
     
     IDESourceCodeEditor *editor = [MHXcodeDocumentNavigator currentEditor];
     IDESourceCodeDocument *document = [editor sourceCodeDocument];
-    NSString *filePath = [[document fileURL] path];
-    
-    MHFile *file = [MHFile fileWithPath:filePath];
-    [file removeDuplicateImports];
+    return [[document fileURL] path];
+}
+
+- (void) addImport {
+    NSString *filePath = [self currentFilePath];
+    if(filePath) {
+        MHFile *file = [MHFile fileWithPath:filePath];
+        [file addImport:@"#import \"Header.h\""];
+    }
+}
+
+// Sample Action, for menu item:
+- (void)removeDuplicateImports {
+    NSString *filePath = [self currentFilePath];
+    if(filePath) {
+        MHFile *file = [MHFile fileWithPath:filePath];
+        [file removeDuplicateImports];
+    }
 }
 
 -(void) sortImports {
-    if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
-        return;
+    NSString *filePath = [self currentFilePath];
+    if(filePath) {
+        MHFile *file = [MHFile fileWithPath:filePath];
+        [file sortImportsAlphabetically];
     }
-    
-    IDESourceCodeEditor *editor = [MHXcodeDocumentNavigator currentEditor];
-    IDESourceCodeDocument *document = [editor sourceCodeDocument];
-    NSString *filePath = [[document fileURL] path];
-    
-    MHFile *file = [MHFile fileWithPath:filePath];
-    [file sortImportsAlphabetically];
 }
 
 - (void)dealloc

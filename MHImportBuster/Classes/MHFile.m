@@ -17,10 +17,11 @@
 #import "DVTSourceTextStorage+Operations.h"
 #import "MHRemoveDuplicateImportsOperation.h"
 #import "MHSortImportsAlphabeticallyOperation.h"
+#import "MHAddImportOperation.h"
 
 @implementation MHFile
 + (instancetype)fileWithPath:(NSString *)filePath {
-	Class class = nil;
+    Class class = nil;
 	if ([filePath isHeaderFilePath]) {
 		class = [MHInterfaceFile class];
 	}
@@ -33,6 +34,10 @@
 	return [[class alloc] initWithFilePath:filePath];
 }
 
+- (void)observeFileChanges {
+    
+}
+
 - (id)initWithFilePath:(NSString *)filePath {
 	self = [super init];
 	if (self) {
@@ -42,23 +47,39 @@
 }
 
 - (void)removeDuplicateImports {
-    if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
-        return;
+    DVTSourceTextStorage *textStorage = [self currentTextStorage];
+    if (textStorage) {
+        NSOperation *operation = [MHRemoveDuplicateImportsOperation operationWithSource:textStorage];
+        [operation start];
     }
-    NSTextView *textView = [MHXcodeDocumentNavigator currentSourceCodeTextView];
-    DVTSourceTextStorage *textStorage = (DVTSourceTextStorage*)textView.textStorage;
-    NSOperation *operation = [MHRemoveDuplicateImportsOperation operationWithSource:textStorage];
-    [operation start];
 }
 
 - (void)sortImportsAlphabetically {
+    DVTSourceTextStorage *textStorage = [self currentTextStorage];
+    if (textStorage) {
+        NSOperation *operation = [MHSortImportsAlphabeticallyOperation operationWithSource:textStorage];
+        [operation start];
+    }
+}
+
+- (DVTSourceTextStorage *)currentTextStorage {
     if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
-        return;
+        return nil;
     }
     NSTextView *textView = [MHXcodeDocumentNavigator currentSourceCodeTextView];
-    DVTSourceTextStorage *textStorage = (DVTSourceTextStorage*)textView.textStorage;
-    NSOperation *operation = [MHSortImportsAlphabeticallyOperation operationWithSource:textStorage];
-    [operation start];
+    return (DVTSourceTextStorage*)textView.textStorage;
+}
+
+- (void)addImport:(NSString *)import {
+    DVTSourceTextStorage *textStorage = [self currentTextStorage];
+    if (textStorage) {
+        MHStatementParser *parser = [MHStatementParser new];
+        NSArray *statements = [parser parseText:import error:nil];
+        MHImportStatement *statement = [statements firstObject];
+        NSOperation *operation = [MHAddImportOperation operationWithSource:textStorage
+                                                               importToAdd:statement];
+        [operation start];
+    }
 }
 
 @end

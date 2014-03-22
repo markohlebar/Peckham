@@ -27,7 +27,7 @@
 }
 
 -(void) execute {
-    
+    [self doesNotRecognizeSelector:_cmd];
 }
 
 @end

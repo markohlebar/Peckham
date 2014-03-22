@@ -16,9 +16,13 @@
 - (void)mhInsertString:(NSString *)string atLine:(NSUInteger)lineNumber {
 	NSRange range = [self.string mhRangeOfLine:lineNumber];
 	range.length = 0;
-	if (range.location != NSNotFound) {
-		[self mhReplaceCharactersInRange:range withString:string];
-	}
+    //edge case when string is out of bounds
+    if (range.location == NSNotFound) {
+        range = NSMakeRange(self.length, 0);
+//        NSString *newLine = @"\n";
+//        string = [newLine stringByAppendingString:string];
+    };
+    [self mhReplaceCharactersInRange:range withString:string];
 }
 
 - (void)mhDeleteLine:(NSInteger)lineNumber {

@@ -38,9 +38,9 @@ describe(@"DVTSourceTextStorage", ^{
             [[textStorage.string should] equal:@"Zero\nFirst\nSecond\nThird\nMOCKEND"];
         });
         
-        it(@"Should not insert a line if it's out of bounds", ^{
+        it(@"Should insert text at the end if it's out of bounds", ^{
             [textStorage mhInsertString:mockText atLine:5];
-            [[textStorage.string should] equal:@"Zero\nFirst\nSecond\nThird\nEND"];
+            [[textStorage.string should] equal:@"Zero\nFirst\nSecond\nThird\nENDMOCK"];
         });
         
         it(@"Should be able to insert text with new line at middle line", ^{

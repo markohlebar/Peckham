@@ -9,6 +9,8 @@
 #ifndef MHImportBuster_MHTestTokens_h
 #define MHImportBuster_MHTestTokens_h
 
+#import "MHStatement.h"
+
 static void (^tokenFeedBlock)(MHStatement *loc, NSArray* tokens) = ^(MHStatement *loc, NSArray* tokens) {
     beforeEach(^{
         for(PKToken *token in tokens) {
@@ -39,6 +41,18 @@ static NSArray* (^projectTokensWithStrings) (NSString*, NSString*) = ^NSArray* (
              [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"\"" floatValue:0],
              [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:subpath floatValue:0],
              [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"/" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:header floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"." floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"h" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"\"" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"\n" floatValue:0],
+             ];
+};
+
+static NSArray* (^projectTokensWithString) (NSString*) = ^NSArray* (NSString *header) {
+    return @[
+             [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"#import" floatValue:0],
+             [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"\"" floatValue:0],
              [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:header floatValue:0],
              [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"." floatValue:0],
              [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"h" floatValue:0],

@@ -10,6 +10,7 @@
 
 @protocol MHSourceOperation <NSObject>
 + (instancetype)operationWithSource:(NSTextStorage *)source;
+- (id)initWithSource:(NSTextStorage *)source;
 - (void)execute;
 @property (nonatomic, readonly) NSTextStorage *source;
 @end

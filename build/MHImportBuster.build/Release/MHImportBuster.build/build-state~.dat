@@ -1,0 +1,764 @@
+TMHImportBuster
+v6
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/Resources/Info.plist /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Info.plist
+cSymLink /Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/MHImportBuster.framework /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework
+cPhaseScriptExecution Check\ Pods\ Manifest.lock /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Script-91F8557A81DF432F8CB0BB89.sh
+cProcessPCH /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch.pch MHImportBuster/MHImportBuster-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHConcreteSourceOperation.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSView+Dumping.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSView+Dumping.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatement.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/DVTSourceTextStorage+Operations.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHSortImportsAlphabeticallyOperation.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentLOCObserver.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+MHNSRange.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/PKToken+Factory.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement+Sorting.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSObject+MHLogMethods.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatementParser.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentObserver.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHFile.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+Files.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHRemoveDuplicateImportsOperation.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentMethodLOCObserver.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentMethodLOCObserver.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHMethodStatement.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSMutableIndexSet+NSArray.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSMutableIndexSet+NSArray.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHXcodeDocumentNavigator.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/MHImportBuster normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
+c0000000053216B7600000000000000AA
+t1394699126
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/SDKSettings.plist
+c00000000531B004D000000000000044C
+t1394278477
+s1100
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/CoreServices/SystemVersion.plist
+c0000000053216B6300000000000001DE
+t1394699107
+s478
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AppKit.framework/AppKit
+c0000000053216B640000000000268434
+t1394699108
+s2524212
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Cocoa
+c00000000531B004E000000000000253C
+t1394278478
+s9532
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.m
+c0000000052F760FE0000000000000688
+t1391943934
+s1672
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.m
+c0000000052F78D66000000000000055B
+t1391955302
+s1371
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSMutableIndexSet+NSArray.m
+c0000000052C44A50000000000000026D
+t1388595792
+s621
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.m
+c0000000052F60F9000000000000002A9
+t1391857552
+s681
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.m
+c0000000052C45A06000000000000063C
+t1388599814
+s1596
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.m
+c0000000052F77FA600000000000004B5
+t1391951782
+s1205
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSView+Dumping.m
+c0000000052F5FCC600000000000004CB
+t1391852742
+s1227
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.m
+c0000000052F78B1C00000000000002A7
+t1391954716
+s679
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m
+c0000000052F7723C0000000000000236
+t1391948348
+s566
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.m
+c0000000052F6103C000000000000027C
+t1391857724
+s636
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentMethodLOCObserver.m
+c0000000052ED055400000000000002AC
+t1391265108
+s684
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.m
+c0000000052F022180000000000000788
+t1391469080
+s1928
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m
+c0000000052F78E0600000000000007DA
+t1391955462
+s2010
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.m
+c0000000052ED05560000000000000812
+t1391265110
+s2066
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.m
+c0000000052ED055600000000000006F4
+t1391265110
+s1780
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m
+c0000000052F7728C0000000000000645
+t1391948428
+s1605
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m
+c0000000052F7805A0000000000000650
+t1391951962
+s1616
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.m
+c0000000052F789EE00000000000008DD
+t1391954414
+s2269
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.m
+c0000000052F642580000000000001136
+t1391870552
+s4406
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m
+c0000000052EFE8BA0000000000001E71
+t1391454394
+s7793
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Info.plist
+c0000000052C67E3C00000000000003C3
+t1388740156
+s963
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Prefix.pch
+c0000000052C6807A00000000000000EA
+t1388740730
+s234
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/DVTSourceTextStorage+Operations.o
+t1395092227
+s27872
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHConcreteSourceOperation.o
+t1395092227
+s16960
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentLOCObserver.o
+t1395092227
+s10840
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentMethodLOCObserver.o
+t1395092228
+s5852
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentObserver.o
+t1395092228
+s24860
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHFile.o
+t1395092228
+s26944
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportBuster.LinkFileList
+c0000000053276B020000000000000B9F
+t1395092226
+s2975
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement+Sorting.o
+t1395092227
+s10696
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement.o
+t1395092228
+s19100
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHMethodStatement.o
+t1395092228
+s16880
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHRemoveDuplicateImportsOperation.o
+t1395092228
+s13232
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHSortImportsAlphabeticallyOperation.o
+t1395092227
+s13504
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatement.o
+t1395092227
+s25004
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatementParser.o
+t1395092228
+s38388
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHXcodeDocumentNavigator.o
+t1395092228
+s45584
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSMutableIndexSet+NSArray.o
+t1395092228
+s9316
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSObject+MHLogMethods.o
+t1395092227
+s6820
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+Files.o
+t1395092228
+s10260
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+MHNSRange.o
+t1395092227
+s10460
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSView+Dumping.o
+t1395092227
+s20600
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/PKToken+Factory.o
+t1395092227
+s8864
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Script-91F8557A81DF432F8CB0BB89.sh
+c0000000053276B020000000000000103
+t1395092226
+s259
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/MHImportBuster.framework
+t2
+s0
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/libPods-MHImportBuster.a
+c00000000000000000000000000000000
+t2
+s0
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/MHImportBuster
+t2
+s0
+
+N/Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/Resources/Info.plist
+t2
+s0
+
+N/var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch.pch
+t1395092227
+s13731936
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciese1437582a2d7b841^92209082a2d7b841^---0#1#1#--18"Check dependencies36"FEF7B6CE-40FB-4A9D-AD74-9E06073080AC-
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/DVTSourceTextStorage+Operations.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.745087
+e416785027.852422
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/DVTSourceTextStorage+Operations.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/XCFXcodePrivate.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.m266"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/DVTSourceTextStorage+Operations.o [1mMHImportBuster/Categories/DVTSourceTextStorage+Operations.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerd32dbf83a2d7b841^1040da83a2d7b841^---0#0#1#-19%DVTDocumentLocation2@113"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.m0000000000000000^3665"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/DVTSourceTextStorage+Operations.o [1mMHImportBuster/Categories/DVTSourceTextStorage+Operations.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/DVTSourceTextStorage+Operations.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/DVTSourceTextStorage+Operations.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/DVTSourceTextStorage+Operations.o36"03D77709-D2A4-4CD8-8282-C6090F7E12E3-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHConcreteSourceOperation.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.742998
+e416785027.836916
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHConcreteSourceOperation.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSourceOperation.h
+o[1m/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m:14:41: [0m[0;1;35mwarning: [0m[1mincompatible pointer types
+o      sending 'NSTextStorage *' to parameter of type 'NSString *' [-Wincompatible-pointer-types][0m
+o    return [[self alloc] initWithSource:source];
+o[0;1;32m                                        ^~~~~~
+o[0mIn file included from /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m:1:
+oIn file included from /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Prefix.pch:8:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h:12:
+oIn file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h:143:
+o[1m/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAppleScript.h:30:34: [0m[0;1;30mnote: [0m
+o      passing argument to parameter 'source' here[0m
+o- (id)initWithSource:(NSString *)source;
+o[0;1;32m                                 ^
+o[0m1 warning generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m251"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHConcreteSourceOperation.o [1mMHImportBuster/Classes/MHConcreteSourceOperation.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerb554be83a2d7b841^4888d683a2d7b841^-1358"[1m/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m:14:41: [0m[0;1;35mwarning: [0m[1mincompatible pointer types      sending 'NSTextStorage *' to parameter of type 'NSString *' [-Wincompatible-pointer-types][0m    return [[self alloc] initWithSource:source];[0;1;32m                                        ^~~~~~[0mIn file included from /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m:1:In file included from /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Prefix.pch:8:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h:12:In file included from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h:143:[1m/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAppleScript.h:30:34: [0m[0;1;30mnote: [0m      passing argument to parameter 'source' here[0m- (id)initWithSource:(NSString *)source;[0;1;32m                                 ^[0m1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@86"Incompatible pointer types sending 'NSTextStorage *' to parameter of type 'NSString *'-416785027#18446744073709551615#0#1(2@43"Passing argument to parameter 'source' here-416785027#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@176"file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAppleScript.h0000000000000000^29#33#29#33#1750#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@104"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m0000000000000000^13#40#13#40#345#0#14"Semantic Issue1(3@104"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m0000000000000000^13#40#13#46#345#0#-0#0#1#-19%DVTDocumentLocation4@104"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m0000000000000000^3623"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHConcreteSourceOperation.o [1mMHImportBuster/Classes/MHConcreteSourceOperation.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHConcreteSourceOperation.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHConcreteSourceOperation.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHConcreteSourceOperation.o36"9DC05D8B-333E-4790-8BD1-77BD8472EC42-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentLOCObserver.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.844764
+e416785027.913318
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentLOCObserver.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.m243"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentLOCObserver.o [1mMHImportBuster/Classes/MHDocumentLOCObserver.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerb35ed883a2d7b841^eecfe983a2d7b841^---0#0#1#-19%DVTDocumentLocation2@100"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.m0000000000000000^3599"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentLOCObserver.o [1mMHImportBuster/Classes/MHDocumentLOCObserver.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentLOCObserver.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentLOCObserver.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentLOCObserver.o36"766B8792-3003-4CB3-9220-A78A52BCD8BC-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentMethodLOCObserver.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentMethodLOCObserver.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785028.071384
+e416785028.129845
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentMethodLOCObserver.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentMethodLOCObserver.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentMethodLOCObserver.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentMethodLOCObserver.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentLOCObserver.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection107"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentMethodLOCObserver.m255"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentMethodLOCObserver.o [1mMHImportBuster/Classes/MHDocumentMethodLOCObserver.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler45621284a2d7b841^21582184a2d7b841^---0#0#1#-19%DVTDocumentLocation2@106"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentMethodLOCObserver.m0000000000000000^3635"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentMethodLOCObserver.o [1mMHImportBuster/Classes/MHDocumentMethodLOCObserver.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentMethodLOCObserver.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentMethodLOCObserver.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentMethodLOCObserver.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentMethodLOCObserver.o36"2FB9D88D-5CD9-4B2E-9776-F283A3B66D3E-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentObserver.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.975060
+e416785028.067469
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentObserver.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/XCFXcodePrivate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.m237"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentObserver.o [1mMHImportBuster/Classes/MHDocumentObserver.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler54c8f983a2d7b841^0da61184a2d7b841^---0#0#1#-19%DVTDocumentLocation2@97"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.m0000000000000000^3581"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentObserver.o [1mMHImportBuster/Classes/MHDocumentObserver.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentObserver.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentObserver.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHDocumentObserver.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHDocumentObserver.o36"9FF81427-C529-4A0C-A11C-51B111578AFB-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHFile.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.977353
+e416785028.075769
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHFile.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKToken.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTypes.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/XCFXcodePrivate.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSourceOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.h
+o[1m/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m:21:17: [0m[0;1;35mwarning: [0m[1mmethod definition for 'observeFileChanges' not
+o      found [-Wincomplete-implementation][0m
+o@implementation MHFile
+o[0;1;32m                ^
+o[0mIn file included from /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m:9:
+o[1m/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.h:17:1: [0m[0;1;30mnote: [0mmethod 'observeFileChanges' declared here[0m
+o- (void)observeFileChanges;
+o[0;1;32m^
+o[0m1 warning generated.
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m213"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHFile.o [1mMHImportBuster/Classes/MHFile.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilere84cfa83a2d7b841^77a31384a2d7b841^-593"[1m/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m:21:17: [0m[0;1;35mwarning: [0m[1mmethod definition for 'observeFileChanges' not      found [-Wincomplete-implementation][0m@implementation MHFile[0;1;32m                ^[0mIn file included from /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m:9:[1m/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.h:17:1: [0m[0;1;30mnote: [0mmethod 'observeFileChanges' declared here[0m- (void)observeFileChanges;[0;1;32m^[0m1 warning generated.1(36%IDEClangDiagnosticActivityLogMessage2@52"Method definition for 'observeFileChanges' not found-416785028#18446744073709551615#0#1(2@41"Method 'observeFileChanges' declared here-416785028#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@85"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.h0000000000000000^16#0#16#0#382#0#14"Semantic Issue--1#27"com.apple.dt.IDE.diagnostic3@85"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m0000000000000000^20#16#20#16#503#0#14"Semantic Issue--0#0#1#-19%DVTDocumentLocation4@85"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m0000000000000000^3509"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHFile.o [1mMHImportBuster/Classes/MHFile.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHFile.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHFile.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHFile.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHFile.o36"546A4FED-2816-4053-A809-36E97F3FD18B-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement+Sorting.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.909658
+e416785027.973578
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement+Sorting.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKToken.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTypes.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.m254"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement+Sorting.o [1mMHImportBuster/Categories/MHImportStatement+Sorting.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler6ef9e883a2d7b841^8317f983a2d7b841^---0#0#1#-19%DVTDocumentLocation2@107"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.m0000000000000000^3629"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement+Sorting.o [1mMHImportBuster/Categories/MHImportStatement+Sorting.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement+Sorting.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement+Sorting.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement+Sorting.o36"67ADD47C-3311-40A5-B7A5-AD3ADD4F7054-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.922257
+e416785028.005253
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKToken.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTypes.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.m235"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement.o [1mMHImportBuster/Classes/MHImportStatement.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler048eec83a2d7b841^3e590184a2d7b841^---0#0#1#-19%DVTDocumentLocation2@96"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.m0000000000000000^3575"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement.o [1mMHImportBuster/Classes/MHImportStatement.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportStatement.o36"5D620220-274C-4976-B508-0A120B1D829D-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHMethodStatement.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785028.075991
+e416785028.151753
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHMethodStatement.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKToken.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTypes.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.m235"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHMethodStatement.o [1mMHImportBuster/Classes/MHMethodStatement.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerab071484a2d7b841^33de2684a2d7b841^---0#0#1#-19%DVTDocumentLocation2@96"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.m0000000000000000^3575"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHMethodStatement.o [1mMHImportBuster/Classes/MHMethodStatement.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHMethodStatement.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHMethodStatement.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHMethodStatement.o36"26D7C98D-C5A4-4092-8FE2-E14194AA73BA-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHRemoveDuplicateImportsOperation.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785028.067830
+e416785028.150093
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHRemoveDuplicateImportsOperation.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSourceOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/XCFXcodePrivate.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKToken.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTypes.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m267"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHRemoveDuplicateImportsOperation.o [1mMHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler60781184a2d7b841^99812684a2d7b841^---0#0#1#-19%DVTDocumentLocation2@112"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m0000000000000000^3671"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHRemoveDuplicateImportsOperation.o [1mMHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHRemoveDuplicateImportsOperation.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHRemoveDuplicateImportsOperation.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHRemoveDuplicateImportsOperation.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHRemoveDuplicateImportsOperation.o36"50315881-BC53-4898-ACE5-EEF0B3999B47-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHSortImportsAlphabeticallyOperation.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.837334
+e416785027.919152
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHSortImportsAlphabeticallyOperation.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHConcreteSourceOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSourceOperation.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKToken.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTypes.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/MHImportStatement+Sorting.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/DVTSourceTextStorage+Operations.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m273"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHSortImportsAlphabeticallyOperation.o [1mMHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilere278d683a2d7b841^1958eb83a2d7b841^---0#0#1#-19%DVTDocumentLocation2@115"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m0000000000000000^3689"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHSortImportsAlphabeticallyOperation.o [1mMHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHSortImportsAlphabeticallyOperation.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHSortImportsAlphabeticallyOperation.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHSortImportsAlphabeticallyOperation.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHSortImportsAlphabeticallyOperation.o36"1BBB2347-7769-4F25-A63E-7AAB6A0E978B-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatement.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.744054
+e416785027.850019
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatement.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKToken.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTypes.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.m223"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatement.o [1mMHImportBuster/Classes/MHStatement.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerd7dfbe83a2d7b841^46cfd983a2d7b841^---0#0#1#-19%DVTDocumentLocation2@90"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.m0000000000000000^3539"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatement.o [1mMHImportBuster/Classes/MHStatement.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatement.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatement.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatement.o36"475E78B3-0836-4DC9-AA2B-9110325F2198-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatementParser.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.920311
+e416785028.069254
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatementParser.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTokenizer.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTypes.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKToken.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatements.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHImportStatement.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHMethodStatement.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.m235"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatementParser.o [1mMHImportBuster/Classes/MHStatementParser.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerafb5eb83a2d7b841^41b91184a2d7b841^---0#0#1#-19%DVTDocumentLocation2@96"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.m0000000000000000^3575"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatementParser.o [1mMHImportBuster/Classes/MHStatementParser.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatementParser.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatementParser.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Classes/MHStatementParser.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHStatementParser.o36"B82D3D86-6065-474F-872A-D0F291028AFD-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHXcodeDocumentNavigator.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785028.130160
+e416785028.254275
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHXcodeDocumentNavigator.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/XCFXcodePrivate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m257"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHXcodeDocumentNavigator.o [1mMHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerf06e2184a2d7b841^8b194184a2d7b841^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m0000000000000000^3633"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHXcodeDocumentNavigator.o [1mMHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHXcodeDocumentNavigator.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHXcodeDocumentNavigator.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/External/Benoit/MHXcodeDocumentNavigator.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHXcodeDocumentNavigator.o36"9FB4938A-9963-428F-B1E0-4647DC22B640-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSMutableIndexSet+NSArray.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSMutableIndexSet+NSArray.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785028.077344
+e416785028.130568
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSMutableIndexSet+NSArray.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSMutableIndexSet+NSArray.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSMutableIndexSet+NSArray.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSMutableIndexSet+NSArray.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSMutableIndexSet+NSArray.m254"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSMutableIndexSet+NSArray.o [1mMHImportBuster/Categories/NSMutableIndexSet+NSArray.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler86e51384a2d7b841^51682184a2d7b841^---0#0#1#-19%DVTDocumentLocation2@107"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSMutableIndexSet+NSArray.m0000000000000000^3629"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSMutableIndexSet+NSArray.o [1mMHImportBuster/Categories/NSMutableIndexSet+NSArray.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSMutableIndexSet+NSArray.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSMutableIndexSet+NSArray.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSMutableIndexSet+NSArray.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSMutableIndexSet+NSArray.o36"6742D7FB-86BB-4F38-B567-1AD1F2B5D73D-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSObject+MHLogMethods.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.913733
+e416785027.977047
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSObject+MHLogMethods.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.m246"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSObject+MHLogMethods.o [1mMHImportBuster/Categories/NSObject+MHLogMethods.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compileree05ea83a2d7b841^d522fa83a2d7b841^---0#0#1#-19%DVTDocumentLocation2@103"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.m0000000000000000^3605"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSObject+MHLogMethods.o [1mMHImportBuster/Categories/NSObject+MHLogMethods.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSObject+MHLogMethods.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSObject+MHLogMethods.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSObject+MHLogMethods.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSObject+MHLogMethods.o36"49DABAE2-20C2-40E4-BC92-4289DEEC38C2-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+Files.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785028.005960
+e416785028.076351
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+Files.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.m232"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+Files.o [1mMHImportBuster/Categories/NSString+Files.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compilerdca10184a2d7b841^b7ed1384a2d7b841^---0#0#1#-19%DVTDocumentLocation2@96"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.m0000000000000000^3563"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+Files.o [1mMHImportBuster/Categories/NSString+Files.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+Files.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+Files.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+Files.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+Files.o36"69097941-9B4B-4A60-8BB3-7991FAB699CC-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+MHNSRange.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.850352
+e416785027.920844
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+MHNSRange.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection101"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.m240"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+MHNSRange.o [1mMHImportBuster/Categories/NSString+MHNSRange.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler70d1d983a2d7b841^7504ec83a2d7b841^---0#0#1#-19%DVTDocumentLocation2@100"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.m0000000000000000^3587"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+MHNSRange.o [1mMHImportBuster/Categories/NSString+MHNSRange.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+MHNSRange.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+MHNSRange.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSString+MHNSRange.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSString+MHNSRange.o36"B9E2EF6C-0496-426B-8D37-6B75CB984700-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSView+Dumping.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSView+Dumping.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.743369
+e416785027.844114
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSView+Dumping.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSView+Dumping.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSView+Dumping.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSView+Dumping.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSView+Dumping.m232"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSView+Dumping.o [1mMHImportBuster/Categories/NSView+Dumping.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler9962be83a2d7b841^b518d883a2d7b841^---0#0#1#-19%DVTDocumentLocation2@96"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSView+Dumping.m0000000000000000^3563"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSView+Dumping.o [1mMHImportBuster/Categories/NSView+Dumping.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSView+Dumping.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSView+Dumping.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/NSView+Dumping.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/NSView+Dumping.o36"7E64B378-9B4E-487C-889C-283D0D6ECA5E-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCompileC build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/PKToken+Factory.o /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785027.853494
+e416785027.909281
+r1
+xCompileC
+xbuild/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/PKToken+Factory.o
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.m
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKToken.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit/PKTypes.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Compile /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.m234"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/PKToken+Factory.o [1mMHImportBuster/Categories/PKToken+Factory.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler5299da83a2d7b841^d2c7e883a2d7b841^---0#0#1#-19%DVTDocumentLocation2@97"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.m0000000000000000^3569"[1mCompileC[0m build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/PKToken+Factory.o [1mMHImportBuster/Categories/PKToken+Factory.m[0m normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -include /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch -MMD -MT dependencies -MF /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/PKToken+Factory.d --serialize-diagnostics /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/PKToken+Factory.dia -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/Categories/PKToken+Factory.m -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/PKToken+Factory.o36"626D3EC1-81F4-48F2-B8AF-445469C26547-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CCopyStringsFile /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/Resources/en.lproj/InfoPlist.strings MHImportBuster/en.lproj/InfoPlist.strings
+r0
+
+CCpHeader MHImportBuster/MHImportBuster.h build/UninstalledProducts/MHImportBuster.framework/Versions/A/Headers/MHImportBuster.h
+r0
+
+CGenerateDSYMFile /Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/MHImportBuster.framework.dSYM /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/MHImportBuster
+r0
+
+CLd /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/MHImportBuster normal x86_64
+s416785028.256339
+e416785028.278340
+r0
+xLd
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/MHImportBuster
+xnormal
+xx86_64
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportBuster.LinkFileList
+old: library not found for -lPods-MHImportBuster
+oclang: error: linker command failed with exit code 1 (use -v to see invocation)
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection128"Link /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/MHImportBuster101"[1mLd[0m build/UninstalledProducts/MHImportBuster.framework/Versions/A/MHImportBuster normal x86_64deac4184a2d7b841^14424784a2d7b841^-128"ld: library not found for -lPods-MHImportBusterclang: error: linker command failed with exit code 1 (use -v to see invocation)2(21%IDEActivityLogMessage2@43"Library not found for -lPods-MHImportBuster-416785028#0#48#-0#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#31"Apple Mach-O Linker (ld) Notice--2@65"Linker command failed with exit code 1 (use -v to see invocation)-416785028#48#80#-2#-3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#30"Apple Mach-O Linker (ld) Error--0#0#1#--1374"[1mLd[0m build/UninstalledProducts/MHImportBuster.framework/Versions/A/MHImportBuster normal x86_64    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export MACOSX_DEPLOYMENT_TARGET=10.9    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -L/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks -filelist /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportBuster.LinkFileList -install_name @rpath/MHImportBuster.framework/Versions/A/MHImportBuster -mmacosx-version-min=10.9 -ObjC -licucore -framework Foundation -fobjc-arc -fobjc-link-runtime -framework AppKit -framework Cocoa -lPods-MHImportBuster -single_module -compatibility_version 1 -current_version 1 -Xlinker -dependency_info -Xlinker /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Objects-normal/x86_64/MHImportBuster_dependency_info.dat -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/MHImportBuster36"D1AB775C-F079-4201-9459-FB91E1A7806E-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CPhaseScriptExecution Check\ Pods\ Manifest.lock /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Script-91F8557A81DF432F8CB0BB89.sh
+s416785026.585655
+e416785026.625200
+r1
+xPhaseScriptExecution
+xCheck Pods Manifest.lock
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Script-91F8557A81DF432F8CB0BB89.sh
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection50"Run custom shell script 'Check Pods Manifest.lock'146"[1mPhaseScriptExecution[0m Check\ Pods\ Manifest.lock build/MHImportBuster.build/Release/MHImportBuster.build/Script-91F8557A81DF432F8CB0BB89.sh382f9682a2d7b841^d00ea082a2d7b841^---0#0#1#--354"[1mPhaseScriptExecution[0m Check\ Pods\ Manifest.lock build/MHImportBuster.build/Release/MHImportBuster.build/Script-91F8557A81DF432F8CB0BB89.sh    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    /bin/sh -c /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Script-91F8557A81DF432F8CB0BB89.sh36"2F207829-2326-48E8-A132-B8293EC67D27-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CPhaseScriptExecution Copy\ Pods\ Resources /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/Script-BB779327726B4FA4B9A1508E.sh
+r0
+
+CProcessInfoPlistFile /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/Resources/Info.plist /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Info.plist
+s416785026.568979
+e416785026.572609
+r1
+xProcessInfoPlistFile
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/Resources/Info.plist
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Process /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Info.plist160"[1mProcessInfoPlistFile[0m build/UninstalledProducts/MHImportBuster.framework/Versions/A/Resources/Info.plist [1mMHImportBuster/MHImportBuster-Info.plist[0m48de9182a2d7b841^9e979282a2d7b841^---0#0#1#-19%DVTDocumentLocation2@94"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Info.plist0000000000000000^503"[1mProcessInfoPlistFile[0m build/UninstalledProducts/MHImportBuster.framework/Versions/A/Resources/Info.plist [1mMHImportBuster/MHImportBuster-Info.plist[0m    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    builtin-infoPlistUtility /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Info.plist -expandbuildsettings -platform macosx -o /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework/Versions/A/Resources/Info.plist36"8B0A60BA-82EB-4C35-9BB5-8D328879D05C-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CProcessPCH /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch.pch MHImportBuster/MHImportBuster-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s416785026.626107
+e416785027.742288
+r1
+xProcessPCH
+x/var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch.pch
+xMHImportBuster/MHImportBuster-Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Prefix.pch
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHBlocks.h
+d/Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBusterErrors.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection51"Precompile MHImportBuster/MHImportBuster-Prefix.pch326"[1mProcessPCH[0m /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch.pch MHImportBuster/MHImportBuster-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler3e5aa082a2d7b841^2d07be83a2d7b841^---0#0#1#-19%DVTDocumentLocation2@94"file:///Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Prefix.pch0000000000000000^3621"[1mProcessPCH[0m /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch.pch MHImportBuster/MHImportBuster-Prefix.pch normal x86_64 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    export LANG=en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch x86_64 -fmessage-length=143 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -fcolor-diagnostics -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DCOCOAPODS=1 -DNS_BLOCK_ASSERTIONS=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -mmacosx-version-min=10.9 -g -Wno-sign-conversion -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-generated-files.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-own-target-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-all-target-headers.hmap -iquote /Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/MHImportBuster-project-headers.hmap -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/include -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/Kiwi -I/Users/mhlebar/Documents/GitHub/MHImportBuster/Pods/Headers/ParseKit -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources/x86_64 -I/Users/mhlebar/Documents/GitHub/MHImportBuster/build/MHImportBuster.build/Release/MHImportBuster.build/DerivedSources -F/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release -F/Applications/Xcode.app/Contents/SharedFrameworks --serialize-diagnostics /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch.dia -MMD -MT dependencies -MF /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch.d -c /Users/mhlebar/Documents/GitHub/MHImportBuster/MHImportBuster/MHImportBuster-Prefix.pch -o /var/folders/06/4k_bf7xx1dq5y1j4dncj8y300000gn/C/com.apple.DeveloperTools/5.1-5B130a/Xcode/SharedPrecompiledHeaders/MHImportBuster-Prefix-gefvateuugytlaaysomzfinxcggv/MHImportBuster-Prefix.pch.pch36"EC96B902-E42B-484D-BCAA-37B8F794E9D7-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CSymLink /Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/MHImportBuster.framework /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework
+s416785026.573044
+e416785026.584788
+r1
+xSymLink
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/MHImportBuster.framework
+x/Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Process /Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/MHImportBuster.framework105"[1mSymLink[0m build/Release/MHImportBuster.framework build/UninstalledProducts/MHImportBuster.framework96cb9282a2d7b841^85b59582a2d7b841^---0#0#1#--360"[1mSymLink[0m build/Release/MHImportBuster.framework build/UninstalledProducts/MHImportBuster.framework    cd /Users/mhlebar/Documents/GitHub/MHImportBuster    /bin/ln -sf /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework /Users/mhlebar/Documents/GitHub/MHImportBuster/build/Release/MHImportBuster.framework36"52F450E3-64CA-49BD-B702-BC86B07AD3A4-
+bE44D2153-8ED8-49E7-83CA-FD64C1D867AB
+
+CTouch /Users/mhlebar/Documents/GitHub/MHImportBuster/build/UninstalledProducts/MHImportBuster.framework
+r0
+

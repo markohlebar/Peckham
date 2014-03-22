@@ -32,16 +32,4 @@
     return [_tokens containsObject:[PKToken forwardSlash]];
 }
 
-//
-////TODO: there can be more subpaths than one...
--(NSString*) subpathString {
-    NSInteger indexOfSubpath = [_tokens indexOfObject:[PKToken forwardSlash]] - 1;
-    return [_tokens[indexOfSubpath] value];
-}
-
--(NSString*) headerString {
-    NSInteger indexOfHeader = [_tokens indexOfObject:[PKToken dot]] - 1;
-    return [_tokens[indexOfHeader] value];
-}
-
 @end

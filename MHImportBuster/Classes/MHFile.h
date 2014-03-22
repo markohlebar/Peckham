@@ -13,6 +13,7 @@
 + (instancetype)fileWithPath:(NSString *)filePath;
 - (void)removeDuplicateImports;
 - (void)sortImportsAlphabetically;
+- (void)addImport:(NSString *)import;
 
 - (void)observeFileChanges;
 

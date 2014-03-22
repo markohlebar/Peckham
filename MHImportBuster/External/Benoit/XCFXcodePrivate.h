@@ -8,6 +8,7 @@
 @interface DVTTextDocumentLocation : NSObject
 @property (readonly) NSRange characterRange;
 @property (readonly) NSRange lineRange;
+@property (readonly) NSURL *documentURL;
 @end
 
 @interface DVTTextPreferences : NSObject
@@ -116,4 +117,17 @@
 
 @interface IDEWorkspaceDocument : NSDocument
 @property (readonly) IDEWorkspace *workspace;
+@end
+
+typedef NS_ENUM(NSInteger, IDEIssueSeverity) {
+    IDEIssueSeverityNone = 0,
+    IDEIssueSeverityWarning = 1,
+    IDEIssueSeverityError = 2
+};
+
+@interface IDEIssue : NSObject
+@property (readonly) NSArray *documentLocations;
+@property (readonly) IDEIssueSeverity severity;
+@property (readonly) NSString *fullMessage;
+@property (readonly) NSString *issueTypeIdentifier;
 @end
