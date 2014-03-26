@@ -4,11 +4,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "XCFXcodePrivate.h"
 @class IDESourceCodeDocument;
 
 @interface MHXcodeDocumentNavigator : NSObject
 + (id)currentEditor;
 + (IDESourceCodeDocument *)currentSourceCodeDocument;
 + (NSTextView *)currentSourceCodeTextView;
++ (IDEWorkspaceDocument *)currentWorkspaceDocument;
 @end

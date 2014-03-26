@@ -12,6 +12,8 @@
 #import "MHXcodeDocumentNavigator.h"
 #import "XCFXcodePrivate.h"
 #import "MHXcodeIssuesParser.h"
+#import "MHHeaderCache.h"
+#import "NSString+Extensions.h"
 
 static MHImportBusterPlugin *sharedPlugin;
 
@@ -91,6 +93,11 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
 //        _locObserver.delegate = self;
 //        _locObserver.maxLinesOfCode = 150;
         
+  
+        
+        
+        
+        
     }
     return self;
 }
@@ -104,25 +111,52 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
 
 -(void) coalesceIssues:(NSNotification *)notification {
 //    NSLog(@"Coalescing:\n\n%@", notification.userInfo);
-    [MHXcodeIssuesParser parseDictionary:notification.userInfo];
+    NSArray *issues = [MHXcodeIssuesParser parseDictionary:notification.userInfo];
     
-    [self addImport];
+    for (IDEIssue *issue in issues) {
+        if (issue.severity == IDEIssueSeverityError) {
+            if ([issue.fullMessage containsString:@"Use of undeclared identifier"]) {
+                NSArray *components = [issue.fullMessage componentsSeparatedByString:@"'"];
+                NSString *className = components.count > 1 ? components[1] : nil;
+                
+                NSLog(@"Class Name %@", className);
+                
+                MHHeaderCache *headerCache = [MHHeaderCache new];
+                NSString *header = [headerCache headerForClassName:className];
+                
+                NSLog(@"HEADER FOUND: %@", header);
+                if (header) {
+                    [self addImport:header];
+                }
+            }
+        }
+    }
+    
+   // [self addImport];
 }
 
 -(void) findMissingImports {
-    NSTask *task = [[NSTask alloc] init];
+    MHHeaderCache *cache = [MHHeaderCache new];
     
-    task.launchPath = @"/Users/mhlebar/Documents/clang-llvm/build/bin/loop-convert";
+//    NSArray *headers = [cache findAllHeadersInCurrentWorkspace];
+//    NSLog(@"HEADERS \n\n %@", headers);
+    
+//    HRROC *pile = nil;
+    
+
+//    NSTask *task = [[NSTask alloc] init];
+//    
+//    task.launchPath = @"/Users/mhlebar/Documents/clang-llvm/build/bin/loop-convert";
+////    task.arguments = @[
+////                       [NSString stringWithFormat:@"--style=%@", style],
+////                       @"-i",
 //    task.arguments = @[
-//                       [NSString stringWithFormat:@"--style=%@", style],
-//                       @"-i",
-    task.arguments = @[
-                       [self currentFilePath],
-                       @"--"
-                       ];
-    
-    [task launch];
-    [task waitUntilExit];
+//                       [self currentFilePath],
+//                       @"--"
+//                       ];
+//    
+//    [task launch];
+//    [task waitUntilExit];
 }
 
 -(void) loadKeyboardHandler {
@@ -169,11 +203,11 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
     return [[document fileURL] path];
 }
 
-- (void) addImport {
+- (void) addImport:(NSString *) header {
     NSString *filePath = [self currentFilePath];
     if(filePath) {
         MHFile *file = [MHFile fileWithPath:filePath];
-        [file addImport:@"#import \"Header.h\""];
+        [file addImport:[NSString stringWithFormat:@"#import \"%@\"", header]];
     }
 }
 

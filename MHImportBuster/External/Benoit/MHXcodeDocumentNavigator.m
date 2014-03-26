@@ -4,7 +4,6 @@
 //
 
 #import "MHXcodeDocumentNavigator.h"
-#import "XCFXcodePrivate.h"
 
 @implementation MHXcodeDocumentNavigator {}
 

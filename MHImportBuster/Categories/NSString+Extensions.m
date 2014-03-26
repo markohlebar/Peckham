@@ -1,0 +1,19 @@
+//
+//  NSString+Extensions.m
+//  PropertyParser
+//
+//  Created by marko.hlebar on 7/20/13.
+//  Copyright (c) 2013 Clover Studio. All rights reserved.
+//
+
+#import "NSString+Extensions.h"
+
+@implementation NSString (Extensions)
+-(BOOL) containsString:(NSString*) string {
+    return [self rangeOfString:string].location != NSNotFound;
+}
+
+-(NSString*) stringByRemovingWhitespaces {
+    return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+}
+@end

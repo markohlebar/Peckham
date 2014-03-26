@@ -26,6 +26,7 @@
 		return [MHStatementParser parseText:text
 		                            success:successBlock
 		                              error:errorBlock];
+        
 	}
 	else {
 		if (errorBlock) {
