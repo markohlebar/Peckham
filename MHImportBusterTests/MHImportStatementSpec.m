@@ -13,10 +13,11 @@
 SPEC_BEGIN(MHImportStatementSpec)
 
 describe(@"Framework headers", ^{
-    __block MHImportStatement *statement = [MHFrameworkImportStatement statement];
-    __block NSArray *tokens = frameworkTokens();
-    
-    tokenFeedBlock(statement, tokens);
+    __block MHImportStatement *statement = nil;
+    beforeEach(^{
+        statement = [MHFrameworkImportStatement statement];
+        feedStatement(statement, @"#import <Framework/Header.h>\n");
+    });
     
     it(@"Should return value #import <Framework/Header.h>", ^{
         [[statement.value should] equal:@"#import <Framework/Header.h>"];
@@ -24,10 +25,11 @@ describe(@"Framework headers", ^{
 });
 
 describe(@"Project headers", ^{
-    __block MHImportStatement *statement = [MHProjectImportStatement statement];
-    __block NSArray *tokens = projectTokens();
-
-    tokenFeedBlock(statement, tokens);
+    __block MHImportStatement *statement = nil;
+    beforeEach(^{
+        statement = [MHProjectImportStatement statement];
+        feedStatement(statement, @"#import \"Subpath/Header.h\"\n");
+    });
 
     it(@"Should return value #import \"Subpath/Header.h\"", ^{
         [[statement.value should] equal:@"#import \"Subpath/Header.h\""];
@@ -35,11 +37,12 @@ describe(@"Project headers", ^{
 });
 
 describe(@"Project headers with no subpath", ^{
-    __block MHImportStatement *statement = [MHProjectImportStatement statement];
-    __block NSArray *tokens = projectTokensNoSubpath();
+    __block MHImportStatement *statement = nil;
+    beforeEach(^{
+        statement = [MHProjectImportStatement statement];
+        feedStatement(statement, @"#import \"Header.h\"\n");
+    });
     
-    tokenFeedBlock(statement, tokens);
-
     it(@"Should return value #import \"Header.h\"", ^{
         [[statement.value should] equal:@"#import \"Header.h\""];
     });

@@ -10,6 +10,17 @@
 #define MHImportBuster_MHTestTokens_h
 
 #import "MHStatement.h"
+#import "MHStatementParser.h"
+#import <ParseKit/PKToken.h>
+#import "PKTokenizer+Factory.h"
+
+static void (^feedStatement)(MHStatement *, NSString *) = ^(MHStatement *statement, NSString *string) {
+    PKTokenizer *tokenizer = [PKTokenizer defaultTokenizer];
+    tokenizer.string = string;
+    [tokenizer enumerateTokensUsingBlock:^(PKToken *tok, BOOL *stop) {
+        [statement feedToken:tok];
+    }];
+};
 
 static void (^tokenFeedBlock)(MHStatement *loc, NSArray* tokens) = ^(MHStatement *loc, NSArray* tokens) {
     beforeEach(^{

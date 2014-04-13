@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 @interface MHStatementParser : NSObject
 
 @property (nonatomic, readonly) NSString *text;
@@ -18,5 +17,4 @@
                           error:(MHErrorBlock)errorBlock;
 - (NSArray*)parseText:(NSString *)text error:(NSError **)error statementClasses:(NSArray *)statementClasses;
 - (NSArray*)parseText:(NSString *)text error:(NSError **)error;
-
 @end

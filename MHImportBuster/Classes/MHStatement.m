@@ -7,35 +7,86 @@
 //
 
 #import "MHStatement.h"
+#import "PKToken+Equality.h"
+#import "MHPropertyStatement.h"
+#import "PKTokenizer+Factory.h"
 
 @implementation MHStatement
 {
 	NSMutableIndexSet *_codeLineNumbers;
+    MHStatement *_currentChild;
 }
 
 + (instancetype)statement {
 	return [[self alloc] init];
 }
 
++ (instancetype)statementWithString:(NSString *) string {
+    return [[self alloc] initWithString:string];
+}
+
+- (id)initWithString:(NSString *)string {
+    self = [self init];
+    if (self) {
+        [self feedTokensFromString:string];
+    }
+    return self;
+}
+
+- (void) feedTokensFromString:(NSString *)string {
+    PKTokenizer *tokenizer = [PKTokenizer defaultTokenizer];
+    tokenizer.string = string;
+    [tokenizer enumerateTokensUsingBlock:^(PKToken *tok, BOOL *stop) {
+        [self feedToken:tok];
+    }];
+}
+
 - (id)init {
 	self = [super init];
 	if (self) {
 		_tokens = [[NSMutableArray alloc] init];
+        _children = [[NSMutableArray alloc] init];
 		_codeLineNumbers = [[NSMutableIndexSet alloc] init];
 	}
 	return self;
 }
 
-/**
- *  Feed the next token in the line
- *
- *  @param token a token
- *
- *  @return is endToken reached
- */
-- (BOOL)feedToken:(PKToken *)token {
-	[self processToken:token];
-	return [self containsCannonicalTokens];
+- (MHStatement *)feedToken:(PKToken *)token {
+    if ([self shouldFeedChildren:token]) {
+        for (Class childStatementClass in [self childStatementClasses]) {
+            if([childStatementClass isPrimaryCannonicalToken:token]) {
+                _currentChild = [childStatementClass statement];
+                [self addChild:_currentChild];
+                break;
+            }
+        }
+    }
+    
+    if (_currentChild) {
+        [_currentChild feedToken:token];
+        if ([_currentChild containsCannonicalTokens]) {
+            _currentChild = nil;
+        }
+    }
+    else {
+        [self processToken:token];
+    }
+    return self;
+}
+
+- (BOOL)shouldFeedChildren:(PKToken *)token {
+    return YES;
+}
+
+- (NSArray *)childStatementClasses {
+    return @[];
+}
+
+- (void) addChild:(MHStatement *)statement {
+    if (![_children containsObject:statement]) {
+        [_children addObject:statement];
+        statement.parent = self;
+    }
 }
 
 - (void)feedTokens:(NSArray *)tokens {
@@ -56,16 +107,11 @@
 }
 
 - (void)addLineNumber:(NSInteger)lineNumber {
-	[_codeLineNumbers addIndex:lineNumber];
+    if(![_codeLineNumbers containsIndex:lineNumber]) [_codeLineNumbers addIndex:lineNumber];
 }
 
 - (void)processToken:(PKToken *)token {
 	[_tokens addObject:token];
-}
-
-- (NSString *)endTokenString {
-	[self doesNotRecognizeSelector:_cmd];
-	return nil;
 }
 
 + (NSArray *)cannonicalTokens {
@@ -78,7 +124,8 @@
 	NSArray *cannonicalTokens = [[self class] cannonicalTokens];
 	for (PKToken *processedToken in tokens) {
 		for (NSInteger tokenIndex = startTokenIndex; tokenIndex < cannonicalTokens.count; tokenIndex++) {
-			if ([processedToken isEqual:cannonicalTokens[tokenIndex]]) {
+            PKToken *cannonicalToken = cannonicalTokens[tokenIndex];
+			if ([processedToken isEqualIgnoringPlaceholderWord:cannonicalToken]) {
 				startTokenIndex++;
 				break;
 			}

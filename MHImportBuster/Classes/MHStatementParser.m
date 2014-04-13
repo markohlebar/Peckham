@@ -11,6 +11,9 @@
 #import <ParseKit/PKToken.h>
 #import "NSString+Files.h"
 #import "MHStatements.h"
+#import "NSFileManager+Headers.h"
+#import "MHInterfaceStatement.h"
+#import "PKTokenizer+Factory.h"
 
 @implementation MHStatementParser
 {
@@ -26,7 +29,6 @@
 		return [MHStatementParser parseText:text
 		                            success:successBlock
 		                              error:errorBlock];
-        
 	}
 	else {
 		if (errorBlock) {
@@ -62,34 +64,32 @@
 - (NSArray*)parseText:(NSString *)text error:(NSError **)error statementClasses:(NSArray *)statementClasses {
     _registeredStatementClasses = statementClasses;
     
-    __block PKTokenizer *tokenizer = [MHStatementParser tokenizer];
+    __block PKTokenizer *tokenizer = [PKTokenizer defaultTokenizer];
 	NSMutableArray *statements = [NSMutableArray array];
-	NSMutableArray *tokens = [NSMutableArray array];
-	NSMutableSet *lineNumbers = [NSMutableSet set];
     
 	__block NSInteger lineNumber = 0;
     
 	[text enumerateLinesUsingBlock: ^(NSString *line, BOOL *stop) {
 	    tokenizer.string = line;
+        
+        __block NSArray *candidateStatements = nil;
 	    [tokenizer enumerateTokensUsingBlock: ^(PKToken *token, BOOL *stop) {
 	        //if this is the first token in the list or there is more than 1.
-	        if ([self isCannonicalToken:token] || tokens.count >= 1) {
-	            [tokens addObject:token];
-	            [lineNumbers addObject:[NSNumber numberWithInteger:lineNumber]];
+            if (!candidateStatements) {
+                candidateStatements = [self statementsForPrimaryToken:token];
+            }
+            
+            [candidateStatements enumerateObjectsUsingBlock:^(MHStatement *statement, NSUInteger idx, BOOL *stop) {
+                [statement addLineNumber:lineNumber];
+                [statement feedToken:token];
                 
-	            for (Class class in _registeredStatementClasses) {
-	                if ([class containsCannonicalTokens:tokens]) {
-	                    MHStatement *statement = [class statement];
-	                    [statement feedTokens:tokens];
-	                    [statement addLineNumber:lineNumber];
-                        
-	                    [statements addObject:statement];
-	                    //clear tokens
-	                    [tokens removeAllObjects];
-	                    [lineNumbers removeAllObjects];
-					}
-				}
-			}
+                if ([statement containsCannonicalTokens]) {
+                    [statements addObject:statement];
+                    candidateStatements = nil;
+                    *stop = YES;
+                }
+            }];
+   
 		}];
 	    lineNumber++;
 	}];
@@ -101,48 +101,34 @@
 - (NSArray*)parseText:(NSString *)text error:(NSError **)error {
    return [self parseText:text
                     error:error
-         statementClasses:[MHStatementParser allStatementClasses]];
+         statementClasses:[MHStatementParser rootStatementClasses]];
 }
 
-+ (NSArray*) allStatementClasses {
++ (NSArray*) rootStatementClasses {
     return @[
              [MHFrameworkImportStatement class],
              [MHProjectImportStatement class],
-             [MHClassMethodStatement class],
-             [MHInstanceMethodStatement class]
+             [MHInterfaceStatement class]
              ];
 }
 
-+ (PKTokenizer *)tokenizer {
-	PKTokenizer *tokenizer = [PKTokenizer tokenizer];
-	//sets the parsing of #import "header.h" not to behave as quoted string
-	[tokenizer setTokenizerState:(PKTokenizerState *)tokenizer.symbolState
-	                        from:'"'
-	                          to:'"'];
-	//sets the parsing of anything that starts with a # as a word
-	[tokenizer setTokenizerState:(PKTokenizerState *)tokenizer.wordState
-	                        from:'#'
-	                          to:'#'];
-	return tokenizer;
+- (NSArray *)statementsForPrimaryToken:(PKToken *)token {
+    NSArray *classes = [self classesForPrimaryToken:token];
+    NSMutableArray *statements = [NSMutableArray array];
+    [classes enumerateObjectsUsingBlock:^(Class class, NSUInteger idx, BOOL *stop) {
+        [statements addObject:[class statement]];
+    }];
+    return statements.copy;
 }
 
-- (BOOL)isCannonicalToken:(PKToken *)token {
-	for (Class registeredClass in _registeredStatementClasses) {
+- (NSArray *)classesForPrimaryToken:(PKToken *)token {
+    NSMutableArray *classes = [NSMutableArray array];
+    for (Class registeredClass in _registeredStatementClasses) {
 		if ([registeredClass isPrimaryCannonicalToken:token]) {
-			return YES;
+			[classes addObject:registeredClass];
 		}
 	}
-	return NO;
-}
-
-- (Class)LOCClassForToken:(PKToken *)token {
-	Class class = nil;
-	for (Class registeredClass in _registeredStatementClasses) {
-		if ([registeredClass isPrimaryCannonicalToken:token]) {
-			class = registeredClass;
-		}
-	}
-	return class;
+	return classes.copy;
 }
 
 @end

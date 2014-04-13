@@ -14,7 +14,17 @@ SPEC_BEGIN(MHHeaderCacheSpec)
 
 describe(@"MHHeaderCache", ^{
 
+    pending(@"Should find a header for class interface in that header", ^{
     
+    });
+    
+    pending(@"Should find a header for a method in a class category header", ^{
+        
+    });
+    
+    pending(@"Should find a header for a symbol", ^{
+        
+    });
     
 });
 

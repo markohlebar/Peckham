@@ -9,4 +9,5 @@
 #import "MHBlocks.h"
 #import "MHImportBusterErrors.h"
 #import "MHImportBusterTestsHelper.h"
+#import "MHTestTokens.h"
 #endif

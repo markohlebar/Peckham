@@ -29,8 +29,8 @@ describe(@"Fake file", ^{
     
     beforeEach(^{
         parser = [MHStatementParser parseFileAtPath:fakeFilePath
-                                      success:successBlock
-                                        error:errorBlock];
+                                            success:successBlock
+                                              error:errorBlock];
     });
     
     it(@"Should invoke an errorBlock if filePath is bad and the error should be correct", ^{
@@ -75,8 +75,8 @@ describe(@"Existing file", ^{
         [[isErrorInvoked shouldEventually] equal:@NO];
     });
     
-    it(@"Should return array with at least 2 statements", ^{
-        [[expectFutureValue(outArray) shouldEventually] haveCountOfAtLeast:2];
+    it(@"Should return array with 1 root statement", ^{
+        [[expectFutureValue(outArray) shouldEventually] haveCountOfAtLeast:1];
     });
 });
 

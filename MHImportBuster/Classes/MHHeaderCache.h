@@ -11,4 +11,6 @@
 @interface MHHeaderCache : NSObject
 //- (NSArray *)findAllHeadersInCurrentWorkspace;
 - (NSString *)headerForClassName:(NSString *)className;
+- (NSString *)headerForMethod:(NSString *)method forClassName:(NSString *)className;
+
 @end

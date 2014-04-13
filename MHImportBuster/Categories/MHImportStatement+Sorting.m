@@ -28,8 +28,4 @@
     return NSOrderedSame;
 }
 
--(BOOL) hasSubpath {
-    return [_tokens containsObject:[PKToken forwardSlash]];
-}
-
 @end

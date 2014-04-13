@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ParseKit/PKToken.h>
+#import "PKToken+Factory.h"
 
 /**
  *  Represents a single tokenized code statement.
@@ -19,22 +20,32 @@
 }
 
 /**
+ *  The parent statement of this statement
+ */
+@property (nonatomic, strong) MHStatement *parent;
+
+/**
+ *  The children statements of this statement
+ */
+@property (nonatomic, strong) NSMutableArray *children;
+
+/**
  *  The value is available when LOC reaches endToken
  */
 @property (nonatomic, readonly, strong) id value;
 
 + (instancetype)statement;
 
++ (instancetype)statementWithString:(NSString *) string;
+
 /**
  *  Feed the next token in the line
  *
  *  @param token a token
  *
- *  @return is endToken reached
+ *  @return a child statement if one is found
  */
-- (BOOL)feedToken:(PKToken *)token;
-
-- (void)feedTokens:(NSArray *)tokens;
+- (MHStatement *)feedToken:(PKToken *)token;
 
 /**
  *  Processes the token
@@ -50,6 +61,14 @@
  */
 - (BOOL)containsCannonicalTokens;
 
+/**
+ *  Checks if the statement should feed children. 
+ *  This is a hook for special cases and returns YES by default.
+ *
+ *  @return should I feed my children?
+ */
+- (BOOL)shouldFeedChildren:(PKToken *)token;
+
 - (NSIndexSet *)codeLineNumbers;
 - (void)addLineNumber:(NSInteger)lineNumber;
 
@@ -58,5 +77,8 @@
 + (NSArray *)cannonicalTokens;
 
 - (BOOL)isEqualValue:(MHStatement *)otherStatement;
+
+
+- (void) addChild:(MHStatement *)statement;
 
 @end

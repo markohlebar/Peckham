@@ -12,10 +12,18 @@
 
 @end
 
-@interface MHClassMethodStatement : MHMethodStatement
+@interface MHClassMethodDeclarationStatement : MHMethodStatement
 
 @end
 
-@interface MHInstanceMethodStatement : MHMethodStatement
+@interface MHInstanceMethodDeclarationStatement : MHMethodStatement
+
+@end
+
+@interface MHClassMethodImplementationStatement : MHMethodStatement
+
+@end
+
+@interface MHInstanceMethodImplementationStatement : MHMethodStatement
 
 @end

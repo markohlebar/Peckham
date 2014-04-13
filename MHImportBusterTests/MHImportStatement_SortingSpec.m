@@ -26,10 +26,10 @@ describe(@"MHImportStatement+Sorting", ^{
     
     it(@"Should sort imports alphabetically", ^{
         MHProjectImportStatement *aProjectImport = [MHProjectImportStatement statement];
-        [aProjectImport feedTokens:projectTokensWithStrings(@"AProject", @"Header.h")];
+        feedStatement(aProjectImport, @"#import \"AProject/Header.h\"");
         
         MHProjectImportStatement *bProjectImport = [MHProjectImportStatement statement];
-        [bProjectImport feedTokens:projectTokensWithStrings(@"BProject", @"Header.h")];
+        feedStatement(bProjectImport, @"#import \"BProject/Header.h\"");
         
         NSComparisonResult comparisonResult = [aProjectImport compare:bProjectImport];
         [[theValue(comparisonResult) should] equal:theValue(NSOrderedAscending)];
