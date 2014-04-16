@@ -42,6 +42,8 @@
 		964B0A9B18A79B8300E36C8E /* MHConcreteSourceOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B0A9918A79B8300E36C8E /* MHConcreteSourceOperation.m */; };
 		964B0A9D18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B0A9C18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m */; };
 		96580BF8189D258B00466993 /* MHMethodStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96580BF7189D258B00466993 /* MHMethodStatementSpec.m */; };
+		96589FAE18FDDD6800654F2B /* NSArray+MHStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 96589FAC18FDDD6800654F2B /* NSArray+MHStatement.h */; };
+		96589FAF18FDDD6800654F2B /* NSArray+MHStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 96589FAD18FDDD6800654F2B /* NSArray+MHStatement.m */; };
 		9658B95E18A643D700A768B0 /* NSObject+MHLogMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */; };
 		9658B95F18A643D700A768B0 /* NSObject+MHLogMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */; };
 		9683A66E18FAA402009E0232 /* MHMethodArgumentStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 9683A66C18FAA402009E0232 /* MHMethodArgumentStatement.h */; };
@@ -177,6 +179,8 @@
 		964B0A9918A79B8300E36C8E /* MHConcreteSourceOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConcreteSourceOperation.m; sourceTree = "<group>"; };
 		964B0A9C18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConcreteSourceOperationSpec.m; sourceTree = "<group>"; };
 		96580BF7189D258B00466993 /* MHMethodStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMethodStatementSpec.m; sourceTree = "<group>"; };
+		96589FAC18FDDD6800654F2B /* NSArray+MHStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MHStatement.h"; sourceTree = "<group>"; };
+		96589FAD18FDDD6800654F2B /* NSArray+MHStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHStatement.m"; sourceTree = "<group>"; };
 		9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MHLogMethods.h"; sourceTree = "<group>"; };
 		9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MHLogMethods.m"; sourceTree = "<group>"; };
 		9683A66C18FAA402009E0232 /* MHMethodArgumentStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHMethodArgumentStatement.h; sourceTree = "<group>"; };
@@ -486,6 +490,8 @@
 		96D89DF418A7B0180087D248 /* Statements */ = {
 			isa = PBXGroup;
 			children = (
+				96589FAC18FDDD6800654F2B /* NSArray+MHStatement.h */,
+				96589FAD18FDDD6800654F2B /* NSArray+MHStatement.m */,
 				96D89DF518A7B03C0087D248 /* MHImportStatement+Sorting.h */,
 				96D89DF618A7B03C0087D248 /* MHImportStatement+Sorting.m */,
 			);
@@ -691,6 +697,7 @@
 				969A558B18DDA3890040EB6C /* MHAddImportOperation.h in Headers */,
 				AD6A20031876B68D00E4137F /* NSMutableIndexSet+NSArray.h in Headers */,
 				AD6A200D1876B68D00E4137F /* MHImportStatement.h in Headers */,
+				96589FAE18FDDD6800654F2B /* NSArray+MHStatement.h in Headers */,
 				9699F6FB18954F7400AC7432 /* MHDocumentObserver.h in Headers */,
 				963282E018F971090007699A /* MHPropertyQualifierStatement.h in Headers */,
 				AD6A20131876B68D00E4137F /* MHStatement.h in Headers */,
@@ -912,6 +919,7 @@
 				963282D018F933C50007699A /* MHInterfaceStatement.m in Sources */,
 				964B0A9B18A79B8300E36C8E /* MHConcreteSourceOperation.m in Sources */,
 				9683A66F18FAA402009E0232 /* MHMethodArgumentStatement.m in Sources */,
+				96589FAF18FDDD6800654F2B /* NSArray+MHStatement.m in Sources */,
 				96D864D218A6343C0065CD9A /* NSView+Dumping.m in Sources */,
 				AD6A20141876B68D00E4137F /* MHStatement.m in Sources */,
 				9628390818A63A11007EE520 /* DVTSourceTextStorage+Operations.m in Sources */,

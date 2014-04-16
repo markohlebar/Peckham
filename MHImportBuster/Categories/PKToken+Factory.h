@@ -88,4 +88,10 @@
  */
 +(PKToken*) minus;
 
+/**
+ *  Returns a # symbol
+ *
+ *  @return a token
+ */
++(PKToken*) hash;
 @end

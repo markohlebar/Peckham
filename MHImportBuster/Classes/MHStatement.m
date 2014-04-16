@@ -153,4 +153,12 @@
 	return isEqual;
 }
 
+- (NSDictionary *) serialize {
+    return @{};
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@", self.value];
+}
+
 @end

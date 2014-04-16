@@ -108,4 +108,14 @@
     return _minus;
 }
 
++(PKToken*) hash {
+    static PKToken *_hash = nil;
+    if  (!_hash) {
+        _hash = [PKToken tokenWithTokenType:PKTokenTypeSymbol
+                                 stringValue:@"#"
+                                  floatValue:0];
+    }
+    return _hash;
+}
+
 @end

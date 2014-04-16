@@ -81,4 +81,6 @@
 
 - (void) addChild:(MHStatement *)statement;
 
+- (NSDictionary *) serialize;
+
 @end

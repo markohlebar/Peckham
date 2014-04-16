@@ -129,6 +129,20 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
                     [self addImport:header];
                 }
             }
+            else if([issue.fullMessage containsString:@"Unknown type name"]) {
+                NSArray *components = [issue.fullMessage componentsSeparatedByString:@"'"];
+                NSString *className = components.count > 1 ? components[1] : nil;
+                
+                NSLog(@"Class Name %@", className);
+                
+                MHHeaderCache *headerCache = [MHHeaderCache new];
+                NSString *header = [headerCache headerForClassName:className];
+                
+                NSLog(@"HEADER FOUND: %@", header);
+                if (header) {
+                    [self addImport:header];
+                }
+            }
         }
     }
     

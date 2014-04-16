@@ -6,14 +6,15 @@
 //  Copyright (c) 2013 Marko Hlebar. All rights reserved.
 //
 
-#import "MHStatementParser.h"
-#import <ParseKit/PKTokenizer.h>
 #import <ParseKit/PKToken.h>
-#import "NSString+Files.h"
+#import <ParseKit/PKTokenizer.h>
+#import "MHInterfaceStatement.h"
+#import "MHStatementParser.h"
 #import "MHStatements.h"
 #import "NSFileManager+Headers.h"
-#import "MHInterfaceStatement.h"
+#import "NSString+Files.h"
 #import "PKTokenizer+Factory.h"
+#import "MHPropertyStatement.h"
 
 @implementation MHStatementParser
 {
@@ -33,7 +34,8 @@
 	else {
 		if (errorBlock) {
 			errorBlock(MHImportBusterError(MHImportBusterFileDoesntExistAtPath, nil));
-		}
+		}        
+        
 	}
 	return nil;
 }
@@ -69,10 +71,9 @@
     
 	__block NSInteger lineNumber = 0;
     
+    __block NSArray *candidateStatements = nil;
 	[text enumerateLinesUsingBlock: ^(NSString *line, BOOL *stop) {
 	    tokenizer.string = line;
-        
-        __block NSArray *candidateStatements = nil;
 	    [tokenizer enumerateTokensUsingBlock: ^(PKToken *token, BOOL *stop) {
 	        //if this is the first token in the list or there is more than 1.
             if (!candidateStatements) {

@@ -168,6 +168,20 @@ describe(@"PKToken_Factory", ^{
             [[theValue(token == token2) should] equal:@YES];
         });
     });
+    
+    context(@"# symbol", ^{
+        it(@"Should create an - symbol token", ^{
+            PKToken *token = [PKToken hash];
+            [[token.value should] equal:@"#"];
+            [[theValue(token.tokenType) should] equal:theValue(PKTokenTypeSymbol)];
+        });
+        
+        it(@"Should reuse the token", ^{
+            PKToken *token = [PKToken hash];
+            PKToken *token2 = [PKToken hash];
+            [[theValue(token == token2) should] equal:@YES];
+        });
+    });
 });
 
 SPEC_END

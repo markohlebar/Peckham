@@ -40,7 +40,34 @@ describe(@"Fake file", ^{
     });
 });
 
-describe(@"Existing file", ^{
+describe(@"Parsing interface file", ^{
+    __block MHStatementParser *parser = nil;
+    __block NSString *filePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MyClass" ofType:@"h"];
+    
+    __block NSNumber *isSuccessInvoked = @NO;
+    __block NSNumber *isErrorInvoked = @NO;
+    __block NSArray *outArray = nil;
+    
+    MHArrayBlock successBlock = ^(NSArray *array){
+        outArray = array;
+        isSuccessInvoked = @YES;
+    };
+    MHErrorBlock errorBlock = ^(NSError *error){
+        isErrorInvoked = @YES;
+    };
+    
+    beforeEach(^{
+        parser = [MHStatementParser parseFileAtPath:filePath
+                                            success:successBlock
+                                              error:errorBlock];
+    });
+    
+    it(@"Should return array with 3 root statements", ^{
+        [[expectFutureValue(outArray) shouldEventually] haveCountOf:3];
+    });
+});
+
+describe(@"Parsing implementation file", ^{
     __block MHStatementParser *parser = nil;
     __block NSString *filePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MyClass" ofType:@"m"];
     

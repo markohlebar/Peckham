@@ -48,4 +48,16 @@ describe(@"Project headers with no subpath", ^{
     });
 });
 
+describe(@"Headers with stange formatting", ^{
+    __block MHImportStatement *statement = nil;
+    beforeEach(^{
+        statement = [MHProjectImportStatement statement];
+        feedStatement(statement, @"    #    import         \"Header.h\"\n");
+    });
+    
+    it(@"Should return value #import \"Header.h\"", ^{
+        [[statement.value should] equal:@"#import \"Header.h\""];
+    });
+});
+
 SPEC_END
