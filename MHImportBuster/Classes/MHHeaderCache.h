@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface MHHeaderCache : NSObject
-//- (NSArray *)findAllHeadersInCurrentWorkspace;
++ (NSArray *)allHeadersInCurrentWorkspace;
 - (NSString *)headerForClassName:(NSString *)className;
 - (NSString *)headerForMethod:(NSString *)method forClassName:(NSString *)className;
-
 @end

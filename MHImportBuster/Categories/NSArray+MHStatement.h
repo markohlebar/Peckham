@@ -10,4 +10,5 @@
 
 @interface NSArray (MHStatement)
 - (NSArray *)interfaceStatements;
+- (NSArray *)methodStatements;
 @end

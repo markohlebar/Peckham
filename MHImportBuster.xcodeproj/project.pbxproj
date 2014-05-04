@@ -46,6 +46,7 @@
 		96589FAF18FDDD6800654F2B /* NSArray+MHStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 96589FAD18FDDD6800654F2B /* NSArray+MHStatement.m */; };
 		9658B95E18A643D700A768B0 /* NSObject+MHLogMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = 9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */; };
 		9658B95F18A643D700A768B0 /* NSObject+MHLogMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */; };
+		9679BC63191650EF0004AB6B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9679BC62191650EF0004AB6B /* QuartzCore.framework */; };
 		9683A66E18FAA402009E0232 /* MHMethodArgumentStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 9683A66C18FAA402009E0232 /* MHMethodArgumentStatement.h */; };
 		9683A66F18FAA402009E0232 /* MHMethodArgumentStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 9683A66D18FAA402009E0232 /* MHMethodArgumentStatement.m */; };
 		9683A67318FAAF5E009E0232 /* MHMethodReturnStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 9683A67118FAAF5E009E0232 /* MHMethodReturnStatement.h */; };
@@ -53,6 +54,21 @@
 		9683A67818FAB17A009E0232 /* PKTokenizer+Factory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9683A67618FAB17A009E0232 /* PKTokenizer+Factory.h */; };
 		9683A67918FAB17A009E0232 /* PKTokenizer+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9683A67718FAB17A009E0232 /* PKTokenizer+Factory.m */; };
 		9683A67B18FAC062009E0232 /* MHMethodArgumentStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9683A67A18FAC062009E0232 /* MHMethodArgumentStatementSpec.m */; };
+		96872B0919163A6D0068AF7A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */; };
+		96872B0F19163A6D0068AF7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96872B0D19163A6D0068AF7A /* InfoPlist.strings */; };
+		96872B1119163A6D0068AF7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96872B1019163A6D0068AF7A /* main.m */; };
+		96872B1519163A6D0068AF7A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 96872B1319163A6D0068AF7A /* Credits.rtf */; };
+		96872B1819163A6D0068AF7A /* MHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96872B1719163A6D0068AF7A /* MHAppDelegate.m */; };
+		96872B1B19163A6E0068AF7A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96872B1919163A6E0068AF7A /* MainMenu.xib */; };
+		96872B1D19163A6E0068AF7A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96872B1C19163A6E0068AF7A /* Images.xcassets */; };
+		96872B2319163A6E0068AF7A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FD41876B5BD00E4137F /* XCTest.framework */; };
+		96872B2419163A6E0068AF7A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */; };
+		96872B2C19163A6E0068AF7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96872B2A19163A6E0068AF7A /* InfoPlist.strings */; };
+		96872B2E19163A6E0068AF7A /* MHImportBusterAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96872B2D19163A6E0068AF7A /* MHImportBusterAppTests.m */; };
+		96872B3719163D080068AF7A /* MHImportListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96872B3619163D080068AF7A /* MHImportListView.m */; };
+		96872B3819163D080068AF7A /* MHImportListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96872B3619163D080068AF7A /* MHImportListView.m */; };
+		96872B3B19163D5B0068AF7A /* MHImportListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96872B3A19163D5B0068AF7A /* MHImportListView.xib */; };
+		96872B3C19163D5B0068AF7A /* MHImportListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96872B3A19163D5B0068AF7A /* MHImportListView.xib */; };
 		968AD40E18986746009E6FE6 /* MHDocumentMethodLOCObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 968AD40C18986746009E6FE6 /* MHDocumentMethodLOCObserver.h */; };
 		968AD40F18986746009E6FE6 /* MHDocumentMethodLOCObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AD40D18986746009E6FE6 /* MHDocumentMethodLOCObserver.m */; };
 		9699F6FB18954F7400AC7432 /* MHDocumentObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 9699F6F918954F7400AC7432 /* MHDocumentObserver.h */; };
@@ -121,6 +137,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		96872B2519163A6E0068AF7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD6A1FB31876B5BD00E4137F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96872B0719163A6D0068AF7A;
+			remoteInfo = MHImportBusterApp;
+		};
 		AD6A1FD71876B5BD00E4137F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD6A1FB31876B5BD00E4137F /* Project object */;
@@ -183,6 +206,7 @@
 		96589FAD18FDDD6800654F2B /* NSArray+MHStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHStatement.m"; sourceTree = "<group>"; };
 		9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MHLogMethods.h"; sourceTree = "<group>"; };
 		9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MHLogMethods.m"; sourceTree = "<group>"; };
+		9679BC62191650EF0004AB6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9683A66C18FAA402009E0232 /* MHMethodArgumentStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHMethodArgumentStatement.h; sourceTree = "<group>"; };
 		9683A66D18FAA402009E0232 /* MHMethodArgumentStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMethodArgumentStatement.m; sourceTree = "<group>"; };
 		9683A67118FAAF5E009E0232 /* MHMethodReturnStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHMethodReturnStatement.h; sourceTree = "<group>"; };
@@ -190,6 +214,23 @@
 		9683A67618FAB17A009E0232 /* PKTokenizer+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKTokenizer+Factory.h"; sourceTree = "<group>"; };
 		9683A67718FAB17A009E0232 /* PKTokenizer+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKTokenizer+Factory.m"; sourceTree = "<group>"; };
 		9683A67A18FAC062009E0232 /* MHMethodArgumentStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMethodArgumentStatementSpec.m; sourceTree = "<group>"; };
+		96872B0819163A6D0068AF7A /* MHImportBusterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHImportBusterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96872B0C19163A6D0068AF7A /* MHImportBusterApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MHImportBusterApp-Info.plist"; sourceTree = "<group>"; };
+		96872B0E19163A6D0068AF7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96872B1019163A6D0068AF7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96872B1219163A6D0068AF7A /* MHImportBusterApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MHImportBusterApp-Prefix.pch"; sourceTree = "<group>"; };
+		96872B1419163A6D0068AF7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		96872B1619163A6D0068AF7A /* MHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHAppDelegate.h; sourceTree = "<group>"; };
+		96872B1719163A6D0068AF7A /* MHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHAppDelegate.m; sourceTree = "<group>"; };
+		96872B1A19163A6E0068AF7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		96872B1C19163A6E0068AF7A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		96872B2219163A6E0068AF7A /* MHImportBusterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHImportBusterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96872B2919163A6E0068AF7A /* MHImportBusterAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MHImportBusterAppTests-Info.plist"; sourceTree = "<group>"; };
+		96872B2B19163A6E0068AF7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96872B2D19163A6E0068AF7A /* MHImportBusterAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHImportBusterAppTests.m; sourceTree = "<group>"; };
+		96872B3519163D080068AF7A /* MHImportListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHImportListView.h; sourceTree = "<group>"; };
+		96872B3619163D080068AF7A /* MHImportListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHImportListView.m; sourceTree = "<group>"; };
+		96872B3A19163D5B0068AF7A /* MHImportListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHImportListView.xib; sourceTree = "<group>"; };
 		968AD40C18986746009E6FE6 /* MHDocumentMethodLOCObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDocumentMethodLOCObserver.h; sourceTree = "<group>"; };
 		968AD40D18986746009E6FE6 /* MHDocumentMethodLOCObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentMethodLOCObserver.m; sourceTree = "<group>"; };
 		9699F6F918954F7400AC7432 /* MHDocumentObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDocumentObserver.h; sourceTree = "<group>"; };
@@ -273,6 +314,24 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		96872B0519163A6D0068AF7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9679BC63191650EF0004AB6B /* QuartzCore.framework in Frameworks */,
+				96872B0919163A6D0068AF7A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96872B1F19163A6E0068AF7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96872B2419163A6E0068AF7A /* Cocoa.framework in Frameworks */,
+				96872B2319163A6E0068AF7A /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD6A1FB81876B5BD00E4137F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +512,58 @@
 			name = PKTokenizer;
 			sourceTree = "<group>";
 		};
+		96872B0A19163A6D0068AF7A /* MHImportBusterApp */ = {
+			isa = PBXGroup;
+			children = (
+				96872B1619163A6D0068AF7A /* MHAppDelegate.h */,
+				96872B1719163A6D0068AF7A /* MHAppDelegate.m */,
+				96872B1919163A6E0068AF7A /* MainMenu.xib */,
+				96872B1C19163A6E0068AF7A /* Images.xcassets */,
+				96872B0B19163A6D0068AF7A /* Supporting Files */,
+			);
+			path = MHImportBusterApp;
+			sourceTree = "<group>";
+		};
+		96872B0B19163A6D0068AF7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96872B0C19163A6D0068AF7A /* MHImportBusterApp-Info.plist */,
+				96872B0D19163A6D0068AF7A /* InfoPlist.strings */,
+				96872B1019163A6D0068AF7A /* main.m */,
+				96872B1219163A6D0068AF7A /* MHImportBusterApp-Prefix.pch */,
+				96872B1319163A6D0068AF7A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96872B2719163A6E0068AF7A /* MHImportBusterAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				96872B2D19163A6E0068AF7A /* MHImportBusterAppTests.m */,
+				96872B2819163A6E0068AF7A /* Supporting Files */,
+			);
+			path = MHImportBusterAppTests;
+			sourceTree = "<group>";
+		};
+		96872B2819163A6E0068AF7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96872B2919163A6E0068AF7A /* MHImportBusterAppTests-Info.plist */,
+				96872B2A19163A6E0068AF7A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96872B3919163D0F0068AF7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96872B3519163D080068AF7A /* MHImportListView.h */,
+				96872B3619163D080068AF7A /* MHImportListView.m */,
+				96872B3A19163D5B0068AF7A /* MHImportListView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		96D89DE718A7A4570087D248 /* Operations Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +629,8 @@
 				AD6A1FC51876B5BD00E4137F /* MHImportBuster */,
 				AD6A1FDA1876B5BD00E4137F /* MHImportBusterTests */,
 				ADB1CF811876C0B000D935C7 /* MHImportBusterPlugin */,
+				96872B0A19163A6D0068AF7A /* MHImportBusterApp */,
+				96872B2719163A6E0068AF7A /* MHImportBusterAppTests */,
 				AD6A1FBE1876B5BD00E4137F /* Frameworks */,
 				AD6A1FBD1876B5BD00E4137F /* Products */,
 				E0FACE9357C24C5DAC2071C3 /* Pods.xcconfig */,
@@ -532,6 +645,8 @@
 				AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */,
 				AD6A1FD31876B5BD00E4137F /* MHImportBusterTests.xctest */,
 				ADB1CF7C1876C0B000D935C7 /* MHImportBusterPlugin.xcplugin */,
+				96872B0819163A6D0068AF7A /* MHImportBusterApp.app */,
+				96872B2219163A6E0068AF7A /* MHImportBusterAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -539,6 +654,7 @@
 		AD6A1FBE1876B5BD00E4137F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9679BC62191650EF0004AB6B /* QuartzCore.framework */,
 				AD3D6CED187736C000DF605A /* Carbon.framework */,
 				AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */,
 				AD6A1FD41876B5BD00E4137F /* XCTest.framework */,
@@ -647,6 +763,7 @@
 		ADB1CF811876C0B000D935C7 /* MHImportBusterPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				96872B3919163D0F0068AF7A /* View */,
 				ADB1CF871876C0B000D935C7 /* MHImportBusterPlugin.h */,
 				ADB1CF881876C0B000D935C7 /* MHImportBusterPlugin.m */,
 				ADB1CF821876C0B000D935C7 /* Supporting Files */,
@@ -715,6 +832,41 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		96872B0719163A6D0068AF7A /* MHImportBusterApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96872B3319163A6E0068AF7A /* Build configuration list for PBXNativeTarget "MHImportBusterApp" */;
+			buildPhases = (
+				96872B0419163A6D0068AF7A /* Sources */,
+				96872B0519163A6D0068AF7A /* Frameworks */,
+				96872B0619163A6D0068AF7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MHImportBusterApp;
+			productName = MHImportBusterApp;
+			productReference = 96872B0819163A6D0068AF7A /* MHImportBusterApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96872B2119163A6E0068AF7A /* MHImportBusterAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96872B3419163A6E0068AF7A /* Build configuration list for PBXNativeTarget "MHImportBusterAppTests" */;
+			buildPhases = (
+				96872B1E19163A6E0068AF7A /* Sources */,
+				96872B1F19163A6E0068AF7A /* Frameworks */,
+				96872B2019163A6E0068AF7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96872B2619163A6E0068AF7A /* PBXTargetDependency */,
+			);
+			name = MHImportBusterAppTests;
+			productName = MHImportBusterAppTests;
+			productReference = 96872B2219163A6E0068AF7A /* MHImportBusterAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AD6A1FBB1876B5BD00E4137F /* MHImportBuster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD6A1FE41876B5BD00E4137F /* Build configuration list for PBXNativeTarget "MHImportBuster" */;
@@ -783,6 +935,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Marko Hlebar";
 				TargetAttributes = {
+					96872B2119163A6E0068AF7A = {
+						TestTargetID = AD6A1FBB1876B5BD00E4137F;
+					};
 					AD6A1FD21876B5BD00E4137F = {
 						TestTargetID = AD6A1FBB1876B5BD00E4137F;
 					};
@@ -794,6 +949,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = AD6A1FB21876B5BD00E4137F;
 			productRefGroup = AD6A1FBD1876B5BD00E4137F /* Products */;
@@ -803,11 +959,33 @@
 				AD6A1FBB1876B5BD00E4137F /* MHImportBuster */,
 				AD6A1FD21876B5BD00E4137F /* MHImportBusterTests */,
 				ADB1CF7B1876C0AF00D935C7 /* MHImportBusterPlugin */,
+				96872B0719163A6D0068AF7A /* MHImportBusterApp */,
+				96872B2119163A6E0068AF7A /* MHImportBusterAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		96872B0619163A6D0068AF7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96872B0F19163A6D0068AF7A /* InfoPlist.strings in Resources */,
+				96872B3C19163D5B0068AF7A /* MHImportListView.xib in Resources */,
+				96872B1D19163A6E0068AF7A /* Images.xcassets in Resources */,
+				96872B1519163A6D0068AF7A /* Credits.rtf in Resources */,
+				96872B1B19163A6E0068AF7A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96872B2019163A6E0068AF7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96872B2C19163A6E0068AF7A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD6A1FBA1876B5BD00E4137F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -828,6 +1006,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96872B3B19163D5B0068AF7A /* MHImportListView.xib in Resources */,
 				ADB1CF861876C0B000D935C7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -912,6 +1091,24 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		96872B0419163A6D0068AF7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96872B1119163A6D0068AF7A /* main.m in Sources */,
+				96872B3819163D080068AF7A /* MHImportListView.m in Sources */,
+				96872B1819163A6D0068AF7A /* MHAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96872B1E19163A6E0068AF7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96872B2E19163A6E0068AF7A /* MHImportBusterAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD6A1FB71876B5BD00E4137F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -987,6 +1184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96872B3719163D080068AF7A /* MHImportListView.m in Sources */,
 				ADB1CF891876C0B000D935C7 /* MHImportBusterPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -994,6 +1192,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		96872B2619163A6E0068AF7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96872B0719163A6D0068AF7A /* MHImportBusterApp */;
+			targetProxy = 96872B2519163A6E0068AF7A /* PBXContainerItemProxy */;
+		};
 		AD6A1FD81876B5BD00E4137F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AD6A1FBB1876B5BD00E4137F /* MHImportBuster */;
@@ -1002,6 +1205,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		96872B0D19163A6D0068AF7A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96872B0E19163A6D0068AF7A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		96872B1319163A6D0068AF7A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96872B1419163A6D0068AF7A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		96872B1919163A6E0068AF7A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96872B1A19163A6E0068AF7A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		96872B2A19163A6E0068AF7A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96872B2B19163A6E0068AF7A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		AD6A1FC81876B5BD00E4137F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1029,6 +1264,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		96872B2F19163A6E0068AF7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBusterApp/MHImportBusterApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "MHImportBusterApp/MHImportBusterApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		96872B3019163A6E0068AF7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBusterApp/MHImportBusterApp-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "MHImportBusterApp/MHImportBusterApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		96872B3119163A6E0068AF7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MHImportBuster.framework/Versions/A/MHImportBuster";
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBusterApp/MHImportBusterApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "MHImportBusterAppTests/MHImportBusterAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		96872B3219163A6E0068AF7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MHImportBuster.framework/Versions/A/MHImportBuster";
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MHImportBusterApp/MHImportBusterApp-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "MHImportBusterAppTests/MHImportBusterAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		AD6A1FE21876B5BD00E4137F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1230,6 +1543,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		96872B3319163A6E0068AF7A /* Build configuration list for PBXNativeTarget "MHImportBusterApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96872B2F19163A6E0068AF7A /* Debug */,
+				96872B3019163A6E0068AF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96872B3419163A6E0068AF7A /* Build configuration list for PBXNativeTarget "MHImportBusterAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96872B3119163A6E0068AF7A /* Debug */,
+				96872B3219163A6E0068AF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AD6A1FB61876B5BD00E4137F /* Build configuration list for PBXProject "MHImportBuster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

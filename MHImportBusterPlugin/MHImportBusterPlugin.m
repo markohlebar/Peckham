@@ -14,12 +14,13 @@
 #import "MHXcodeIssuesParser.h"
 #import "MHHeaderCache.h"
 #import "NSString+Extensions.h"
+#import "MHImportListView.h"
 
 static MHImportBusterPlugin *sharedPlugin;
 
 @interface MHImportBusterPlugin() <MHDocumentObserverDelegate>
-
 @property (nonatomic, strong) NSBundle *bundle;
+@property (nonatomic, strong) NSPopover *popover;
 @end
 
 @implementation MHImportBusterPlugin
@@ -27,7 +28,6 @@ static MHImportBusterPlugin *sharedPlugin;
     MHDocumentObserver *_documentObserver;
     MHDocumentLOCObserver *_locObserver;
 }
-
 OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void *userData) {
     
     EventHotKeyID hkRef;
@@ -83,23 +83,59 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
             [[menuItem submenu] addItem:actionMenuItem];
         }
         
-        [self addIssuesObserver];
+//        [self loadImportListView];
         
+//        [self addIssuesObserver];
 //        [self loadKeyboardHandler];
-        
-//        _documentObserver = [[MHDocumentObserver alloc] init];
-        
-//        _locObserver = [[MHDocumentLOCObserver alloc] init];
-//        _locObserver.delegate = self;
-//        _locObserver.maxLinesOfCode = 150;
-        
-  
-        
-        
-        
-        
     }
     return self;
+}
+
+- (void)loadImportListView {
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSViewController *contentViewController = [[NSViewController alloc] initWithNibName:@"MHImportListView" bundle:bundle];
+    
+    NSPopover *popover = [[NSPopover alloc] init];
+    popover.delegate = self;
+    popover.behavior = NSPopoverBehaviorTransient;
+    popover.appearance = NSPopoverAppearanceMinimal;
+    popover.animates = NO;
+    popover.contentViewController = contentViewController;
+    
+    self.popover = popover;
+}
+
+- (NSRect) frameForCaretInTextView:(NSTextView *)textView {
+    NSArray *selectedRanges = textView.selectedRanges;
+    if (selectedRanges.count > 0) {
+        NSRange selectedRange = [[selectedRanges objectAtIndex:0] rangeValue];
+        
+        // Locate the line containing the caret
+        NSRange lineRange = [textView.textStorage.string lineRangeForRange:selectedRange];
+        
+        // Stick popover at the beginning of the key
+        NSRect keyRectOnScreen = [textView firstRectForCharacterRange:lineRange];
+        NSRect keyRectOnWindow = [textView.window convertRectFromScreen:keyRectOnScreen];
+        NSRect keyRectOnTextView = [textView convertRect:keyRectOnWindow fromView:nil];
+        return keyRectOnTextView;
+    }
+    return NSZeroRect;
+}
+
+- (void)showImportListViewInTextView:(NSTextView *) textView {
+    [self.popover showRelativeToRect:[self frameForCaretInTextView:textView]
+                              ofView:textView
+                       preferredEdge:NSMinYEdge];
+    MHImportListView *listView = (MHImportListView *)self.popover.contentViewController.view;
+    listView.headers = [MHHeaderCache allHeadersInCurrentWorkspace];
+}
+
+- (void)showImportList:(NSNotification *)notification {
+    
+    NSLog(@"SHOW IMPORT LIST");
+    
+    NSTextView *currentTextView = [MHXcodeDocumentNavigator currentSourceCodeTextView];
+    if(currentTextView) [self showImportListViewInTextView:currentTextView];
 }
 
 -(void) addIssuesObserver {
@@ -143,6 +179,21 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
                     [self addImport:header];
                 }
             }
+            else if([issue.fullMessage containsString:@"No visible @interface for"]) {
+                NSArray *components = [issue.fullMessage componentsSeparatedByString:@"'"];
+                NSString *className = components.count > 1 ? components[1] : nil;
+                NSString *methodName = components.count > 3 ? components[3] : nil;
+                NSLog(@"Class Name %@", className);
+                NSLog(@"Method Name %@", methodName);
+                MHHeaderCache *headerCache = [MHHeaderCache new];
+                NSString *header = [headerCache headerForMethod:methodName
+                                                   forClassName:className];
+                
+                NSLog(@"HEADER FOUND FOR METHOD: %@", header);
+                if (header) {
+                    [self addImport:header];
+                }
+            }
         }
     }
     
@@ -150,8 +201,8 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
 }
 
 -(void) findMissingImports {
-    MHHeaderCache *cache = [MHHeaderCache new];
-    
+//    MHHeaderCache *cache = [MHHeaderCache new];
+//    
 //    NSArray *headers = [cache findAllHeadersInCurrentWorkspace];
 //    NSLog(@"HEADERS \n\n %@", headers);
     
@@ -185,10 +236,10 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
     myHotKeyID.signature='mhk1';
     myHotKeyID.id=1;
 
-    RegisterEventHotKey(49, cmdKey+shiftKey, myHotKeyID, GetApplicationEventTarget(), 0, &myHotKeyRef);
+    RegisterEventHotKey(kVK_ANSI_P, cmdKey+controlKey, myHotKeyID, GetApplicationEventTarget(), 0, &myHotKeyRef);
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(removeDuplicateImports)
+                                             selector:@selector(showImportList:)
                                                  name:@"RemoveDuplicateImports"
                                                object:nil];
 }

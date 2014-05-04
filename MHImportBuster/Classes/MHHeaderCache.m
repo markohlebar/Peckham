@@ -13,6 +13,7 @@
 #import "NSString+Extensions.h"
 #import "MHStatementParser.h"
 #import "NSArray+MHStatement.h"
+#import "MHInterfaceStatement.h"
 
 @implementation MHHeaderCache
 {
@@ -24,13 +25,13 @@
 {
     self = [super init];
     if (self) {
-        _headers = [self allHeadersInCurrentWorkspace];
+        _headers = [MHHeaderCache allHeadersInCurrentWorkspace];
         _interfaceDictionary = [self parseInterfacesForHeaders:_headers];
     }
     return self;
 }
 
-- (NSArray *)allHeadersInCurrentWorkspace {
++ (NSArray *)allHeadersInCurrentWorkspace {
     IDEWorkspaceDocument *document = [MHXcodeDocumentNavigator currentWorkspaceDocument];
     NSURL *workspaceURL = document.workspace.representingFilePath.fileURL;
     NSURL *projectURL = [workspaceURL URLByDeletingLastPathComponent];
@@ -70,7 +71,23 @@
 }
 
 - (NSString *)headerForMethod:(NSString *)method forClassName:(NSString *)className {
-    
+    for (NSString *headerPath in _interfaceDictionary.allKeys) {
+        NSArray *statements = _interfaceDictionary[headerPath];
+        NSArray *interfaceStatements = [statements interfaceStatements];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.value == %@", className];
+        NSArray *interfaceMatches = [interfaceStatements filteredArrayUsingPredicate:predicate];
+        
+        for (MHInterfaceStatement *statement in interfaceMatches) {
+            NSArray *methodStatements = [statement.children methodStatements];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.value == %@", method];
+            NSArray *methodMatches = [methodStatements filteredArrayUsingPredicate:predicate];
+            
+            if (methodMatches.count > 0) {
+                NSString *header = [headerPath lastPathComponent];
+                return header;
+            }
+        }
+    }
     return nil;
 }
 
