@@ -10,7 +10,7 @@
 
 @implementation NSFileManager (Headers)
 ///finds all files with extension in directory and its subdirectories
-///@param extension extension of file ie @".h"
+///@param extension extension of file ie @"h"
 ///@param path directory path
 ///@return array of headers
 +(NSArray*) findFilesWithExtension:(NSString*) extension inDirectory:(NSString*) path {
@@ -18,7 +18,7 @@
 }
 
 ///finds all files with extensions in directory and its subdirectories
-///@param extensions array of extensions of file ie @[@".h, @".m"]
+///@param extensions array of extensions of file ie @[@"h, @"m"]
 ///@param path directory path
 ///@return array of headers
 +(NSArray*) findFilesWithExtensions:(NSArray*) extensions inDirectory:(NSString*) path {
@@ -33,7 +33,7 @@
         for (NSString *item in items) {
 
             for (NSString *extension in extensions) {
-                if ([item rangeOfString:extension].location != NSNotFound) {
+                if ([[item pathExtension] isEqualToString:extension]) {
                     NSString *fullPath = [path stringByAppendingPathComponent:item];
                     [headers addObject:fullPath];
                 }

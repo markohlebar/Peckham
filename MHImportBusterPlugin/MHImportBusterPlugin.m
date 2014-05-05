@@ -14,11 +14,10 @@
 #import "MHXcodeIssuesParser.h"
 #import "MHHeaderCache.h"
 #import "NSString+Extensions.h"
-#import "MHImportListView.h"
 
 static MHImportBusterPlugin *sharedPlugin;
 
-@interface MHImportBusterPlugin() <MHDocumentObserverDelegate>
+@interface MHImportBusterPlugin() <MHDocumentObserverDelegate, MHImportListViewDelegate>
 @property (nonatomic, strong) NSBundle *bundle;
 @property (nonatomic, strong) NSPopover *popover;
 @end
@@ -44,6 +43,9 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
     return noErr;
 }
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 + (void)pluginDidLoad:(NSBundle *)plugin
 {
@@ -83,16 +85,16 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
             [[menuItem submenu] addItem:actionMenuItem];
         }
         
-//        [self loadImportListView];
+        [self loadImportListView];
         
 //        [self addIssuesObserver];
-//        [self loadKeyboardHandler];
+        [self loadKeyboardHandler];
     }
     return self;
 }
 
 - (void)loadImportListView {
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSBundle *bundle = [NSBundle bundleForClass:[MHImportListView class]];
     NSViewController *contentViewController = [[NSViewController alloc] initWithNibName:@"MHImportListView" bundle:bundle];
     
     NSPopover *popover = [[NSPopover alloc] init];
@@ -128,12 +130,10 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
                        preferredEdge:NSMinYEdge];
     MHImportListView *listView = (MHImportListView *)self.popover.contentViewController.view;
     listView.headers = [MHHeaderCache allHeadersInCurrentWorkspace];
+    listView.delegate = self;
 }
 
 - (void)showImportList:(NSNotification *)notification {
-    
-    NSLog(@"SHOW IMPORT LIST");
-    
     NSTextView *currentTextView = [MHXcodeDocumentNavigator currentSourceCodeTextView];
     if(currentTextView) [self showImportListViewInTextView:currentTextView];
 }
@@ -201,6 +201,8 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
 }
 
 -(void) findMissingImports {
+    
+    [self showImportList:nil];
 //    MHHeaderCache *cache = [MHHeaderCache new];
 //    
 //    NSArray *headers = [cache findAllHeadersInCurrentWorkspace];
@@ -293,9 +295,11 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
     }
 }
 
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+#pragma mark - MHImportListViewDelegate
+
+- (void)importList:(MHImportListView *)importList didSelectHeader:(NSString *)headerPath {
+    [self addImport:[headerPath lastPathComponent]];
+    [self.popover close];
 }
 
 @end

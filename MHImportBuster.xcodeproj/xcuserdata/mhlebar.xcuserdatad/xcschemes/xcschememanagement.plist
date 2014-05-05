@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>MHImportBusterApp.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>MHImportBusterPlugin.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,26 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>96872B0719163A6D0068AF7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96872B2119163A6E0068AF7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96B1E10119121EE800AC469F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96B1E11B19121EE800AC469F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AD6A1FBB1876B5BD00E4137F</key>
 		<dict>
 			<key>primary</key>

@@ -22,7 +22,7 @@
 
 #pragma mark - NSTableViewDataSource
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    return _headers[row];
+    return [_headers[row] lastPathComponent];
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
@@ -30,11 +30,16 @@
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
-    NSTableView *tableView = aNotification.object;
-    if (tableView == _tableView) {
-        NSInteger selectedRow = [_tableView selectedRow];
-        [_tableView deselectRow:selectedRow];
-    }
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
+    return 20.0;
+}
+
+- (void) tableViewDidReturn:(MHTableView *)tableView {
+    NSInteger selectedRow = [_tableView selectedRow];
+    [_delegate importList:self
+          didSelectHeader:_headers[selectedRow]];
 }
 
 @end

@@ -36,7 +36,7 @@
     NSURL *workspaceURL = document.workspace.representingFilePath.fileURL;
     NSURL *projectURL = [workspaceURL URLByDeletingLastPathComponent];
     if (projectURL) {
-        return [NSFileManager findFilesWithExtension:@".h" inDirectory:[projectURL path]];
+        return [NSFileManager findFilesWithExtension:@"h" inDirectory:[projectURL path]];
     }
     return nil;
 }
@@ -65,6 +65,8 @@
         if (interfaceMatches.count > 0) {
             NSString *header = [headerPath lastPathComponent];
             return header;
+            
+            
         }
     }
     return nil;

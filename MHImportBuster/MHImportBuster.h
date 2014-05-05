@@ -9,3 +9,4 @@
 #import "MHDocumentObserver.h"
 #import "MHDocumentLOCObserver.h"
 #import "MHFile.h"
+#import "MHImportListView.h"

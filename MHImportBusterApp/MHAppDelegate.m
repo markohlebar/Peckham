@@ -7,6 +7,8 @@
 //
 
 #import "MHAppDelegate.h"
+//#import <MHImportBuster/MHImportBuster.h>
+#import "MHImportListView.h"
 
 @interface MHAppDelegate () <NSPopoverDelegate>
 @property (nonatomic, strong) NSPopover *popover;
@@ -17,7 +19,6 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-//    [self instantiatePopover];
 }
 
 - (void)instantiatePopover
@@ -31,8 +32,10 @@
     popover.appearance = NSPopoverAppearanceMinimal;
     popover.animates = NO;
     popover.contentViewController = contentViewController;
-    
     self.popover = popover;
+    
+    MHImportListView *listView = (MHImportListView *)self.popover.contentViewController.view;
+    listView.headers = @[@"Aheader.h", @"BHeader.h", @"AAHeader.h"];
     
     NSWindow *keyWindow = [[NSApplication sharedApplication] keyWindow];
     [self.popover showRelativeToRect:keyWindow.frame
