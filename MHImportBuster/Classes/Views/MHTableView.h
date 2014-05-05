@@ -10,7 +10,7 @@
 
 @class MHTableView;
 @protocol MHTableViewDelegate <NSTableViewDelegate>
-- (void)tableViewDidReturn:(MHTableView *)tableView;
+- (void)tableView:(MHTableView *)tableView onKeyPress:(NSEvent *)key;
 @end
 
 @interface MHTableView : NSTableView

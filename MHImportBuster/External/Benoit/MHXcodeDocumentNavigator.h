@@ -12,4 +12,6 @@
 + (IDESourceCodeDocument *)currentSourceCodeDocument;
 + (NSTextView *)currentSourceCodeTextView;
 + (IDEWorkspaceDocument *)currentWorkspaceDocument;
++ (NSString *)currentFilePath;
+
 @end

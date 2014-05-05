@@ -14,10 +14,11 @@
 #import "MHXcodeIssuesParser.h"
 #import "MHHeaderCache.h"
 #import "NSString+Extensions.h"
+#import "MHImportListViewController.h"
 
 static MHImportBusterPlugin *sharedPlugin;
 
-@interface MHImportBusterPlugin() <MHDocumentObserverDelegate, MHImportListViewDelegate>
+@interface MHImportBusterPlugin() <MHDocumentObserverDelegate>
 @property (nonatomic, strong) NSBundle *bundle;
 @property (nonatomic, strong) NSPopover *popover;
 @end
@@ -78,64 +79,11 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
             actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Sort Imports" action:@selector(sortImports) keyEquivalent:@""];
             [actionMenuItem setTarget:self];
             [[menuItem submenu] addItem:actionMenuItem];
-            
-            [[menuItem submenu] addItem:[NSMenuItem separatorItem]];
-            actionMenuItem = [[NSMenuItem alloc] initWithTitle:@"Find Missing Imports" action:@selector(findMissingImports) keyEquivalent:@""];
-            [actionMenuItem setTarget:self];
-            [[menuItem submenu] addItem:actionMenuItem];
         }
         
-        [self loadImportListView];
-        
-//        [self addIssuesObserver];
         [self loadKeyboardHandler];
     }
     return self;
-}
-
-- (void)loadImportListView {
-    NSBundle *bundle = [NSBundle bundleForClass:[MHImportListView class]];
-    NSViewController *contentViewController = [[NSViewController alloc] initWithNibName:@"MHImportListView" bundle:bundle];
-    
-    NSPopover *popover = [[NSPopover alloc] init];
-    popover.delegate = self;
-    popover.behavior = NSPopoverBehaviorTransient;
-    popover.appearance = NSPopoverAppearanceMinimal;
-    popover.animates = NO;
-    popover.contentViewController = contentViewController;
-    
-    self.popover = popover;
-}
-
-- (NSRect) frameForCaretInTextView:(NSTextView *)textView {
-    NSArray *selectedRanges = textView.selectedRanges;
-    if (selectedRanges.count > 0) {
-        NSRange selectedRange = [[selectedRanges objectAtIndex:0] rangeValue];
-        
-        // Locate the line containing the caret
-        NSRange lineRange = [textView.textStorage.string lineRangeForRange:selectedRange];
-        
-        // Stick popover at the beginning of the key
-        NSRect keyRectOnScreen = [textView firstRectForCharacterRange:lineRange];
-        NSRect keyRectOnWindow = [textView.window convertRectFromScreen:keyRectOnScreen];
-        NSRect keyRectOnTextView = [textView convertRect:keyRectOnWindow fromView:nil];
-        return keyRectOnTextView;
-    }
-    return NSZeroRect;
-}
-
-- (void)showImportListViewInTextView:(NSTextView *) textView {
-    [self.popover showRelativeToRect:[self frameForCaretInTextView:textView]
-                              ofView:textView
-                       preferredEdge:NSMinYEdge];
-    MHImportListView *listView = (MHImportListView *)self.popover.contentViewController.view;
-    listView.headers = [MHHeaderCache allHeadersInCurrentWorkspace];
-    listView.delegate = self;
-}
-
-- (void)showImportList:(NSNotification *)notification {
-    NSTextView *currentTextView = [MHXcodeDocumentNavigator currentSourceCodeTextView];
-    if(currentTextView) [self showImportListViewInTextView:currentTextView];
 }
 
 -(void) addIssuesObserver {
@@ -161,9 +109,9 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
                 NSString *header = [headerCache headerForClassName:className];
                 
                 NSLog(@"HEADER FOUND: %@", header);
-                if (header) {
-                    [self addImport:header];
-                }
+//                if (header) {
+//                    [self addImport:header];
+//                }
             }
             else if([issue.fullMessage containsString:@"Unknown type name"]) {
                 NSArray *components = [issue.fullMessage componentsSeparatedByString:@"'"];
@@ -175,9 +123,9 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
                 NSString *header = [headerCache headerForClassName:className];
                 
                 NSLog(@"HEADER FOUND: %@", header);
-                if (header) {
-                    [self addImport:header];
-                }
+//                if (header) {
+//                    [self addImport:header];
+//                }
             }
             else if([issue.fullMessage containsString:@"No visible @interface for"]) {
                 NSArray *components = [issue.fullMessage componentsSeparatedByString:@"'"];
@@ -190,40 +138,14 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
                                                    forClassName:className];
                 
                 NSLog(@"HEADER FOUND FOR METHOD: %@", header);
-                if (header) {
-                    [self addImport:header];
-                }
+//                if (header) {
+//                    [self addImport:header];
+//                }
             }
         }
     }
     
    // [self addImport];
-}
-
--(void) findMissingImports {
-    
-    [self showImportList:nil];
-//    MHHeaderCache *cache = [MHHeaderCache new];
-//    
-//    NSArray *headers = [cache findAllHeadersInCurrentWorkspace];
-//    NSLog(@"HEADERS \n\n %@", headers);
-    
-//    HRROC *pile = nil;
-    
-
-//    NSTask *task = [[NSTask alloc] init];
-//    
-//    task.launchPath = @"/Users/mhlebar/Documents/clang-llvm/build/bin/loop-convert";
-////    task.arguments = @[
-////                       [NSString stringWithFormat:@"--style=%@", style],
-////                       @"-i",
-//    task.arguments = @[
-//                       [self currentFilePath],
-//                       @"--"
-//                       ];
-//    
-//    [task launch];
-//    [task waitUntilExit];
 }
 
 -(void) loadKeyboardHandler {
@@ -257,49 +179,20 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
     [alert runModal];
 }
 
-- (NSString *)currentFilePath {
-    if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
-        return nil;
-    }
-    
-    //TODO: produce a separate document for each filePath. note when any changes occur
-    //on the observers.
-    
-    IDESourceCodeEditor *editor = [MHXcodeDocumentNavigator currentEditor];
-    IDESourceCodeDocument *document = [editor sourceCodeDocument];
-    return [[document fileURL] path];
+#pragma mark - Actions 
+
+- (void)showImportList:(NSNotification *)notification {
+    [MHImportListViewController present];
 }
 
-- (void) addImport:(NSString *) header {
-    NSString *filePath = [self currentFilePath];
-    if(filePath) {
-        MHFile *file = [MHFile fileWithPath:filePath];
-        [file addImport:[NSString stringWithFormat:@"#import \"%@\"", header]];
-    }
-}
-
-// Sample Action, for menu item:
 - (void)removeDuplicateImports {
-    NSString *filePath = [self currentFilePath];
-    if(filePath) {
-        MHFile *file = [MHFile fileWithPath:filePath];
-        [file removeDuplicateImports];
-    }
+    MHFile *file = [MHFile fileWithCurrentFilePath];
+    [file removeDuplicateImports];
 }
 
 -(void) sortImports {
-    NSString *filePath = [self currentFilePath];
-    if(filePath) {
-        MHFile *file = [MHFile fileWithPath:filePath];
-        [file sortImportsAlphabetically];
-    }
-}
-
-#pragma mark - MHImportListViewDelegate
-
-- (void)importList:(MHImportListView *)importList didSelectHeader:(NSString *)headerPath {
-    [self addImport:[headerPath lastPathComponent]];
-    [self.popover close];
+    MHFile *file = [MHFile fileWithCurrentFilePath];
+    [file sortImportsAlphabetically];
 }
 
 @end

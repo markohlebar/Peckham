@@ -14,18 +14,19 @@
 
 - (void) keyDown:(NSEvent *)theEvent {
     [super keyDown:theEvent];
-    NSLog(@"KEY DOWN");
-    if (theEvent.type == NSKeyDown && theEvent.keyCode == kVK_Return) {
-        NSLog(@"KEY DOWN ENTER");
-        [self.delegate tableViewDidReturn:self];
+    if (theEvent.type == NSKeyDown) {
+        [self.delegate tableView:self onKeyPress:theEvent];
     }
 }
 
 - (BOOL)performKeyEquivalent:(NSEvent *)theEvent {
-    if (theEvent.type == NSKeyDown && theEvent.keyCode == kVK_Return) {
-        return YES;
+    if (theEvent.type == NSKeyDown) {
+        if (theEvent.keyCode == kVK_UpArrow ||
+            theEvent.keyCode == kVK_DownArrow) {
+            return [super performKeyEquivalent:theEvent];
+        }
     }
-    return [super performKeyEquivalent:theEvent];
+    return YES;
 }
 
 @end

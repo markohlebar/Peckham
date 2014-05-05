@@ -34,6 +34,10 @@
 	return [[class alloc] initWithFilePath:filePath];
 }
 
++ (instancetype)fileWithCurrentFilePath {
+    return [self fileWithPath:[MHXcodeDocumentNavigator currentFilePath]];
+}
+
 - (void)observeFileChanges {
     
 }

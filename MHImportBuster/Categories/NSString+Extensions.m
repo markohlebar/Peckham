@@ -16,4 +16,9 @@
 -(NSString*) stringByRemovingWhitespaces {
     return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
+
+- (BOOL) isAlphaNumeric {
+    NSCharacterSet *unwantedCharacters = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
+    return [self rangeOfCharacterFromSet:unwantedCharacters].location == NSNotFound;
+}
 @end

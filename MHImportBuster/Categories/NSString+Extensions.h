@@ -11,4 +11,5 @@
 @interface NSString (Extensions)
 -(BOOL) containsString:(NSString*) string;
 -(NSString*) stringByRemovingWhitespaces;
+-(BOOL)isAlphaNumeric;
 @end

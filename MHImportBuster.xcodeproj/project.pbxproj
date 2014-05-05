@@ -74,9 +74,15 @@
 		969A558B18DDA3890040EB6C /* MHAddImportOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 969A558918DDA3890040EB6C /* MHAddImportOperation.h */; };
 		969A558C18DDA3890040EB6C /* MHAddImportOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A558A18DDA3890040EB6C /* MHAddImportOperation.m */; };
 		969A558E18DDA3C20040EB6C /* MHAddImportOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 969A558D18DDA3C20040EB6C /* MHAddImportOperationSpec.m */; };
+		96A095331917673E00338093 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A095321917673E00338093 /* Accounts.framework */; };
+		96A0953719177B5D00338093 /* MHImportListViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 96A0953519177B5D00338093 /* MHImportListViewController.h */; };
+		96A0953819177B5D00338093 /* MHImportListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0953619177B5D00338093 /* MHImportListViewController.m */; };
+		96A0953B19177ED400338093 /* NSTextView+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 96A0953919177ED400338093 /* NSTextView+Operations.h */; };
+		96A0953C19177ED400338093 /* NSTextView+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A0953A19177ED400338093 /* NSTextView+Operations.m */; };
 		96B22FA719167CC8001E643C /* MHImportListView.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B22FA419167CC8001E643C /* MHImportListView.h */; };
 		96B22FA819167CC8001E643C /* MHImportListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B22FA519167CC8001E643C /* MHImportListView.m */; };
 		96B22FA919167CC8001E643C /* MHImportListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B22FA619167CC8001E643C /* MHImportListView.xib */; };
+		96B289681917A7AA00028CD2 /* MHImportBuster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; };
 		96B64AC018DE01F4007DFC26 /* MHHeaderCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B64ABE18DE01F4007DFC26 /* MHHeaderCache.h */; };
 		96B64AC118DE01F4007DFC26 /* MHHeaderCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B64ABF18DE01F4007DFC26 /* MHHeaderCache.m */; };
 		96B64AC318DE099B007DFC26 /* MHHeaderCacheSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B64AC218DE099B007DFC26 /* MHHeaderCacheSpec.m */; };
@@ -102,10 +108,8 @@
 		96D89DFF18A7BE580087D248 /* PKToken+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89DFD18A7BE580087D248 /* PKToken+Factory.m */; };
 		96D89E0118A7BEC20087D248 /* PKToken_FactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89E0018A7BEC20087D248 /* PKToken_FactorySpec.m */; };
 		96EA84C11916A79200CBEFE4 /* MHImportListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96B22FA619167CC8001E643C /* MHImportListView.xib */; };
-		96EA84C21916A7A000CBEFE4 /* MHImportListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B22FA519167CC8001E643C /* MHImportListView.m */; };
 		96EA84C51916ACDD00CBEFE4 /* MHTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 96EA84C31916ACDD00CBEFE4 /* MHTableView.h */; };
 		96EA84C61916ACDD00CBEFE4 /* MHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EA84C41916ACDD00CBEFE4 /* MHTableView.m */; };
-		96EA84C71916AD2200CBEFE4 /* MHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EA84C41916ACDD00CBEFE4 /* MHTableView.m */; };
 		96EA84C81916AEBB00CBEFE4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD3D6CED187736C000DF605A /* Carbon.framework */; };
 		96FB646A18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 96FB646818A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h */; };
 		96FB646B18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FB646918A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.m */; };
@@ -234,6 +238,11 @@
 		969A558918DDA3890040EB6C /* MHAddImportOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAddImportOperation.h; sourceTree = "<group>"; };
 		969A558A18DDA3890040EB6C /* MHAddImportOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHAddImportOperation.m; sourceTree = "<group>"; };
 		969A558D18DDA3C20040EB6C /* MHAddImportOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHAddImportOperationSpec.m; path = Operations/MHAddImportOperationSpec.m; sourceTree = "<group>"; };
+		96A095321917673E00338093 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		96A0953519177B5D00338093 /* MHImportListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHImportListViewController.h; path = Controller/MHImportListViewController.h; sourceTree = "<group>"; };
+		96A0953619177B5D00338093 /* MHImportListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHImportListViewController.m; path = Controller/MHImportListViewController.m; sourceTree = "<group>"; };
+		96A0953919177ED400338093 /* NSTextView+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextView+Operations.h"; sourceTree = "<group>"; };
+		96A0953A19177ED400338093 /* NSTextView+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+Operations.m"; sourceTree = "<group>"; };
 		96B22FA419167CC8001E643C /* MHImportListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHImportListView.h; sourceTree = "<group>"; };
 		96B22FA519167CC8001E643C /* MHImportListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHImportListView.m; sourceTree = "<group>"; };
 		96B22FA619167CC8001E643C /* MHImportListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHImportListView.xib; sourceTree = "<group>"; };
@@ -321,6 +330,7 @@
 			files = (
 				9679BC63191650EF0004AB6B /* QuartzCore.framework in Frameworks */,
 				96872B0919163A6D0068AF7A /* Cocoa.framework in Frameworks */,
+				96B289681917A7AA00028CD2 /* MHImportBuster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A095331917673E00338093 /* Accounts.framework in Frameworks */,
 				96EA84C81916AEBB00CBEFE4 /* Carbon.framework in Frameworks */,
 				9699F6FD1895518900AC7432 /* AppKit.framework in Frameworks */,
 				AD6A1FC01876B5BD00E4137F /* Cocoa.framework in Frameworks */,
@@ -534,6 +545,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		96A0953419177B3200338093 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				96A0953519177B5D00338093 /* MHImportListViewController.h */,
+				96A0953619177B5D00338093 /* MHImportListViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		96B22FA319167CC8001E643C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,6 +596,8 @@
 				9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */,
 				9611423F18A6504400E03589 /* NSString+MHNSRange.h */,
 				9611424018A6504400E03589 /* NSString+MHNSRange.m */,
+				96A0953919177ED400338093 /* NSTextView+Operations.h */,
+				96A0953A19177ED400338093 /* NSTextView+Operations.m */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -634,6 +656,7 @@
 		AD6A1FBE1876B5BD00E4137F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96A095321917673E00338093 /* Accounts.framework */,
 				964CEC5C191663360012C63D /* IDEFoundation.framework */,
 				964CEC5D191663360012C63D /* IDEKit.framework */,
 				964CEC5E191663360012C63D /* DVTFoundation.framework */,
@@ -730,6 +753,7 @@
 		AD6A1FEF1876B68D00E4137F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				96A0953419177B3200338093 /* Controller */,
 				96B22FA319167CC8001E643C /* Views */,
 				9618D21518DB72670049EE62 /* Issues */,
 				96542C6918A798B900246A79 /* Operations */,
@@ -773,11 +797,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B64ACA18DE0D8F007DFC26 /* NSString+Extensions.h in Headers */,
+				96A0953719177B5D00338093 /* MHImportListViewController.h in Headers */,
 				9611424118A6504400E03589 /* NSString+MHNSRange.h in Headers */,
 				9683A66E18FAA402009E0232 /* MHMethodArgumentStatement.h in Headers */,
 				AD5427CA1876C37E00A2BC8E /* MHImportBuster.h in Headers */,
 				96B64AC818DE0D8F007DFC26 /* NSFileManager+Headers.h in Headers */,
 				96D89DFE18A7BE580087D248 /* PKToken+Factory.h in Headers */,
+				96A0953B19177ED400338093 /* NSTextView+Operations.h in Headers */,
 				964B0A9718A79AD000E36C8E /* XCFXcodePrivate.h in Headers */,
 				96C21B84189CE00A00484D57 /* MHMethodStatement.h in Headers */,
 				96FB646A18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h in Headers */,
@@ -1051,9 +1077,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96EA84C71916AD2200CBEFE4 /* MHTableView.m in Sources */,
 				96872B1119163A6D0068AF7A /* main.m in Sources */,
-				96EA84C21916A7A000CBEFE4 /* MHImportListView.m in Sources */,
 				96872B1819163A6D0068AF7A /* MHAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1080,7 +1104,9 @@
 				96D89DFF18A7BE580087D248 /* PKToken+Factory.m in Sources */,
 				969A558C18DDA3890040EB6C /* MHAddImportOperation.m in Sources */,
 				96B22FA819167CC8001E643C /* MHImportListView.m in Sources */,
+				96A0953819177B5D00338093 /* MHImportListViewController.m in Sources */,
 				96D89DF818A7B03C0087D248 /* MHImportStatement+Sorting.m in Sources */,
+				96A0953C19177ED400338093 /* NSTextView+Operations.m in Sources */,
 				9658B95F18A643D700A768B0 /* NSObject+MHLogMethods.m in Sources */,
 				AD6A20161876B68D00E4137F /* MHStatementParser.m in Sources */,
 				AD6A200E1876B68D00E4137F /* MHImportStatement.m in Sources */,

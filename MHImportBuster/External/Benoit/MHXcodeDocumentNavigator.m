@@ -171,5 +171,12 @@
     return nil;
 }
 
-
++ (NSString *)currentFilePath {
+    if (![[MHXcodeDocumentNavigator currentEditor] isKindOfClass:NSClassFromString(@"IDESourceCodeEditor")]) {
+        return nil;
+    }
+    IDESourceCodeEditor *editor = [MHXcodeDocumentNavigator currentEditor];
+    IDESourceCodeDocument *document = [editor sourceCodeDocument];
+    return [[document fileURL] path];
+}
 @end

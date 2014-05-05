@@ -13,13 +13,9 @@
 @protocol MHImportListViewDelegate <NSObject>
 @required
 -(void) importList:(MHImportListView *)importList didSelectHeader:(NSString *)headerPath;
-
 @end
 
 @interface MHImportListView : NSView <MHTableViewDelegate, NSTableViewDataSource>
 @property (nonatomic, strong) NSArray *headers;
 @property (nonatomic, weak) id <MHImportListViewDelegate> delegate;
-
-+ (instancetype)presentInPopover;
-- (void) dismiss;
 @end
