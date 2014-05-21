@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @interface MHStatementParser : NSObject
 
 @property (nonatomic, readonly) NSString *text;

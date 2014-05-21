@@ -26,8 +26,9 @@
     
     NSError *error = nil;
     NSMutableArray *items = [NSMutableArray arrayWithArray:[fileManager subpathsOfDirectoryAtPath:path error:&error]];
+    [items addObjectsFromArray:[fileManager subpathsAtPath:path]];
     
-    NSMutableArray *headers = [NSMutableArray array];
+    NSMutableArray *files = [NSMutableArray array];
     if (!error) {
         
         for (NSString *item in items) {
@@ -35,7 +36,9 @@
             for (NSString *extension in extensions) {
                 if ([[item pathExtension] isEqualToString:extension]) {
                     NSString *fullPath = [path stringByAppendingPathComponent:item];
-                    [headers addObject:fullPath];
+                    if (![files containsObject:fullPath]) {
+                        [files addObject:fullPath];
+                    }
                 }
             }
         }
@@ -44,7 +47,7 @@
         NSLog(@"%@", [error localizedDescription]);
     }
     
-    return [headers copy];
+    return [files copy];
 }
 
 ///finds all subdirectories inside a directory

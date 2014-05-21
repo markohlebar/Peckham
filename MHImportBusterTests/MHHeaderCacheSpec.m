@@ -8,7 +8,7 @@
 
 #import <Kiwi/Kiwi.h>
 #import "MHHeaderCache.h"
-
+#import "MHXcodeDocumentNavigator.h"
 
 SPEC_BEGIN(MHHeaderCacheSpec)
 
@@ -24,6 +24,10 @@ describe(@"MHHeaderCache", ^{
     
     pending(@"Should find a header for a symbol", ^{
         
+    });
+    
+    it(@"Should find all frameworks imported in a workspace", ^{
+//        NSString *filePath = @""
     });
     
 });

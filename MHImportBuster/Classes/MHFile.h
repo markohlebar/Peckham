@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class MHImportStatement;
 @interface MHFile : NSObject
 @property (nonatomic, readonly, copy) NSString *filePath;
 + (instancetype)fileWithPath:(NSString *)filePath;
 + (instancetype)fileWithCurrentFilePath;
 - (void)removeDuplicateImports;
 - (void)sortImportsAlphabetically;
-- (void)addImport:(NSString *)import;
+- (void)addImport:(MHImportStatement *)import;
 - (void)observeFileChanges;
 @end
 

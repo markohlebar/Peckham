@@ -33,6 +33,7 @@
                                                        error:nil
                                             statementClasses:@[[MHFrameworkImportStatement class],
                                                                [MHProjectImportStatement class]]];
+    NSLog(@"%@", statements);
     __block NSInteger lastLine = 0;
     __weak MHAddImportOperation* weakSelf = self;
     [statements enumerateObjectsUsingBlock:^(MHImportStatement *statement, NSUInteger idx, BOOL *stop) {

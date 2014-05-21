@@ -94,4 +94,11 @@
  *  @return a token
  */
 +(PKToken*) hash;
+
+/**
+ *  Returns a " symbol
+ *
+ *  @return a token
+ */
++(PKToken*) doubleQuote;
 @end

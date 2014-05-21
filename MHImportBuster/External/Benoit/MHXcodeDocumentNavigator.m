@@ -4,6 +4,9 @@
 //
 
 #import "MHXcodeDocumentNavigator.h"
+#import "NSString+Extensions.h"
+
+static NSString * const MHFrameworkExtension = @"framework";
 
 @implementation MHXcodeDocumentNavigator {}
 
@@ -179,4 +182,18 @@
     IDESourceCodeDocument *document = [editor sourceCodeDocument];
     return [[document fileURL] path];
 }
+
++ (NSString *)currentWorkspacePath {
+    IDEWorkspaceDocument *document = [MHXcodeDocumentNavigator currentWorkspaceDocument];
+    return [[document fileURL] path];
+}
+
++ (NSString *) pathForFrameworkNamed:(NSString *)frameworkName {
+    if (![[frameworkName pathExtension] isEqualToString:MHFrameworkExtension]) {
+        frameworkName = [frameworkName stringByAppendingPathExtension:MHFrameworkExtension];
+    }
+    
+    return [MHSystemFrameworksPath stringByAppendingPathComponent:frameworkName];
+}
+
 @end

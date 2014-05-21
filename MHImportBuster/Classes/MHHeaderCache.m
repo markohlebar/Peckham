@@ -7,13 +7,15 @@
 //
 
 #import "MHHeaderCache.h"
-#import "XCFXcodePrivate.h"
-#import "MHXcodeDocumentNavigator.h"
-#import "NSFileManager+Headers.h"
-#import "NSString+Extensions.h"
-#import "MHStatementParser.h"
-#import "NSArray+MHStatement.h"
 #import "MHInterfaceStatement.h"
+#import "MHStatementParser.h"
+#import "MHXcodeDocumentNavigator.h"
+#import "NSArray+MHStatement.h"
+#import "NSFileManager+Headers.h"
+#import "XCTarget+XCProject.h"
+#import "XCWorkspace.h"
+#import "MHImportStatement+Construction.h"
+#import "XcodeEditor.h"
 
 @implementation MHHeaderCache
 {
@@ -25,20 +27,92 @@
 {
     self = [super init];
     if (self) {
-        _headers = [MHHeaderCache allHeadersInCurrentWorkspace];
-        _interfaceDictionary = [self parseInterfacesForHeaders:_headers];
+//        _headers = [MHHeaderCache allHeadersInCurrentWorkspace];
+//        _interfaceDictionary = [self parseInterfacesForHeaders:_headers];
     }
     return self;
 }
 
-+ (NSArray *)allHeadersInCurrentWorkspace {
-    IDEWorkspaceDocument *document = [MHXcodeDocumentNavigator currentWorkspaceDocument];
-    NSURL *workspaceURL = document.workspace.representingFilePath.fileURL;
-    NSURL *projectURL = [workspaceURL URLByDeletingLastPathComponent];
-    if (projectURL) {
-        return [NSFileManager findFilesWithExtension:@"h" inDirectory:[projectURL path]];
-    }
++ (NSArray *)allFrameworksInCurrentWorkspace {
+    
+    NSString *filePath = [MHXcodeDocumentNavigator currentWorkspacePath];
+    XCWorkspace *workspace = [XCWorkspace workspaceWithFilePath:filePath];
+    XCProject *project = [workspace.projects firstObject];
+
+    XCTarget *target = [project.targets firstObject];
+//    XCBuildSettings *buildSettings = [XCBuildSettings buildSettingsWithTarget:target];
+//    NSLog(@"%@", buildSettings.settings);
+    
+//    NSLog(@"%@", resources);
+    
+//    NSDictionary *frameworkSearchPaths = target.defaultConfiguration.specifiedBuildSettings;
+//    NSLog(@"%@", frameworkSearchPaths);
+    
+
+    //NSArray *frameworks = [NSBundle allFrameworks];
+    //NSLog(@"%@", frameworks);
+    
+    //    for (id configuration in frameworkSearchPaths) {
+//        NSLog(@"%@", configuration);
+//        if (![configuration isEqualToString:@"$(inherited)"]) {
+//            NSLog(@"%@", [self resolvePath:configuration]);
+//        }
+//    }
+//    NSString* path = @(getenv("SYSTEM_APPS_DIR"));
+//    NSLog(@"SYSTEM_APPS_DIR = %@", path);
+    
+//    for (id member in resources) {
+//        NSLog(@"%@ %@", member, NSStringFromClass([member class]));
+//    }
+    
     return nil;
+}
+
++ (NSArray *)allImportStatementsInCurrentWorkspace {
+    NSMutableArray *importStatements = [NSMutableArray array];
+    [importStatements addObjectsFromArray:[self projectImportStatements]];
+    [importStatements addObjectsFromArray:[self frameworkImportStatements]];
+    return importStatements.copy;
+}
+
++ (NSArray *)frameworkImportStatements {
+    NSString *filePath = [MHXcodeDocumentNavigator currentWorkspacePath];
+    XCWorkspace *workspace = [XCWorkspace workspaceWithFilePath:filePath];
+    XCProject *project = [workspace.projects firstObject];
+    XCTarget *target = [project.targets firstObject];
+    NSArray *frameworkNames = [[target frameworks] valueForKey:@"name"];
+
+    __block NSMutableArray *importStatements = [NSMutableArray array];
+    [frameworkNames enumerateObjectsUsingBlock:^(NSString *frameworkName, NSUInteger idx, BOOL *stop) {
+        NSString *frameworkPath = [MHXcodeDocumentNavigator pathForFrameworkNamed:frameworkName];
+        NSString *headersDirectory = [frameworkPath stringByAppendingPathComponent:@"Headers/"];
+        NSArray *headerPaths = [NSFileManager findFilesWithExtension:@"h" inDirectory:headersDirectory];
+        [headerPaths enumerateObjectsUsingBlock:^(NSString *headerPath, NSUInteger idx, BOOL *stop) {
+            MHFrameworkImportStatement *statement = [MHFrameworkImportStatement statementWithFrameworkHeaderPath:headerPath];
+            if (statement) {
+                [importStatements addObject:statement];
+            }
+        }];
+    }];
+
+    return importStatements;
+}
+
++ (NSArray *)projectImportStatements {
+    NSString *filePath = [MHXcodeDocumentNavigator currentWorkspacePath];
+    XCWorkspace *workspace = [XCWorkspace workspaceWithFilePath:filePath];
+    NSMutableArray *headers = [NSMutableArray array];
+    [workspace.projects enumerateObjectsUsingBlock:^(XCProject *project, NSUInteger idx, BOOL *stop) {
+        [headers addObjectsFromArray:[project.headerFiles valueForKey:@"pathRelativeToProjectRoot"]];
+    }];
+    
+    NSMutableArray *importStatements = [NSMutableArray array];
+    [headers enumerateObjectsUsingBlock:^(NSString *headerPath, NSUInteger idx, BOOL *stop) {
+        MHProjectImportStatement *statement = [MHProjectImportStatement statementWithHeaderPath:headerPath];
+        if(statement) [importStatements addObject:statement];
+    }];
+    
+    return importStatements.copy;
 }
 
 - (NSDictionary *) parseInterfacesForHeaders:(NSArray *)headers {
@@ -65,8 +139,6 @@
         if (interfaceMatches.count > 0) {
             NSString *header = [headerPath lastPathComponent];
             return header;
-            
-            
         }
     }
     return nil;

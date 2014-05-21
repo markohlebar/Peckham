@@ -12,6 +12,7 @@
 #import "MHFile.h"
 #import "MHHeaderCache.h"
 #import "NSTextView+Operations.h"
+#import "MHImportStatement.h"
 
 @interface MHImportListViewController () <NSPopoverDelegate, MHImportListViewDelegate>
 @property (nonatomic, strong) NSPopover *popover;
@@ -67,13 +68,13 @@
     _headers = headers;
     
     MHImportListView *listView = (MHImportListView *)self.popover.contentViewController.view;
-    listView.headers = headers;
+    listView.imports = headers;
     listView.delegate = self;
 }
 
 - (NSArray *)allHeadersSortedAlphabetically {
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"lastPathComponent" ascending:YES];
-    return [[MHHeaderCache allHeadersInCurrentWorkspace] sortedArrayUsingDescriptors:@[descriptor]];
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"value" ascending:YES];
+    return [[MHHeaderCache allImportStatementsInCurrentWorkspace] sortedArrayUsingDescriptors:@[descriptor]];
 }
 
 + (instancetype)present {
@@ -98,15 +99,16 @@
 
 #pragma mark MHFile 
 
-- (void) addImport:(NSString *) header {
+
+- (void) addImport:(MHImportStatement *)statement {
     MHFile *file = [MHFile fileWithCurrentFilePath];
-    [file addImport:[NSString stringWithFormat:@"#import \"%@\"", header]];
+    [file addImport:statement];
 }
 
 #pragma mark - MHImportListViewDelegate
 
-- (void)importList:(MHImportListView *)importList didSelectHeader:(NSString *)headerPath {
-    [self addImport:[headerPath lastPathComponent]];
+- (void)importList:(MHImportListView *)importList didSelectImport:(MHImportStatement *)importStatement {
+    [self addImport:importStatement];
     [self dismiss];
 }
 

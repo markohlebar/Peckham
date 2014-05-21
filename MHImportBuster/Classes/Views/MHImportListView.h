@@ -9,13 +9,15 @@
 #import <Cocoa/Cocoa.h>
 #import "MHTableView.h"
 
+@class MHImportStatement;
 @class MHImportListView;
 @protocol MHImportListViewDelegate <NSObject>
 @required
--(void) importList:(MHImportListView *)importList didSelectHeader:(NSString *)headerPath;
+-(void) importList:(MHImportListView *)importList
+   didSelectImport:(MHImportStatement *)importStatement;
 @end
 
 @interface MHImportListView : NSView <MHTableViewDelegate, NSTableViewDataSource>
-@property (nonatomic, strong) NSArray *headers;
+@property (nonatomic, strong) NSArray *imports;
 @property (nonatomic, weak) id <MHImportListViewDelegate> delegate;
 @end

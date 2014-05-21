@@ -74,12 +74,9 @@
     return (DVTSourceTextStorage*)textView.textStorage;
 }
 
-- (void)addImport:(NSString *)import {
+- (void)addImport:(MHImportStatement *)statement {
     DVTSourceTextStorage *textStorage = [self currentTextStorage];
     if (textStorage) {
-        MHStatementParser *parser = [MHStatementParser new];
-        NSArray *statements = [parser parseText:import error:nil];
-        MHImportStatement *statement = [statements firstObject];
         NSOperation *operation = [MHAddImportOperation operationWithSource:textStorage
                                                                importToAdd:statement];
         [operation start];

@@ -183,6 +183,8 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
 
 - (void)showImportList:(NSNotification *)notification {
     [MHImportListViewController present];
+    
+    [MHHeaderCache allFrameworksInCurrentWorkspace];
 }
 
 - (void)removeDuplicateImports {

@@ -8,7 +8,7 @@
 
 #import <Kiwi/Kiwi.h>
 #import "MHStatementParser.h"
-
+#import "MHImportStatement.h"
 
 SPEC_BEGIN(MHStatementParserSpec)
 
@@ -104,6 +104,46 @@ describe(@"Parsing implementation file", ^{
     
     it(@"Should return array with 1 root statement", ^{
         [[expectFutureValue(outArray) shouldEventually] haveCountOfAtLeast:1];
+    });
+});
+
+describe(@"Bug_1", ^{
+    __block NSArray *statements = nil;
+    __block MHStatementParser *parser = nil;
+    
+    beforeEach(^{
+        parser = [MHStatementParser new];
+    });
+    
+    it(@"Should find a header if a static string is above the header statement", ^{
+        NSString *filePath = [[NSBundle bundleForClass:self.class] pathForResource:@"Bug_1" ofType:@"m"];
+        NSString *text = [NSString stringWithContentsOfFile:filePath
+                                                   encoding:NSUTF8StringEncoding
+                                                      error:nil];
+        statements = [parser parseText:text
+                                 error:nil
+                      statementClasses:@[[MHProjectImportStatement class], [MHFrameworkImportStatement class]]];
+        [[statements should] haveCountOf:1];
+    });
+});
+
+describe(@"Bug_2", ^{
+    __block NSArray *statements = nil;
+    __block MHStatementParser *parser = nil;
+    
+    beforeEach(^{
+        parser = [MHStatementParser new];
+    });
+    
+    it(@"Should find a header if a static string is above the header statement", ^{
+        NSString *filePath = [[NSBundle bundleForClass:self.class] pathForResource:@"Bug_2" ofType:@"m"];
+        NSString *text = [NSString stringWithContentsOfFile:filePath
+                                                   encoding:NSUTF8StringEncoding
+                                                      error:nil];
+        statements = [parser parseText:text
+                                 error:nil
+                      statementClasses:@[[MHProjectImportStatement class], [MHFrameworkImportStatement class]]];
+        [[statements should] haveCountOf:1];
     });
 });
 

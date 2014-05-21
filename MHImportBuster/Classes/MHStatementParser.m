@@ -15,11 +15,13 @@
 #import "NSString+Files.h"
 #import "PKTokenizer+Factory.h"
 #import "MHPropertyStatement.h"
+#import "MHStringLiteralStatement.h"
+
+@interface MHStatementParser ()
+@property (nonatomic, strong) NSArray *registeredStatementClasses;
+@end
 
 @implementation MHStatementParser
-{
-    NSArray *_registeredStatementClasses;
-}
 
 + (instancetype)parseFileAtPath:(NSString *)filePath
                         success:(MHArrayBlock)successBlock
@@ -63,8 +65,16 @@
 	return self;
 }
 
+- (void) setRegisteredStatementClasses:(NSArray *)registeredStatementClasses {
+    _registeredStatementClasses = registeredStatementClasses;
+    
+    if (![_registeredStatementClasses containsObject:[MHStringLiteralStatement class]]) {
+        _registeredStatementClasses = [_registeredStatementClasses arrayByAddingObject:[MHStringLiteralStatement class]];
+    }
+}
+
 - (NSArray*)parseText:(NSString *)text error:(NSError **)error statementClasses:(NSArray *)statementClasses {
-    _registeredStatementClasses = statementClasses;
+    self.registeredStatementClasses = statementClasses;
     
     __block PKTokenizer *tokenizer = [PKTokenizer defaultTokenizer];
 	NSMutableArray *statements = [NSMutableArray array];
@@ -76,7 +86,7 @@
 	    tokenizer.string = line;
 	    [tokenizer enumerateTokensUsingBlock: ^(PKToken *token, BOOL *stop) {
 	        //if this is the first token in the list or there is more than 1.
-            if (!candidateStatements) {
+            if (candidateStatements.count == 0) {
                 candidateStatements = [self statementsForPrimaryToken:token];
             }
             

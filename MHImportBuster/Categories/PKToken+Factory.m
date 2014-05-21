@@ -71,7 +71,7 @@
 +(PKToken*) at {
     static PKToken *_at = nil;
     if  (!_at) {
-        _at = [PKToken tokenWithTokenType:PKTokenTypeSymbol
+        _at = [PKToken tokenWithTokenType:PKTokenTypeWord
                               stringValue:@"@"
                                floatValue:0];
     }
@@ -114,6 +114,16 @@
         _hash = [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                  stringValue:@"#"
                                   floatValue:0];
+    }
+    return _hash;
+}
+
++(PKToken*) doubleQuote {
+    static PKToken *_hash = nil;
+    if  (!_hash) {
+        _hash = [PKToken tokenWithTokenType:PKTokenTypeSymbol
+                                stringValue:@"\""
+                                 floatValue:0];
     }
     return _hash;
 }

@@ -7,7 +7,6 @@
 //
 
 #import "MHImportListView.h"
-#import <XcodeEditor/XcodeEditor.h>
 #import <Carbon/Carbon.h>
 #import "NSString+Extensions.h"
 
@@ -19,12 +18,12 @@
 @implementation MHImportListView
 {
     NSMutableString *_currentString;
-    NSMutableArray *_filteredHeaders;
+    NSMutableArray *_filteredImports;
 }
 
 - (void)awakeFromNib {
     _currentString = [NSMutableString new];
-    _filteredHeaders = [NSMutableArray new];
+    _filteredImports = [NSMutableArray new];
 }
 
 - (void)resetCurrentString {
@@ -33,9 +32,9 @@
 
 #pragma mark - Setters
 
-- (void) setHeaders:(NSArray *)headers {
-    _headers = headers;
-    [_filteredHeaders setArray:headers];
+- (void) setImports:(NSArray *)headers {
+    _imports = headers;
+    [_filteredImports setArray:headers];
     [_tableView reloadData];
     [self resetCurrentString];
 }
@@ -43,8 +42,8 @@
 #pragma mark - NSTableViewDataSource
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    if(_filteredHeaders.count > 0) {
-        NSString *header = [_filteredHeaders[row] lastPathComponent];
+    if(_filteredImports.count > 0) {
+        NSString *header = [_filteredImports[row] value];
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:header];
         if (_currentString.length > 0) {
             NSRange range = [header rangeOfString:_currentString options:NSCaseInsensitiveSearch];
@@ -68,7 +67,7 @@
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
-    return _filteredHeaders.count > 0 ? _filteredHeaders.count : 1;
+    return _filteredImports.count > 0 ? _filteredImports.count : 1;
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
@@ -97,23 +96,23 @@
     }
     else if (key.keyCode == kVK_Return) {
         if (selectedRow != -1 &&
-            _filteredHeaders.count > 0) {
+            _filteredImports.count > 0) {
             [_delegate importList:self
-                  didSelectHeader:_filteredHeaders[selectedRow]];
+                  didSelectImport:_filteredImports[selectedRow]];
         }
     }
 }
 
 - (void) updateData {
-    NSArray *filteredHeaders = [self headersForCurrentString];
+    NSArray *filteredImports = [self importsForCurrentString];
     if (_currentString.length > 0 ) {
-        if (![filteredHeaders isEqual:_filteredHeaders]) {
-            [_filteredHeaders setArray:filteredHeaders];
+        if (![filteredImports isEqual:_filteredImports]) {
+            [_filteredImports setArray:filteredImports];
             [self selectRow:0];
         }
     }
     else {
-        [self setHeaders:_headers];
+        [self setImports:_imports];
     }
     [self.tableView reloadData];
 }
@@ -121,11 +120,12 @@
 - (void) selectRow:(NSInteger) row {
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row]
                 byExtendingSelection:NO];
+    [self.tableView scrollRowToVisible:row];
 }
 
-- (NSArray*)headersForCurrentString {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.lastPathComponent CONTAINS[cd] %@", _currentString];
-    return [_headers filteredArrayUsingPredicate:predicate];
+- (NSArray*)importsForCurrentString {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.value CONTAINS[cd] %@", _currentString];
+    return [_imports filteredArrayUsingPredicate:predicate];
 }
 
 @end

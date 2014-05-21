@@ -37,5 +37,6 @@
  *
  *  @return a file path with added suffix
  */
--(NSString*) filePathByAddingSuffix:(NSString*) suffix;
+- (NSString *)filePathByAddingSuffix:(NSString*) suffix;
+
 @end

@@ -182,6 +182,20 @@ describe(@"PKToken_Factory", ^{
             [[theValue(token == token2) should] equal:@YES];
         });
     });
+    
+    context(@"\" symbol", ^{
+        it(@"Should create an - symbol token", ^{
+            PKToken *token = [PKToken doubleQuote];
+            [[token.value should] equal:@"\""];
+            [[theValue(token.tokenType) should] equal:theValue(PKTokenTypeSymbol)];
+        });
+        
+        it(@"Should reuse the token", ^{
+            PKToken *token = [PKToken doubleQuote];
+            PKToken *token2 = [PKToken doubleQuote];
+            [[theValue(token == token2) should] equal:@YES];
+        });
+    });
 });
 
 SPEC_END

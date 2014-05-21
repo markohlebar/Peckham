@@ -56,4 +56,5 @@
     filePath = [filePath stringByAppendingString:suffix];
     return extension ? [filePath stringByAppendingPathExtension:extension] : filePath;
 }
+
 @end
