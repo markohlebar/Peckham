@@ -184,6 +184,14 @@
 /* Begin PBXFileReference section */
 		1E6C46054B3049289C35CE1F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHImportBusterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96067BEF192C80F20095AEFF /* Bug_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bug_1.m; sourceTree = "<group>"; };
+		96067BF0192C80F20095AEFF /* Bug_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bug_2.m; sourceTree = "<group>"; };
+		96067BF1192C80F20095AEFF /* FileHandleInsertTestFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = FileHandleInsertTestFile; sourceTree = "<group>"; };
+		96067BF2192C80F20095AEFF /* FileHandleTestFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = FileHandleTestFile; sourceTree = "<group>"; };
+		96067BF3192C80F20095AEFF /* MHStringLiteralStatementSpec */ = {isa = PBXFileReference; lastKnownFileType = text; path = MHStringLiteralStatementSpec; sourceTree = "<group>"; };
+		96067BF4192C80F20095AEFF /* MyClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyClass.h; sourceTree = "<group>"; };
+		96067BF5192C80F20095AEFF /* MyClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyClass.m; sourceTree = "<group>"; };
+		96067BF6192C80F20095AEFF /* MyClass_duplicateImports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyClass_duplicateImports.h; sourceTree = "<group>"; };
 		9611423F18A6504400E03589 /* NSString+MHNSRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MHNSRange.h"; sourceTree = "<group>"; };
 		9611424018A6504400E03589 /* NSString+MHNSRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MHNSRange.m"; sourceTree = "<group>"; };
 		9611424418A650C100E03589 /* NSString_MHNSRangeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSString_MHNSRangeSpec.m; path = Categories/NSString_MHNSRangeSpec.m; sourceTree = "<group>"; };
@@ -399,6 +407,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96067BEE192C80F20095AEFF /* TestFiles */ = {
+			isa = PBXGroup;
+			children = (
+				96067BEF192C80F20095AEFF /* Bug_1.m */,
+				96067BF0192C80F20095AEFF /* Bug_2.m */,
+				96067BF1192C80F20095AEFF /* FileHandleInsertTestFile */,
+				96067BF2192C80F20095AEFF /* FileHandleTestFile */,
+				96067BF3192C80F20095AEFF /* MHStringLiteralStatementSpec */,
+				96067BF4192C80F20095AEFF /* MyClass.h */,
+				96067BF5192C80F20095AEFF /* MyClass.m */,
+				96067BF6192C80F20095AEFF /* MyClass_duplicateImports.h */,
+			);
+			path = TestFiles;
+			sourceTree = "<group>";
+		};
 		9611424318A6509800E03589 /* Category Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -771,6 +794,7 @@
 		AD6A1FDA1876B5BD00E4137F /* MHImportBusterTests */ = {
 			isa = PBXGroup;
 			children = (
+				96067BEE192C80F20095AEFF /* TestFiles */,
 				AD6A1FDB1876B5BD00E4137F /* Supporting Files */,
 				96D89DF918A7B91D0087D248 /* Statements Tests */,
 				96D89DE718A7A4570087D248 /* Operations Tests */,

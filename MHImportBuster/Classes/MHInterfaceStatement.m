@@ -18,7 +18,7 @@
 	if (![self containsCannonicalTokens]) {
 		return nil;
 	}
-	return [_tokens[1] stringValue];
+	return [_tokens[2] stringValue];
 }
 
 + (NSArray *)cannonicalTokens {

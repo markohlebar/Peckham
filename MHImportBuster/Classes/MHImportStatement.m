@@ -7,6 +7,8 @@
 //
 
 #import "MHImportStatement.h"
+#import "PKToken+Factory.h"
+
 @implementation MHImportStatement
 - (id)value {
 	if (![self containsCannonicalTokens]) {
@@ -16,10 +18,14 @@
 	if (!_value) {
 		__block NSMutableString *value = [NSMutableString string];
 		[_tokens enumerateObjectsUsingBlock: ^(PKToken *token, NSUInteger idx, BOOL *stop) {
-            [value appendString:token.stringValue];
-            if ([token.stringValue isEqual:@"import"]) {
-		        [value appendString:@" "];
-			}
+            if (![token isEqual:[PKToken whitespace]]) {
+                NSString *tokenString = token.stringValue;
+                [value appendString:tokenString];
+                
+                if ([tokenString isEqual:@"import"]) {
+                    [value appendString:@" "];
+                }
+            }
 		}];
 		_value = value;
 	}

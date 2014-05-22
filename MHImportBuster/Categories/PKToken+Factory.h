@@ -101,4 +101,11 @@
  *  @return a token
  */
 +(PKToken*) doubleQuote;
+
+/**
+ *  Returns a whitespace symbol
+ *
+ *  @return a token
+ */
++(PKToken*) whitespace;
 @end

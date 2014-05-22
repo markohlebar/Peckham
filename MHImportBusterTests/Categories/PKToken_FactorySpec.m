@@ -117,7 +117,7 @@ describe(@"PKToken_Factory", ^{
         it(@"Should create an @ symbol token", ^{
             PKToken *token = [PKToken at];
             [[token.value should] equal:@"@"];
-            [[theValue(token.tokenType) should] equal:theValue(PKTokenTypeSymbol)];
+            [[theValue(token.tokenType) should] equal:theValue(PKTokenTypeWord)];
         });
         
         it(@"Should reuse the token", ^{
@@ -156,7 +156,7 @@ describe(@"PKToken_Factory", ^{
     });
     
     context(@"- symbol", ^{
-        it(@"Should create an - symbol token", ^{
+        it(@"Should create a - symbol token", ^{
             PKToken *token = [PKToken minus];
             [[token.value should] equal:@"-"];
             [[theValue(token.tokenType) should] equal:theValue(PKTokenTypeSymbol)];
@@ -170,7 +170,7 @@ describe(@"PKToken_Factory", ^{
     });
     
     context(@"# symbol", ^{
-        it(@"Should create an - symbol token", ^{
+        it(@"Should create a # symbol token", ^{
             PKToken *token = [PKToken hash];
             [[token.value should] equal:@"#"];
             [[theValue(token.tokenType) should] equal:theValue(PKTokenTypeSymbol)];
@@ -184,7 +184,7 @@ describe(@"PKToken_Factory", ^{
     });
     
     context(@"\" symbol", ^{
-        it(@"Should create an - symbol token", ^{
+        it(@"Should create an \" symbol token", ^{
             PKToken *token = [PKToken doubleQuote];
             [[token.value should] equal:@"\""];
             [[theValue(token.tokenType) should] equal:theValue(PKTokenTypeSymbol)];
@@ -193,6 +193,20 @@ describe(@"PKToken_Factory", ^{
         it(@"Should reuse the token", ^{
             PKToken *token = [PKToken doubleQuote];
             PKToken *token2 = [PKToken doubleQuote];
+            [[theValue(token == token2) should] equal:@YES];
+        });
+    });
+    
+    context(@"whitespace symbol", ^{
+        it(@"Should create an whitespace symbol token", ^{
+            PKToken *token = [PKToken whitespace];
+            [[token.value should] equal:@" "];
+            [[theValue(token.tokenType) should] equal:theValue(PKTokenTypeSymbol)];
+        });
+        
+        it(@"Should reuse the token", ^{
+            PKToken *token = [PKToken whitespace];
+            PKToken *token2 = [PKToken whitespace];
             [[theValue(token == token2) should] equal:@YES];
         });
     });

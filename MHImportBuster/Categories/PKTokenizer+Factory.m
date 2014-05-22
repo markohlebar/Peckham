@@ -16,9 +16,9 @@
                                    from:'"'
                                      to:'"'];
     
-//    [defaultTokenizer setTokenizerState:(PKTokenizerState *)defaultTokenizer.wordState
-//                                   from:0
-//                                     to:' '];
+    [defaultTokenizer setTokenizerState:(PKTokenizerState *)defaultTokenizer.symbolState
+                                   from:0
+                                     to:' '];
     
     //sets the parsing of anything that starts with a # as a word
 //    [defaultTokenizer setTokenizerState:(PKTokenizerState *)defaultTokenizer.wordState

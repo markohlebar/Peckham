@@ -33,7 +33,9 @@
                                                        error:nil
                                             statementClasses:@[[MHFrameworkImportStatement class],
                                                                [MHProjectImportStatement class]]];
-    NSLog(@"%@", statements);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MHImportStatement class]];
+    statements = [statements filteredArrayUsingPredicate:predicate];
+    
     __block NSInteger lastLine = 0;
     __weak MHAddImportOperation* weakSelf = self;
     [statements enumerateObjectsUsingBlock:^(MHImportStatement *statement, NSUInteger idx, BOOL *stop) {

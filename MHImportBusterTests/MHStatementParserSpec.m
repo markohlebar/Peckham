@@ -74,10 +74,10 @@ describe(@"Parsing implementation file", ^{
     __block NSNumber *isSuccessInvoked = @NO;
     __block NSNumber *isErrorInvoked = @NO;
     __block NSArray *outArray = nil;
-
+    
     MHArrayBlock successBlock = ^(NSArray *array){
         outArray = array;
-         isSuccessInvoked = @YES;
+        isSuccessInvoked = @YES;
     };
     MHErrorBlock errorBlock = ^(NSError *error){
         isErrorInvoked = @YES;
@@ -123,7 +123,8 @@ describe(@"Bug_1", ^{
         statements = [parser parseText:text
                                  error:nil
                       statementClasses:@[[MHProjectImportStatement class], [MHFrameworkImportStatement class]]];
-        [[statements should] haveCountOf:1];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MHImportStatement class]];
+        [[[statements filteredArrayUsingPredicate:predicate] should] haveCountOf:1];
     });
 });
 
@@ -143,7 +144,8 @@ describe(@"Bug_2", ^{
         statements = [parser parseText:text
                                  error:nil
                       statementClasses:@[[MHProjectImportStatement class], [MHFrameworkImportStatement class]]];
-        [[statements should] haveCountOf:1];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MHImportStatement class]];
+        [[[statements filteredArrayUsingPredicate:predicate] should] haveCountOf:1];
     });
 });
 

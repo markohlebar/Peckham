@@ -15,8 +15,7 @@ SPEC_BEGIN(MHImportStatementSpec)
 describe(@"Framework headers", ^{
     __block MHImportStatement *statement = nil;
     beforeEach(^{
-        statement = [MHFrameworkImportStatement statement];
-        feedStatement(statement, @"#import <Framework/Header.h>\n");
+        statement = [MHFrameworkImportStatement statementWithString:@"#import <Framework/Header.h>"];
     });
     
     it(@"Should return value #import <Framework/Header.h>", ^{
@@ -27,8 +26,7 @@ describe(@"Framework headers", ^{
 describe(@"Project headers", ^{
     __block MHImportStatement *statement = nil;
     beforeEach(^{
-        statement = [MHProjectImportStatement statement];
-        feedStatement(statement, @"#import \"Subpath/Header.h\"\n");
+        statement = [MHProjectImportStatement statementWithString:@"#import \"Subpath/Header.h\""];
     });
 
     it(@"Should return value #import \"Subpath/Header.h\"", ^{
@@ -39,8 +37,7 @@ describe(@"Project headers", ^{
 describe(@"Project headers with no subpath", ^{
     __block MHImportStatement *statement = nil;
     beforeEach(^{
-        statement = [MHProjectImportStatement statement];
-        feedStatement(statement, @"#import \"Header.h\"\n");
+        statement = [MHProjectImportStatement statementWithString:@"#import \"Header.h\""];
     });
     
     it(@"Should return value #import \"Header.h\"", ^{
@@ -51,8 +48,7 @@ describe(@"Project headers with no subpath", ^{
 describe(@"Headers with stange formatting", ^{
     __block MHImportStatement *statement = nil;
     beforeEach(^{
-        statement = [MHProjectImportStatement statement];
-        feedStatement(statement, @"    #    import         \"Header.h\"\n");
+        statement = [MHProjectImportStatement statementWithString:@"    #    import         \"Header.h\""];
     });
     
     it(@"Should return value #import \"Header.h\"", ^{

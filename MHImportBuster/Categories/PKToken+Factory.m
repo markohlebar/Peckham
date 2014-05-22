@@ -119,13 +119,28 @@
 }
 
 +(PKToken*) doubleQuote {
-    static PKToken *_hash = nil;
-    if  (!_hash) {
-        _hash = [PKToken tokenWithTokenType:PKTokenTypeSymbol
+    static PKToken *_doubleQuote = nil;
+    if  (!_doubleQuote) {
+        _doubleQuote = [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                 stringValue:@"\""
                                  floatValue:0];
     }
-    return _hash;
+    return _doubleQuote;
+}
+
+/**
+ *  Returns a whitespace symbol
+ *
+ *  @return a token
+ */
++(PKToken*) whitespace {
+    static PKToken *_whitespace = nil;
+    if  (!_whitespace) {
+        _whitespace = [PKToken tokenWithTokenType:PKTokenTypeSymbol
+                                       stringValue:@" "
+                                        floatValue:0];
+    }
+    return _whitespace;
 }
 
 @end

@@ -25,7 +25,9 @@
             *stop = YES;
             return;
         }
-	    [string appendString:token.stringValue];
+        if (![token isEqual:[PKToken whitespace]]) {
+            [string appendString:token.stringValue];
+        }
 	}];
 	return string;
 }
