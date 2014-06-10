@@ -79,8 +79,9 @@
 }
 
 - (NSArray *)allHeadersSortedAlphabetically {
-    _projectHeaders = [MHHeaderCache projectHeaders];
-    _frameworkHeaders = [MHHeaderCache frameworkHeaders];
+    MHHeaderCache *cache = [MHHeaderCache sharedCache];
+    _projectHeaders = [cache projectHeaders];
+    _frameworkHeaders = [cache frameworkHeaders];
     return [_projectHeaders arrayByAddingObjectsFromArray:_frameworkHeaders];
 }
 

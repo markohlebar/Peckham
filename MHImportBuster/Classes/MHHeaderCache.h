@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface MHHeaderCache : NSObject
-+ (NSArray *)frameworkHeaders;
-+ (NSArray *)projectHeaders;
++ (instancetype)sharedCache;
+- (NSArray *)frameworkHeaders;
+- (NSArray *)projectHeaders;
 @end
