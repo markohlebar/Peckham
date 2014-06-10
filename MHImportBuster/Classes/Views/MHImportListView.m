@@ -24,6 +24,8 @@
 - (void)awakeFromNib {
     _currentString = [NSMutableString new];
     _filteredImports = [NSMutableArray new];
+    
+    [self.tableView setDoubleAction:@selector(onDoubleClick:)];
 }
 
 - (void)resetCurrentString {
@@ -41,9 +43,13 @@
 
 #pragma mark - NSTableViewDataSource
 
+- (void)onDoubleClick:(NSTableView *)sender {
+    [self onSelectedRow:sender.clickedRow];
+}
+
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     if(_filteredImports.count > 0) {
-        NSString *header = [_filteredImports[row] value];
+        NSString *header =  [self.delegate importList:self formattedImport:_filteredImports[row]];
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:header];
         if (_currentString.length > 0) {
             NSRange range = [header rangeOfString:_currentString options:NSCaseInsensitiveSearch];
@@ -95,12 +101,17 @@
         [self updateData];
     }
     else if (key.keyCode == kVK_Return) {
-        if (selectedRow != -1 &&
-            _filteredImports.count > 0) {
-            [_delegate importList:self
-                  didSelectImport:_filteredImports[selectedRow]];
-        }
+        [self onSelectedRow:selectedRow];
     }
+}
+
+- (void)onSelectedRow:(NSInteger) selectedRow {
+    if (selectedRow != -1 &&
+        _filteredImports.count > 0) {
+        [_delegate importList:self
+              didSelectImport:_filteredImports[selectedRow]];
+    }
+
 }
 
 - (void) updateData {
@@ -124,7 +135,7 @@
 }
 
 - (NSArray*)importsForCurrentString {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.value CONTAINS[cd] %@", _currentString];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", _currentString];
     return [_imports filteredArrayUsingPredicate:predicate];
 }
 

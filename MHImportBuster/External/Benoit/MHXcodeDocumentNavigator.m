@@ -188,12 +188,22 @@ static NSString * const MHFrameworkExtension = @"framework";
     return [[document fileURL] path];
 }
 
-+ (NSString *) pathForFrameworkNamed:(NSString *)frameworkName {
-    if (![[frameworkName pathExtension] isEqualToString:MHFrameworkExtension]) {
-        frameworkName = [frameworkName stringByAppendingPathExtension:MHFrameworkExtension];
++ (NSArray *)frameworkRoots {
+    return @[
+             @"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/",
+             @"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/"
+             ];
+}
+
++ (NSString *)pathForFrameworkNamed:(NSString *)frameworkName {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    for (NSString *frameworkRoot in [self frameworkRoots]) {
+        NSString *path = [frameworkRoot stringByAppendingPathComponent:frameworkName];
+        if ([fileManager fileExistsAtPath:path]) {
+            return path;
+        }
     }
-    
-    return [MHSystemFrameworksPath stringByAppendingPathComponent:frameworkName];
+    return nil;
 }
 
 @end

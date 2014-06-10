@@ -21,4 +21,11 @@
     NSCharacterSet *unwantedCharacters = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
     return [self rangeOfCharacterFromSet:unwantedCharacters].location == NSNotFound;
 }
+
+-(BOOL)isWhitespaceOrNewline {
+    NSString *string = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+    string = [self stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return string.length == 0;
+}
+
 @end

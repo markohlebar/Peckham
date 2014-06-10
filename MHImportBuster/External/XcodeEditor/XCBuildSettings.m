@@ -13,7 +13,13 @@
 
 static NSString * const XCBuildSettingsCommandFormat = @"xcodebuild -project %@ -target %@ -showBuildSettings";
 
+NSString *const XCBuildSettingsSDKROOTKey =            @"SDKROOT";
+
+
 @implementation XCBuildSettings
+{
+    NSDictionary *_settings;
+}
 
 + (instancetype)buildSettingsWithTarget:(XCTarget *)target
 {
@@ -31,10 +37,17 @@ static NSString * const XCBuildSettingsCommandFormat = @"xcodebuild -project %@ 
 
 - (NSDictionary *)settings
 {
-    NSString *projectPath = [_target.project filePath];
-    NSString *command = [NSString stringWithFormat:XCBuildSettingsCommandFormat, projectPath, _target.name];
-    NSString *output = [command xcRunAsCommand];
-    return [output xcSettingsDictionary];
+    if(!_settings) {
+        NSString *projectPath = [_target.project filePath];
+        NSString *command = [NSString stringWithFormat:XCBuildSettingsCommandFormat, projectPath, _target.name];
+        NSString *output = [command xcRunAsCommand];
+        _settings = [output xcSettingsDictionary];
+    }
+    return _settings;
+}
+
+- (id) valueForKey:(NSString *)key {
+    return self.settings[key];
 }
 
 @end

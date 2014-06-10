@@ -13,12 +13,16 @@
 #import "MHHeaderCache.h"
 #import "NSTextView+Operations.h"
 #import "MHImportStatement.h"
+#import "MHImportStatement+Construction.h"
 
 @interface MHImportListViewController () <NSPopoverDelegate, MHImportListViewDelegate>
 @property (nonatomic, strong) NSPopover *popover;
 @end
 
 @implementation MHImportListViewController
+{
+    NSDictionary *_currentHeadersDictionary;
+}
 
 + (instancetype)sharedInstance {
     static MHImportListViewController *_viewController = nil;
@@ -73,8 +77,14 @@
 }
 
 - (NSArray *)allHeadersSortedAlphabetically {
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"value" ascending:YES];
-    return [[MHHeaderCache allImportStatementsInCurrentWorkspace] sortedArrayUsingDescriptors:@[descriptor]];
+    _currentHeadersDictionary = [MHHeaderCache headersInCurrentWorkspace];
+    NSArray *headers = [_currentHeadersDictionary allValues];
+    NSMutableArray *allHeaders = [NSMutableArray array];
+    [headers enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger idx, BOOL *stop) {
+        [allHeaders addObjectsFromArray:array];
+    }];
+    [allHeaders sortUsingSelector:@selector(compare:)];
+    return allHeaders.copy;
 }
 
 + (instancetype)present {
@@ -107,9 +117,24 @@
 
 #pragma mark - MHImportListViewDelegate
 
-- (void)importList:(MHImportListView *)importList didSelectImport:(MHImportStatement *)importStatement {
-    [self addImport:importStatement];
+- (MHImportStatement *)importStatementForImport:(NSString *)import {
+    NSArray *projectHeaders = _currentHeadersDictionary[MHHeaderCacheProjectHeaders];
+    if ([projectHeaders containsObject:import]) {
+        return [MHImportStatement statementWithHeaderPath:import];
+    }
+    else {
+        return [MHImportStatement statementWithFrameworkHeaderPath:import];
+    }
+}
+
+- (void)importList:(MHImportListView *)importList didSelectImport:(NSString *)import {
+    [self addImport:[self importStatementForImport:import]];
     [self dismiss];
+}
+
+- (NSString *)importList:(MHImportListView *)importList formattedImport:(NSString *)import {
+    NSString *formattedImport = [self importStatementForImport:import].value;
+    return formattedImport ? formattedImport : import;
 }
 
 @end

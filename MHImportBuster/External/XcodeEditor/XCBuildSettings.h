@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const XCBuildSettingsSDKROOTKey;
+
 @class XCTarget;
 @interface XCBuildSettings : NSObject
 @property (nonatomic, strong, readonly) XCTarget *target;
 @property (nonatomic, readonly) NSDictionary *settings;
 + (instancetype)buildSettingsWithTarget:(XCTarget *)target;
+- (id) valueForKey:(NSString *)key;
 @end

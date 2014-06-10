@@ -12,4 +12,5 @@
 -(BOOL) containsString:(NSString*) string;
 -(NSString*) stringByRemovingWhitespaces;
 -(BOOL)isAlphaNumeric;
+-(BOOL)isWhitespaceOrNewline;
 @end

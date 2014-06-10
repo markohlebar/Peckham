@@ -26,13 +26,13 @@ describe(@"MHAddImportOperation", ^{
     
     it(@"Should add an import after other source imports", ^{
         [operation execute];
-        [[operation.source.string should] equal:@"#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n#import \"newImport.h\"\n"];
+        [[operation.source.string shouldEventually] equal:@"#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n#import \"newImport.h\"\n"];
     });
     
     it(@"Should not add another import if the import exists already", ^{
         [operation execute];
         [operation execute];
-        [[operation.source.string should] equal:@"#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n#import \"newImport.h\"\n"];
+        [[operation.source.string shouldEventually] equal:@"#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n#import \"newImport.h\"\n"];
     });
 });
 

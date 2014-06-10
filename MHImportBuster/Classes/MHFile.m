@@ -20,6 +20,10 @@
 #import "MHAddImportOperation.h"
 
 @implementation MHFile
+{
+    NSOperationQueue *_operationQueue;
+}
+
 + (instancetype)fileWithPath:(NSString *)filePath {
     Class class = nil;
 	if ([filePath isHeaderFilePath]) {
@@ -46,6 +50,7 @@
 	self = [super init];
 	if (self) {
 		_filePath = filePath.copy;
+        _operationQueue = [NSOperationQueue new];
 	}
 	return self;
 }
@@ -54,7 +59,7 @@
     DVTSourceTextStorage *textStorage = [self currentTextStorage];
     if (textStorage) {
         NSOperation *operation = [MHRemoveDuplicateImportsOperation operationWithSource:textStorage];
-        [operation start];
+        [_operationQueue addOperation:operation];
     }
 }
 
@@ -62,7 +67,7 @@
     DVTSourceTextStorage *textStorage = [self currentTextStorage];
     if (textStorage) {
         NSOperation *operation = [MHSortImportsAlphabeticallyOperation operationWithSource:textStorage];
-        [operation start];
+        [_operationQueue addOperation:operation];
     }
 }
 
@@ -79,7 +84,7 @@
     if (textStorage) {
         NSOperation *operation = [MHAddImportOperation operationWithSource:textStorage
                                                                importToAdd:statement];
-        [operation start];
+        [_operationQueue addOperation:operation];
     }
 }
 

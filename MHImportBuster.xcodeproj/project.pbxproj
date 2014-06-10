@@ -299,6 +299,7 @@
 		96E3D9BA192BF71D00600588 /* MHStringLiteralStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHStringLiteralStatementSpec.m; sourceTree = "<group>"; };
 		96EA84C31916ACDD00CBEFE4 /* MHTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTableView.h; sourceTree = "<group>"; };
 		96EA84C41916ACDD00CBEFE4 /* MHTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHTableView.m; sourceTree = "<group>"; };
+		96F2916519447098008CC5AB /* Bug_3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bug_3.m; sourceTree = "<group>"; };
 		96FB646818A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHRemoveDuplicateImportsOperation.h; sourceTree = "<group>"; };
 		96FB646918A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHRemoveDuplicateImportsOperation.m; sourceTree = "<group>"; };
 		96FC2B38191B596E000CA4EB /* NSString+XCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XCAdditions.h"; sourceTree = "<group>"; };
@@ -341,7 +342,7 @@
 		AD6A20231876B73200E4137F /* MHStatementParserSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHStatementParserSpec.m; sourceTree = "<group>"; };
 		AD6A20241876B73200E4137F /* MHStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHStatementSpec.m; sourceTree = "<group>"; };
 		AD6A20251876B73200E4137F /* MHTestTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHTestTokens.h; sourceTree = "<group>"; };
-		ADB1CF7C1876C0B000D935C7 /* MHImportBusterPlugin.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHImportBusterPlugin.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB1CF7C1876C0B000D935C7 /* Peckham.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Peckham.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB1CF7D1876C0B000D935C7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		ADB1CF7F1876C0B000D935C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		ADB1CF831876C0B000D935C7 /* MHImportBusterPlugin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MHImportBusterPlugin-Info.plist"; sourceTree = "<group>"; };
@@ -410,8 +411,7 @@
 		96067BEE192C80F20095AEFF /* TestFiles */ = {
 			isa = PBXGroup;
 			children = (
-				96067BEF192C80F20095AEFF /* Bug_1.m */,
-				96067BF0192C80F20095AEFF /* Bug_2.m */,
+				96F29166194470A6008CC5AB /* Bugs */,
 				96067BF1192C80F20095AEFF /* FileHandleInsertTestFile */,
 				96067BF2192C80F20095AEFF /* FileHandleTestFile */,
 				96067BF3192C80F20095AEFF /* MHStringLiteralStatementSpec */,
@@ -686,6 +686,16 @@
 			name = Literals;
 			sourceTree = "<group>";
 		};
+		96F29166194470A6008CC5AB /* Bugs */ = {
+			isa = PBXGroup;
+			children = (
+				96067BEF192C80F20095AEFF /* Bug_1.m */,
+				96067BF0192C80F20095AEFF /* Bug_2.m */,
+				96F2916519447098008CC5AB /* Bug_3.m */,
+			);
+			name = Bugs;
+			sourceTree = "<group>";
+		};
 		96FC2B36191B596E000CA4EB /* XcodeEditor */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,7 +739,7 @@
 			children = (
 				AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */,
 				AD6A1FD31876B5BD00E4137F /* MHImportBusterTests.xctest */,
-				ADB1CF7C1876C0B000D935C7 /* MHImportBusterPlugin.xcplugin */,
+				ADB1CF7C1876C0B000D935C7 /* Peckham.xcplugin */,
 				96872B0819163A6D0068AF7A /* MHImportBusterApp.app */,
 			);
 			name = Products;
@@ -991,9 +1001,9 @@
 			productReference = AD6A1FD31876B5BD00E4137F /* MHImportBusterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		ADB1CF7B1876C0AF00D935C7 /* MHImportBusterPlugin */ = {
+		ADB1CF7B1876C0AF00D935C7 /* Peckham */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADB1CF8D1876C0B000D935C7 /* Build configuration list for PBXNativeTarget "MHImportBusterPlugin" */;
+			buildConfigurationList = ADB1CF8D1876C0B000D935C7 /* Build configuration list for PBXNativeTarget "Peckham" */;
 			buildPhases = (
 				ADB1CF781876C0AF00D935C7 /* Sources */,
 				ADB1CF791876C0AF00D935C7 /* Frameworks */,
@@ -1004,9 +1014,9 @@
 			);
 			dependencies = (
 			);
-			name = MHImportBusterPlugin;
+			name = Peckham;
 			productName = MHImportBusterPlugin;
-			productReference = ADB1CF7C1876C0B000D935C7 /* MHImportBusterPlugin.xcplugin */;
+			productReference = ADB1CF7C1876C0B000D935C7 /* Peckham.xcplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -1038,7 +1048,7 @@
 			targets = (
 				AD6A1FBB1876B5BD00E4137F /* MHImportBuster */,
 				AD6A1FD21876B5BD00E4137F /* MHImportBusterTests */,
-				ADB1CF7B1876C0AF00D935C7 /* MHImportBusterPlugin */,
+				ADB1CF7B1876C0AF00D935C7 /* Peckham */,
 				96872B0719163A6D0068AF7A /* MHImportBusterApp */,
 			);
 		};
@@ -1622,7 +1632,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADB1CF8D1876C0B000D935C7 /* Build configuration list for PBXNativeTarget "MHImportBusterPlugin" */ = {
+		ADB1CF8D1876C0B000D935C7 /* Build configuration list for PBXNativeTarget "Peckham" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADB1CF8B1876C0B000D935C7 /* Debug */,

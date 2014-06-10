@@ -6,10 +6,15 @@
 //  Copyright (c) 2014 Marko Hlebar. All rights reserved.
 //
 
+#import <AppKit/AppKit.h>
+#import <AppKit/AppKit.h>
 #import "MHAddImportOperation.h"
 #import "MHImportStatement.h"
 #import "MHStatementParser.h"
 #import "DVTSourceTextStorage+Operations.h"
+#import "NSString+Extensions.h"
+
+NSString * const MHAddImportOperationImportRegexPattern = @".*#.*(\bimport\b|\binclude\b)*[\",<]*[\",>]";
 
 @implementation MHAddImportOperation
 
@@ -29,31 +34,61 @@
 }
 
 - (void)execute {
-    NSArray *statements = [[MHStatementParser new] parseText:self.source.string
-                                                       error:nil
-                                            statementClasses:@[[MHFrameworkImportStatement class],
-                                                               [MHProjectImportStatement class]]];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF isKindOfClass: %@", [MHImportStatement class]];
-    statements = [statements filteredArrayUsingPredicate:predicate];
+    NSInteger lastLine = [self appropriateLine];
     
-    __block NSInteger lastLine = 0;
-    __weak MHAddImportOperation* weakSelf = self;
-    [statements enumerateObjectsUsingBlock:^(MHImportStatement *statement, NSUInteger idx, BOOL *stop) {
-        if ([statement isEqual:weakSelf.importToAdd]) {
-            lastLine = NSNotFound;
-            *stop = YES;
-        }
-        
-        [statement.codeLineNumbers enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
-            if(idx > lastLine) lastLine = idx;
-        }];
-    }];
-
     if (lastLine != NSNotFound) {
         NSString *importString = [NSString stringWithFormat:@"%@\n", [_importToAdd value]];
-        [self.source mhInsertString:importString
-                             atLine:lastLine+1];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.source mhInsertString:importString
+                                 atLine:lastLine+1];
+        });
     }
+}
+
+- (NSUInteger)appropriateLine {
+    __block NSUInteger lineNumber = NSNotFound;
+    __block NSUInteger currentLineNumber = 0;
+    [self.source.string enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
+        if ([self isImportString:line]) {
+            lineNumber = currentLineNumber;
+        }
+        currentLineNumber++;
+    }];
+    
+    if (lineNumber == NSNotFound) {
+        currentLineNumber = 0;
+        [self.source.string enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
+            if (![line isWhitespaceOrNewline]) {
+                currentLineNumber++;
+            }
+            else {
+                lineNumber = currentLineNumber;
+                *stop = YES;
+            }
+        }];
+    }
+    
+    return lineNumber;
+}
+
++ (NSRegularExpression *)importRegex {
+    static NSRegularExpression *_regex = nil;
+    if (!_regex) {
+        NSError *error = nil;
+        _regex = [[NSRegularExpression alloc] initWithPattern:MHAddImportOperationImportRegexPattern
+                                                      options:0
+                                                        error:&error];
+    }
+    return _regex;
+}
+
+- (BOOL) isImportString:(NSString *)string {
+    NSRegularExpression *regex = [MHAddImportOperation importRegex];
+    NSInteger numberOfMatches = [regex numberOfMatchesInString:string
+                                                       options:0
+                                                         range:NSMakeRange(0, string.length)];
+    return numberOfMatches > 0;
 }
 
 @end

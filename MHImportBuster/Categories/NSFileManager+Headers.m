@@ -26,11 +26,10 @@
     
     NSError *error = nil;
     NSMutableArray *items = [NSMutableArray arrayWithArray:[fileManager subpathsOfDirectoryAtPath:path error:&error]];
-    [items addObjectsFromArray:[fileManager subpathsAtPath:path]];
-    
     NSMutableArray *files = [NSMutableArray array];
     if (!error) {
-        
+        [items addObjectsFromArray:[fileManager subpathsAtPath:path]];
+
         for (NSString *item in items) {
 
             for (NSString *extension in extensions) {
@@ -44,7 +43,7 @@
         }
     }
     else {
-        NSLog(@"%@", [error localizedDescription]);
+        NSLog(@"%@ %@", path, [error localizedDescription]);
     }
     
     return [files copy];

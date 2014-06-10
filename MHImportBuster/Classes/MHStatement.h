@@ -51,8 +51,9 @@
  *  Processes the token
  *
  *  @param token a token
+ *  @return NO if the token can't be accepted.
  */
-- (void)processToken:(PKToken *)token;
+- (BOOL)processToken:(PKToken *)token;
 
 /**
  *  Checks if the LOC contains all the tokens needed

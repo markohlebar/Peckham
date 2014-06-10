@@ -81,7 +81,7 @@
     
 	__block NSInteger lineNumber = 0;
     
-    __block NSArray *candidateStatements = nil;
+    __block NSMutableArray *candidateStatements = nil;
 	[text enumerateLinesUsingBlock: ^(NSString *line, BOOL *stop) {
 	    tokenizer.string = line;
 	    [tokenizer enumerateTokensUsingBlock: ^(PKToken *token, BOOL *stop) {
@@ -92,9 +92,12 @@
             
             [candidateStatements enumerateObjectsUsingBlock:^(MHStatement *statement, NSUInteger idx, BOOL *stop) {
                 [statement addLineNumber:lineNumber];
-                [statement feedToken:token];
-                
-                if ([statement containsCannonicalTokens]) {
+                MHStatement *returnStatement = [statement feedToken:token];
+               
+                if (!returnStatement) {
+                    [candidateStatements removeObject:statement];
+                }
+                else if ([statement containsCannonicalTokens]) {
                     [statements addObject:statement];
                     candidateStatements = nil;
                     *stop = YES;
@@ -123,13 +126,13 @@
              ];
 }
 
-- (NSArray *)statementsForPrimaryToken:(PKToken *)token {
+- (NSMutableArray *)statementsForPrimaryToken:(PKToken *)token {
     NSArray *classes = [self classesForPrimaryToken:token];
     NSMutableArray *statements = [NSMutableArray array];
     [classes enumerateObjectsUsingBlock:^(Class class, NSUInteger idx, BOOL *stop) {
         [statements addObject:[class statement]];
     }];
-    return statements.copy;
+    return statements;
 }
 
 - (NSArray *)classesForPrimaryToken:(PKToken *)token {

@@ -9,12 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import "MHTableView.h"
 
-@class MHImportStatement;
 @class MHImportListView;
 @protocol MHImportListViewDelegate <NSObject>
 @required
--(void) importList:(MHImportListView *)importList
-   didSelectImport:(MHImportStatement *)importStatement;
+-(void) importList:(MHImportListView *)importList didSelectImport:(NSString *)import;
+-(NSString *)importList:(MHImportListView *)importList formattedImport:(NSString *)import;
 @end
 
 @interface MHImportListView : NSView <MHTableViewDelegate, NSTableViewDataSource>

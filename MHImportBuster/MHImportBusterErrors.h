@@ -10,7 +10,7 @@
 #define MHImportBuster_MHImportBusterErrors_h
 
 typedef enum {
-    MHImportBusterFileDoesntExistAtPath = 1000
+    MHImportBusterFileDoesntExistAtPath = 1000,
 } MHImportBusterErrorCode;
 
 #define MHImportBusterErrorDomain @"com.markohlebar.importbuster"

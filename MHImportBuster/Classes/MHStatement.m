@@ -52,6 +52,7 @@
 }
 
 - (MHStatement *)feedToken:(PKToken *)token {
+    MHStatement *statement = self;
     if ([self shouldFeedChildren:token]) {
         for (Class childStatementClass in [self childStatementClasses]) {
             if([childStatementClass isPrimaryCannonicalToken:token]) {
@@ -69,9 +70,9 @@
         }
     }
     else {
-        [self processToken:token];
+        statement = [self processToken:token] ? statement : nil;
     }
-    return self;
+    return statement;
 }
 
 - (BOOL)shouldFeedChildren:(PKToken *)token {
@@ -110,8 +111,9 @@
     if(![_codeLineNumbers containsIndex:lineNumber]) [_codeLineNumbers addIndex:lineNumber];
 }
 
-- (void)processToken:(PKToken *)token {
-	[_tokens addObject:token];
+- (BOOL)processToken:(PKToken *)token {
+    [_tokens addObject:token];
+    return YES;
 }
 
 + (NSArray *)cannonicalTokens {

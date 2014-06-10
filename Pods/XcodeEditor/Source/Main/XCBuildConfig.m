@@ -11,14 +11,14 @@
 
 
 
-#import "XCBuildConfiguration.h"
+#import "XCBuildConfig.h"
 #import "XCGroup.h"
 #import "XCKeyBuilder.h"
 #import "XCProject.h"
 #import "XCSourceFile.h"
 #import "Utils/XCMemoryUtils.h"
 
-@implementation XCBuildConfiguration
+@implementation XCBuildConfig
 + (NSDictionary*)buildConfigurationsFromArray:(NSArray*)array inProject:(XCProject*)project
 {
     NSMutableDictionary* configurations = [NSMutableDictionary dictionary];
@@ -29,10 +29,10 @@
 
         if ([[buildConfiguration valueForKey:@"isa"] asMemberType] == XCBuildConfigurationType)
         {
-            XCBuildConfiguration* configuration = [configurations objectForKey:[buildConfiguration objectForKey:@"name"]];
+            XCBuildConfig* configuration = [configurations objectForKey:[buildConfiguration objectForKey:@"name"]];
             if (!configuration)
             {
-                configuration = [[XCBuildConfiguration alloc] init];
+                configuration = [[XCBuildConfig alloc] init];
 
                 [configurations setObject:configuration forKey:[buildConfiguration objectForKey:@"name"]];
             }
