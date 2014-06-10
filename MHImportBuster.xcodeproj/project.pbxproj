@@ -222,8 +222,8 @@
 		964561CB1895750000026306 /* MHDocumentLOCObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentLOCObserver.m; sourceTree = "<group>"; };
 		964561D01895777A00026306 /* MHDocumentLOCObserverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentLOCObserverSpec.m; sourceTree = "<group>"; };
 		964B0A8F18A799A000E36C8E /* MHSourceOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHSourceOperation.h; sourceTree = "<group>"; };
-		964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHXcodeDocumentNavigator.h; sourceTree = "<group>"; };
-		964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHXcodeDocumentNavigator.m; sourceTree = "<group>"; };
+		964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHXcodeDocumentNavigator.h; path = ../External/Benoit/MHXcodeDocumentNavigator.h; sourceTree = "<group>"; };
+		964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHXcodeDocumentNavigator.m; path = ../External/Benoit/MHXcodeDocumentNavigator.m; sourceTree = "<group>"; };
 		964B0A9418A79AD000E36C8E /* XCFXcodePrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCFXcodePrivate.h; sourceTree = "<group>"; };
 		964B0A9818A79B8300E36C8E /* MHConcreteSourceOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHConcreteSourceOperation.h; sourceTree = "<group>"; };
 		964B0A9918A79B8300E36C8E /* MHConcreteSourceOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConcreteSourceOperation.m; sourceTree = "<group>"; };
@@ -505,8 +505,6 @@
 		964B0A9118A79AD000E36C8E /* Benoit */ = {
 			isa = PBXGroup;
 			children = (
-				964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */,
-				964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */,
 				964B0A9418A79AD000E36C8E /* XCFXcodePrivate.h */,
 			);
 			path = Benoit;
@@ -846,6 +844,8 @@
 		AD6A1FEF1876B68D00E4137F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */,
+				964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */,
 				96A0953419177B3200338093 /* Controller */,
 				96B22FA319167CC8001E643C /* Views */,
 				9618D21518DB72670049EE62 /* Issues */,

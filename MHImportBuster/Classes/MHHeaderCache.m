@@ -18,9 +18,6 @@
 #import "XcodeEditor.h"
 #import "XCBuildSettings.h"
 
-NSString *const MHHeaderCacheFrameworkHeaders =     @"MHHeaderCacheFrameworkHeaders";
-NSString *const MHHeaderCacheProjectHeaders =       @"MHHeaderCacheProjectHeaders";
-
 NSString *const MHHeaderCacheFrameworksSubPath =       @"/System/Library/Frameworks";
 
 @implementation MHHeaderCache
@@ -33,37 +30,26 @@ NSString *const MHHeaderCacheFrameworksSubPath =       @"/System/Library/Framewo
 {
     self = [super init];
     if (self) {
-
     }
     return self;
 }
 
 + (NSArray *)allFrameworksInCurrentWorkspace {
-    NSString *filePath = [MHXcodeDocumentNavigator currentWorkspacePath];
-    XCWorkspace *workspace = [XCWorkspace workspaceWithFilePath:filePath];
-    
+    XCTarget *target = [MHXcodeDocumentNavigator currentTarget];
     NSMutableArray *frameworkPaths = [NSMutableArray array];
-    [workspace.projects enumerateObjectsUsingBlock:^(XCProject *project, NSUInteger idx, BOOL *stop) {
-        [project.targets enumerateObjectsUsingBlock:^(XCTarget *target, NSUInteger idx, BOOL *stop) {
-            NSArray *names = [[target frameworks] valueForKey:@"name"];
-            [names enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
-                NSString *frameworkPath = [MHXcodeDocumentNavigator pathForFrameworkNamed:name];
-                if(frameworkPath) [frameworkPaths addObject:frameworkPath];
-            }];
-        }];
+    NSArray *names = [[target frameworks] valueForKey:@"name"];
+    [names enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
+        NSString *frameworkPath = [MHXcodeDocumentNavigator pathForFrameworkNamed:name];
+        if(frameworkPath) [frameworkPaths addObject:frameworkPath];
     }];
     
     return [NSSet setWithArray:frameworkPaths].allObjects;
 }
 
-+ (NSDictionary *)headersInCurrentWorkspace {
-    return @{
-             MHHeaderCacheFrameworkHeaders :    [self frameworkHeaders],
-             MHHeaderCacheProjectHeaders :      [self projectHeaders]
-             };
-}
-
 + (NSArray *)frameworkHeaders {
+    
+    [MHXcodeDocumentNavigator currentTarget];
+    
     NSArray *frameworkPaths = [self allFrameworksInCurrentWorkspace];
     __block NSMutableArray *allHeaderPaths = [NSMutableArray array];
     [frameworkPaths enumerateObjectsUsingBlock:^(NSString *frameworkPath, NSUInteger idx, BOOL *stop) {
@@ -71,20 +57,17 @@ NSString *const MHHeaderCacheFrameworksSubPath =       @"/System/Library/Framewo
         NSArray *headerPaths = [NSFileManager findFilesWithExtension:@"h" inDirectory:headersDirectory];
         [allHeaderPaths addObjectsFromArray:headerPaths];
     }];
-    return allHeaderPaths.copy;
+    return [allHeaderPaths sortedArrayUsingSelector:@selector(compare:)];
 }
 
 + (NSArray *)projectHeaders {
-    NSString *filePath = [MHXcodeDocumentNavigator currentWorkspacePath];
-    XCWorkspace *workspace = [XCWorkspace workspaceWithFilePath:filePath];
-    NSMutableArray *headers = [NSMutableArray array];
-    [workspace.projects enumerateObjectsUsingBlock:^(XCProject *project, NSUInteger idx, BOOL *stop) {
-        [headers addObjectsFromArray:[project.headerFiles valueForKey:@"pathRelativeToProjectRoot"]];
-    }];
+    XCTarget *target = [MHXcodeDocumentNavigator currentTarget];
+    NSArray *headers = [target.project.headerFiles valueForKey:@"pathRelativeToProjectRoot"];
     
     //remove .pch files
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF CONTAINS[c] %@)", @".pch"];
-    return [headers filteredArrayUsingPredicate:predicate];
+    headers = [headers filteredArrayUsingPredicate:predicate];
+    return [headers sortedArrayUsingSelector:@selector(compare:)];;
 }
 
 #pragma mark - Legacy
@@ -123,7 +106,6 @@ NSString *const MHHeaderCacheFrameworksSubPath =       @"/System/Library/Framewo
         NSArray *statements = _interfaceDictionary[headerPath];
         NSArray *interfaceStatements = [statements interfaceStatements];
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.value == %@", className];
-#import <AppKit/AppKit.h>
         NSArray *interfaceMatches = [interfaceStatements filteredArrayUsingPredicate:predicate];
         
         for (MHInterfaceStatement *statement in interfaceMatches) {

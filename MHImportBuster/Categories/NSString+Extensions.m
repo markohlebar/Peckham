@@ -13,8 +13,9 @@
     return [self rangeOfString:string].location != NSNotFound;
 }
 
--(NSString*) stringByRemovingWhitespaces {
-    return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+-(NSString*) stringByRemovingWhitespacesAndNewlines {
+    NSString *string = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+    return [string stringByReplacingOccurrencesOfString:@"\n" withString:@""];
 }
 
 - (BOOL) isAlphaNumeric {

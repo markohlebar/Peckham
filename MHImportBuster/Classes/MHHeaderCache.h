@@ -8,16 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const MHHeaderCacheFrameworkHeaders;
-extern NSString *const MHHeaderCacheProjectHeaders;
-
 @interface MHHeaderCache : NSObject
-/**
- *  Returns a dictionary with arrays for project and framework header file paths.
- *  The values can be accessed with respective MHHeaderCacheFrameworkHeaders and
- *  MHHeaderCacheProjectHeaders keys.
- *
- *  @return a dictionary
- */
-+ (NSDictionary *)headersInCurrentWorkspace;
++ (NSArray *)frameworkHeaders;
++ (NSArray *)projectHeaders;
 @end

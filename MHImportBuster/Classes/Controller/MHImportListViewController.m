@@ -14,6 +14,7 @@
 #import "NSTextView+Operations.h"
 #import "MHImportStatement.h"
 #import "MHImportStatement+Construction.h"
+#import "NSString+Extensions.h"
 
 @interface MHImportListViewController () <NSPopoverDelegate, MHImportListViewDelegate>
 @property (nonatomic, strong) NSPopover *popover;
@@ -21,7 +22,8 @@
 
 @implementation MHImportListViewController
 {
-    NSDictionary *_currentHeadersDictionary;
+    NSArray *_projectHeaders;
+    NSArray *_frameworkHeaders;
 }
 
 + (instancetype)sharedInstance {
@@ -77,14 +79,9 @@
 }
 
 - (NSArray *)allHeadersSortedAlphabetically {
-    _currentHeadersDictionary = [MHHeaderCache headersInCurrentWorkspace];
-    NSArray *headers = [_currentHeadersDictionary allValues];
-    NSMutableArray *allHeaders = [NSMutableArray array];
-    [headers enumerateObjectsUsingBlock:^(NSArray *array, NSUInteger idx, BOOL *stop) {
-        [allHeaders addObjectsFromArray:array];
-    }];
-    [allHeaders sortUsingSelector:@selector(compare:)];
-    return allHeaders.copy;
+    _projectHeaders = [MHHeaderCache projectHeaders];
+    _frameworkHeaders = [MHHeaderCache frameworkHeaders];
+    return [_projectHeaders arrayByAddingObjectsFromArray:_frameworkHeaders];
 }
 
 + (instancetype)present {
@@ -118,8 +115,7 @@
 #pragma mark - MHImportListViewDelegate
 
 - (MHImportStatement *)importStatementForImport:(NSString *)import {
-    NSArray *projectHeaders = _currentHeadersDictionary[MHHeaderCacheProjectHeaders];
-    if ([projectHeaders containsObject:import]) {
+    if ([_projectHeaders containsObject:import]) {
         return [MHImportStatement statementWithHeaderPath:import];
     }
     else {

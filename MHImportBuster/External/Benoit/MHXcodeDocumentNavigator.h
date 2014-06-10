@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 #import "XCFXcodePrivate.h"
 @class IDESourceCodeDocument;
+@class XCTarget;
 
 @interface MHXcodeDocumentNavigator : NSObject
 + (id)currentEditor;
@@ -17,4 +18,5 @@
 
 
 + (NSString *)pathForFrameworkNamed:(NSString *)frameworkName;
++ (XCTarget *)currentTarget;
 @end

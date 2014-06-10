@@ -10,7 +10,7 @@
 
 @interface NSString (Extensions)
 -(BOOL) containsString:(NSString*) string;
--(NSString*) stringByRemovingWhitespaces;
+-(NSString*) stringByRemovingWhitespacesAndNewlines;
 -(BOOL)isAlphaNumeric;
 -(BOOL)isWhitespaceOrNewline;
 @end

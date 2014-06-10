@@ -5,8 +5,14 @@
 
 #import "MHXcodeDocumentNavigator.h"
 #import "NSString+Extensions.h"
+#import "NSString+XCAdditions.h"
+#import "NSString+Extensions.h"
+#import "XCWorkspace.h"
+#import "XCProject.h"
 
-static NSString * const MHFrameworkExtension = @"framework";
+static NSString * const MHFrameworkExtension    = @"framework";
+static NSString * const MHWhoami                = @"whoami";
+static NSString * const MHXCUserStatePathFormat = @"xcuserdata/%@.xcuserdatad/UserInterfaceState.xcuserstate";
 
 @implementation MHXcodeDocumentNavigator {}
 
@@ -188,6 +194,7 @@ static NSString * const MHFrameworkExtension = @"framework";
     return [[document fileURL] path];
 }
 
+//TODO: this is hardcoded for performace purposes... Maybe move it to a plist or find a better way?
 + (NSArray *)frameworkRoots {
     return @[
              @"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/",
@@ -202,6 +209,29 @@ static NSString * const MHFrameworkExtension = @"framework";
         if ([fileManager fileExistsAtPath:path]) {
             return path;
         }
+    }
+    return nil;
+}
+
++ (NSString *)currentUserStatePath {
+    NSString *userName = [[MHWhoami xcRunAsCommand] stringByRemovingWhitespacesAndNewlines];
+    NSString *userStatePath = [NSString stringWithFormat:MHXCUserStatePathFormat, userName];
+    return [[self currentWorkspacePath] stringByAppendingPathComponent:userStatePath];
+}
+
++ (XCWorkspace *)currentWorkspace {
+   return [XCWorkspace workspaceWithFilePath:[self currentWorkspacePath]];
+}
+
++ (XCTarget *)currentTarget {
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[self currentUserStatePath]];
+    NSArray *objects = dictionary[@"$objects"];
+    NSUInteger targetIndex = [objects indexOfObject:@"IDENameString"];
+    NSString *targetName = objects[targetIndex + 1];
+    
+    for (XCProject *project in [[self currentWorkspace] projects]) {
+        XCTarget *target = [project targetWithName:targetName];
+        if (target) return target;
     }
     return nil;
 }
