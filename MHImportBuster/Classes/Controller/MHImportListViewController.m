@@ -22,8 +22,7 @@
 
 @implementation MHImportListViewController
 {
-    NSArray *_projectHeaders;
-    NSArray *_frameworkHeaders;
+ 
 }
 
 + (instancetype)sharedInstance {
@@ -67,7 +66,10 @@
     [self.popover showRelativeToRect:frame
                               ofView:view
                        preferredEdge:NSMinYEdge];
-    [self setHeaders:[self allHeadersSortedAlphabetically]];
+    
+    [[MHHeaderCache sharedCache] loadHeaders:^(NSArray *headers) {
+        self.headers = headers;
+    }];
 }
 
 - (void)setHeaders:(NSArray *)headers {
@@ -76,13 +78,6 @@
     MHImportListView *listView = (MHImportListView *)self.popover.contentViewController.view;
     listView.imports = headers;
     listView.delegate = self;
-}
-
-- (NSArray *)allHeadersSortedAlphabetically {
-    MHHeaderCache *cache = [MHHeaderCache sharedCache];
-    _projectHeaders = [cache projectHeaders];
-    _frameworkHeaders = [cache frameworkHeaders];
-    return [_projectHeaders arrayByAddingObjectsFromArray:_frameworkHeaders];
 }
 
 + (instancetype)present {
@@ -116,7 +111,7 @@
 #pragma mark - MHImportListViewDelegate
 
 - (MHImportStatement *)importStatementForImport:(NSString *)import {
-    if ([_projectHeaders containsObject:import]) {
+    if ([[MHHeaderCache sharedCache] isProjectHeader:import]) {
         return [MHImportStatement statementWithHeaderPath:import];
     }
     else {

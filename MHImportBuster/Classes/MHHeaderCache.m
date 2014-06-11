@@ -29,6 +29,7 @@ NSString *const MHHeaderCacheFrameworksSubPath = @"/System/Library/Frameworks";
 @implementation MHHeaderCache {
     NSArray *_projectHeaders;
     NSArray *_frameworkHeaders;
+    NSOperationQueue *_operationQueue;
 }
 
 + (instancetype)sharedCache {
@@ -40,20 +41,28 @@ NSString *const MHHeaderCacheFrameworksSubPath = @"/System/Library/Frameworks";
     return _sharedInstance;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _projectHeaders = [NSArray new];
+        _frameworkHeaders = [NSArray new];
+        _operationQueue = [NSOperationQueue new];
+        _operationQueue.maxConcurrentOperationCount = 2;
+    }
+    return self;
+}
+
 - (BOOL) shouldReloadHeadersForTarget:(XCTarget *)target {
     return ![self.currentTarget.name isEqualToString:target.name] ||
-            [self.lastModifiedDate compare:[target.project dateModified]] != NSOrderedSame;
+            [self.lastModifiedDate compare:[target.project dateModified]] != NSOrderedSame ||
+            _projectHeaders.count == 0 ||
+            _frameworkHeaders.count == 0;
 }
 
 - (void)setCurrentTarget:(XCTarget *)currentTarget {
     _currentTarget = currentTarget;
     self.lastModifiedDate = [currentTarget.project dateModified];
-    [self reloadHeaders];
-}
-
-- (void)reloadHeaders {
-    [self reloadFrameworkHeaders];
-    [self reloadProjectHeaders];
 }
 
 - (NSArray *)allFrameworksForTarget:(XCTarget *) target {
@@ -86,21 +95,42 @@ NSString *const MHHeaderCacheFrameworksSubPath = @"/System/Library/Frameworks";
     _projectHeaders = [headers sortedArrayUsingSelector:@selector(compare:)];
 }
 
-- (void) reloadHeadersIfNeeded {
+- (BOOL)isProjectHeader:(NSString *)header {
+    return [_projectHeaders containsObject:header];
+}
+
+- (BOOL)isFrameworkHeader:(NSString *)header {
+    return [_frameworkHeaders containsObject:header];
+}
+
+- (NSArray *) allHeaders {
+    return [_projectHeaders arrayByAddingObjectsFromArray:_frameworkHeaders];
+}
+
+- (void)loadHeaders:(MHArrayBlock)headersBlock {
+    
     XCTarget *target = [MHXcodeDocumentNavigator currentTarget];
     if ([self shouldReloadHeadersForTarget:target]) {
         self.currentTarget = target;
+        
+        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+            [self reloadProjectHeaders];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                headersBlock([self allHeaders]);
+            });
+        }];
+        [_operationQueue addOperation:operation];
+        
+        operation = [NSBlockOperation blockOperationWithBlock:^{
+            [self reloadFrameworkHeaders];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                headersBlock([self allHeaders]);
+            });
+        }];
+        [_operationQueue addOperation:operation];
+    } else {
+        headersBlock([self allHeaders]);
     }
-}
-
-- (NSArray *)frameworkHeaders {
-    [self reloadHeadersIfNeeded];
-    return _frameworkHeaders;
-}
-
-- (NSArray *)projectHeaders {
-    [self reloadHeadersIfNeeded];
-    return _projectHeaders;
 }
 
 @end

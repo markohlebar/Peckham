@@ -46,6 +46,10 @@
 		964B0A9A18A79B8300E36C8E /* MHConcreteSourceOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 964B0A9818A79B8300E36C8E /* MHConcreteSourceOperation.h */; };
 		964B0A9B18A79B8300E36C8E /* MHConcreteSourceOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B0A9918A79B8300E36C8E /* MHConcreteSourceOperation.m */; };
 		964B0A9D18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B0A9C18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m */; };
+		964B3F831949100C00B079BD /* MHOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 964B3F811949100C00B079BD /* MHOperation.h */; };
+		964B3F841949100C00B079BD /* MHOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B3F821949100C00B079BD /* MHOperation.m */; };
+		964B3F87194910A300B079BD /* MHSearchArrayOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 964B3F85194910A300B079BD /* MHSearchArrayOperation.h */; };
+		964B3F88194910A300B079BD /* MHSearchArrayOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B3F86194910A300B079BD /* MHSearchArrayOperation.m */; };
 		964CEC60191663360012C63D /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964CEC5C191663360012C63D /* IDEFoundation.framework */; };
 		964CEC61191663360012C63D /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964CEC5D191663360012C63D /* IDEKit.framework */; };
 		964CEC62191663360012C63D /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964CEC5E191663360012C63D /* DVTFoundation.framework */; };
@@ -230,6 +234,10 @@
 		964B0A9818A79B8300E36C8E /* MHConcreteSourceOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHConcreteSourceOperation.h; sourceTree = "<group>"; };
 		964B0A9918A79B8300E36C8E /* MHConcreteSourceOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConcreteSourceOperation.m; sourceTree = "<group>"; };
 		964B0A9C18A79C7200E36C8E /* MHConcreteSourceOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConcreteSourceOperationSpec.m; sourceTree = "<group>"; };
+		964B3F811949100C00B079BD /* MHOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHOperation.h; sourceTree = "<group>"; };
+		964B3F821949100C00B079BD /* MHOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHOperation.m; sourceTree = "<group>"; };
+		964B3F85194910A300B079BD /* MHSearchArrayOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHSearchArrayOperation.h; sourceTree = "<group>"; };
+		964B3F86194910A300B079BD /* MHSearchArrayOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHSearchArrayOperation.m; sourceTree = "<group>"; };
 		964CEC5C191663360012C63D /* IDEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEFoundation.framework; path = ../../../../Applications/Xcode.app/Contents/Frameworks/IDEFoundation.framework; sourceTree = "<group>"; };
 		964CEC5D191663360012C63D /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = ../../../../Applications/Xcode.app/Contents/Frameworks/IDEKit.framework; sourceTree = "<group>"; };
 		964CEC5E191663360012C63D /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = ../../../../Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework; sourceTree = "<group>"; };
@@ -517,6 +525,10 @@
 		96542C6918A798B900246A79 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				964B3F811949100C00B079BD /* MHOperation.h */,
+				964B3F821949100C00B079BD /* MHOperation.m */,
+				964B3F85194910A300B079BD /* MHSearchArrayOperation.h */,
+				964B3F86194910A300B079BD /* MHSearchArrayOperation.m */,
 				964B0A8F18A799A000E36C8E /* MHSourceOperation.h */,
 				964B0A9818A79B8300E36C8E /* MHConcreteSourceOperation.h */,
 				964B0A9918A79B8300E36C8E /* MHConcreteSourceOperation.m */,
@@ -921,11 +933,13 @@
 				968AD40E18986746009E6FE6 /* MHDocumentMethodLOCObserver.h in Headers */,
 				9628390718A63A11007EE520 /* DVTSourceTextStorage+Operations.h in Headers */,
 				AD6A20071876B68D00E4137F /* MHFile.h in Headers */,
+				964B3F87194910A300B079BD /* MHSearchArrayOperation.h in Headers */,
 				964B0A9518A79AD000E36C8E /* MHXcodeDocumentNavigator.h in Headers */,
 				96FC2B3E191B596E000CA4EB /* XCWorkspace.h in Headers */,
 				964B0A9A18A79B8300E36C8E /* MHConcreteSourceOperation.h in Headers */,
 				9658B95E18A643D700A768B0 /* NSObject+MHLogMethods.h in Headers */,
 				969A558B18DDA3890040EB6C /* MHAddImportOperation.h in Headers */,
+				964B3F831949100C00B079BD /* MHOperation.h in Headers */,
 				AD6A20031876B68D00E4137F /* NSMutableIndexSet+NSArray.h in Headers */,
 				AD6A200D1876B68D00E4137F /* MHImportStatement.h in Headers */,
 				96589FAE18FDDD6800654F2B /* NSArray+MHStatement.h in Headers */,
@@ -1222,7 +1236,9 @@
 				9658B95F18A643D700A768B0 /* NSObject+MHLogMethods.m in Sources */,
 				AD6A20161876B68D00E4137F /* MHStatementParser.m in Sources */,
 				AD6A200E1876B68D00E4137F /* MHImportStatement.m in Sources */,
+				964B3F88194910A300B079BD /* MHSearchArrayOperation.m in Sources */,
 				961C7DD3191F6F9000031FAD /* XCTarget+XCProject.m in Sources */,
+				964B3F841949100C00B079BD /* MHOperation.m in Sources */,
 				96B64ACB18DE0D8F007DFC26 /* NSString+Extensions.m in Sources */,
 				9699F6FC18954F7400AC7432 /* MHDocumentObserver.m in Sources */,
 				9683A67418FAAF5E009E0232 /* MHMethodReturnStatement.m in Sources */,

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MHSourceOperation.h"
+#import "MHOperation.h"
 
-@interface MHConcreteSourceOperation : NSOperation <MHSourceOperation>
+@interface MHConcreteSourceOperation : MHOperation <MHSourceOperation>
 @property (nonatomic, readonly) NSTextStorage *source;
 @end

@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MHBlocks.h"
 
 @interface MHHeaderCache : NSObject
 + (instancetype)sharedCache;
-- (NSArray *)frameworkHeaders;
-- (NSArray *)projectHeaders;
+- (void)loadHeaders:(MHArrayBlock) headersBlock;
+- (BOOL)isProjectHeader:(NSString *)header;
+- (BOOL)isFrameworkHeader:(NSString *)header;
 @end

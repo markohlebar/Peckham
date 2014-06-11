@@ -9,6 +9,7 @@
 #import "MHImportListView.h"
 #import <Carbon/Carbon.h>
 #import "NSString+Extensions.h"
+#import "MHSearchArrayOperation.h"
 
 @interface MHImportListView ()
 @property (weak) IBOutlet NSTableView *tableView;
@@ -19,11 +20,15 @@
 {
     NSMutableString *_currentString;
     NSMutableArray *_filteredImports;
+    NSOperationQueue *_searchOperationQueue;
+    MHSearchArrayOperation *_currentSearchOperation;
 }
 
 - (void)awakeFromNib {
     _currentString = [NSMutableString new];
     _filteredImports = [NSMutableArray new];
+    
+    _searchOperationQueue = [NSOperationQueue new];
     
     [self.tableView setDoubleAction:@selector(onDoubleClick:)];
 }
@@ -91,14 +96,14 @@
     if ([characters isAlphaNumeric] ||
         key.keyCode == kVK_ANSI_Period) {
         [_currentString appendString:characters];
-        [self updateData];
+        [self updateData:NO];
     }
     else if (key.keyCode == kVK_Delete) {
         NSUInteger length = _currentString.length;
         if (length > 0) {
             [_currentString setString:[_currentString substringToIndex:length-1]];
         }
-        [self updateData];
+        [self updateData:YES];
     }
     else if (key.keyCode == kVK_Return) {
         [self onSelectedRow:selectedRow];
@@ -114,18 +119,26 @@
 
 }
 
-- (void) updateData {
-    NSArray *filteredImports = [self importsForCurrentString];
+- (void) updateData:(BOOL) useCompleteDataSet {
+    NSArray *searchArray = useCompleteDataSet ? _imports : _filteredImports;
     if (_currentString.length > 0 ) {
-        if (![filteredImports isEqual:_filteredImports]) {
+        
+        MHArrayBlock resultsBlock = ^(NSArray *filteredImports) {
             [_filteredImports setArray:filteredImports];
             [self selectRow:0];
-        }
+            [self.tableView reloadData];
+        };
+        
+        [_currentSearchOperation cancel];
+        _currentSearchOperation = [MHSearchArrayOperation operationWithSearchArray:searchArray
+                                                                      searchString:_currentString
+                                                                searchResultsBlock:resultsBlock];
+        [_searchOperationQueue addOperation:_currentSearchOperation];
     }
     else {
-        [self setImports:_imports];
+        [self setImports:searchArray];
+        [self.tableView reloadData];
     }
-    [self.tableView reloadData];
 }
 
 - (void) selectRow:(NSInteger) row {
