@@ -247,6 +247,7 @@
 		96589FAD18FDDD6800654F2B /* NSArray+MHStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHStatement.m"; sourceTree = "<group>"; };
 		9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MHLogMethods.h"; sourceTree = "<group>"; };
 		9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MHLogMethods.m"; sourceTree = "<group>"; };
+		9664484B1956F1AF0040EC56 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9679BC62191650EF0004AB6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9683A66C18FAA402009E0232 /* MHMethodArgumentStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHMethodArgumentStatement.h; sourceTree = "<group>"; };
 		9683A66D18FAA402009E0232 /* MHMethodArgumentStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMethodArgumentStatement.m; sourceTree = "<group>"; };
@@ -738,6 +739,7 @@
 		AD6A1FB21876B5BD00E4137F = {
 			isa = PBXGroup;
 			children = (
+				9664484B1956F1AF0040EC56 /* LICENSE */,
 				AD6A1FC51876B5BD00E4137F /* MHImportBuster */,
 				AD6A1FDA1876B5BD00E4137F /* MHImportBusterTests */,
 				ADB1CF811876C0B000D935C7 /* MHImportBusterPlugin */,
