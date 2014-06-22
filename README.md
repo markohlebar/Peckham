@@ -34,6 +34,11 @@ There are several things that are to be added to the project
 - user headers are not really handled properly
 - there is an issue with header duplication (especially visible with CocoaPods)
 
+### Dependencies
+
+- **XcodeEditor** https://github.com/jasperblues/XcodeEditor
+- **ParseKit** https://github.com/itod/parsekit
+
 ### License
 
 MIT, see LICENSE
