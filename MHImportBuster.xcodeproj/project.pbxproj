@@ -76,8 +76,8 @@
 		96872B1D19163A6E0068AF7A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96872B1C19163A6E0068AF7A /* Images.xcassets */; };
 		968AD40E18986746009E6FE6 /* MHDocumentMethodLOCObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 968AD40C18986746009E6FE6 /* MHDocumentMethodLOCObserver.h */; };
 		968AD40F18986746009E6FE6 /* MHDocumentMethodLOCObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AD40D18986746009E6FE6 /* MHDocumentMethodLOCObserver.m */; };
-		9691A4B51947B0C3005407A1 /* XCProject+NSDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9691A4B31947B0C3005407A1 /* XCProject+NSDate.h */; };
-		9691A4B61947B0C3005407A1 /* XCProject+NSDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691A4B41947B0C3005407A1 /* XCProject+NSDate.m */; };
+		9691A4B51947B0C3005407A1 /* XCProject+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9691A4B31947B0C3005407A1 /* XCProject+Extensions.h */; };
+		9691A4B61947B0C3005407A1 /* XCProject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691A4B41947B0C3005407A1 /* XCProject+Extensions.m */; };
 		9699F6FB18954F7400AC7432 /* MHDocumentObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 9699F6F918954F7400AC7432 /* MHDocumentObserver.h */; };
 		9699F6FC18954F7400AC7432 /* MHDocumentObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 9699F6FA18954F7400AC7432 /* MHDocumentObserver.m */; };
 		9699F6FD1895518900AC7432 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FC41876B5BD00E4137F /* AppKit.framework */; };
@@ -267,8 +267,8 @@
 		96872B1C19163A6E0068AF7A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		968AD40C18986746009E6FE6 /* MHDocumentMethodLOCObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDocumentMethodLOCObserver.h; sourceTree = "<group>"; };
 		968AD40D18986746009E6FE6 /* MHDocumentMethodLOCObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentMethodLOCObserver.m; sourceTree = "<group>"; };
-		9691A4B31947B0C3005407A1 /* XCProject+NSDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCProject+NSDate.h"; sourceTree = "<group>"; };
-		9691A4B41947B0C3005407A1 /* XCProject+NSDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCProject+NSDate.m"; sourceTree = "<group>"; };
+		9691A4B31947B0C3005407A1 /* XCProject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCProject+Extensions.h"; sourceTree = "<group>"; };
+		9691A4B41947B0C3005407A1 /* XCProject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCProject+Extensions.m"; sourceTree = "<group>"; };
 		9699F6F918954F7400AC7432 /* MHDocumentObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDocumentObserver.h; sourceTree = "<group>"; };
 		9699F6FA18954F7400AC7432 /* MHDocumentObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentObserver.m; sourceTree = "<group>"; };
 		969A558918DDA3890040EB6C /* MHAddImportOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAddImportOperation.h; sourceTree = "<group>"; };
@@ -729,8 +729,8 @@
 				96FC2B39191B596E000CA4EB /* NSString+XCAdditions.m */,
 				961C7DD0191F6F9000031FAD /* XCTarget+XCProject.h */,
 				961C7DD1191F6F9000031FAD /* XCTarget+XCProject.m */,
-				9691A4B31947B0C3005407A1 /* XCProject+NSDate.h */,
-				9691A4B41947B0C3005407A1 /* XCProject+NSDate.m */,
+				9691A4B31947B0C3005407A1 /* XCProject+Extensions.h */,
+				9691A4B41947B0C3005407A1 /* XCProject+Extensions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -953,7 +953,7 @@
 				9618D21918DB72970049EE62 /* MHXcodeIssuesParser.h in Headers */,
 				9683A67818FAB17A009E0232 /* PKTokenizer+Factory.h in Headers */,
 				963282D518F964930007699A /* PKToken+Equality.h in Headers */,
-				9691A4B51947B0C3005407A1 /* XCProject+NSDate.h in Headers */,
+				9691A4B51947B0C3005407A1 /* XCProject+Extensions.h in Headers */,
 				96B22FA719167CC8001E643C /* MHImportListView.h in Headers */,
 				96D89DF718A7B03C0087D248 /* MHImportStatement+Sorting.h in Headers */,
 				96B64AC018DE01F4007DFC26 /* MHHeaderCache.h in Headers */,
@@ -1219,7 +1219,7 @@
 				9618D21A18DB72970049EE62 /* MHXcodeIssuesParser.m in Sources */,
 				96B64AC918DE0D8F007DFC26 /* NSFileManager+Headers.m in Sources */,
 				96D89DF018A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.m in Sources */,
-				9691A4B61947B0C3005407A1 /* XCProject+NSDate.m in Sources */,
+				9691A4B61947B0C3005407A1 /* XCProject+Extensions.m in Sources */,
 				9683A67918FAB17A009E0232 /* PKTokenizer+Factory.m in Sources */,
 				964561CD1895750000026306 /* MHDocumentLOCObserver.m in Sources */,
 				9611424218A6504400E03589 /* NSString+MHNSRange.m in Sources */,

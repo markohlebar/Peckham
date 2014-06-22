@@ -11,10 +11,12 @@
 #import "NSString+XCAdditions.h"
 #import <XcodeEditor/XCProject.h>
 
-static NSString * const XCBuildSettingsCommandFormat = @"xcodebuild -project %@ -target %@ -showBuildSettings";
+static NSString * const XCBuildSettingsCommandFormat           = @"xcodebuild -project \"%@\" -target \"%@\" -showBuildSettings";
 
-NSString *const XCBuildSettingsSDKROOTKey =            @"SDKROOT";
-
+NSString *const XCBuildSettingsSDKROOTKey                      = @"SDKROOT";
+NSString *const XCBuildSettingsHeaderSearchPathsKey            = @"HEADER_SEARCH_PATHS";
+NSString *const XCBuildSettingsUserHeaderSearchPathsKey        = @"USER_HEADER_SEARCH_PATHS";
+NSString *const XCBuildSettingsProjectDirKey                   = @"PROJECT_DIR";
 
 @implementation XCBuildSettings
 {

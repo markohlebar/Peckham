@@ -9,6 +9,7 @@
 #import "NSString+Extensions.h"
 #import "XCWorkspace.h"
 #import "XCProject.h"
+#import "XCProject+SubProject.h"
 
 static NSString * const MHFrameworkExtension    = @"framework";
 static NSString * const MHWhoami                = @"whoami";
@@ -228,11 +229,13 @@ static NSString * const MHXCUserStatePathFormat = @"xcuserdata/%@.xcuserdatad/Us
     NSArray *objects = dictionary[@"$objects"];
     NSUInteger targetIndex = [objects indexOfObject:@"IDENameString"];
     NSString *targetName = objects[targetIndex + 1];
-    
-    for (XCProject *project in [[self currentWorkspace] projects]) {
+    NSArray *projects = [[self currentWorkspace] projects];
+    for (XCProject *project in projects) {
         XCTarget *target = [project targetWithName:targetName];
+        NSLog(@"%@", target);
         if (target) return target;
     }
+    NSLog(@"Can't find current target.");
     return nil;
 }
 

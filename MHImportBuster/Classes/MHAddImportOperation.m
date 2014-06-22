@@ -14,7 +14,7 @@
 #import "DVTSourceTextStorage+Operations.h"
 #import "NSString+Extensions.h"
 
-NSString * const MHAddImportOperationImportRegexPattern = @".*#.*(\bimport\b|\binclude\b)*[\",<]*[\",>]";
+NSString * const MHAddImportOperationImportRegexPattern = @".*#.*(import|include).*[\",<].*[\",>]";
 
 @implementation MHAddImportOperation
 

@@ -11,3 +11,7 @@
 @interface XCProject (NSDate)
 - (NSDate *)dateModified;
 @end
+
+@interface XCProject (MHSubprojects)
+- (NSArray *)subProjectFiles;
+@end

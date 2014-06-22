@@ -9,6 +9,8 @@
 #import "XCWorkspace.h"
 #import "XCProject.h"
 #import "NSString+XCAdditions.h"
+#import "XCProject+Extensions.h"
+#import "XCSourceFile.h"
 
 static NSString * const XCWorkspaceContents =       @"contents.xcworkspacedata";
 static NSString * const XCFileRefElement =          @"FileRef";
@@ -55,6 +57,16 @@ static NSString * const XCLocationKey =             @"location";
 - (void) addProjectWithFilePath:(NSString *)filePath {
     XCProject *project = [XCProject projectWithFilePath:filePath];
     _projects = [_projects arrayByAddingObject:project];
+    
+    //subprojects
+    NSArray *subProjects = [project subProjectFiles];
+    if (subProjects.count > 0) {
+        NSString *rootPath = [filePath stringByDeletingLastPathComponent];
+        [subProjects enumerateObjectsUsingBlock:^(XCSourceFile *projectFile, NSUInteger idx, BOOL *stop) {
+            NSString *fullPath = [rootPath stringByAppendingPathComponent:projectFile.pathRelativeToProjectRoot];
+            [self addProjectWithFilePath:fullPath];
+        }];
+    }
 }
 
 -   (void)parser:(NSXMLParser *)parser

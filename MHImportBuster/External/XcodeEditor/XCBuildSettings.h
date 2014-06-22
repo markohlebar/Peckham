@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 extern NSString *const XCBuildSettingsSDKROOTKey;
+extern NSString *const XCBuildSettingsHeaderSearchPathsKey;
+extern NSString *const XCBuildSettingsUserHeaderSearchPathsKey;
+extern NSString *const XCBuildSettingsProjectDirKey;
 
 @class XCTarget;
 @interface XCBuildSettings : NSObject

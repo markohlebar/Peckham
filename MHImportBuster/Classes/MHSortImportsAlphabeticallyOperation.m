@@ -37,7 +37,7 @@
         NSString *statementValue = [NSString stringWithFormat:@"%@\n", statement.value];
         [sortedStatements appendString:statementValue];
     }
-    
+        
     [self.source mhInsertString:sortedStatements
                          atLine:firstIndex];
 }

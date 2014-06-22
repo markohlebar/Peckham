@@ -17,18 +17,22 @@
 #import "MHImportStatement+Construction.h"
 #import "XcodeEditor.h"
 #import "XCBuildSettings.h"
-#import "XCProject+NSDate.h"
+#import "XCProject+Extensions.h"
+#import "XCProject+SubProject.h"
 
 NSString *const MHHeaderCacheFrameworksSubPath = @"/System/Library/Frameworks";
 
 @interface MHHeaderCache ()
 @property (nonatomic, strong) XCTarget *currentTarget;
 @property (nonatomic, strong) NSDate *lastModifiedDate;
+@property (nonatomic, copy) MHArrayBlock headersBlock;
 @end
 
 @implementation MHHeaderCache {
     NSArray *_projectHeaders;
     NSArray *_frameworkHeaders;
+    NSArray *_userHeaders;
+
     NSOperationQueue *_operationQueue;
 }
 
@@ -47,6 +51,7 @@ NSString *const MHHeaderCacheFrameworksSubPath = @"/System/Library/Frameworks";
     if (self) {
         _projectHeaders = [NSArray new];
         _frameworkHeaders = [NSArray new];
+        _userHeaders = [NSArray new];
         _operationQueue = [NSOperationQueue new];
         _operationQueue.maxConcurrentOperationCount = 2;
     }
@@ -88,11 +93,60 @@ NSString *const MHHeaderCacheFrameworksSubPath = @"/System/Library/Frameworks";
 }
 
 - (void) reloadProjectHeaders {
-    NSArray *headers = [self.currentTarget.project.headerFiles valueForKey:@"pathRelativeToProjectRoot"];
-    //remove .pch files
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"NOT (SELF CONTAINS[c] %@)", @".pch"];
-    headers = [headers filteredArrayUsingPredicate:predicate];
-    _projectHeaders = [headers sortedArrayUsingSelector:@selector(compare:)];
+    NSMutableArray *allHeaders = [NSMutableArray array];
+    
+    XCBuildSettings *buildSettings = [XCBuildSettings buildSettingsWithTarget:self.currentTarget];
+    //project, header search paths, user header search paths
+    NSString *projectPath = [buildSettings valueForKey:XCBuildSettingsProjectDirKey];
+    
+    if(projectPath) {
+        NSArray *projectHeaders = [NSFileManager findFilesWithExtension:@"h"
+                                                            inDirectory:projectPath];
+        [allHeaders addObjectsFromArray:projectHeaders];
+    }
+    else {
+        NSLog(@"PROJECT PATH NOT FOUND");
+        NSLog(@"%@", buildSettings.settings);
+    }
+    
+    NSArray *headerSearchPaths = [buildSettings valueForKey:XCBuildSettingsHeaderSearchPathsKey];
+    if ([headerSearchPaths isKindOfClass:[NSString class]]) headerSearchPaths = @[headerSearchPaths];
+    [headerSearchPaths enumerateObjectsUsingBlock:^(NSString *headerSearchPath, NSUInteger idx, BOOL *stop) {
+        _userHeaders =[NSFileManager findFilesWithExtension:@"h"
+                                                inDirectory:headerSearchPath];
+    }];
+    
+    NSArray *userHeaderSearchPaths = [buildSettings valueForKey:XCBuildSettingsUserHeaderSearchPathsKey];
+    if ([userHeaderSearchPaths isKindOfClass:[NSString class]]) userHeaderSearchPaths = @[userHeaderSearchPaths];
+    [userHeaderSearchPaths enumerateObjectsUsingBlock:^(NSString *headerSearchPath, NSUInteger idx, BOOL *stop) {
+        NSArray *headers =[NSFileManager findFilesWithExtension:@"h"
+                                                    inDirectory:headerSearchPath];
+        [allHeaders addObjectsFromArray:headers];
+    }];
+    
+    //This solves the problem of having 2 of the same files in different places in project (CocoaPods),
+    //but might potentially introduce some other issues
+    __block NSMutableArray *filteredHeaders = [NSMutableArray new];
+    [allHeaders enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+        if (![self array:filteredHeaders containsStringWithLastPathComponent:[path lastPathComponent]]) {
+            [filteredHeaders addObject:path];
+        }
+    }];
+    
+    _projectHeaders = [filteredHeaders sortedArrayUsingComparator:^NSComparisonResult(NSString *obj1, NSString *obj2) {
+        return [obj1.lastPathComponent compare:obj2.lastPathComponent];
+    }];
+}
+
+- (BOOL) array:(NSArray *) array containsStringWithLastPathComponent:(NSString *)lastPathComponent {
+    __block BOOL contains = NO;
+    [array enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
+        if([obj rangeOfString:lastPathComponent].location != NSNotFound) {
+            contains = YES;
+            *stop = YES;
+        }
+    }];
+    return contains;
 }
 
 - (BOOL)isProjectHeader:(NSString *)header {
@@ -103,33 +157,49 @@ NSString *const MHHeaderCacheFrameworksSubPath = @"/System/Library/Frameworks";
     return [_frameworkHeaders containsObject:header];
 }
 
+- (BOOL)isUserHeader:(NSString *)header {
+    return [_userHeaders containsObject:header];
+}
+
 - (NSArray *) allHeaders {
-    return [_projectHeaders arrayByAddingObjectsFromArray:_frameworkHeaders];
+    NSMutableArray *allHeaders = [NSMutableArray array];
+    [allHeaders addObjectsFromArray:_projectHeaders];
+    [allHeaders addObjectsFromArray:_userHeaders];
+    [allHeaders addObjectsFromArray:_frameworkHeaders];
+    return allHeaders.copy;
 }
 
 - (void)loadHeaders:(MHArrayBlock)headersBlock {
-    
+    self.headersBlock = headersBlock;
+
     XCTarget *target = [MHXcodeDocumentNavigator currentTarget];
+    
     if ([self shouldReloadHeadersForTarget:target]) {
         self.currentTarget = target;
         
         NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
             [self reloadProjectHeaders];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                headersBlock([self allHeaders]);
-            });
+            [self notifyAllHeaders];
         }];
+        operation.queuePriority = NSOperationQueuePriorityVeryHigh;
+        operation.threadPriority = 1;
         [_operationQueue addOperation:operation];
         
         operation = [NSBlockOperation blockOperationWithBlock:^{
             [self reloadFrameworkHeaders];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                headersBlock([self allHeaders]);
-            });
+            [self notifyAllHeaders];
         }];
         [_operationQueue addOperation:operation];
     } else {
-        headersBlock([self allHeaders]);
+        [self notifyAllHeaders];
+    }
+}
+
+- (void)notifyAllHeaders {
+    if (self.headersBlock) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.headersBlock([self allHeaders]);
+        });
     }
 }
 

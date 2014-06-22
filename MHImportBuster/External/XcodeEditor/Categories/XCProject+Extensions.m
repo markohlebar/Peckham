@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Marko Hlebar. All rights reserved.
 //
 
-#import "XCProject+NSDate.h"
+#import "XCProject+Extensions.h"
+
+@interface XCProject ()
+- (NSArray*)projectFilesOfType:(XcodeSourceFileType)projectFileType;
+@end
 
 @implementation XCProject (NSDate)
 - (NSDate *)dateModified {
@@ -16,5 +20,11 @@
                        forKey:NSURLContentModificationDateKey
                         error:nil];
     return date;
+}
+@end
+
+@implementation XCProject (MHSubprojects)
+- (NSArray *)subProjectFiles {
+    return [self projectFilesOfType:XcodeProject];
 }
 @end

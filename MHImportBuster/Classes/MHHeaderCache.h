@@ -14,4 +14,6 @@
 - (void)loadHeaders:(MHArrayBlock) headersBlock;
 - (BOOL)isProjectHeader:(NSString *)header;
 - (BOOL)isFrameworkHeader:(NSString *)header;
+- (BOOL)isUserHeader:(NSString *)header;
+
 @end
