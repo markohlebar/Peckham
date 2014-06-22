@@ -11,7 +11,7 @@
 @implementation MHConcreteSourceOperation
 
 + (instancetype)operationWithSource:(NSTextStorage *)source{
-    return [[self alloc] initWithSource:source];
+    return [(MHConcreteSourceOperation*)[self alloc] initWithSource:source];
 }
 
 - (instancetype)initWithSource:(NSTextStorage *)source

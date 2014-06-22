@@ -72,20 +72,20 @@ describe(@"Invalid file tests", ^{
 });
 
 describe(@"Duplicate imports tests", ^{
-    __block MHFile *file = nil;
-    __block NSString *cannonicalFilePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MyClass" ofType:@"h"];
-    __block NSString *filePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MyClass_duplicateImports" ofType:@"h"];
-    __block NSString *tempFilePath = nil;
-    
-    beforeEach(^{
-        tempFilePath = createTempFile(filePath);
-        file = fileBlock(tempFilePath);
-    });
-    
-    afterEach(^{
-        deleteFile(tempFilePath);
-    });
-    
+//    __block MHFile *file = nil;
+//    __block NSString *cannonicalFilePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MyClass" ofType:@"h"];
+//    __block NSString *filePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MyClass_duplicateImports" ofType:@"h"];
+//    __block NSString *tempFilePath = nil;
+//    
+//    beforeEach(^{
+//        tempFilePath = createTempFile(filePath);
+//        file = fileBlock(tempFilePath);
+//    });
+//    
+//    afterEach(^{
+//        deleteFile(tempFilePath);
+//    });
+//    
 //    it(@"Should be able to remove duplicate imports", ^{
 //        [file removeDuplicateImports];
 //        BOOL result = compareFiles(cannonicalFilePath, tempFilePath);

@@ -18,10 +18,9 @@ describe(@"MHAddImportOperation", ^{
     __block NSTextStorage *testSource = [[NSTextStorage alloc] initWithString:@"#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n#import <Framework/Framework.h>\n"];
     
     beforeEach(^{
-        id importMock = [MHImportStatement nullMock];
-        [importMock stub:@selector(value) andReturn:@"#import \"newImport.h\""];
+        MHProjectImportStatement *importStatement = [MHProjectImportStatement statementWithString:@"#import \"newImport.h\""];
         operation = [MHAddImportOperation operationWithSource:testSource
-                                                  importToAdd:importMock];
+                                                  importToAdd:importStatement];
     });
     
     it(@"Should add an import after other source imports", ^{

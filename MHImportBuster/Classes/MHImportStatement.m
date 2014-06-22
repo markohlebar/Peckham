@@ -35,8 +35,9 @@
 - (BOOL)processToken:(PKToken *)token {
 	NSArray *cannonicalTokens = [[self class] cannonicalTokens];
     BOOL shouldAddToken = YES;
-    if(_tokens.count < 3 || [token isEqual:[PKToken whitespace]]) {
-        shouldAddToken = [cannonicalTokens[_tokens.count] isEqual:token];
+    if(_tokens.count < 3) {
+        shouldAddToken = [token isEqual:[PKToken whitespace]] ||
+                         [cannonicalTokens[_tokens.count] isEqual:token];
     }
     if (shouldAddToken){
         [_tokens addObject:token];

@@ -49,13 +49,24 @@ NSString * const MHAddImportOperationImportRegexPattern = @".*#.*(import|include
 - (NSUInteger)appropriateLine {
     __block NSUInteger lineNumber = NSNotFound;
     __block NSUInteger currentLineNumber = 0;
+    __block BOOL foundDuplicate = NO;
+    Class importClass = [_importToAdd class];
     [self.source.string enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
         if ([self isImportString:line]) {
+            MHImportStatement *statement = [importClass statementWithString:line];
+            if ([statement isEqual:_importToAdd]) {
+                foundDuplicate = YES;
+                *stop = YES;
+                return;
+            }
             lineNumber = currentLineNumber;
         }
         currentLineNumber++;
     }];
     
+    if (foundDuplicate) return NSNotFound;
+    
+    //if no imports are present find the first new line.
     if (lineNumber == NSNotFound) {
         currentLineNumber = 0;
         [self.source.string enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {

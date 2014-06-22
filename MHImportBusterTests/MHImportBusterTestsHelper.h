@@ -12,6 +12,9 @@
 #import <Foundation/Foundation.h>
 #import "NSString+Files.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-function"
+
 static NSString *createTempFile(NSString* filePath) {
     NSString *tempFilePath = [filePath filePathByAddingSuffix:@"__"];
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -29,4 +32,5 @@ static BOOL compareFiles(NSString *filePath, NSString *filePath2) {
     return [fileManager contentsEqualAtPath:filePath andPath:filePath2];
 }
 
+#pragma clang diagnostic pop
 #endif
