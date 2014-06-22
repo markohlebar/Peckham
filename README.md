@@ -34,3 +34,6 @@ There are several things that are to be added to the project
 - user headers are not really handled properly
 - there is an issue with header duplication (especially visible with CocoaPods)
 
+### License
+
+MIT, see LICENSE
