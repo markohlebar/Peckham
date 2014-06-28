@@ -129,4 +129,8 @@
     return formattedImport ? formattedImport : import;
 }
 
+- (void)importListDidDismiss:(MHImportListView *)importList {
+    [self dismiss];
+}
+
 @end
