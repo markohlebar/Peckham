@@ -105,6 +105,9 @@
         }
         [self updateData:YES];
     }
+    else if (key.keyCode == kVK_Escape) {
+        [self.delegate importListDidDismiss:self];
+    }
     else if (key.keyCode == kVK_Return) {
         [self onSelectedRow:selectedRow];
     }
@@ -113,8 +116,8 @@
 - (void)onSelectedRow:(NSInteger) selectedRow {
     if (selectedRow != -1 &&
         _filteredImports.count > 0) {
-        [_delegate importList:self
-              didSelectImport:_filteredImports[selectedRow]];
+        [self.delegate importList:self
+                  didSelectImport:_filteredImports[selectedRow]];
     }
 
 }

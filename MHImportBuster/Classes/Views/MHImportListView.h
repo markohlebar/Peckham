@@ -12,8 +12,9 @@
 @class MHImportListView;
 @protocol MHImportListViewDelegate <NSObject>
 @required
--(void) importList:(MHImportListView *)importList didSelectImport:(NSString *)import;
--(NSString *)importList:(MHImportListView *)importList formattedImport:(NSString *)import;
+- (void)importList:(MHImportListView *)importList didSelectImport:(NSString *)import;
+- (NSString *)importList:(MHImportListView *)importList formattedImport:(NSString *)import;
+- (void)importListDidDismiss:(MHImportListView *)importList;
 @end
 
 @interface MHImportListView : NSView <MHTableViewDelegate, NSTableViewDataSource>
