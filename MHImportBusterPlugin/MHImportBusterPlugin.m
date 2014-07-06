@@ -68,6 +68,7 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
         self.bundle = plugin;
         [self loadKeyboardHandler];
         [self registerObserver];
+        [self loadHeaderCache];
     }
     return self;
 }
@@ -79,7 +80,11 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
                                                object:nil];
 }
 
--(void) loadKeyboardHandler {
+- (void)loadHeaderCache {
+    [MHHeaderCache sharedCache];
+}
+
+- (void)loadKeyboardHandler {
     EventHotKeyRef myHotKeyRef;
     EventHotKeyID myHotKeyID;
     EventTypeSpec eventType;
@@ -105,7 +110,7 @@ OSStatus myHotKeyHandler(EventHandlerCallRef nextHandler, EventRef anEvent, void
     [file removeDuplicateImports];
 }
 
--(void) sortImports {
+- (void)sortImports {
     MHFile *file = [MHFile fileWithCurrentFilePath];
     [file sortImportsAlphabetically];
 }

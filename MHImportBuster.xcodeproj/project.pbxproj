@@ -24,6 +24,8 @@
 		9628390718A63A11007EE520 /* DVTSourceTextStorage+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 9628390518A63A11007EE520 /* DVTSourceTextStorage+Operations.h */; };
 		9628390818A63A11007EE520 /* DVTSourceTextStorage+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390618A63A11007EE520 /* DVTSourceTextStorage+Operations.m */; };
 		9628390C18A63D35007EE520 /* DVTSourceTextStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */; };
+		9629DE721969399500BD3CA1 /* XCSourceFile+MHSourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 9629DE701969399500BD3CA1 /* XCSourceFile+MHSourceFile.h */; };
+		9629DE731969399500BD3CA1 /* XCSourceFile+MHSourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9629DE711969399500BD3CA1 /* XCSourceFile+MHSourceFile.m */; };
 		963282CF18F933C50007699A /* MHInterfaceStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 963282CD18F933C50007699A /* MHInterfaceStatement.h */; };
 		963282D018F933C50007699A /* MHInterfaceStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 963282CE18F933C50007699A /* MHInterfaceStatement.m */; };
 		963282D218F961E80007699A /* MHInterfaceStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 963282D118F961E80007699A /* MHInterfaceStatementSpec.m */; };
@@ -131,6 +133,10 @@
 		96FC2B3D191B596E000CA4EB /* NSString+XCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC2B39191B596E000CA4EB /* NSString+XCAdditions.m */; };
 		96FC2B3E191B596E000CA4EB /* XCWorkspace.h in Headers */ = {isa = PBXBuildFile; fileRef = 96FC2B3A191B596E000CA4EB /* XCWorkspace.h */; };
 		96FC2B3F191B596E000CA4EB /* XCWorkspace.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FC2B3B191B596E000CA4EB /* XCWorkspace.m */; };
+		96FDF3DD19694C0100170DEB /* MHConcreteSourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 96FDF3DB19694C0100170DEB /* MHConcreteSourceFile.h */; };
+		96FDF3DE19694C0100170DEB /* MHConcreteSourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FDF3DC19694C0100170DEB /* MHConcreteSourceFile.m */; };
+		96FDF3EA19694EB600170DEB /* NSArray+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 96FDF3E819694EB600170DEB /* NSArray+Operations.h */; };
+		96FDF3EB19694EB600170DEB /* NSArray+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 96FDF3E919694EB600170DEB /* NSArray+Operations.m */; };
 		AD5427CA1876C37E00A2BC8E /* MHImportBuster.h in Headers */ = {isa = PBXBuildFile; fileRef = AD6A1FCC1876B5BD00E4137F /* MHImportBuster.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD6A1FC01876B5BD00E4137F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */; };
 		AD6A1FCA1876B5BD00E4137F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD6A1FC81876B5BD00E4137F /* InfoPlist.strings */; };
@@ -211,6 +217,8 @@
 		9628390518A63A11007EE520 /* DVTSourceTextStorage+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTSourceTextStorage+Operations.h"; sourceTree = "<group>"; };
 		9628390618A63A11007EE520 /* DVTSourceTextStorage+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DVTSourceTextStorage+Operations.m"; sourceTree = "<group>"; };
 		9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVTSourceTextStorageSpec.m; sourceTree = "<group>"; };
+		9629DE701969399500BD3CA1 /* XCSourceFile+MHSourceFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCSourceFile+MHSourceFile.h"; path = "../External/XcodeEditor/Categories/XCSourceFile+MHSourceFile.h"; sourceTree = "<group>"; };
+		9629DE711969399500BD3CA1 /* XCSourceFile+MHSourceFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCSourceFile+MHSourceFile.m"; path = "../External/XcodeEditor/Categories/XCSourceFile+MHSourceFile.m"; sourceTree = "<group>"; };
 		963282CD18F933C50007699A /* MHInterfaceStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHInterfaceStatement.h; sourceTree = "<group>"; };
 		963282CE18F933C50007699A /* MHInterfaceStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHInterfaceStatement.m; sourceTree = "<group>"; };
 		963282D118F961E80007699A /* MHInterfaceStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHInterfaceStatementSpec.m; sourceTree = "<group>"; };
@@ -247,6 +255,7 @@
 		96589FAD18FDDD6800654F2B /* NSArray+MHStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHStatement.m"; sourceTree = "<group>"; };
 		9658B95C18A643D700A768B0 /* NSObject+MHLogMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MHLogMethods.h"; sourceTree = "<group>"; };
 		9658B95D18A643D700A768B0 /* NSObject+MHLogMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MHLogMethods.m"; sourceTree = "<group>"; };
+		9661D52019694B0600A9930E /* MHSourceFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHSourceFile.h; sourceTree = "<group>"; };
 		9664484B1956F1AF0040EC56 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9679BC62191650EF0004AB6B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9683A66C18FAA402009E0232 /* MHMethodArgumentStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHMethodArgumentStatement.h; sourceTree = "<group>"; };
@@ -319,6 +328,10 @@
 		96FC2B39191B596E000CA4EB /* NSString+XCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XCAdditions.m"; sourceTree = "<group>"; };
 		96FC2B3A191B596E000CA4EB /* XCWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCWorkspace.h; sourceTree = "<group>"; };
 		96FC2B3B191B596E000CA4EB /* XCWorkspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCWorkspace.m; sourceTree = "<group>"; };
+		96FDF3DB19694C0100170DEB /* MHConcreteSourceFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHConcreteSourceFile.h; sourceTree = "<group>"; };
+		96FDF3DC19694C0100170DEB /* MHConcreteSourceFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHConcreteSourceFile.m; sourceTree = "<group>"; };
+		96FDF3E819694EB600170DEB /* NSArray+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Operations.h"; sourceTree = "<group>"; };
+		96FDF3E919694EB600170DEB /* NSArray+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Operations.m"; sourceTree = "<group>"; };
 		AD3D6CED187736C000DF605A /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHImportBuster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6A1FBF1876B5BD00E4137F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -563,6 +576,15 @@
 			name = Statements;
 			sourceTree = "<group>";
 		};
+		9661D52119694B8200A9930E /* XcodeEditor */ = {
+			isa = PBXGroup;
+			children = (
+				9629DE701969399500BD3CA1 /* XCSourceFile+MHSourceFile.h */,
+				9629DE711969399500BD3CA1 /* XCSourceFile+MHSourceFile.m */,
+			);
+			name = XcodeEditor;
+			sourceTree = "<group>";
+		};
 		9683A67018FAAF40009E0232 /* Methods */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +682,8 @@
 				9611424018A6504400E03589 /* NSString+MHNSRange.m */,
 				96A0953919177ED400338093 /* NSTextView+Operations.h */,
 				96A0953A19177ED400338093 /* NSTextView+Operations.m */,
+				96FDF3E819694EB600170DEB /* NSArray+Operations.h */,
+				96FDF3E919694EB600170DEB /* NSArray+Operations.m */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -734,6 +758,16 @@
 				9691A4B41947B0C3005407A1 /* XCProject+Extensions.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		96FDF3DF19694C1000170DEB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9661D52019694B0600A9930E /* MHSourceFile.h */,
+				96FDF3DB19694C0100170DEB /* MHConcreteSourceFile.h */,
+				96FDF3DC19694C0100170DEB /* MHConcreteSourceFile.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		AD6A1FB21876B5BD00E4137F = {
@@ -852,6 +886,7 @@
 		AD6A1FEA1876B68D00E4137F /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				9661D52119694B8200A9930E /* XcodeEditor */,
 				9683A67518FAB124009E0232 /* PKTokenizer */,
 				963282D718F964970007699A /* PKToken */,
 				96D89DF418A7B0180087D248 /* Statements */,
@@ -866,6 +901,7 @@
 			children = (
 				964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */,
 				964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */,
+				96FDF3DF19694C1000170DEB /* Model */,
 				96A0953419177B3200338093 /* Controller */,
 				96B22FA319167CC8001E643C /* Views */,
 				9618D21518DB72670049EE62 /* Issues */,
@@ -916,6 +952,7 @@
 				9683A66E18FAA402009E0232 /* MHMethodArgumentStatement.h in Headers */,
 				AD5427CA1876C37E00A2BC8E /* MHImportBuster.h in Headers */,
 				96B64AC818DE0D8F007DFC26 /* NSFileManager+Headers.h in Headers */,
+				96FDF3DD19694C0100170DEB /* MHConcreteSourceFile.h in Headers */,
 				96D89DFE18A7BE580087D248 /* PKToken+Factory.h in Headers */,
 				96A0953B19177ED400338093 /* NSTextView+Operations.h in Headers */,
 				964B0A9718A79AD000E36C8E /* XCFXcodePrivate.h in Headers */,
@@ -931,6 +968,7 @@
 				9683A67318FAAF5E009E0232 /* MHMethodReturnStatement.h in Headers */,
 				96D89DEF18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.h in Headers */,
 				963282CF18F933C50007699A /* MHInterfaceStatement.h in Headers */,
+				96FDF3EA19694EB600170DEB /* NSArray+Operations.h in Headers */,
 				96FC2B3C191B596E000CA4EB /* NSString+XCAdditions.h in Headers */,
 				968AD40E18986746009E6FE6 /* MHDocumentMethodLOCObserver.h in Headers */,
 				9628390718A63A11007EE520 /* DVTSourceTextStorage+Operations.h in Headers */,
@@ -959,6 +997,7 @@
 				96B22FA719167CC8001E643C /* MHImportListView.h in Headers */,
 				96D89DF718A7B03C0087D248 /* MHImportStatement+Sorting.h in Headers */,
 				96B64AC018DE01F4007DFC26 /* MHHeaderCache.h in Headers */,
+				9629DE721969399500BD3CA1 /* XCSourceFile+MHSourceFile.h in Headers */,
 				961C7DD2191F6F9000031FAD /* XCTarget+XCProject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1063,6 +1102,90 @@
 			knownRegions = (
 				en,
 				Base,
+				af,
+				am,
+				ar,
+				be,
+				bg,
+				ca,
+				cs,
+				da,
+				de,
+				de_AT,
+				de_CH,
+				el,
+				en_GB,
+				en_IE,
+				en_IN,
+				en_SG,
+				en_ZA,
+				es,
+				es_419,
+				es_AR,
+				es_BO,
+				es_CL,
+				es_CO,
+				es_CR,
+				es_DO,
+				es_EC,
+				es_GT,
+				es_HN,
+				es_MX,
+				es_NI,
+				es_PA,
+				es_PE,
+				es_PR,
+				es_PY,
+				es_SV,
+				es_US,
+				es_UY,
+				es_VE,
+				et,
+				fa,
+				fi,
+				fil,
+				fr,
+				fr_CH,
+				gsw,
+				he,
+				hi,
+				hr,
+				hu,
+				id,
+				in,
+				it,
+				iw,
+				ja,
+				ko,
+				ln,
+				lt,
+				lv,
+				mo,
+				ms,
+				nb,
+				nl,
+				no,
+				pl,
+				pt,
+				pt_BR,
+				pt_PT,
+				ro,
+				ru,
+				sk,
+				sl,
+				sr,
+				sv,
+				sw,
+				th,
+				tl,
+				tr,
+				uk,
+				vi,
+				zh,
+				zh_CN,
+				zh_HK,
+				zh_TW,
+				zu,
 			);
 			mainGroup = AD6A1FB21876B5BD00E4137F;
 			productRefGroup = AD6A1FBD1876B5BD00E4137F /* Products */;
@@ -1209,6 +1332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				963282D018F933C50007699A /* MHInterfaceStatement.m in Sources */,
+				96FDF3EB19694EB600170DEB /* NSArray+Operations.m in Sources */,
 				964B0A9B18A79B8300E36C8E /* MHConcreteSourceOperation.m in Sources */,
 				96C1BF331928BF2E007A4699 /* MHImportStatement+Construction.m in Sources */,
 				9683A66F18FAA402009E0232 /* MHMethodArgumentStatement.m in Sources */,
@@ -1227,12 +1351,14 @@
 				9611424218A6504400E03589 /* NSString+MHNSRange.m in Sources */,
 				963282E118F971090007699A /* MHPropertyQualifierStatement.m in Sources */,
 				96D89DFF18A7BE580087D248 /* PKToken+Factory.m in Sources */,
+				9629DE731969399500BD3CA1 /* XCSourceFile+MHSourceFile.m in Sources */,
 				96FC2B3D191B596E000CA4EB /* NSString+XCAdditions.m in Sources */,
 				96FC2B3F191B596E000CA4EB /* XCWorkspace.m in Sources */,
 				969A558C18DDA3890040EB6C /* MHAddImportOperation.m in Sources */,
 				96B22FA819167CC8001E643C /* MHImportListView.m in Sources */,
 				96A0953819177B5D00338093 /* MHImportListViewController.m in Sources */,
 				96E3D9B9192BF5AE00600588 /* MHStringLiteralStatement.m in Sources */,
+				96FDF3DE19694C0100170DEB /* MHConcreteSourceFile.m in Sources */,
 				96D89DF818A7B03C0087D248 /* MHImportStatement+Sorting.m in Sources */,
 				96A0953C19177ED400338093 /* NSTextView+Operations.m in Sources */,
 				9658B95F18A643D700A768B0 /* NSObject+MHLogMethods.m in Sources */,
@@ -1493,6 +1619,10 @@
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
 				INSTALL_PATH = "@rpath";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mhlebar/Documents/GitHub/CSSocial/CSSocial/External/GooglePlus/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1521,6 +1651,10 @@
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
 				INSTALL_PATH = "@rpath";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mhlebar/Documents/GitHub/CSSocial/CSSocial/External/GooglePlus/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;

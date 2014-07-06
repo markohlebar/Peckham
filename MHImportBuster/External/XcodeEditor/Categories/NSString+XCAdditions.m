@@ -43,10 +43,9 @@
     [task setLaunchPath: @"/bin/sh"];
     [task setArguments:@[@"-c", [NSString stringWithFormat:@"%@", self]]];
     [task setStandardOutput:pipe];
-    
-    NSFileHandle* file = [pipe fileHandleForReading];
     [task launch];
-    
+
+    NSFileHandle* file = [pipe fileHandleForReading];
     return [[NSString alloc] initWithData:[file readDataToEndOfFile] encoding:NSUTF8StringEncoding];
 }
 

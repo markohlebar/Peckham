@@ -15,6 +15,7 @@
 #import "MHImportStatement.h"
 #import "MHImportStatement+Construction.h"
 #import "NSString+Extensions.h"
+#import <XcodeEditor/XCSourceFile.h>
 
 @interface MHImportListViewController () <NSPopoverDelegate, MHImportListViewDelegate>
 @property (nonatomic, strong) NSPopover *popover;
@@ -67,17 +68,30 @@
                               ofView:view
                        preferredEdge:NSMinYEdge];
     
-    [[MHHeaderCache sharedCache] loadHeaders:^(NSArray *headers) {
+    [self startLoading];
+    [[MHHeaderCache sharedCache] loadHeaders:^(NSArray *headers, BOOL doneLoading) {
         self.headers = headers;
+        if (doneLoading) [self stopLoading];
     }];
+}
+
+- (MHImportListView *)importListView {
+    return (MHImportListView *)self.popover.contentViewController.view;
+}
+
+- (void)startLoading {
+    [self.importListView startLoading];
+}
+
+- (void)stopLoading {
+    [self.importListView stopLoading];
 }
 
 - (void)setHeaders:(NSArray *)headers {
     _headers = headers;
     
-    MHImportListView *listView = (MHImportListView *)self.popover.contentViewController.view;
-    listView.imports = headers;
-    listView.delegate = self;
+    self.importListView.imports = headers;
+    self.importListView.delegate = self;
 }
 
 + (instancetype)present {
@@ -110,23 +124,23 @@
 
 #pragma mark - MHImportListViewDelegate
 
-- (MHImportStatement *)importStatementForImport:(NSString *)import {
+- (MHImportStatement *)importStatementForImport:(XCSourceFile *)import {
     if ([[MHHeaderCache sharedCache] isProjectHeader:import]) {
-        return [MHImportStatement statementWithHeaderPath:import];
+        return [MHImportStatement statementWithHeaderPath:import.name];
     }
     else {
-        return [MHImportStatement statementWithFrameworkHeaderPath:import];
+        return [MHImportStatement statementWithFrameworkHeaderPath:import.name];
     }
 }
 
-- (void)importList:(MHImportListView *)importList didSelectImport:(NSString *)import {
+- (void)importList:(MHImportListView *)importList didSelectImport:(XCSourceFile *)import {
     [self addImport:[self importStatementForImport:import]];
     [self dismiss];
 }
 
-- (NSString *)importList:(MHImportListView *)importList formattedImport:(NSString *)import {
+- (NSString *)importList:(MHImportListView *)importList formattedImport:(XCSourceFile *)import {
     NSString *formattedImport = [self importStatementForImport:import].value;
-    return formattedImport ? formattedImport : import;
+    return formattedImport ? formattedImport : import.name;
 }
 
 - (void)importListDidDismiss:(MHImportListView *)importList {

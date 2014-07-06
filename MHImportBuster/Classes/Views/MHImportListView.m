@@ -13,7 +13,7 @@
 
 @interface MHImportListView ()
 @property (weak) IBOutlet NSTableView *tableView;
-
+@property (weak) IBOutlet NSProgressIndicator *activityIndicator;
 @end
 
 @implementation MHImportListView
@@ -37,6 +37,14 @@
     [_currentString setString:@""];
 }
 
+- (void)startLoading {
+    [self.activityIndicator startAnimation:self];
+}
+
+- (void)stopLoading {
+    [self.activityIndicator stopAnimation:self];
+}
+
 #pragma mark - Setters
 
 - (void) setImports:(NSArray *)headers {
@@ -55,6 +63,7 @@
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     if(_filteredImports.count > 0) {
         NSString *header =  [self.delegate importList:self formattedImport:_filteredImports[row]];
+
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:header];
         if (_currentString.length > 0) {
             NSRange range = [header rangeOfString:_currentString options:NSCaseInsensitiveSearch];
