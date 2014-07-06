@@ -14,7 +14,7 @@
 #import "XCTarget.h"
 #import "XCSourceFile.h"
 #import "XCProject.h"
-#import "XCBuildConfig.h"
+#import "XCBuildConfiguration.h"
 #import "Utils/XCMemoryUtils.h"
 
 /* ================================================================================================================== */
@@ -94,7 +94,7 @@
 	if (_configurations == nil) {
 		NSString *buildConfigurationRootSectionKey = [[[_project objects] objectForKey:_key] objectForKey:@"buildConfigurationList"];
 		NSDictionary *buildConfigurationDictionary = [[_project objects] objectForKey:buildConfigurationRootSectionKey];
-		_configurations = [[XCBuildConfig buildConfigurationsFromArray:[buildConfigurationDictionary objectForKey:@"buildConfigurations"]
+		_configurations = [[XCBuildConfiguration buildConfigurationsFromArray:[buildConfigurationDictionary objectForKey:@"buildConfigurations"]
                                                                          inProject:_project] mutableCopy];
 		_defaultConfigurationName = [[buildConfigurationDictionary objectForKey:@"defaultConfigurationName"] copy];
 	}
@@ -102,11 +102,11 @@
 	return _configurations;
 }
 
-- (XCBuildConfig*)defaultConfiguration {
+- (XCBuildConfiguration*)defaultConfiguration {
 	return [[self configurations] objectForKey:_defaultConfigurationName];
 }
 
-- (XCBuildConfig*)configurationWithName:(NSString*)name
+- (XCBuildConfiguration*)configurationWithName:(NSString*)name
 {
     return [[self configurations] objectForKey:name];
 }
@@ -228,7 +228,7 @@
         buildConfiguration[@"buildSettings"][@"PRODUCT_NAME"] = productName;
     };
     
-    dupTargetObj[@"buildConfigurationList"] = [XCBuildConfig duplicatedBuildConfigurationListWithKey: buildConfigurationListKey
+    dupTargetObj[@"buildConfigurationList"] = [XCBuildConfiguration duplicatedBuildConfigurationListWithKey: buildConfigurationListKey
                                                                                                   inProject: _project
                                                                               withBuildConfigurationVisitor: visitor];
     

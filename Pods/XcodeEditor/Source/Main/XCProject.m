@@ -17,7 +17,7 @@
 #import "XCSourceFile.h"
 #import "XCTarget.h"
 #import "XCFileOperationQueue.h"
-#import "XCBuildConfig.h"
+#import "XCBuildConfiguration.h"
 #import "Utils/XCMemoryUtils.h"
 
 
@@ -342,7 +342,7 @@
                 [[[self objects] objectForKey:[self rootObjectKey]] objectForKey:@"buildConfigurationList"];
         NSDictionary* buildConfigurationDictionary = [[self objects] objectForKey:buildConfigurationRootSectionKey];
         _configurations =
-                [[XCBuildConfig buildConfigurationsFromArray:[buildConfigurationDictionary objectForKey:@"buildConfigurations"]
+                [[XCBuildConfiguration buildConfigurationsFromArray:[buildConfigurationDictionary objectForKey:@"buildConfigurations"]
                                                                inProject:self] mutableCopy];
         _defaultConfigurationName = [[buildConfigurationDictionary objectForKey:@"defaultConfigurationName"] copy];
     }
@@ -354,7 +354,7 @@
     return [[self configurations] objectForKey:name];
 }
 
-- (XCBuildConfig*)defaultConfiguration
+- (XCBuildConfiguration*)defaultConfiguration
 {
     return [[self configurations] objectForKey:_defaultConfigurationName];
 }

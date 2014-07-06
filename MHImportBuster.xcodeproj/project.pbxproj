@@ -24,6 +24,8 @@
 		9628390718A63A11007EE520 /* DVTSourceTextStorage+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 9628390518A63A11007EE520 /* DVTSourceTextStorage+Operations.h */; };
 		9628390818A63A11007EE520 /* DVTSourceTextStorage+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390618A63A11007EE520 /* DVTSourceTextStorage+Operations.m */; };
 		9628390C18A63D35007EE520 /* DVTSourceTextStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */; };
+		9629DE721969399500BD3CA1 /* XCSourceFile+Equality.h in Headers */ = {isa = PBXBuildFile; fileRef = 9629DE701969399500BD3CA1 /* XCSourceFile+Equality.h */; };
+		9629DE731969399500BD3CA1 /* XCSourceFile+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = 9629DE711969399500BD3CA1 /* XCSourceFile+Equality.m */; };
 		963282CF18F933C50007699A /* MHInterfaceStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 963282CD18F933C50007699A /* MHInterfaceStatement.h */; };
 		963282D018F933C50007699A /* MHInterfaceStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 963282CE18F933C50007699A /* MHInterfaceStatement.m */; };
 		963282D218F961E80007699A /* MHInterfaceStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 963282D118F961E80007699A /* MHInterfaceStatementSpec.m */; };
@@ -211,6 +213,8 @@
 		9628390518A63A11007EE520 /* DVTSourceTextStorage+Operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DVTSourceTextStorage+Operations.h"; sourceTree = "<group>"; };
 		9628390618A63A11007EE520 /* DVTSourceTextStorage+Operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DVTSourceTextStorage+Operations.m"; sourceTree = "<group>"; };
 		9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVTSourceTextStorageSpec.m; sourceTree = "<group>"; };
+		9629DE701969399500BD3CA1 /* XCSourceFile+Equality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCSourceFile+Equality.h"; sourceTree = "<group>"; };
+		9629DE711969399500BD3CA1 /* XCSourceFile+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCSourceFile+Equality.m"; sourceTree = "<group>"; };
 		963282CD18F933C50007699A /* MHInterfaceStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHInterfaceStatement.h; sourceTree = "<group>"; };
 		963282CE18F933C50007699A /* MHInterfaceStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHInterfaceStatement.m; sourceTree = "<group>"; };
 		963282D118F961E80007699A /* MHInterfaceStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHInterfaceStatementSpec.m; sourceTree = "<group>"; };
@@ -732,6 +736,8 @@
 				961C7DD1191F6F9000031FAD /* XCTarget+XCProject.m */,
 				9691A4B31947B0C3005407A1 /* XCProject+Extensions.h */,
 				9691A4B41947B0C3005407A1 /* XCProject+Extensions.m */,
+				9629DE701969399500BD3CA1 /* XCSourceFile+Equality.h */,
+				9629DE711969399500BD3CA1 /* XCSourceFile+Equality.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -959,6 +965,7 @@
 				96B22FA719167CC8001E643C /* MHImportListView.h in Headers */,
 				96D89DF718A7B03C0087D248 /* MHImportStatement+Sorting.h in Headers */,
 				96B64AC018DE01F4007DFC26 /* MHHeaderCache.h in Headers */,
+				9629DE721969399500BD3CA1 /* XCSourceFile+Equality.h in Headers */,
 				961C7DD2191F6F9000031FAD /* XCTarget+XCProject.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1063,6 +1070,90 @@
 			knownRegions = (
 				en,
 				Base,
+				af,
+				am,
+				ar,
+				be,
+				bg,
+				ca,
+				cs,
+				da,
+				de,
+				de_AT,
+				de_CH,
+				el,
+				en_GB,
+				en_IE,
+				en_IN,
+				en_SG,
+				en_ZA,
+				es,
+				es_419,
+				es_AR,
+				es_BO,
+				es_CL,
+				es_CO,
+				es_CR,
+				es_DO,
+				es_EC,
+				es_GT,
+				es_HN,
+				es_MX,
+				es_NI,
+				es_PA,
+				es_PE,
+				es_PR,
+				es_PY,
+				es_SV,
+				es_US,
+				es_UY,
+				es_VE,
+				et,
+				fa,
+				fi,
+				fil,
+				fr,
+				fr_CH,
+				gsw,
+				he,
+				hi,
+				hr,
+				hu,
+				id,
+				in,
+				it,
+				iw,
+				ja,
+				ko,
+				ln,
+				lt,
+				lv,
+				mo,
+				ms,
+				nb,
+				nl,
+				no,
+				pl,
+				pt,
+				pt_BR,
+				pt_PT,
+				ro,
+				ru,
+				sk,
+				sl,
+				sr,
+				sv,
+				sw,
+				th,
+				tl,
+				tr,
+				uk,
+				vi,
+				zh,
+				zh_CN,
+				zh_HK,
+				zh_TW,
+				zu,
 			);
 			mainGroup = AD6A1FB21876B5BD00E4137F;
 			productRefGroup = AD6A1FBD1876B5BD00E4137F /* Products */;
@@ -1227,6 +1318,7 @@
 				9611424218A6504400E03589 /* NSString+MHNSRange.m in Sources */,
 				963282E118F971090007699A /* MHPropertyQualifierStatement.m in Sources */,
 				96D89DFF18A7BE580087D248 /* PKToken+Factory.m in Sources */,
+				9629DE731969399500BD3CA1 /* XCSourceFile+Equality.m in Sources */,
 				96FC2B3D191B596E000CA4EB /* NSString+XCAdditions.m in Sources */,
 				96FC2B3F191B596E000CA4EB /* XCWorkspace.m in Sources */,
 				969A558C18DDA3890040EB6C /* MHAddImportOperation.m in Sources */,
@@ -1493,6 +1585,10 @@
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
 				INSTALL_PATH = "@rpath";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mhlebar/Documents/GitHub/CSSocial/CSSocial/External/GooglePlus/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1521,6 +1617,10 @@
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
 				INSTALL_PATH = "@rpath";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/mhlebar/Documents/GitHub/CSSocial/CSSocial/External/GooglePlus/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;

@@ -13,7 +13,7 @@
 
 @class XCProject;
 
-@interface XCBuildConfig : NSObject
+@interface XCBuildConfiguration : NSObject
 {
 @private
     NSMutableDictionary* _buildSettings;

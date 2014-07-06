@@ -22,7 +22,7 @@
 @class XCSourceFile;
 @class XCTarget;
 @class XCSubProjectDefinition;
-@class XCBuildConfig;
+@class XCBuildConfiguration;
 
 
 __attribute__((__visibility__("default"))) @interface XCProject : NSObject
@@ -155,7 +155,7 @@ __attribute__((__visibility__("default"))) @interface XCProject : NSObject
 
 - (NSDictionary*)configurationWithName:(NSString*)name;
 
-- (XCBuildConfig*)defaultConfiguration;
+- (XCBuildConfiguration*)defaultConfiguration;
 
 /* ====================================================================================================================================== */
 #pragma mark Saving
