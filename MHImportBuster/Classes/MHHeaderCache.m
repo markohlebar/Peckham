@@ -21,20 +21,25 @@
 #import "XCProject+SubProject.h"
 #import <XcodeEditor/XCBuildConfiguration.h>
 #import "NSObject+MHLogMethods.h"
-#import "XCSourceFile+Equality.h"
+#import "MHSourceFile.h"
+#import "MHConcreteSourceFile.h"
+#import "NSArray+Operations.h"
+
+typedef NSString * MHHeaderCacheHeaderKind;
+MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindProjects = @"MHHeaderCacheHeaderKindProjects";
+MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCacheHeaderKindFrameworks";
 
 @interface MHHeaderCache ()
 @property (nonatomic, strong) NSDate *lastModifiedDate;
 @property (nonatomic, copy) MHHeaderLoadingBlock headersBlock;
-@property (nonatomic, copy) XCTarget *currentTarget;
 @property (nonatomic, strong) NSMutableArray *projectHeaders;
+@property (nonatomic, strong) NSMutableArray *frameworkHeaders;
 
 @property (nonatomic, strong) NSMapTable *workspacesMapTable;
 @property (nonatomic, strong) NSMutableDictionary *workspaceCacheDictionary;
 @end
 
 @implementation MHHeaderCache {
-    NSArray *_frameworkHeaders;
     NSArray *_userHeaders;
 
     NSOperationQueue *_operationQueue;
@@ -54,7 +59,7 @@
     self = [super init];
     if (self) {
         _projectHeaders = [NSMutableArray new];
-        _frameworkHeaders = [NSArray new];
+        _frameworkHeaders = [NSMutableArray new];
         _userHeaders = [NSArray new];
         _operationQueue = [NSOperationQueue new];
         _operationQueue.maxConcurrentOperationCount = 1;
@@ -85,39 +90,33 @@
                              object:nil];
 }
 
-- (BOOL)shouldReloadHeadersForTarget:(XCTarget *)target {
-    return ![self.currentTarget.name isEqualToString:target.name] ||
-            [self.lastModifiedDate compare:[target.project dateModified]] != NSOrderedSame ||
-            _projectHeaders.count == 0 ||
-            _userHeaders.count == 0 ||
-            _frameworkHeaders.count == 0;
-}
-
-- (void)setCurrentTarget:(XCTarget *)currentTarget {
-    _currentTarget = currentTarget;
-    self.lastModifiedDate = [currentTarget.project dateModified];
-}
-
-- (NSArray *)allFrameworksForTarget:(XCTarget *) target {
+- (NSArray *)allFrameworksForProject:(XCProject *) project {
+    NSArray *names = [[project valueForKeyPath:@"targets.frameworks.name"] mhFlattenedArray];
+    names = [[NSSet setWithArray:names] allObjects];
+    
     NSMutableArray *frameworkPaths = [NSMutableArray array];
-    NSArray *names = [[target frameworks] valueForKey:@"name"];
     [names enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
         NSString *frameworkPath = [MHXcodeDocumentNavigator pathForFrameworkNamed:name];
-        if(frameworkPath) [frameworkPaths addObject:frameworkPath];
+        if(frameworkPath) {
+            [frameworkPaths addObject:frameworkPath];
+        }
     }];
     
-    return [NSSet setWithArray:frameworkPaths].allObjects;
+    return frameworkPaths;
 }
 
-- (void)reloadFrameworkHeaders {
-    NSArray *frameworkPaths = [self allFrameworksForTarget:self.currentTarget];
-    __block NSMutableArray *allHeaderPaths = [NSMutableArray array];
+- (NSArray *)frameworkHeadersForProject:(XCProject *)project {
+    NSArray *frameworkPaths = [self allFrameworksForProject:project];
+    __block NSMutableArray *allHeaders = [NSMutableArray array];
     [frameworkPaths enumerateObjectsUsingBlock:^(NSString *frameworkPath, NSUInteger idx, BOOL *stop) {
         NSString *headersDirectory = [frameworkPath stringByAppendingPathComponent:@"Headers/"];
         NSArray *headerPaths = [NSFileManager findFilesWithExtension:@"h" inDirectory:headersDirectory];
-        [allHeaderPaths addObjectsFromArray:headerPaths];
+        [headerPaths enumerateObjectsUsingBlock:^(NSString *path, NSUInteger idx, BOOL *stop) {
+            MHConcreteSourceFile *header = [MHConcreteSourceFile sourceFileWithName:path];
+            [allHeaders addObject:header];
+        }];
     }];
-    _frameworkHeaders = [allHeaderPaths sortedArrayUsingSelector:@selector(compare:)];
+    return allHeaders;
 }
 
 - (BOOL) array:(NSArray *) array containsStringWithLastPathComponent:(NSString *)lastPathComponent {
@@ -145,8 +144,8 @@
 
 - (NSArray *) allHeaders {
     NSMutableArray *allHeaders = [NSMutableArray array];
-    [allHeaders addObjectsFromArray:_projectHeaders];
-    [allHeaders addObjectsFromArray:_frameworkHeaders];
+    [allHeaders addObjectsFromArray:self.projectHeaders];
+    [allHeaders addObjectsFromArray:self.frameworkHeaders];
     return allHeaders.copy;
 }
 
@@ -156,9 +155,8 @@
 }
 
 - (void)asyncReloadHeaders {
-    self.currentTarget = [MHXcodeDocumentNavigator currentTarget];
-
     [self.projectHeaders removeAllObjects];
+    [self.frameworkHeaders removeAllObjects];
     
     NSBlockOperation *operation = nil;
     operation = [self sortProjectHeadersOperationWithCompletion:^{
@@ -193,18 +191,41 @@
     return workspace;
 }
 
-- (NSMapTable *)projectsMapTableForWorkspace:(XCWorkspace *)workspace {
-    NSMapTable *mapTable = [_workspacesMapTable objectForKey:workspace];
+- (NSMapTable *)mapTableForWorkspace:(XCWorkspace *)workspace
+                                kind:(MHHeaderCacheHeaderKind)kind {
+    NSMutableDictionary *mapTableDictionary = [_workspacesMapTable objectForKey:workspace];
+    NSMapTable *mapTable = mapTableDictionary[kind];
     if (!mapTable) {
         mapTable = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsStrongMemory
                                          valueOptions:NSPointerFunctionsStrongMemory];
-        [_workspacesMapTable setObject:mapTable forKey:workspace];
+        if (!mapTableDictionary) {
+            mapTableDictionary = [NSMutableDictionary dictionary];
+            [_workspacesMapTable setObject:mapTableDictionary
+                                    forKey:workspace];
+        }
+        
+        [mapTableDictionary setObject:mapTable
+                               forKey:kind];
     }
     return mapTable;
 }
 
+- (NSMapTable *)projectsMapTableForWorkspace:(XCWorkspace *)workspace {
+    return [self mapTableForWorkspace:workspace
+                                 kind:MHHeaderCacheHeaderKindProjects];
+}
+
+- (NSMapTable *)frameworksMapTableForWorkspace:(XCWorkspace *)workspace {
+    return [self mapTableForWorkspace:workspace
+                                 kind:MHHeaderCacheHeaderKindFrameworks];
+}
+
 - (NSMapTable *)projectsMapTable {
     return [self projectsMapTableForWorkspace:self.currentWorkspace];
+}
+
+- (NSMapTable *)frameworksMapTable {
+    return [self frameworksMapTableForWorkspace:self.currentWorkspace];
 }
 
 #pragma mark - Projects handling 
@@ -214,8 +235,7 @@
     
     [self.projectsMapTable.keyEnumerator.allObjects enumerateObjectsUsingBlock:
      ^(XCProject *cachedProject, NSUInteger idx, BOOL *stop) {
-        if ([cachedProject isKindOfClass:[XCProject class]] &&
-            [cachedProject.filePath isEqualToString:path]) {
+        if ([cachedProject.filePath isEqualToString:path]) {
             project = cachedProject;
             *stop = YES;
         }
@@ -228,12 +248,18 @@
     
     XCProject *project = [XCProject projectWithFilePath:path];
     [self.projectsMapTable setObject:project.headerFiles
-                          forKey:project];
+                              forKey:project];
+    
+    NSArray *frameworkHeaders = [self frameworkHeadersForProject:project];
+    [self.frameworksMapTable setObject:frameworkHeaders
+                                forKey:project];
 }
 
 - (void)removeProjectWithPath:(NSString *)path {
     XCProject *project = [self cachedProjectWithPath:path];
     [self.projectsMapTable removeObjectForKey:project];
+    [self.frameworksMapTable removeObjectForKey:project];
+
 }
 
 #pragma mark - Notifications
@@ -277,7 +303,7 @@
         
         [weakSelf.projectsMapTable.objectEnumerator.allObjects enumerateObjectsUsingBlock:
          ^(NSArray *headers, NSUInteger idx, BOOL *stop) {
-             [headers enumerateObjectsUsingBlock:^(XCSourceFile *source, NSUInteger idx, BOOL *stop) {
+             [headers enumerateObjectsUsingBlock:^(id <MHSourceFile> source, NSUInteger idx, BOOL *stop) {
                  if (![weakSelf.projectHeaders containsObject:source] &&
                      [source.extension isEqualToString:@"h"]) {
                      [weakSelf.projectHeaders addObject:source];
@@ -285,7 +311,19 @@
              }];
         }];
         
+        [weakSelf.frameworksMapTable.objectEnumerator.allObjects enumerateObjectsUsingBlock:
+         ^(NSArray *headers, NSUInteger idx, BOOL *stop) {
+             [headers enumerateObjectsUsingBlock:^(id <MHSourceFile> source, NSUInteger idx, BOOL *stop) {
+                 if (![weakSelf.frameworkHeaders containsObject:source] &&
+                     [source.extension isEqualToString:@"h"]) {
+                     [weakSelf.frameworkHeaders addObject:source];
+                 }
+             }];
+         }];
+        
         [weakSelf.projectHeaders sortUsingDescriptors:[self headersSortDescriptors]];
+        [weakSelf.frameworkHeaders sortUsingDescriptors:[self headersSortDescriptors]];
+
         completionBlock();
     }];
     return operation;

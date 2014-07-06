@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Marko Hlebar. All rights reserved.
 //
 
-#import "XCSourceFile+Equality.h"
+#import "XCSourceFile+MHSourceFile.h"
 
-@implementation XCSourceFile (Equality)
+@implementation XCSourceFile (MHSourceFile)
 
 - (NSUInteger)hash {
     return self.type ^ [self.name hash] ^ [self.key hash];

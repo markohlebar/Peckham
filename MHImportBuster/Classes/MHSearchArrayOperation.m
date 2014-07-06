@@ -8,7 +8,7 @@
 
 #import "MHSearchArrayOperation.h"
 #import "NSString+Extensions.h"
-#import "XCSourceFile+Equality.h"
+#import "MHSourceFile.h"
 
 const NSUInteger MHSearchArrayOperationProgression = 2;
 
@@ -38,7 +38,7 @@ const NSUInteger MHSearchArrayOperationProgression = 2;
     __block NSUInteger resultTarget = MHSearchArrayOperationProgression;
     __block NSMutableArray *results = NSMutableArray.new;
     NSString *searchString = self.searchString;
-    [_searchArray enumerateObjectsUsingBlock:^(XCSourceFile *source, NSUInteger idx, BOOL *stop) {
+    [_searchArray enumerateObjectsUsingBlock:^(id <MHSourceFile> source, NSUInteger idx, BOOL *stop) {
         if (self.isCancelled) {
             *stop = YES;
             return;

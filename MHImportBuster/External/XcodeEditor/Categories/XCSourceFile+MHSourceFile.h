@@ -7,8 +7,7 @@
 //
 
 #import "XCSourceFile.h"
+#import "MHSourceFile.h"
 
-@interface XCSourceFile (Equality)
-- (NSString *)lastPathComponent;
-- (NSString *)extension;
+@interface XCSourceFile (MHSourceFile) <MHSourceFile>
 @end
