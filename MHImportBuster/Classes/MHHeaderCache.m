@@ -248,6 +248,8 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 }
 
 - (void)updateProjectWithPath:(NSString *)path {
+    if(![[NSFileManager defaultManager] fileExistsAtPath:path]) return;
+    
     [self removeProjectWithPath:path];
     
     XCWorkspace *workspace = self.currentWorkspace;
