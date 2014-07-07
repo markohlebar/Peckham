@@ -182,6 +182,10 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 - (XCWorkspace *)currentWorkspace {
     NSString *workspacePath = [MHXcodeDocumentNavigator currentWorkspacePath];
     if (!workspacePath) return nil;
+    return [self workspaceWithPath:workspacePath];
+}
+
+- (XCWorkspace *)workspaceWithPath:(NSString *)workspacePath {
     XCWorkspace *workspace = _workspaceCacheDictionary[workspacePath];
     if (!workspace) {
         workspace = [XCWorkspace workspaceWithFilePath:workspacePath];
@@ -246,13 +250,24 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 - (void)updateProjectWithPath:(NSString *)path {
     [self removeProjectWithPath:path];
     
+    XCWorkspace *workspace = self.currentWorkspace;
+    if (!workspace) {
+        NSString *workspacePath = [path stringByAppendingPathComponent:@"project.xcworkspace"];
+        workspace = [self workspaceWithPath:workspacePath];
+    }
+    
     XCProject *project = [XCProject projectWithFilePath:path];
-    [self.projectsMapTable setObject:project.headerFiles
-                              forKey:project];
+    NSMapTable *projectsMapTable = [self mapTableForWorkspace:workspace
+                                                         kind:MHHeaderCacheHeaderKindProjects];
+    [projectsMapTable setObject:project.headerFiles
+                         forKey:project];
     
     NSArray *frameworkHeaders = [self frameworkHeadersForProject:project];
-    [self.frameworksMapTable setObject:frameworkHeaders
-                                forKey:project];
+    
+    NSMapTable *frameworksMapTable = [self mapTableForWorkspace:workspace
+                                                           kind:MHHeaderCacheHeaderKindFrameworks];
+    [frameworksMapTable setObject:frameworkHeaders
+                           forKey:project];
 }
 
 - (void)removeProjectWithPath:(NSString *)path {
@@ -300,7 +315,6 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 - (NSBlockOperation *)sortProjectHeadersOperationWithCompletion:(void(^)(void)) completionBlock {
     __weak typeof(self) weakSelf = self;
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        
         [weakSelf.projectsMapTable.objectEnumerator.allObjects enumerateObjectsUsingBlock:
          ^(NSArray *headers, NSUInteger idx, BOOL *stop) {
              [headers enumerateObjectsUsingBlock:^(id <MHSourceFile> source, NSUInteger idx, BOOL *stop) {
