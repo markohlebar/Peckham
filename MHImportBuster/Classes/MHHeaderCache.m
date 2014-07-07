@@ -301,7 +301,14 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 - (void)projectDidChange:(NSNotification *)notification {
     NSString *filePath = [self filePathForProjectFromNotification:notification];
     if (filePath) {
-        [self updateProjectWithPath:filePath];
+        
+        //TODO: This is a temporary solution which works. When opening .xcodeproj
+        //files, it seems that the notification order is differrent and we can't find
+        //the current workspace. Find out which notification gets fired after opening
+        //.xcodeproj and act after that perhaps... 
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self updateProjectWithPath:filePath];
+        });
     }
 }
 
