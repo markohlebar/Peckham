@@ -8,7 +8,7 @@ Xcode plugin that simplifies adding #import-s.
 ### Installation Guide
 
 - clone the repository or download .zip
-- open **MHImportBuster.workspace** 
+- open **MHImportBuster.xcworkspace** 
 - build **Peckham** target
 - restart Xcode
 
