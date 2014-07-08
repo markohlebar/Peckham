@@ -96,6 +96,7 @@
 
 + (instancetype)present {
     NSTextView *currentTextView = [MHXcodeDocumentNavigator currentSourceCodeTextView];
+    if (!currentTextView) return nil;
     return [self presentInView:currentTextView];
 }
 
