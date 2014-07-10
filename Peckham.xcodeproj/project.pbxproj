@@ -1,188 +1,121 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>9666E4CE196BCAB40076C1F2</key>
-		<dict>
-			<key>children</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9666E4CF196BCAB40076C1F2</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>9666E4D2196BCAB40076C1F2</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>9666E4CE196BCAB40076C1F2</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>9666E4D5196BCB2B0076C1F2</string>
-			</array>
-		</dict>
-		<key>9666E4D2196BCAB40076C1F2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>9666E4D3196BCAB40076C1F2</string>
-				<string>9666E4D4196BCAB40076C1F2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>9666E4D3196BCAB40076C1F2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict/>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>9666E4D4196BCAB40076C1F2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict/>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>9666E4D5196BCB2B0076C1F2</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>9666E4D8196BCB2B0076C1F2</string>
-			<key>buildPhases</key>
-			<array>
-				<string>9666E4D9196BCB4E0076C1F2</string>
-				<string>B7E53EB97D5F4CFA94BCEFFF</string>
-			</array>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXAggregateTarget</string>
-			<key>name</key>
-			<string>Peckham</string>
-			<key>productName</key>
-			<string>Peckham</string>
-		</dict>
-		<key>9666E4D6196BCB2B0076C1F2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>9666E4D7196BCB2B0076C1F2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>9666E4D8196BCB2B0076C1F2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>9666E4D6196BCB2B0076C1F2</string>
-				<string>9666E4D7196BCB2B0076C1F2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>9666E4D9196BCB4E0076C1F2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>xcodebuild -workspace MHImportBuster.xcworkspace -scheme Peckham</string>
-		</dict>
-		<key>B7E53EB97D5F4CFA94BCEFFF</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Find unused imports</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>/bin/sh "/Users/mhlebar/Library/Application Support/Developer/Shared/Xcode/Plug-ins/xcfui.xcplugin/Contents/Resources/fui_script.sh" "/Users/mhlebar/Documents/GitHub/MHImportBuster"</string>
-			<key>showEnvVarsInLog</key>
-			<string>1</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>9666E4CF196BCAB40076C1F2</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		9666E4D5196BCB2B0076C1F2 /* Peckham */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9666E4D8196BCB2B0076C1F2 /* Build configuration list for PBXAggregateTarget "Peckham" */;
+			buildPhases = (
+				9666E4D9196BCB4E0076C1F2 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Peckham;
+			productName = Peckham;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXGroup section */
+		9666E4CE196BCAB40076C1F2 = {
+			isa = PBXGroup;
+			children = (
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		9666E4CF196BCAB40076C1F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 9666E4D2196BCAB40076C1F2 /* Build configuration list for PBXProject "Peckham" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9666E4CE196BCAB40076C1F2;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9666E4D5196BCB2B0076C1F2 /* Peckham */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9666E4D9196BCB4E0076C1F2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "xcodebuild -workspace MHImportBuster.xcworkspace -scheme Peckham";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9666E4D3196BCAB40076C1F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		9666E4D4196BCAB40076C1F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		9666E4D6196BCB2B0076C1F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9666E4D7196BCB2B0076C1F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9666E4D2196BCAB40076C1F2 /* Build configuration list for PBXProject "Peckham" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9666E4D3196BCAB40076C1F2 /* Debug */,
+				9666E4D4196BCAB40076C1F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9666E4D8196BCB2B0076C1F2 /* Build configuration list for PBXAggregateTarget "Peckham" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9666E4D6196BCB2B0076C1F2 /* Debug */,
+				9666E4D7196BCB2B0076C1F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9666E4CF196BCAB40076C1F2 /* Project object */;
+}
