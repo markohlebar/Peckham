@@ -13,7 +13,7 @@
                                          withString:(NSString *)replacement;
 
 - (BOOL)containsOccurencesOfStrings:(NSArray *)strings;
-- (BOOL)containsString:(NSString *)string;
+- (BOOL)mh_containsString:(NSString *)string;
 @end
 
 @interface NSString (ShellExecution)

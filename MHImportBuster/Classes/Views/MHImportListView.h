@@ -10,17 +10,24 @@
 #import "MHTableView.h"
 
 @class MHImportListView;
-@class XCSourceFile;
 @protocol MHImportListViewDelegate <NSObject>
 @required
-- (void)importList:(MHImportListView *)importList didSelectImport:(XCSourceFile *)import;
-- (NSString *)importList:(MHImportListView *)importList formattedImport:(XCSourceFile *)import;
+- (void)importList:(MHImportListView *)importList didSelectRow:(NSUInteger)row;
 - (void)importListDidDismiss:(MHImportListView *)importList;
 @end
 
+@protocol MHImportListViewDataSource <NSObject>
+@required
+- (void)importList:(MHImportListView *)importList
+     performSearch:(NSString *)searchString;
+- (NSString *)searchStringForImportList:(MHImportListView *)importList;
+- (NSString *)importList:(MHImportListView *)importList stringForRow:(NSUInteger)row;
+@end
+
 @interface MHImportListView : NSView <MHTableViewDelegate, NSTableViewDataSource>
-@property (nonatomic, strong) NSArray *imports;
+@property (nonatomic, readwrite) NSUInteger numberOfRows;
 @property (nonatomic, weak) id <MHImportListViewDelegate> delegate;
+@property (nonatomic, weak) id <MHImportListViewDataSource> dataSource;
 
 - (void)startLoading;
 - (void)stopLoading;

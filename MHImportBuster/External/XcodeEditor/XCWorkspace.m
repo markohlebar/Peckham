@@ -80,7 +80,7 @@ static NSString * const XCLocationKey =             @"location";
     if ([elementName isEqualToString:XCFileRefElement]) {
         NSString *location = attributeDict[XCLocationKey];
         
-        if ([location containsString:@"self:"]) {
+        if ([location mh_containsString:@"self:"]) {
             location = [self workspaceRootPath];
         }
         else {

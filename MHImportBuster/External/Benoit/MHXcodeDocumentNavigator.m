@@ -215,7 +215,7 @@ static NSString * const MHXCUserStatePathFormat = @"xcuserdata/%@.xcuserdatad/Us
 }
 
 + (NSString *)currentUserStatePath {
-    NSString *userName = [[MHWhoami xcRunAsCommand] stringByRemovingWhitespacesAndNewlines];
+    NSString *userName = [[MHWhoami xcRunAsCommand] mh_stringByRemovingWhitespacesAndNewlines];
     NSString *userStatePath = [NSString stringWithFormat:MHXCUserStatePathFormat, userName];
     return [[self currentWorkspacePath] stringByAppendingPathComponent:userStatePath];
 }

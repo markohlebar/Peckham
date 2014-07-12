@@ -20,14 +20,14 @@
 
 - (BOOL)containsOccurencesOfStrings:(NSArray *)strings {
     for (NSString *string in strings) {
-        if ([self containsString:string]) {
+        if ([self mh_containsString:string]) {
             return YES;
         }
     }
     return NO;
 }
 
-- (BOOL)containsString:(NSString *)string {
+- (BOOL)mh_containsString:(NSString *)string {
     return [self rangeOfString:string].location != NSNotFound;
 }
 
@@ -70,7 +70,7 @@
 
 - (id)xcParseWhitespaceArray {
     //if string doesn't contain whitespaces it is not an array of options
-    if(![self containsString:@" "]) return self;
+    if(![self mh_containsString:@" "]) return self;
     NSString *trimmedString = [self stringByReplacingOccurrencesOfString:@"\"" withString:@""];
     return [trimmedString componentsSeparatedByString:@" "];
 }
