@@ -70,7 +70,7 @@ NSString * const MHAddImportOperationImportRegexPattern = @".*#.*(import|include
     if (lineNumber == NSNotFound) {
         currentLineNumber = 0;
         [self.source.string enumerateLinesUsingBlock:^(NSString *line, BOOL *stop) {
-            if (![line isWhitespaceOrNewline]) {
+            if (![line mh_isWhitespaceOrNewline]) {
                 currentLineNumber++;
             }
             else {

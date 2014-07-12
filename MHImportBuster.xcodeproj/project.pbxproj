@@ -42,6 +42,9 @@
 		964561CC1895750000026306 /* MHDocumentLOCObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 964561CA1895750000026306 /* MHDocumentLOCObserver.h */; };
 		964561CD1895750000026306 /* MHDocumentLOCObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 964561CB1895750000026306 /* MHDocumentLOCObserver.m */; };
 		964561D11895777A00026306 /* MHDocumentLOCObserverSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 964561D01895777A00026306 /* MHDocumentLOCObserverSpec.m */; };
+		9649770119711794006EF60A /* MHSourceFileSearchController.h in Headers */ = {isa = PBXBuildFile; fileRef = 964976FF19711794006EF60A /* MHSourceFileSearchController.h */; };
+		9649770219711794006EF60A /* MHSourceFileSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649770019711794006EF60A /* MHSourceFileSearchController.m */; };
+		9649770519711E53006EF60A /* MHSourceFileSearchControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9649770419711E53006EF60A /* MHSourceFileSearchControllerSpec.m */; };
 		964B0A9518A79AD000E36C8E /* MHXcodeDocumentNavigator.h in Headers */ = {isa = PBXBuildFile; fileRef = 964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */; };
 		964B0A9618A79AD000E36C8E /* MHXcodeDocumentNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */; };
 		964B0A9718A79AD000E36C8E /* XCFXcodePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 964B0A9418A79AD000E36C8E /* XCFXcodePrivate.h */; };
@@ -235,6 +238,9 @@
 		964561CA1895750000026306 /* MHDocumentLOCObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDocumentLOCObserver.h; sourceTree = "<group>"; };
 		964561CB1895750000026306 /* MHDocumentLOCObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentLOCObserver.m; sourceTree = "<group>"; };
 		964561D01895777A00026306 /* MHDocumentLOCObserverSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentLOCObserverSpec.m; sourceTree = "<group>"; };
+		964976FF19711794006EF60A /* MHSourceFileSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHSourceFileSearchController.h; path = Controller/MHSourceFileSearchController.h; sourceTree = "<group>"; };
+		9649770019711794006EF60A /* MHSourceFileSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHSourceFileSearchController.m; path = Controller/MHSourceFileSearchController.m; sourceTree = "<group>"; };
+		9649770419711E53006EF60A /* MHSourceFileSearchControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHSourceFileSearchControllerSpec.m; path = Controllers/MHSourceFileSearchControllerSpec.m; sourceTree = "<group>"; };
 		964B0A8F18A799A000E36C8E /* MHSourceOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHSourceOperation.h; sourceTree = "<group>"; };
 		964B0A9218A79AD000E36C8E /* MHXcodeDocumentNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHXcodeDocumentNavigator.h; path = ../External/Benoit/MHXcodeDocumentNavigator.h; sourceTree = "<group>"; };
 		964B0A9318A79AD000E36C8E /* MHXcodeDocumentNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHXcodeDocumentNavigator.m; path = ../External/Benoit/MHXcodeDocumentNavigator.m; sourceTree = "<group>"; };
@@ -519,6 +525,14 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		9649770319711E28006EF60A /* Controllers Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9649770419711E53006EF60A /* MHSourceFileSearchControllerSpec.m */,
+			);
+			name = "Controllers Tests";
+			sourceTree = "<group>";
+		};
 		964B0A9018A79AD000E36C8E /* External */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +650,8 @@
 			children = (
 				96A0953519177B5D00338093 /* MHImportListViewController.h */,
 				96A0953619177B5D00338093 /* MHImportListViewController.m */,
+				964976FF19711794006EF60A /* MHSourceFileSearchController.h */,
+				9649770019711794006EF60A /* MHSourceFileSearchController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -861,6 +877,7 @@
 				96D89DF918A7B91D0087D248 /* Statements Tests */,
 				96D89DE718A7A4570087D248 /* Operations Tests */,
 				9611424318A6509800E03589 /* Category Tests */,
+				9649770319711E28006EF60A /* Controllers Tests */,
 				9628390A18A63D08007EE520 /* DVT */,
 				964561D21895778700026306 /* Helper */,
 				AD6A20231876B73200E4137F /* MHStatementParserSpec.m */,
@@ -995,6 +1012,7 @@
 				963282D518F964930007699A /* PKToken+Equality.h in Headers */,
 				9691A4B51947B0C3005407A1 /* XCProject+Extensions.h in Headers */,
 				96B22FA719167CC8001E643C /* MHImportListView.h in Headers */,
+				9649770119711794006EF60A /* MHSourceFileSearchController.h in Headers */,
 				96D89DF718A7B03C0087D248 /* MHImportStatement+Sorting.h in Headers */,
 				96B64AC018DE01F4007DFC26 /* MHHeaderCache.h in Headers */,
 				9629DE721969399500BD3CA1 /* XCSourceFile+MHSourceFile.h in Headers */,
@@ -1366,6 +1384,7 @@
 				AD6A200E1876B68D00E4137F /* MHImportStatement.m in Sources */,
 				964B3F88194910A300B079BD /* MHSearchArrayOperation.m in Sources */,
 				961C7DD3191F6F9000031FAD /* XCTarget+XCProject.m in Sources */,
+				9649770219711794006EF60A /* MHSourceFileSearchController.m in Sources */,
 				964B3F841949100C00B079BD /* MHOperation.m in Sources */,
 				96B64ACB18DE0D8F007DFC26 /* NSString+Extensions.m in Sources */,
 				9699F6FC18954F7400AC7432 /* MHDocumentObserver.m in Sources */,
@@ -1389,6 +1408,7 @@
 			files = (
 				AD6A202D1876B73200E4137F /* MHStatementParserSpec.m in Sources */,
 				9612CD4818DDA065003CF9E0 /* MHXcodeIssuesParserSpec.m in Sources */,
+				9649770519711E53006EF60A /* MHSourceFileSearchControllerSpec.m in Sources */,
 				96E3D9BB192BF71D00600588 /* MHStringLiteralStatementSpec.m in Sources */,
 				AD6A202A1876B73200E4137F /* MHImportStatementSpec.m in Sources */,
 				9683A67B18FAC062009E0232 /* MHMethodArgumentStatementSpec.m in Sources */,

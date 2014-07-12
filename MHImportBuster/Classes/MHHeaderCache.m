@@ -32,16 +32,15 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 @interface MHHeaderCache ()
 @property (nonatomic, strong) NSDate *lastModifiedDate;
 @property (nonatomic, copy) MHHeaderLoadingBlock headersBlock;
-@property (nonatomic, strong) NSMutableArray *projectHeaders;
-@property (nonatomic, strong) NSMutableArray *frameworkHeaders;
+@property (strong) NSArray *projectHeaders;
+@property (strong) NSArray *frameworkHeaders;
+@property (strong) NSArray *userHeaders;
 
 @property (nonatomic, strong) NSMapTable *workspacesMapTable;
 @property (nonatomic, strong) NSMutableDictionary *workspaceCacheDictionary;
 @end
 
 @implementation MHHeaderCache {
-    NSArray *_userHeaders;
-
     NSOperationQueue *_operationQueue;
 }
 
@@ -54,13 +53,12 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
     return _sharedInstance;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _projectHeaders = [NSMutableArray new];
         _frameworkHeaders = [NSMutableArray new];
-        _userHeaders = [NSArray new];
+        _userHeaders = [NSMutableArray new];
         _operationQueue = [NSOperationQueue new];
         _operationQueue.maxConcurrentOperationCount = 1;
         _workspacesMapTable = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsStrongMemory
@@ -130,16 +128,20 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
     return contains;
 }
 
-- (BOOL)isProjectHeader:(XCSourceFile *)header {
-    return [_projectHeaders containsObject:header];
+- (BOOL)isProjectHeader:(id <MHSourceFile> )header {
+    return [self.projectHeaders containsObject:header];
 }
 
-- (BOOL)isFrameworkHeader:(XCSourceFile *)header {
-    return [_frameworkHeaders containsObject:header];
+- (BOOL)isFrameworkHeader:(id <MHSourceFile> )header {
+    return [self.frameworkHeaders containsObject:header];
 }
 
-- (BOOL)isUserHeader:(NSString *)header {
-    return [_userHeaders containsObject:header];
+- (BOOL)isUserHeader:(id <MHSourceFile> )header {
+    return [self.userHeaders containsObject:header];
+}
+
+- (BOOL)isLoading {
+    return _operationQueue.operationCount > 0;
 }
 
 - (NSArray *) allHeaders {
@@ -151,12 +153,16 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 
 - (void)loadHeaders:(MHHeaderLoadingBlock)headersBlock {
     self.headersBlock = headersBlock;
-    [self asyncReloadHeaders];
+    
+    if (![self isLoading]) {
+        [self asyncReloadHeaders];
+    }
 }
 
 - (void)asyncReloadHeaders {
-    [self.projectHeaders removeAllObjects];
-    [self.frameworkHeaders removeAllObjects];
+    self.projectHeaders = nil;
+    self.frameworkHeaders = nil;
+    self.userHeaders = nil;
     
     NSBlockOperation *operation = nil;
     operation = [self sortProjectHeadersOperationWithCompletion:^{
@@ -165,14 +171,10 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
     [_operationQueue addOperation:operation];
 }
 
-- (BOOL) isDoneLoading {
-    return _operationQueue.operationCount == 0;
-}
-
 - (void)notifyAllHeaders {
     if (self.headersBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.headersBlock([self allHeaders], self.isDoneLoading);
+            self.headersBlock([self allHeaders], !self.isLoading);
         });
     }
 }
@@ -324,32 +326,23 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 - (NSBlockOperation *)sortProjectHeadersOperationWithCompletion:(void(^)(void)) completionBlock {
     __weak typeof(self) weakSelf = self;
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        [weakSelf.projectsMapTable.objectEnumerator.allObjects enumerateObjectsUsingBlock:
-         ^(NSArray *headers, NSUInteger idx, BOOL *stop) {
-             [headers enumerateObjectsUsingBlock:^(id <MHSourceFile> source, NSUInteger idx, BOOL *stop) {
-                 if (![weakSelf.projectHeaders containsObject:source] &&
-                     [source.extension isEqualToString:@"h"]) {
-                     [weakSelf.projectHeaders addObject:source];
-                 }
-             }];
-        }];
+        NSArray *projectHeaderArrays = weakSelf.projectsMapTable.objectEnumerator.allObjects;
+        weakSelf.projectHeaders = [self sortedHeadersForHeaderArrays:projectHeaderArrays];
         
-        [weakSelf.frameworksMapTable.objectEnumerator.allObjects enumerateObjectsUsingBlock:
-         ^(NSArray *headers, NSUInteger idx, BOOL *stop) {
-             [headers enumerateObjectsUsingBlock:^(id <MHSourceFile> source, NSUInteger idx, BOOL *stop) {
-                 if (![weakSelf.frameworkHeaders containsObject:source] &&
-                     [source.extension isEqualToString:@"h"]) {
-                     [weakSelf.frameworkHeaders addObject:source];
-                 }
-             }];
-         }];
-        
-        [weakSelf.projectHeaders sortUsingDescriptors:[self headersSortDescriptors]];
-        [weakSelf.frameworkHeaders sortUsingDescriptors:[self headersSortDescriptors]];
+        NSArray *frameworkHeaderArrays = weakSelf.frameworksMapTable.objectEnumerator.allObjects;
+        weakSelf.frameworkHeaders = [self sortedHeadersForHeaderArrays:frameworkHeaderArrays];
 
         completionBlock();
     }];
     return operation;
+}
+
+- (NSArray *)sortedHeadersForHeaderArrays:(NSArray *)headerArrays {
+    NSArray *filteredHeaders = [headerArrays mhFlattenedArray];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"extension == %@", @"h"];
+    filteredHeaders = [filteredHeaders filteredArrayUsingPredicate:predicate];
+    filteredHeaders = [[NSSet setWithArray:filteredHeaders] allObjects];
+    return [filteredHeaders sortedArrayUsingDescriptors:[self headersSortDescriptors]];
 }
 
 - (NSArray *)headersSortDescriptors {

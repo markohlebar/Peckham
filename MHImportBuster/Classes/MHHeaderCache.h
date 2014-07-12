@@ -9,14 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "MHBlocks.h"
 
-@class XCSourceFile;
 typedef void(^MHHeaderLoadingBlock)(NSArray *headers, BOOL doneLoading);
 
+@protocol MHSourceFile;
 @interface MHHeaderCache : NSObject
 + (instancetype)sharedCache;
 - (void)loadHeaders:(MHHeaderLoadingBlock) headersBlock;
-- (BOOL)isProjectHeader:(XCSourceFile *)header;
-- (BOOL)isFrameworkHeader:(XCSourceFile *)header;
-- (BOOL)isUserHeader:(XCSourceFile *)header;
+- (BOOL)isProjectHeader:(id <MHSourceFile> )header;
+- (BOOL)isFrameworkHeader:(id <MHSourceFile> )header;
+- (BOOL)isUserHeader:(id <MHSourceFile> )header;
+- (BOOL)isLoading;
 
 @end

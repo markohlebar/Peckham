@@ -9,7 +9,6 @@
 #import "MHImportListView.h"
 #import <Carbon/Carbon.h>
 #import "NSString+Extensions.h"
-#import "MHSearchArrayOperation.h"
 
 @interface MHImportListView ()
 @property (weak) IBOutlet NSTableView *tableView;
@@ -17,24 +16,9 @@
 @end
 
 @implementation MHImportListView
-{
-    NSMutableString *_currentString;
-    NSMutableArray *_filteredImports;
-    NSOperationQueue *_searchOperationQueue;
-    MHSearchArrayOperation *_currentSearchOperation;
-}
 
 - (void)awakeFromNib {
-    _currentString = [NSMutableString new];
-    _filteredImports = [NSMutableArray new];
-    
-    _searchOperationQueue = [NSOperationQueue new];
-    
     [self.tableView setDoubleAction:@selector(onDoubleClick:)];
-}
-
-- (void)resetCurrentString {
-    [_currentString setString:@""];
 }
 
 - (void)startLoading {
@@ -47,11 +31,9 @@
 
 #pragma mark - Setters
 
-- (void) setImports:(NSArray *)headers {
-    _imports = headers;
-    [_filteredImports setArray:headers];
-    [_tableView reloadData];
-    [self resetCurrentString];
+- (void)setNumberOfRows:(NSUInteger)numberOfRows {
+    _numberOfRows = numberOfRows;
+    [self.tableView reloadData];
 }
 
 #pragma mark - NSTableViewDataSource
@@ -61,12 +43,13 @@
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    if(_filteredImports.count > 0) {
-        NSString *header =  [self.delegate importList:self formattedImport:_filteredImports[row]];
-
+    NSString *currentString = [self.dataSource searchStringForImportList:self];
+    if(self.numberOfRows > 0) {
+        NSString *header =  [self.dataSource importList:self stringForRow:row];
+        
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:header];
-        if (_currentString.length > 0) {
-            NSRange range = [header rangeOfString:_currentString options:NSCaseInsensitiveSearch];
+        if (currentString.length > 0) {
+            NSRange range = [header rangeOfString:currentString options:NSCaseInsensitiveSearch];
             [string addAttribute:NSForegroundColorAttributeName
                            value:[NSColor redColor]
                            range:range];
@@ -74,9 +57,9 @@
         return string;
     }
     else {
-        if (_currentString > 0) {
-            NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:_currentString];
-            NSRange range = NSMakeRange(0, _currentString.length);
+        if (currentString > 0) {
+            NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:currentString];
+            NSRange range = NSMakeRange(0, currentString.length);
             [string addAttribute:NSForegroundColorAttributeName
                            value:[NSColor redColor]
                            range:range];
@@ -87,7 +70,7 @@
 }
 
 - (NSInteger) numberOfRowsInTableView:(NSTableView *)tableView {
-    return _filteredImports.count > 0 ? _filteredImports.count : 1;
+    return self.numberOfRows > 0 ? self.numberOfRows : 1;
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification {
@@ -100,19 +83,21 @@
 #pragma mark - MHTableViewDelegate
 
 - (void)tableView:(MHTableView *)tableView onKeyPress:(NSEvent *)key {
+    NSString *currentString = [self.dataSource searchStringForImportList:self];
+
     NSString *characters = key.characters;
     NSInteger selectedRow = [self.tableView selectedRow];
-    if ([characters isAlphaNumeric] ||
+    if ([characters mh_isAlphaNumeric] ||
         key.keyCode == kVK_ANSI_Period) {
-        [_currentString appendString:characters];
-        [self updateData:NO];
+        currentString = [currentString stringByAppendingString:characters];
+        [self performSearch:currentString];
     }
     else if (key.keyCode == kVK_Delete) {
-        NSUInteger length = _currentString.length;
+        NSUInteger length = currentString.length;
         if (length > 0) {
-            [_currentString setString:[_currentString substringToIndex:length-1]];
+            currentString = [currentString substringToIndex:length-1];
         }
-        [self updateData:YES];
+        [self performSearch:currentString];
     }
     else if (key.keyCode == kVK_Escape) {
         [self.delegate importListDidDismiss:self];
@@ -123,45 +108,19 @@
 }
 
 - (void)onSelectedRow:(NSInteger) selectedRow {
-    if (selectedRow != -1 &&
-        _filteredImports.count > 0) {
-        [self.delegate importList:self
-                  didSelectImport:_filteredImports[selectedRow]];
+    if (selectedRow != -1) {
+        [self.delegate importList:self didSelectRow:selectedRow];
     }
-
 }
 
-- (void) updateData:(BOOL) useCompleteDataSet {
-    NSArray *searchArray = useCompleteDataSet ? _imports : _filteredImports;
-    if (_currentString.length > 0 ) {
-        
-        MHArrayBlock resultsBlock = ^(NSArray *filteredImports) {
-            [_filteredImports setArray:filteredImports];
-            [self selectRow:0];
-            [self.tableView reloadData];
-        };
-        
-        [_currentSearchOperation cancel];
-        _currentSearchOperation = [MHSearchArrayOperation operationWithSearchArray:searchArray
-                                                                      searchString:_currentString
-                                                                searchResultsBlock:resultsBlock];
-        [_searchOperationQueue addOperation:_currentSearchOperation];
-    }
-    else {
-        [self setImports:searchArray];
-        [self.tableView reloadData];
-    }
+- (void)performSearch:(NSString *)searchString {
+    [self.dataSource importList:self performSearch:searchString];
 }
 
 - (void) selectRow:(NSInteger) row {
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row]
                 byExtendingSelection:NO];
     [self.tableView scrollRowToVisible:row];
-}
-
-- (NSArray*)importsForCurrentString {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[cd] %@", _currentString];
-    return [_imports filteredArrayUsingPredicate:predicate];
 }
 
 @end
