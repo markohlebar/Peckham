@@ -97,12 +97,8 @@
 - (void)setHeaders:(NSArray *)headers {
     _headers = headers;
     
-    if (![self.searchController.sourceFiles isEqual:headers]) {
-        self.searchController = [MHSourceFileSearchController searchControllerWithSourceFiles:headers];
-        self.importListView.numberOfRows = headers.count;
-    }
-    
-    [self.searchController reset];
+    self.searchController = [MHSourceFileSearchController searchControllerWithSourceFiles:headers];
+    self.importListView.numberOfRows = headers.count;
 }
 
 + (instancetype)present {
