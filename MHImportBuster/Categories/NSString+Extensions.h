@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Extensions)
--(BOOL) containsString:(NSString*) string;
--(NSString*) stringByRemovingWhitespacesAndNewlines;
--(BOOL)isAlphaNumeric;
--(BOOL)isWhitespaceOrNewline;
+- (BOOL)mh_containsString:(NSString *)string;
+- (NSString *)mh_stringByRemovingWhitespacesAndNewlines;
+- (BOOL)mh_isAlphaNumeric;
+- (BOOL)mh_isWhitespaceOrNewline;
 @end

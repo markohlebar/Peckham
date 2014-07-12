@@ -16,15 +16,14 @@
 #import "MHImportStatement+Construction.h"
 #import "NSString+Extensions.h"
 #import <XcodeEditor/XCSourceFile.h>
+#import "MHSourceFile.h"
+#import "MHSourceFileSearchController.h"
 
-@interface MHImportListViewController () <NSPopoverDelegate, MHImportListViewDelegate>
+@interface MHImportListViewController () <NSPopoverDelegate, MHImportListViewDelegate, MHImportListViewDataSource>
 @property (nonatomic, strong) NSPopover *popover;
 @end
 
 @implementation MHImportListViewController
-{
- 
-}
 
 + (instancetype)sharedInstance {
     static MHImportListViewController *_viewController = nil;
@@ -35,11 +34,11 @@
     return _viewController;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         [self loadImportListView];
+        self.headerCache = [MHHeaderCache sharedCache];
     }
     return self;
 }
@@ -54,8 +53,10 @@
     popover.appearance = NSPopoverAppearanceMinimal;
     popover.animates = NO;
     popover.contentViewController = contentViewController;
-    
     self.popover = popover;
+    
+    self.importListView.delegate = self;
+    self.importListView.dataSource = self;
 }
 
 - (void)showImportListViewInTextView:(NSTextView *) textView {
@@ -64,15 +65,21 @@
 }
 
 - (void)showImportListViewInView:(NSView *) view frame:(NSRect)frame {
-    [self.popover showRelativeToRect:frame
-                              ofView:view
-                       preferredEdge:NSMinYEdge];
-    
-    [self startLoading];
-    [[MHHeaderCache sharedCache] loadHeaders:^(NSArray *headers, BOOL doneLoading) {
-        self.headers = headers;
-        if (doneLoading) [self stopLoading];
-    }];
+    if (!self.popover.isShown) {
+        [self.popover showRelativeToRect:frame
+                                  ofView:view
+                           preferredEdge:NSMinYEdge];
+        
+        [self startLoading];
+        
+        [self.searchController reset];
+        [self.headerCache loadHeaders:^(NSArray *headers, BOOL doneLoading) {
+            self.headers = headers;
+            if (doneLoading) {
+                [self stopLoading];
+            }
+        }];
+    }
 }
 
 - (MHImportListView *)importListView {
@@ -90,8 +97,12 @@
 - (void)setHeaders:(NSArray *)headers {
     _headers = headers;
     
-    self.importListView.imports = headers;
-    self.importListView.delegate = self;
+    if (![self.searchController.sourceFiles isEqual:headers]) {
+        self.searchController = [MHSourceFileSearchController searchControllerWithSourceFiles:headers];
+        self.importListView.numberOfRows = headers.count;
+    }
+    
+    [self.searchController reset];
 }
 
 + (instancetype)present {
@@ -125,7 +136,11 @@
 
 #pragma mark - MHImportListViewDelegate
 
-- (MHImportStatement *)importStatementForImport:(XCSourceFile *)import {
+- (NSArray *)sourceFiles {
+    return self.searchController.filteredSourceFiles;
+}
+
+- (MHImportStatement *)importStatementForImport:(id <MHSourceFile>)import {
     if ([[MHHeaderCache sharedCache] isProjectHeader:import]) {
         return [MHImportStatement statementWithHeaderPath:import.name];
     }
@@ -134,18 +149,41 @@
     }
 }
 
-- (void)importList:(MHImportListView *)importList didSelectImport:(XCSourceFile *)import {
+- (void)importList:(MHImportListView *)importList didSelectRow:(NSUInteger)row {
+    
+    id <MHSourceFile> import = self.sourceFiles[row];
     [self addImport:[self importStatementForImport:import]];
     [self dismiss];
 }
 
-- (NSString *)importList:(MHImportListView *)importList formattedImport:(XCSourceFile *)import {
+- (void)importListDidDismiss:(MHImportListView *)importList {
+    [self dismiss];
+}
+
+#pragma mark - MHImportListViewDataSource
+
+- (void)importList:(MHImportListView *)importList performSearch:(NSString *)searchString {
+    __weak typeof(self) weakSelf = self;
+    [self.searchController search:searchString
+                      searchBlock:^(NSArray *array) {
+                          weakSelf.importListView.numberOfRows = array.count;
+                      }];
+}
+
+- (NSString *)importList:(MHImportListView *)importList stringForRow:(NSUInteger)row {
+    id <MHSourceFile> import = self.sourceFiles[row];
     NSString *formattedImport = [self importStatementForImport:import].value;
     return formattedImport ? formattedImport : import.name;
 }
 
-- (void)importListDidDismiss:(MHImportListView *)importList {
-    [self dismiss];
+- (NSString *)searchStringForImportList:(MHImportListView *)importList {
+    return self.searchController.searchString;
+}
+
+#pragma mark - NSPopoverDelegate
+
+- (void)popoverWillClose:(NSNotification *)notification {
+    [self.searchController reset];
 }
 
 @end

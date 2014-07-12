@@ -10,8 +10,6 @@
 #import "NSString+Extensions.h"
 #import "MHSourceFile.h"
 
-const NSUInteger MHSearchArrayOperationProgression = 2;
-
 @implementation MHSearchArrayOperation
 + (instancetype) operationWithSearchArray:(NSArray *) searchArray
                              searchString:(NSString *) searchString
@@ -35,25 +33,8 @@ const NSUInteger MHSearchArrayOperationProgression = 2;
 }
 
 - (void) execute {
-    __block NSUInteger resultTarget = MHSearchArrayOperationProgression;
-    __block NSMutableArray *results = NSMutableArray.new;
-    NSString *searchString = self.searchString;
-    [_searchArray enumerateObjectsUsingBlock:^(id <MHSourceFile> source, NSUInteger idx, BOOL *stop) {
-        if (self.isCancelled) {
-            *stop = YES;
-            return;
-        }
-        
-        if ([source.lastPathComponent rangeOfString:searchString options:NSCaseInsensitiveSearch].location != NSNotFound) {
-            [results addObject:source];
-        }
-        
-        if (results.count >= resultTarget) {
-            [self notifyWithResults:results];
-            resultTarget *= MHSearchArrayOperationProgression;
-        }
-    }];
-    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"lastPathComponent CONTAINS[cd] %@", self.searchString];
+    NSArray *results = [self.searchArray filteredArrayUsingPredicate:predicate];
     [self notifyWithResults:results];
 }
 

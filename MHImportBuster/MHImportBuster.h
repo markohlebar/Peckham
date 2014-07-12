@@ -10,3 +10,4 @@
 #import "MHDocumentLOCObserver.h"
 #import "MHFile.h"
 #import "MHImportListViewController.h"
+#import "MHConcreteSourceFile.h"

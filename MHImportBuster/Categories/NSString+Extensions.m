@@ -9,24 +9,24 @@
 #import "NSString+Extensions.h"
 
 @implementation NSString (Extensions)
--(BOOL) containsString:(NSString*) string {
-    return [self rangeOfString:string].location != NSNotFound;
+- (BOOL)mh_containsString:(NSString *)string {
+	return [self rangeOfString:string].location != NSNotFound;
 }
 
--(NSString*) stringByRemovingWhitespacesAndNewlines {
-    NSString *string = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
-    return [string stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+- (NSString *)mh_stringByRemovingWhitespacesAndNewlines {
+	NSString *string = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+	return [string stringByReplacingOccurrencesOfString:@"\n" withString:@""];
 }
 
-- (BOOL) isAlphaNumeric {
-    NSCharacterSet *unwantedCharacters = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
-    return [self rangeOfCharacterFromSet:unwantedCharacters].location == NSNotFound;
+- (BOOL)mh_isAlphaNumeric {
+	NSCharacterSet *unwantedCharacters = [[NSCharacterSet alphanumericCharacterSet] invertedSet];
+	return [self rangeOfCharacterFromSet:unwantedCharacters].location == NSNotFound;
 }
 
--(BOOL)isWhitespaceOrNewline {
-    NSString *string = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
-    string = [self stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-    return string.length == 0;
+- (BOOL)mh_isWhitespaceOrNewline {
+	NSString *string = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+	string = [self stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+	return string.length == 0;
 }
 
 @end

@@ -22,8 +22,19 @@
 
 - (IBAction)onInfo:(id)sender {
     NSWindow *keyWindow = [[NSApplication sharedApplication] keyWindow];
+
+    MHImportListViewController.sharedInstance.headerCache = nil;
     MHImportListViewController *controller = [MHImportListViewController presentInView:keyWindow.contentView];
-    controller.headers = @[@"AHeader.h", @"BHeader.h", @"AAHeader.h", @"CHeader.h"];
     
+    NSArray *sourceFiles = @[
+                             [MHConcreteSourceFile sourceFileWithName:@"ABImport.h"],
+                             [MHConcreteSourceFile sourceFileWithName:@"ABImportA.h"],
+                             [MHConcreteSourceFile sourceFileWithName:@"ABImportExportA.h"],
+                             [MHConcreteSourceFile sourceFileWithName:@"ABImportB.h"],
+                             [MHConcreteSourceFile sourceFileWithName:@"ABExportA.h"]
+                             ];
+    controller.headers = sourceFiles;
+    [controller performSelector:@selector(stopLoading)];
 }
+
 @end
