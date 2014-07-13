@@ -165,10 +165,22 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
     self.userHeaders = nil;
     
     NSBlockOperation *operation = nil;
+    //In some situations i.e. installing with Alcatraz, the projects can't be loaded
+    //via notifications, but must be loaded manually
+    if (self.shouldLoadWorkspace) {
+        operation = [self loadWorkspaceOperation];
+        [_operationQueue addOperation:operation];
+    }
+    
     operation = [self sortProjectHeadersOperationWithCompletion:^{
         [self notifyAllHeaders];
     }];
     [_operationQueue addOperation:operation];
+}
+
+- (BOOL)shouldLoadWorkspace {
+    NSDictionary *mapTableDictionary = [self.workspacesMapTable objectForKey:self.currentWorkspace];
+    return mapTableDictionary.allValues.count == 0;
 }
 
 - (void)notifyAllHeaders {
@@ -188,10 +200,10 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 }
 
 - (XCWorkspace *)workspaceWithPath:(NSString *)workspacePath {
-    XCWorkspace *workspace = _workspaceCacheDictionary[workspacePath];
+    XCWorkspace *workspace = self.workspaceCacheDictionary[workspacePath];
     if (!workspace) {
         workspace = [XCWorkspace workspaceWithFilePath:workspacePath];
-        _workspaceCacheDictionary[workspacePath] = workspace;
+        self.workspaceCacheDictionary[workspacePath] = workspace;
     }
     
     return workspace;
@@ -199,7 +211,7 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
 
 - (NSMapTable *)mapTableForWorkspace:(XCWorkspace *)workspace
                                 kind:(MHHeaderCacheHeaderKind)kind {
-    NSMutableDictionary *mapTableDictionary = [_workspacesMapTable objectForKey:workspace];
+    NSMutableDictionary *mapTableDictionary = [self.workspacesMapTable objectForKey:workspace];
     NSMapTable *mapTable = mapTableDictionary[kind];
     if (!mapTable) {
         mapTable = [NSMapTable mapTableWithKeyOptions:NSPointerFunctionsStrongMemory
@@ -249,18 +261,10 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
     return project;
 }
 
-- (void)updateProjectWithPath:(NSString *)path {
-    if(![[NSFileManager defaultManager] fileExistsAtPath:path]) return;
-    
-    [self removeProjectWithPath:path];
-    
+- (void)updateProject:(XCProject *)project {
+    [self removeProjectWithPath:project.filePath];
+
     XCWorkspace *workspace = self.currentWorkspace;
-    if (!workspace) {
-        NSString *workspacePath = [path stringByAppendingPathComponent:@"project.xcworkspace"];
-        workspace = [self workspaceWithPath:workspacePath];
-    }
-    
-    XCProject *project = [XCProject projectWithFilePath:path];
     NSMapTable *projectsMapTable = [self mapTableForWorkspace:workspace
                                                          kind:MHHeaderCacheHeaderKindProjects];
     [projectsMapTable setObject:project.headerFiles
@@ -274,11 +278,16 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
                            forKey:project];
 }
 
+- (void)updateProjectWithPath:(NSString *)path {
+    if(![[NSFileManager defaultManager] fileExistsAtPath:path]) return;
+    XCProject *project = [XCProject projectWithFilePath:path];
+    [self updateProject:project];
+}
+
 - (void)removeProjectWithPath:(NSString *)path {
     XCProject *project = [self cachedProjectWithPath:path];
     [self.projectsMapTable removeObjectForKey:project];
     [self.frameworksMapTable removeObjectForKey:project];
-
 }
 
 #pragma mark - Notifications
@@ -333,6 +342,16 @@ MHHeaderCacheHeaderKind const MHHeaderCacheHeaderKindFrameworks = @"MHHeaderCach
         weakSelf.frameworkHeaders = [self sortedHeadersForHeaderArrays:frameworkHeaderArrays];
 
         completionBlock();
+    }];
+    return operation;
+}
+
+- (NSBlockOperation *)loadWorkspaceOperation {
+    __weak typeof(self) weakSelf = self;
+    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        [self.currentWorkspace.projects enumerateObjectsUsingBlock:^(XCProject *project, NSUInteger idx, BOOL *stop) {
+            [weakSelf updateProject:project];
+        }];
     }];
     return operation;
 }
