@@ -12,6 +12,8 @@
 #import "XCProject+Extensions.h"
 #import "XCSourceFile.h"
 
+NSString * const XCWorkspaceProjectWorkspaceFile =  @"project.xcworkspace";
+
 static NSString * const XCWorkspaceContents =       @"contents.xcworkspacedata";
 static NSString * const XCFileRefElement =          @"FileRef";
 static NSString * const XCLocationKey =             @"location";

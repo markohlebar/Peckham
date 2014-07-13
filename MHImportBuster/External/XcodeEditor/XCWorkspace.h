@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const XCWorkspaceProjectWorkspaceFile;
+
 @interface XCWorkspace : NSObject
 /**
  *  Contains an array of XCProject instances
