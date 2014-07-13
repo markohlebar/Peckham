@@ -7,8 +7,14 @@ Xcode plugin that simplifies adding #import-s.
 
 ### Installation Guide
 
+#### Alcatraz
+
+- install [Alcatraz](https://github.com/supermarin/Alcatraz) and search for **Peckham** 
+
+#### Manual Labour
+
 - clone the repository or download .zip
-- open **MHImportBuster.xcworkspace** 
+- open **Peckham.xcodeproj** 
 - build **Peckham** target
 - restart Xcode
 
@@ -16,7 +22,8 @@ Xcode plugin that simplifies adding #import-s.
 
 - **⌘ + ctrl + P** to invoke the popup
 - start typing the keyword of your import
-- press **RETURN** or double click to add an import
+- use **↑** or **↓** keys to navigate
+- press **↵** or double click to add an import
 
 ### History
 
