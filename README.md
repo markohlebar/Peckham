@@ -38,8 +38,8 @@ There are several things that are to be added to the project
 
 ### Contributing 
 
-- check issues section
-- branch from develop and PR to develop 
+- check [issues](https://github.com/markohlebar/Peckham/issues?state=open) section
+- branch from **develop** and PR to **develop** 
 - use gitflow for creating a feature branch
 
 ### Dependencies
