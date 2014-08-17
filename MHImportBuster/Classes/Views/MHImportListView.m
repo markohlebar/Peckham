@@ -44,25 +44,37 @@
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     NSString *currentString = [self.dataSource searchStringForImportList:self];
-    if(self.numberOfRows > 0) {
+  
+    NSDictionary *whiteForegroundTextAttribute = @{NSForegroundColorAttributeName: [NSColor whiteColor]};
+    NSDictionary *redForegroundTextAttribute   = @{NSForegroundColorAttributeName: [NSColor colorWithRed:218/255.f green:48/255.f blue:55/255.f alpha:1.0f]};
+    NSDictionary *highlightedTextAttribute     = @{NSForegroundColorAttributeName: [NSColor blackColor],
+                                                   NSBackgroundColorAttributeName: [NSColor colorWithRed:235/255.f green:222/255.f blue:184/255.f alpha:1.0f],
+                                                   NSStrokeWidthAttributeName: @(-1)};
+  
+    if (self.numberOfRows > 0) {
         NSString *header =  [self.dataSource importList:self stringForRow:row];
-        
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:header];
+        
+        // invert black->white for selected row
+        if (tableView.selectedRow == row) {
+            [string addAttributes:whiteForegroundTextAttribute range:NSMakeRange(0, header.length)];
+        }
+
+        // highlight matched substring
         if (currentString.length > 0) {
             NSRange range = [header rangeOfString:currentString options:NSCaseInsensitiveSearch];
-            [string addAttribute:NSForegroundColorAttributeName
-                           value:[NSColor redColor]
-                           range:range];
+            [string addAttributes:highlightedTextAttribute range:range];
         }
+
         return string;
     }
     else {
         if (currentString > 0) {
             NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:currentString];
             NSRange range = NSMakeRange(0, currentString.length);
-            [string addAttribute:NSForegroundColorAttributeName
-                           value:[NSColor redColor]
-                           range:range];
+            
+            [string addAttributes:redForegroundTextAttribute range:range];
+
             return string;
         }
     }
