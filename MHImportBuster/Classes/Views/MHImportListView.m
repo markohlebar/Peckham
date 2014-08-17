@@ -34,6 +34,7 @@
 - (void)setNumberOfRows:(NSUInteger)numberOfRows {
     _numberOfRows = numberOfRows;
     [self.tableView reloadData];
+    [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
 }
 
 #pragma mark - NSTableViewDataSource
