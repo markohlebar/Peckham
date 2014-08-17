@@ -121,7 +121,7 @@
 }
 
 - (void)onSelectedRow:(NSInteger) selectedRow {
-    if (selectedRow != -1) {
+    if (selectedRow != -1 && self.numberOfRows > 0) {
         [self.delegate importList:self didSelectRow:selectedRow];
     }
 }
