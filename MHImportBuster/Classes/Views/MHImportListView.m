@@ -100,7 +100,7 @@
         else if ([key.charactersIgnoringModifiers isEqualToString:@"p"]) {
             // equivalent to up arrow
             selectedRow -= 1;
-            if (selectedRow == -1) {
+            if (selectedRow < 0) {
                 selectedRow = self.numberOfRows-1;
             }
             [self selectRow:selectedRow];
