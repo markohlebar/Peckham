@@ -26,7 +26,7 @@
             return [super performKeyEquivalent:theEvent];
         }
         else if (theEvent.modifierFlags & NSControlKeyMask) {
-            return [super performKeyEquivalent:theEvent];
+            [self.delegate tableView:self onKeyPress:theEvent];
         }
     }
     return YES;
