@@ -87,8 +87,38 @@
 
     NSString *characters = key.characters;
     NSInteger selectedRow = [self.tableView selectedRow];
-    if ([characters mh_isAlphaNumeric] ||
-        key.keyCode == kVK_ANSI_Period) {
+    
+    if (key.modifierFlags & NSControlKeyMask) {
+        if ([key.charactersIgnoringModifiers isEqualToString:@"n"]) {
+            // equivalent to down arrow
+            selectedRow += 1;
+            if (selectedRow == self.numberOfRows) {
+                selectedRow = 0;
+            }
+            [self selectRow:selectedRow];
+        }
+        else if ([key.charactersIgnoringModifiers isEqualToString:@"p"]) {
+            // equivalent to up arrow
+            selectedRow -= 1;
+            if (selectedRow < 0) {
+                selectedRow = self.numberOfRows-1;
+            }
+            [self selectRow:selectedRow];
+        }
+        else if ([key.charactersIgnoringModifiers isEqualToString:@"h"]) {
+            // equivalent to delete key
+            NSUInteger length = currentString.length;
+            if (length > 0) {
+                currentString = [currentString substringToIndex:length-1];
+            }
+            [self performSearch:currentString];
+        }
+        else if ([key.charactersIgnoringModifiers isEqualToString:@"["]) {
+            // equivalent to esc key
+            [self.delegate importListDidDismiss:self];
+        }
+    }
+    else if ([characters mh_isAlphaNumeric] || key.keyCode == kVK_ANSI_Period) {
         currentString = [currentString stringByAppendingString:characters];
         [self performSearch:currentString];
     }

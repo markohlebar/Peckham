@@ -25,6 +25,9 @@
             theEvent.keyCode == kVK_DownArrow) {
             return [super performKeyEquivalent:theEvent];
         }
+        else if (theEvent.modifierFlags & NSControlKeyMask) {
+            [self.delegate tableView:self onKeyPress:theEvent];
+        }
     }
     return YES;
 }
