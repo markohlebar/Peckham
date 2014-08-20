@@ -45,26 +45,20 @@
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     NSString *currentString = [self.dataSource searchStringForImportList:self];
-  
-    NSDictionary *whiteForegroundTextAttribute = @{NSForegroundColorAttributeName: [NSColor whiteColor]};
-    NSDictionary *redForegroundTextAttribute   = @{NSForegroundColorAttributeName: [NSColor colorWithRed:218/255.f green:48/255.f blue:55/255.f alpha:1.0f]};
-    NSDictionary *highlightedTextAttribute     = @{NSForegroundColorAttributeName: [NSColor blackColor],
-                                                   NSBackgroundColorAttributeName: [NSColor colorWithRed:235/255.f green:222/255.f blue:184/255.f alpha:1.0f],
-                                                   NSStrokeWidthAttributeName: @(-1)};
-  
+
     if (self.numberOfRows > 0) {
         NSString *header =  [self.dataSource importList:self stringForRow:row];
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:header];
         
         // invert black->white for selected row
         if (tableView.selectedRow == row) {
-            [string addAttributes:whiteForegroundTextAttribute range:NSMakeRange(0, header.length)];
+            [string addAttributes:[self whiteForegroundTextAttribute] range:NSMakeRange(0, header.length)];
         }
 
         // highlight matched substring
         if (currentString.length > 0) {
             NSRange range = [header rangeOfString:currentString options:NSCaseInsensitiveSearch];
-            [string addAttributes:highlightedTextAttribute range:range];
+            [string addAttributes:[self highlightedTextAttribute] range:range];
         }
 
         return string;
@@ -74,7 +68,7 @@
             NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:currentString];
             NSRange range = NSMakeRange(0, currentString.length);
             
-            [string addAttributes:redForegroundTextAttribute range:range];
+            [string addAttributes:[self redForegroundTextAttribute] range:range];
 
             return string;
         }
@@ -134,6 +128,25 @@
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row]
                 byExtendingSelection:NO];
     [self.tableView scrollRowToVisible:row];
+}
+
+#pragma mark - MHImportListView table text styles
+
+- (NSDictionary *)whiteForegroundTextAttribute {
+    return @{NSForegroundColorAttributeName: [NSColor whiteColor]};
+}
+
+- (NSDictionary *)redForegroundTextAttribute {
+    NSColor *salmonRed = [NSColor colorWithRed:255/255.f green:120/255.f blue:120/255.f alpha:1.0f];
+    return @{NSForegroundColorAttributeName: salmonRed,
+             NSStrokeColorAttributeName: salmonRed,
+             NSStrokeWidthAttributeName: @(-2.5)};
+}
+
+- (NSDictionary *)highlightedTextAttribute {
+    return @{NSForegroundColorAttributeName: [NSColor blackColor],
+             NSBackgroundColorAttributeName: [NSColor colorWithRed:235/255.f green:222/255.f blue:184/255.f alpha:1.0f],
+             NSStrokeWidthAttributeName: @(-1)};
 }
 
 @end
