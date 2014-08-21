@@ -84,8 +84,6 @@
 
 - (void)tableView:(MHTableView *)tableView onKeyPress:(NSEvent *)key {
     NSString *currentString = [self.dataSource searchStringForImportList:self];
-
-    NSString *characters = key.characters;
     NSInteger selectedRow = [self.tableView selectedRow];
     
     if (key.modifierFlags & NSControlKeyMask) {
@@ -118,8 +116,8 @@
             [self.delegate importListDidDismiss:self];
         }
     }
-    else if ([characters mh_isAlphaNumeric] || key.keyCode == kVK_ANSI_Period) {
-        currentString = [currentString stringByAppendingString:characters];
+    else if ([self isValidKeyForSearching:key]) {
+        currentString = [currentString stringByAppendingString:key.characters];
         [self performSearch:currentString];
     }
     else if (key.keyCode == kVK_Delete) {
@@ -151,6 +149,15 @@
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row]
                 byExtendingSelection:NO];
     [self.tableView scrollRowToVisible:row];
+}
+
+#pragma mark - Keystroke helpers
+
+- (BOOL)isValidKeyForSearching:(NSEvent *)key {
+    return [key.characters mh_isAlphaNumeric] ||
+           key.keyCode == kVK_ANSI_Period ||
+           (key.modifierFlags & NSShiftKeyMask && key.keyCode == kVK_ANSI_Equal) ||
+           (key.modifierFlags & NSShiftKeyMask && key.keyCode == kVK_ANSI_Minus);
 }
 
 @end
