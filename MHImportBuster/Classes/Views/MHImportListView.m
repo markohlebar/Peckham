@@ -91,12 +91,40 @@
 
 - (void)tableView:(MHTableView *)tableView onKeyPress:(NSEvent *)key {
     NSString *currentString = [self.dataSource searchStringForImportList:self];
-
-    NSString *characters = key.characters;
     NSInteger selectedRow = [self.tableView selectedRow];
-    if ([characters mh_isAlphaNumeric] ||
-        key.keyCode == kVK_ANSI_Period) {
-        currentString = [currentString stringByAppendingString:characters];
+    
+    if (key.modifierFlags & NSControlKeyMask) {
+        if ([key.charactersIgnoringModifiers isEqualToString:@"n"]) {
+            // equivalent to down arrow
+            selectedRow += 1;
+            if (selectedRow == self.numberOfRows) {
+                selectedRow = 0;
+            }
+            [self selectRow:selectedRow];
+        }
+        else if ([key.charactersIgnoringModifiers isEqualToString:@"p"]) {
+            // equivalent to up arrow
+            selectedRow -= 1;
+            if (selectedRow < 0) {
+                selectedRow = self.numberOfRows-1;
+            }
+            [self selectRow:selectedRow];
+        }
+        else if ([key.charactersIgnoringModifiers isEqualToString:@"h"]) {
+            // equivalent to delete key
+            NSUInteger length = currentString.length;
+            if (length > 0) {
+                currentString = [currentString substringToIndex:length-1];
+            }
+            [self performSearch:currentString];
+        }
+        else if ([key.charactersIgnoringModifiers isEqualToString:@"["]) {
+            // equivalent to esc key
+            [self.delegate importListDidDismiss:self];
+        }
+    }
+    else if ([self isValidKeyForSearching:key]) {
+        currentString = [currentString stringByAppendingString:key.characters];
         [self performSearch:currentString];
     }
     else if (key.keyCode == kVK_Delete) {
@@ -130,6 +158,7 @@
     [self.tableView scrollRowToVisible:row];
 }
 
+
 #pragma mark - MHImportListView table text styles
 
 - (NSDictionary *)whiteForegroundTextAttribute {
@@ -147,6 +176,15 @@
     return @{NSForegroundColorAttributeName: [NSColor blackColor],
              NSBackgroundColorAttributeName: [NSColor colorWithRed:235/255.f green:222/255.f blue:184/255.f alpha:1.0f],
              NSStrokeWidthAttributeName: @(-1)};
+}
+
+#pragma mark - Keystroke helpers
+
+- (BOOL)isValidKeyForSearching:(NSEvent *)key {
+    return [key.characters mh_isAlphaNumeric] ||
+           key.keyCode == kVK_ANSI_Period ||
+           (key.modifierFlags & NSShiftKeyMask && key.keyCode == kVK_ANSI_Equal) ||
+           (key.modifierFlags & NSShiftKeyMask && key.keyCode == kVK_ANSI_Minus);
 }
 
 @end
