@@ -34,6 +34,7 @@
 - (void)setNumberOfRows:(NSUInteger)numberOfRows {
     _numberOfRows = numberOfRows;
     [self.tableView reloadData];
+    [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:0] byExtendingSelection:NO];
 }
 
 #pragma mark - NSTableViewDataSource
@@ -44,25 +45,31 @@
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     NSString *currentString = [self.dataSource searchStringForImportList:self];
-    if(self.numberOfRows > 0) {
+
+    if (self.numberOfRows > 0) {
         NSString *header =  [self.dataSource importList:self stringForRow:row];
-        
         NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:header];
+        
+        // invert black->white for selected row
+        if (tableView.selectedRow == row) {
+            [string addAttributes:[self whiteForegroundTextAttribute] range:NSMakeRange(0, header.length)];
+        }
+
+        // highlight matched substring
         if (currentString.length > 0) {
             NSRange range = [header rangeOfString:currentString options:NSCaseInsensitiveSearch];
-            [string addAttribute:NSForegroundColorAttributeName
-                           value:[NSColor redColor]
-                           range:range];
+            [string addAttributes:[self highlightedTextAttribute] range:range];
         }
+
         return string;
     }
     else {
         if (currentString > 0) {
             NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:currentString];
             NSRange range = NSMakeRange(0, currentString.length);
-            [string addAttribute:NSForegroundColorAttributeName
-                           value:[NSColor redColor]
-                           range:range];
+            
+            [string addAttributes:[self redForegroundTextAttribute] range:range];
+
             return string;
         }
     }
@@ -136,7 +143,7 @@
 }
 
 - (void)onSelectedRow:(NSInteger) selectedRow {
-    if (selectedRow != -1) {
+    if (selectedRow != -1 && self.numberOfRows > 0) {
         [self.delegate importList:self didSelectRow:selectedRow];
     }
 }
@@ -149,6 +156,26 @@
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row]
                 byExtendingSelection:NO];
     [self.tableView scrollRowToVisible:row];
+}
+
+
+#pragma mark - MHImportListView table text styles
+
+- (NSDictionary *)whiteForegroundTextAttribute {
+    return @{NSForegroundColorAttributeName: [NSColor whiteColor]};
+}
+
+- (NSDictionary *)redForegroundTextAttribute {
+    NSColor *salmonRed = [NSColor colorWithRed:255/255.f green:120/255.f blue:120/255.f alpha:1.0f];
+    return @{NSForegroundColorAttributeName: salmonRed,
+             NSStrokeColorAttributeName: salmonRed,
+             NSStrokeWidthAttributeName: @(-2.5)};
+}
+
+- (NSDictionary *)highlightedTextAttribute {
+    return @{NSForegroundColorAttributeName: [NSColor blackColor],
+             NSBackgroundColorAttributeName: [NSColor colorWithRed:235/255.f green:222/255.f blue:184/255.f alpha:1.0f],
+             NSStrokeWidthAttributeName: @(-1)};
 }
 
 #pragma mark - Keystroke helpers
