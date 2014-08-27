@@ -68,7 +68,7 @@
             NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:currentString];
             NSRange range = NSMakeRange(0, currentString.length);
             
-            [string addAttributes:[self redForegroundTextAttribute] range:range];
+            [string addAttributes:[self whiteForegroundTextAttribute] range:range];
 
             return string;
         }
@@ -163,13 +163,6 @@
 
 - (NSDictionary *)whiteForegroundTextAttribute {
     return @{NSForegroundColorAttributeName: [NSColor whiteColor]};
-}
-
-- (NSDictionary *)redForegroundTextAttribute {
-    NSColor *salmonRed = [NSColor colorWithRed:255/255.f green:120/255.f blue:120/255.f alpha:1.0f];
-    return @{NSForegroundColorAttributeName: salmonRed,
-             NSStrokeColorAttributeName: salmonRed,
-             NSStrokeWidthAttributeName: @(-2.5)};
 }
 
 - (NSDictionary *)highlightedTextAttribute {
