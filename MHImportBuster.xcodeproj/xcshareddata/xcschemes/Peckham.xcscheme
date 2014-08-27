@@ -49,6 +49,9 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <PathRunnable
+         FilePath = "/Applications/Xcode.app">
+      </PathRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
