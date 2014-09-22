@@ -57,7 +57,8 @@ static NSString * const XCLocationKey =             @"location";
 }
 
 - (void) addProjectWithFilePath:(NSString *)filePath {
-    if(![[NSFileManager defaultManager] fileExistsAtPath:filePath]) return;
+    if (![filePath mh_containsString:@".xcodeproj"] || ![[NSFileManager defaultManager] fileExistsAtPath:filePath])
+        return;
     
     XCProject *project = [XCProject projectWithFilePath:filePath];
     _projects = [_projects arrayByAddingObject:project];
