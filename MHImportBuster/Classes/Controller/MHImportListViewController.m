@@ -167,6 +167,16 @@
 }
 
 - (NSString *)importList:(MHImportListView *)importList stringForRow:(NSUInteger)row {
+    NSString *importPrefix = @"#import";
+    NSString *formattedString = [self importList:importList formattedStringForRow:row];
+    
+    return [formattedString stringByReplacingOccurrencesOfString:importPrefix
+                                                      withString:@""
+                                                         options:0
+                                                           range:NSMakeRange(0, importPrefix.length)];
+}
+
+- (NSString *)importList:(MHImportListView *)importList formattedStringForRow:(NSUInteger)row {
     id <MHSourceFile> import = self.sourceFiles[row];
     NSString *formattedImport = [self importStatementForImport:import].value;
     return formattedImport ? formattedImport : import.name;

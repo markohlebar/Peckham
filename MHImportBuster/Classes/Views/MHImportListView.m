@@ -47,17 +47,22 @@
     NSString *currentString = [self.dataSource searchStringForImportList:self];
 
     if (self.numberOfRows > 0) {
-        NSString *header =  [self.dataSource importList:self stringForRow:row];
-        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:header];
+        NSString *header          = [self.dataSource importList:self stringForRow:row];
+        NSString *formattedHeader = [self.dataSource importList:self formattedStringForRow:row];
+        
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:formattedHeader];
         
         // invert black->white for selected row
         if (tableView.selectedRow == row) {
-            [string addAttributes:[self whiteForegroundTextAttribute] range:NSMakeRange(0, header.length)];
+            [string addAttributes:[self whiteForegroundTextAttribute] range:NSMakeRange(0, formattedHeader.length)];
         }
 
         // highlight matched substring
         if (currentString.length > 0) {
+            // modify range to exclude leading "#import"
             NSRange range = [header rangeOfString:currentString options:NSCaseInsensitiveSearch];
+            range.location += [formattedHeader rangeOfString:header].location;
+            
             [string addAttributes:[self highlightedTextAttribute] range:range];
         }
 
