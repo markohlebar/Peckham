@@ -123,6 +123,13 @@
             [self.delegate importListDidDismiss:self];
         }
     }
+    else if ((key.modifierFlags & NSDeviceIndependentModifierFlagsMask) == NSCommandKeyMask) {
+        // paste via command-v
+        if ([key.characters isEqualToString:@"v"]) {
+            currentString = [[NSPasteboard generalPasteboard] stringForType:NSPasteboardTypeString];
+            [self performSearch:currentString];
+        }
+    }
     else if ([self isValidKeyForSearching:key]) {
         currentString = [currentString stringByAppendingString:key.characters];
         [self performSearch:currentString];
