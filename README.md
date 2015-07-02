@@ -21,7 +21,7 @@ Xcode plugin that simplifies adding #import-s.
 ### User guide
 
 - **⌘ + ctrl + P** to invoke the popup
-- start typing the keyword of your import
+- start typing or paste the keyword of your import
 - use **↑** or **↓** keys to navigate
 - press **↵** or double click to add an import
 
