@@ -1742,10 +1742,8 @@
 				DSTROOT = "$(HOME)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
-					/Users/Applications/Xcode.app/Contents/Frameworks,
-					/Users/Applications/Xcode.app/Contents/SharedFrameworks,
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../Frameworks",
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../SharedFrameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBusterPlugin/MHImportBusterPlugin-Prefix.pch";
@@ -1770,10 +1768,8 @@
 				DSTROOT = "$(HOME)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
-					/Users/Applications/Xcode.app/Contents/Frameworks,
-					/Users/Applications/Xcode.app/Contents/SharedFrameworks,
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../Frameworks",
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../SharedFrameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBusterPlugin/MHImportBusterPlugin-Prefix.pch";
