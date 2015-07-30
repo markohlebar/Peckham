@@ -41,3 +41,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 *.swp
+
+# Xcode code coverage (testability files)
+*.gcno
+*.gcda
