@@ -79,6 +79,7 @@ extern "C" {
 #import "KWCaptureSpy.h"
 #import "KWStringPrefixMatcher.h"
 #import "KWStringContainsMatcher.h"
+#import "KWNotificationMatcher.h"
 
   
 // Public Foundation Categories

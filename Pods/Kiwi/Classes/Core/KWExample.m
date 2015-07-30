@@ -15,6 +15,7 @@
 #import "KWContextNode.h"
 #import "KWBeforeEachNode.h"
 #import "KWBeforeAllNode.h"
+#import "KWLetNode.h"
 #import "KWItNode.h"
 #import "KWAfterEachNode.h"
 #import "KWAfterAllNode.h"
@@ -95,7 +96,7 @@
     return verifier;
 }
 
-- (id)addAsyncVerifierWithExpectationType:(KWExpectationType)anExpectationType callSite:(KWCallSite *)aCallSite timeout:(NSInteger)timeout shouldWait:(BOOL)shouldWait {
+- (id)addAsyncVerifierWithExpectationType:(KWExpectationType)anExpectationType callSite:(KWCallSite *)aCallSite timeout:(NSTimeInterval)timeout shouldWait:(BOOL)shouldWait {
   id verifier = [KWAsyncVerifier asyncVerifierWithExpectationType:anExpectationType callSite:aCallSite matcherFactory:self.matcherFactory reporter:self probeTimeout:timeout shouldWait: shouldWait];
   [self addVerifier:verifier];
   return verifier;
@@ -200,6 +201,11 @@
         return;
     
     aNode.block();
+}
+
+- (void)visitLetNode:(KWLetNode *)aNode
+{
+    [aNode evaluateTree];
 }
 
 - (void)visitItNode:(KWItNode *)aNode {
@@ -327,6 +333,12 @@ void it(NSString *aDescription, void (^block)(void)) {
     itWithCallSite(callSite, aDescription, block);
 }
 
+void let_(__autoreleasing id *anObjectRef, const char *aSymbolName, id (^block)(void))
+{
+    NSString *aDescription = [NSString stringWithUTF8String:aSymbolName];
+    letWithCallSite(nil, anObjectRef, aDescription, block);
+}
+
 void specify(void (^block)(void))
 {
     itWithCallSite(nil, nil, block);
@@ -365,6 +377,11 @@ void beforeEachWithCallSite(KWCallSite *aCallSite, void (^block)(void)) {
 
 void afterEachWithCallSite(KWCallSite *aCallSite, void (^block)(void)) {
     [[KWExampleSuiteBuilder sharedExampleSuiteBuilder] setAfterEachNodeWithCallSite:aCallSite block:block];
+}
+
+void letWithCallSite(KWCallSite *aCallSite, __autoreleasing id *anObjectRef, NSString *aSymbolName, id (^block)(void))
+{
+    [[KWExampleSuiteBuilder sharedExampleSuiteBuilder] addLetNodeWithCallSite:aCallSite objectRef:anObjectRef symbolName:aSymbolName block:block];
 }
 
 void itWithCallSite(KWCallSite *aCallSite, NSString *aDescription, void (^block)(void)) {
