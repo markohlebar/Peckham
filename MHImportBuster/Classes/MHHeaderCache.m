@@ -19,7 +19,6 @@
 #import "XCBuildSettings.h"
 #import "XCProject+Extensions.h"
 #import "XCProject+SubProject.h"
-#import <XcodeEditor/XCProjectBuildConfig.h>
 #import "NSObject+MHLogMethods.h"
 #import "MHSourceFile.h"
 #import "MHConcreteSourceFile.h"
