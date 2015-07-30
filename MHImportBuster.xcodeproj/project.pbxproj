@@ -1642,8 +1642,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
 					"$(PROJECT_DIR)/MHImportBuster/External",
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../SharedFrameworks",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
@@ -1675,8 +1675,8 @@
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
 					"$(PROJECT_DIR)/MHImportBuster/External",
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../SharedFrameworks",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
