@@ -20,7 +20,7 @@
 		961C7DCF191F6ED200031FAD /* XCBuildSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C7DCD191F6ED200031FAD /* XCBuildSettings.m */; };
 		961C7DD2191F6F9000031FAD /* XCTarget+XCProject.h in Headers */ = {isa = PBXBuildFile; fileRef = 961C7DD0191F6F9000031FAD /* XCTarget+XCProject.h */; };
 		961C7DD3191F6F9000031FAD /* XCTarget+XCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C7DD1191F6F9000031FAD /* XCTarget+XCProject.m */; };
-		9623786F1895374B0012DEF1 /* MHImportBuster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; };
+		9623786F1895374B0012DEF1 /* MHImportBuster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9628390718A63A11007EE520 /* DVTSourceTextStorage+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 9628390518A63A11007EE520 /* DVTSourceTextStorage+Operations.h */; };
 		9628390818A63A11007EE520 /* DVTSourceTextStorage+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390618A63A11007EE520 /* DVTSourceTextStorage+Operations.m */; };
 		9628390C18A63D35007EE520 /* DVTSourceTextStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */; };
@@ -1115,7 +1115,7 @@
 		AD6A1FB31876B5BD00E4137F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Marko Hlebar";
 				TargetAttributes = {
 					AD6A1FD21876B5BD00E4137F = {
@@ -1534,6 +1534,7 @@
 					"$(SRCROOT)/MHImportBuster/Classes/Views/",
 				);
 				INFOPLIST_FILE = "MHImportBusterApp/MHImportBusterApp-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1554,6 +1555,7 @@
 					"$(SRCROOT)/MHImportBuster/Classes/Views/",
 				);
 				INFOPLIST_FILE = "MHImportBusterApp/MHImportBusterApp-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1575,6 +1577,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -1653,6 +1656,7 @@
 					"$(inherited)",
 					/Users/mhlebar/Documents/GitHub/CSSocial/CSSocial/External/GooglePlus/lib,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1685,6 +1689,7 @@
 					"$(inherited)",
 					/Users/mhlebar/Documents/GitHub/CSSocial/CSSocial/External/GooglePlus/lib,
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1708,6 +1713,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "MHImportBusterTests/MHImportBusterTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1727,6 +1733,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBusterTests/MHImportBusterTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1755,6 +1762,7 @@
 				INFOPLIST_FILE = "MHImportBusterPlugin/MHImportBusterPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -1778,6 +1786,7 @@
 				INFOPLIST_FILE = "MHImportBusterPlugin/MHImportBusterPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
