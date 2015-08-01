@@ -1,4 +1,5 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$(DEVELOPER_LIBRARY_DIR)/Frameworks" $(inherited) "$(DEVELOPER_LIBRARY_DIR)/Frameworks" $(inherited) "$(DEVELOPER_LIBRARY_DIR)/Frameworks" $(inherited) "$(DEVELOPER_LIBRARY_DIR)/Frameworks" "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+FRAMEWORK_SEARCH_PATHS = $(DEVELOPER_FRAMEWORKS_DIR) $(inherited) "$(DEVELOPER_LIBRARY_DIR)/Frameworks" "$(PLATFORM_DIR)/Developer/Library/Frameworks" $(DEVELOPER_FRAMEWORKS_DIR) $(inherited) "$(DEVELOPER_LIBRARY_DIR)/Frameworks" "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+FRAMEWORK_SEARCH_PATHS[sdk=macosx10.10] = $(inherited) $(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks $(inherited) $(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Kiwi" "${PODS_ROOT}/Headers/Public/ParseKit" "${PODS_ROOT}/Headers/Public/XcodeEditor"
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Kiwi" -isystem "${PODS_ROOT}/Headers/Public/ParseKit" -isystem "${PODS_ROOT}/Headers/Public/XcodeEditor"
