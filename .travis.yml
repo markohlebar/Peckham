@@ -2,6 +2,6 @@ language: objective-c
 osx_image: xcode6.4
 before_install:
 	- gem install cocoapods --no-rdoc --no-ri --no-document --quiet
-	- pod instsall
+	- pod install
 xcode_workspace: MHImportBuster.xcworkspace
 xcode_scheme: Peckham
