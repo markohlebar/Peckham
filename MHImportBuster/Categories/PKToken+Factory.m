@@ -13,7 +13,7 @@
 +(PKToken*) forwardSlash {
     static PKToken *_forwardSlashToken = nil;
     if (!_forwardSlashToken) {
-        _forwardSlashToken = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"/" floatValue:0];
+        _forwardSlashToken = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"/" doubleValue:0];
     }
     return _forwardSlashToken;
 }
@@ -21,7 +21,7 @@
 +(PKToken*) dot {
     static PKToken *_dotToken = nil;
     if  (!_dotToken) {
-        _dotToken = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"." floatValue:0];
+        _dotToken = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"." doubleValue:0];
     }
     return _dotToken;
 }
@@ -29,7 +29,7 @@
 +(PKToken*) curlyBraceLeft {
     static PKToken *_curlyBraceLeft = nil;
     if  (!_curlyBraceLeft) {
-        _curlyBraceLeft = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"{" floatValue:0];
+        _curlyBraceLeft = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"{" doubleValue:0];
     }
     return _curlyBraceLeft;
 }
@@ -37,7 +37,7 @@
 +(PKToken*) curlyBraceRight {
     static PKToken *_curlyBraceRight = nil;
     if  (!_curlyBraceRight) {
-        _curlyBraceRight = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"}" floatValue:0];
+        _curlyBraceRight = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"}" doubleValue:0];
     }
     return _curlyBraceRight;
 }
@@ -45,7 +45,7 @@
 +(PKToken*) parenthesesLeft {
     static PKToken *_parenthesesLeft = nil;
     if  (!_parenthesesLeft) {
-        _parenthesesLeft = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"(" floatValue:0];
+        _parenthesesLeft = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@"(" doubleValue:0];
     }
     return _parenthesesLeft;
 }
@@ -53,7 +53,7 @@
 +(PKToken*) parenthesesRight {
     static PKToken *_parenthesesRight = nil;
     if  (!_parenthesesRight) {
-        _parenthesesRight = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@")" floatValue:0];
+        _parenthesesRight = [PKToken tokenWithTokenType:PKTokenTypeSymbol stringValue:@")" doubleValue:0];
     }
     return _parenthesesRight;
 }
@@ -63,7 +63,7 @@
     if  (!_placeholderWord) {
         _placeholderWord = [PKToken tokenWithTokenType:PKTokenTypeWord
                                            stringValue:kMHTokenPlaceholderValue
-                                            floatValue:0];
+                                            doubleValue:0];
     }
     return _placeholderWord;
 }
@@ -73,7 +73,7 @@
     if  (!_at) {
         _at = [PKToken tokenWithTokenType:PKTokenTypeWord
                               stringValue:@"@"
-                               floatValue:0];
+                               doubleValue:0];
     }
     return _at;
 }
@@ -83,7 +83,7 @@
     if  (!_semicolon) {
         _semicolon = [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                      stringValue:@";"
-                                      floatValue:0];
+                                      doubleValue:0];
     }
     return _semicolon;
 }
@@ -93,7 +93,7 @@
     if  (!_plus) {
         _plus = [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                 stringValue:@"+"
-                                 floatValue:0];
+                                 doubleValue:0];
     }
     return _plus;
 }
@@ -103,7 +103,7 @@
     if  (!_minus) {
         _minus = [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                  stringValue:@"-"
-                                  floatValue:0];
+                                  doubleValue:0];
     }
     return _minus;
 }
@@ -113,7 +113,7 @@
     if  (!_hash) {
         _hash = [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                  stringValue:@"#"
-                                  floatValue:0];
+                                  doubleValue:0];
     }
     return _hash;
 }
@@ -123,7 +123,7 @@
     if  (!_doubleQuote) {
         _doubleQuote = [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                 stringValue:@"\""
-                                 floatValue:0];
+                                 doubleValue:0];
     }
     return _doubleQuote;
 }
@@ -138,7 +138,7 @@
     if  (!_whitespace) {
         _whitespace = [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                        stringValue:@" "
-                                        floatValue:0];
+                                        doubleValue:0];
     }
     return _whitespace;
 }

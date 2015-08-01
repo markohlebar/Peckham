@@ -56,13 +56,13 @@ static NSArray *MHFrameworkImportLOCTokens = nil;
                                        [PKToken hash],
                                        [PKToken tokenWithTokenType:PKTokenTypeWord
                                                        stringValue:@"import"
-                                                        floatValue:0],
+                                                        doubleValue:0],
                                        [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                                        stringValue:@"<"
-                                                        floatValue:0],
+                                                        doubleValue:0],
                                        [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                                        stringValue:@">"
-                                                        floatValue:0]
+                                                        doubleValue:0]
                                        ];
 	}
 	return MHFrameworkImportLOCTokens;
@@ -78,13 +78,13 @@ static NSArray *MHProjectImportLOCTokens = nil;
                                      [PKToken hash],
                                      [PKToken tokenWithTokenType:PKTokenTypeWord
                                                      stringValue:@"import"
-                                                      floatValue:0],
+                                                      doubleValue:0],
                                      [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                                      stringValue:@"\""
-                                                      floatValue:0],
+                                                      doubleValue:0],
                                      [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                                      stringValue:@"\""
-                                                      floatValue:0]
+                                                      doubleValue:0]
                                      ];
 	}
 	return MHProjectImportLOCTokens;
