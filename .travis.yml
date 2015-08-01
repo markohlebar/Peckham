@@ -1,2 +1,4 @@
 language: objective-c
-
+osx_image: xcode6.4
+xcode_workspace: MHImportBuster.xcworkspace
+xcode_scheme: Peckham
