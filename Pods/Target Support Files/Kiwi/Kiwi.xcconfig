@@ -1,0 +1,3 @@
+KIWI_FRAMEWORK_SEARCH_PATHS = $(DEVELOPER_FRAMEWORKS_DIR) $(inherited) "$(DEVELOPER_LIBRARY_DIR)/Frameworks" "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+KIWI_FRAMEWORK_SEARCH_PATHS[sdk=macosx10.10] = $(inherited) $(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks
+KIWI_OTHER_LDFLAGS = -framework "XCTest"

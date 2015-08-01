@@ -3,6 +3,8 @@ Peckham
 
 Xcode plugin that simplifies adding #import-s. 
 
+[![CI Status](https://travis-ci.org/ClementPadovani/Peckham.svg?branch=variousUpdates)](https://travis-ci.org/ClementPadovani/Peckham)
+
 ![Peckham.gif](/Misc/Peckham.gif)
 
 ### Installation Guide

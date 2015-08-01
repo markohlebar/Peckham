@@ -33,7 +33,7 @@
 		9666E4CF196BCAB40076C1F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 9666E4D2196BCAB40076C1F2 /* Build configuration list for PBXProject "Peckham" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -71,6 +71,7 @@
 		9666E4D3196BCAB40076C1F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};

@@ -15,6 +15,7 @@
 #import "KWContextNode.h"
 #import "KWBeforeEachNode.h"
 #import "KWBeforeAllNode.h"
+#import "KWLetNode.h"
 #import "KWItNode.h"
 #import "KWAfterEachNode.h"
 #import "KWAfterAllNode.h"
@@ -41,6 +42,8 @@
 @end
 
 @implementation KWExample
+
+@synthesize selectorName = _selectorName;
 
 - (id)initWithExampleNode:(id<KWExampleNode>)node {
     self = [super init];
@@ -85,9 +88,8 @@
 
 - (id)addMatchVerifierWithExpectationType:(KWExpectationType)anExpectationType callSite:(KWCallSite *)aCallSite {
     if (self.unresolvedVerifier) {
-        @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                       reason:@"Trying to add another verifier without specifying a matcher for the previous one."
-                                     userInfo:nil];
+        KWFailure *failure = [KWFailure failureWithCallSite:self.unresolvedVerifier.callSite format:@"expected subject not to be nil"];
+        [self reportFailure:failure];
     }
     id<KWVerifying> verifier = [KWMatchVerifier matchVerifierWithExpectationType:anExpectationType callSite:aCallSite matcherFactory:self.matcherFactory reporter:self];
     [self addVerifier:verifier];
@@ -95,7 +97,7 @@
     return verifier;
 }
 
-- (id)addAsyncVerifierWithExpectationType:(KWExpectationType)anExpectationType callSite:(KWCallSite *)aCallSite timeout:(NSInteger)timeout shouldWait:(BOOL)shouldWait {
+- (id)addAsyncVerifierWithExpectationType:(KWExpectationType)anExpectationType callSite:(KWCallSite *)aCallSite timeout:(NSTimeInterval)timeout shouldWait:(BOOL)shouldWait {
   id verifier = [KWAsyncVerifier asyncVerifierWithExpectationType:anExpectationType callSite:aCallSite matcherFactory:self.matcherFactory reporter:self probeTimeout:timeout shouldWait: shouldWait];
   [self addVerifier:verifier];
   return verifier;
@@ -168,6 +170,41 @@
     return isPending ? [descriptionWithContext stringByAppendingString:[self pendingNotFinished]] : descriptionWithContext;
 }
 
+- (NSString *)selectorName {
+    if (_selectorName) {
+        return _selectorName;
+    }
+
+    NSString *name = [self descriptionWithContext];
+
+    // CamelCase the string
+    NSArray *words = [name componentsSeparatedByString:@" "];
+    name = @"";
+    for (NSString *word in words) {
+        if ([word length] < 1)
+        {
+            continue;
+        }
+        name = [name stringByAppendingString:[[word substringToIndex:1] uppercaseString]];
+        name = [name stringByAppendingString:[word substringFromIndex:1]];
+    }
+
+    // Replace the commas with underscores to separate the levels of context
+    name = [name stringByReplacingOccurrencesOfString:@"," withString:@"_"];
+
+    // Strip out characters not legal in function names
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"[^a-zA-Z0-9_]*" options:0 error:&error];
+    name = [regex stringByReplacingMatchesInString:name options:0 range:NSMakeRange(0, name.length) withTemplate:@""];
+
+    // Ensure examples in the same suite have unique selector names
+    if (self.suite) {
+        name = [self.suite nextUniqueSelectorName:name];
+    }
+
+    return (_selectorName = name);
+}
+
 #pragma mark - Visiting Nodes
 
 - (void)visitRegisterMatchersNode:(KWRegisterMatchersNode *)aNode {
@@ -200,6 +237,11 @@
         return;
     
     aNode.block();
+}
+
+- (void)visitLetNode:(KWLetNode *)aNode
+{
+    [aNode evaluateTree];
 }
 
 - (void)visitItNode:(KWItNode *)aNode {
@@ -270,8 +312,7 @@ KWCallSite *callSiteAtAddressIfNecessary(long address){
 }
 
 KWCallSite *callSiteWithAddress(long address){
-    NSArray *args = @[@"-d",
-                      @"-p", @(getpid()).stringValue, [NSString stringWithFormat:@"%lx", address]];
+    NSArray *args = @[@"-p", @(getpid()).stringValue, [NSString stringWithFormat:@"%lx", address]];
     NSString *callSite = [NSString stringWithShellCommand:@"/usr/bin/atos" arguments:args];
 
     NSString *pattern = @".+\\((.+):([0-9]+)\\)";
@@ -327,6 +368,12 @@ void it(NSString *aDescription, void (^block)(void)) {
     itWithCallSite(callSite, aDescription, block);
 }
 
+void let_(__autoreleasing id *anObjectRef, const char *aSymbolName, id (^block)(void))
+{
+    NSString *aDescription = [NSString stringWithUTF8String:aSymbolName];
+    letWithCallSite(nil, anObjectRef, aDescription, block);
+}
+
 void specify(void (^block)(void))
 {
     itWithCallSite(nil, nil, block);
@@ -365,6 +412,11 @@ void beforeEachWithCallSite(KWCallSite *aCallSite, void (^block)(void)) {
 
 void afterEachWithCallSite(KWCallSite *aCallSite, void (^block)(void)) {
     [[KWExampleSuiteBuilder sharedExampleSuiteBuilder] setAfterEachNodeWithCallSite:aCallSite block:block];
+}
+
+void letWithCallSite(KWCallSite *aCallSite, __autoreleasing id *anObjectRef, NSString *aSymbolName, id (^block)(void))
+{
+    [[KWExampleSuiteBuilder sharedExampleSuiteBuilder] addLetNodeWithCallSite:aCallSite objectRef:anObjectRef symbolName:aSymbolName block:block];
 }
 
 void itWithCallSite(KWCallSite *aCallSite, NSString *aDescription, void (^block)(void)) {

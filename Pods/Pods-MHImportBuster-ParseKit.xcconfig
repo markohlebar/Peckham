@@ -1,1 +1,0 @@
-PODS_MHIMPORTBUSTER_PARSEKIT_OTHER_LDFLAGS = -licucore -framework Foundation
