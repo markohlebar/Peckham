@@ -1,4 +1,6 @@
 language: objective-c
-osx_image: xcode6.4
+before_install:
+    - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
+    - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 xcode_workspace: MHImportBuster.xcworkspace
 xcode_scheme: Peckham
