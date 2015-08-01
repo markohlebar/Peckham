@@ -1,9 +1,9 @@
 Peckham
 =======
 
-Xcode plugin that simplifies adding #import-s. 
+[![CI Status](https://travis-ci.org/markohlebar/Peckham.svg)](https://travis-ci.org/markohlebar/Peckham)
 
-[![CI Status](https://travis-ci.org/ClementPadovani/Peckham.svg?branch=variousUpdates)](https://travis-ci.org/ClementPadovani/Peckham)
+Xcode plugin that simplifies adding #import-s. 
 
 ![Peckham.gif](/Misc/Peckham.gif)
 
