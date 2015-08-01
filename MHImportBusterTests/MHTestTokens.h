@@ -11,7 +11,7 @@
 
 #import "MHStatement.h"
 #import "MHStatementParser.h"
-#import <ParseKit/PKToken.h>
+#import <PEGKit/PKToken.h>
 #import "PKTokenizer+Factory.h"
 
 static void (^feedStatement)(MHStatement *, NSString *) = ^(MHStatement *statement, NSString *string) {
