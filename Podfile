@@ -8,5 +8,5 @@ target :MHImportBuster do
 end
 
 target :MHImportBusterTests do
-    pod 'Kiwi/XCTest'
+    pod 'Kiwi'
 end
