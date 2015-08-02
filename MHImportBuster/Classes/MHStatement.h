@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ParseKit/PKToken.h>
+#import <PEGKit/PKToken.h>
 #import "PKToken+Factory.h"
 
 /**

@@ -28,7 +28,7 @@
 		MHPropertyStatementStatementTokens = @[
                                                [PKToken tokenWithTokenType:PKTokenTypeWord
                                                                stringValue:@"@property"
-                                                                floatValue:0],
+                                                                doubleValue:0],
                                                [PKToken semicolon],
                                                ];
 	}

@@ -1,16 +1,16 @@
 PODS:
   - Kiwi (2.3.1)
-  - ParseKit (0.7)
+  - PEGKit (0.4.2)
   - XcodeEditor (1.6.2)
 
 DEPENDENCIES:
   - Kiwi
-  - ParseKit
+  - PEGKit
   - XcodeEditor
 
 SPEC CHECKSUMS:
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
-  ParseKit: c854022c454a340cdc8978f77ac8e75cba465984
+  PEGKit: 9563952b2f19f5f0c979ecf635c8410369bfe3e9
   XcodeEditor: 0d21967dd71a16262c7121c7723179f6ae2b11c3
 
 COCOAPODS: 0.38.2

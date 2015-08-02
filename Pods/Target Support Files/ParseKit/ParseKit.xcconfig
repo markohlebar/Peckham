@@ -1,1 +1,0 @@
-PARSEKIT_OTHER_LDFLAGS = -l"icucore" -framework "Foundation"

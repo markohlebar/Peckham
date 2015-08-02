@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Marko Hlebar. All rights reserved.
 //
 
-#import <ParseKit/PKToken.h>
-#import <ParseKit/PKTokenizer.h>
+#import <PEGKit/PKToken.h>
+#import <PEGKit/PKTokenizer.h>
 #import "MHInterfaceStatement.h"
 #import "MHStatementParser.h"
 #import "MHStatements.h"

@@ -16,11 +16,11 @@ describe(@"PKToken+Equality", ^{
     
     __block PKToken *token = [PKToken tokenWithTokenType:PKTokenTypeWord
                                              stringValue:@"someString"
-                                              floatValue:0];
+                                              doubleValue:0];
     it(@"Should be equal to the same token", ^{
         PKToken *token2 = [PKToken tokenWithTokenType:PKTokenTypeWord
                                           stringValue:@"someString"
-                                           floatValue:0];
+                                           doubleValue:0];
         
         [[theValue([token isEqualIgnoringPlaceholderWord:token2]) should] beYes];
     });

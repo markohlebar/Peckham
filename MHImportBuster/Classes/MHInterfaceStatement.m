@@ -27,11 +27,11 @@
 		MHInterfaceStatementTokens = @[
                                        [PKToken tokenWithTokenType:PKTokenTypeWord
                                                        stringValue:@"@interface"
-                                                        floatValue:0],
+                                                        doubleValue:0],
                                        [PKToken placeholderWord],
                                        [PKToken tokenWithTokenType:PKTokenTypeWord
                                                        stringValue:@"@end"
-                                                        floatValue:0]
+                                                        doubleValue:0]
                                        ];
 	}
 	return MHInterfaceStatementTokens;
