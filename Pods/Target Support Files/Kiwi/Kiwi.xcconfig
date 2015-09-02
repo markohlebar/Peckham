@@ -1,3 +1,6 @@
-KIWI_FRAMEWORK_SEARCH_PATHS = $(DEVELOPER_FRAMEWORKS_DIR) $(inherited) "$(DEVELOPER_LIBRARY_DIR)/Frameworks" "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-KIWI_FRAMEWORK_SEARCH_PATHS[sdk=macosx10.10] = $(inherited) $(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/Library/Frameworks
-KIWI_OTHER_LDFLAGS = -framework "XCTest"
+FRAMEWORK_SEARCH_PATHS = $(inherited)  "$(DEVELOPER_LIBRARY_DIR)/Frameworks" "$(PLATFORM_DIR)/Developer/Library/Frameworks"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Kiwi" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Kiwi" "${PODS_ROOT}/Headers/Public/PEGKit" "${PODS_ROOT}/Headers/Public/XcodeEditor"
+OTHER_LDFLAGS = -framework "XCTest"
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES
