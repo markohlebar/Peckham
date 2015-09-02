@@ -149,7 +149,11 @@
     else if (key.keyCode == kVK_Escape) {
         [self.delegate importListDidDismiss:self];
     }
-    else if (key.keyCode == kVK_Return) {
+    else if (key.keyCode == kVK_Return ||
+		   key.keyCode == kVK_ANSI_KeypadEnter) {
+	    
+	 
+	    
         [self onSelectedRow:selectedRow];
     }
 }
