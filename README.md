@@ -54,7 +54,7 @@ There are several things that are to be added to the project
 ### Dependencies
 
 - **XcodeEditor** https://github.com/jasperblues/XcodeEditor
-- **ParseKit** https://github.com/itod/parsekit
+- **PegKit** https://github.com/itod/pegkit
 
 ### License
 
