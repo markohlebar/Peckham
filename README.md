@@ -11,7 +11,7 @@ Xcode plugin that simplifies adding #import-s.
 
 #### Alcatraz
 
-- install [Alcatraz](https://github.com/supermarin/Alcatraz) and search for **Peckham** 
+- install [Alcatraz](https://github.com/alcatraz/Alcatraz) and search for **Peckham** 
 
 #### Manual Labour
 
@@ -53,7 +53,7 @@ There are several things that are to be added to the project
 
 ### Dependencies
 
-- **XcodeEditor** https://github.com/jasperblues/XcodeEditor
+- **XcodeEditor** https://github.com/appsquickly/XcodeEditor
 - **PegKit** https://github.com/itod/pegkit
 
 ### License
