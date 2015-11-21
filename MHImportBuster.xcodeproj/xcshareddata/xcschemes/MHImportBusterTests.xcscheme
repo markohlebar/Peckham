@@ -56,10 +56,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "96872B0719163A6D0068AF7A"
-            BuildableName = "MHImportBusterApp.app"
-            BlueprintName = "MHImportBusterApp"
-            ReferencedContainer = "container:MHImportBuster.xcodeproj">
+            BlueprintIdentifier = "A0EBCFA89571E90870B5FE6F110EF756"
+            BuildableName = "libPods-MHImportBusterTests.a"
+            BlueprintName = "Pods-MHImportBusterTests"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>

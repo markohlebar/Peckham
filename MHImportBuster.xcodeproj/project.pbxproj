@@ -174,6 +174,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		599EC6571C00FD430047B022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD6A1FB31876B5BD00E4137F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD6A1FBB1876B5BD00E4137F;
+			remoteInfo = MHImportBuster;
+		};
 		59B330821B6D2BCE00135030 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD6A1FB31876B5BD00E4137F /* Project object */;
@@ -1111,6 +1118,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				599EC6581C00FD430047B022 /* PBXTargetDependency */,
 			);
 			name = Peckham;
 			productName = MHImportBusterPlugin;
@@ -1463,6 +1471,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		599EC6581C00FD430047B022 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD6A1FBB1876B5BD00E4137F /* MHImportBuster */;
+			targetProxy = 599EC6571C00FD430047B022 /* PBXContainerItemProxy */;
+		};
 		59B330831B6D2BCE00135030 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 96872B0719163A6D0068AF7A /* MHImportBusterApp */;
