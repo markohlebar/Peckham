@@ -12,6 +12,7 @@
 			buildConfigurationList = 9666E4D8196BCB2B0076C1F2 /* Build configuration list for PBXAggregateTarget "Peckham" */;
 			buildPhases = (
 				9666E4D9196BCB4E0076C1F2 /* Build Peckham */,
+				596095E51C00CE7F00647E39 /* Remove code coverage files (.gcno) */,
 			);
 			dependencies = (
 			);
@@ -52,6 +53,20 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		596095E51C00CE7F00647E39 /* Remove code coverage files (.gcno) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Remove code coverage files (.gcno)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "find . -type f -depth 1 -name '*.gcno' -delete";
+		};
 		9666E4D9196BCB4E0076C1F2 /* Build Peckham */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
