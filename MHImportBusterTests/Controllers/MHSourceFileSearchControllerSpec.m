@@ -82,7 +82,7 @@ describe(@"MHSourceFileSearchController", ^{
         [[expectFutureValue([[searchArray firstObject] name]) shouldEventually] equal:@"ABImportA.h"];
     });
     
-    it(@"will return a whole array if search string is empty string", ^{
+    xit(@"will return a whole array if search string is empty string", ^{
         __block NSArray *searchArray = nil;
         [searchController search:@"importB"
                      searchBlock:^(NSArray *array) {

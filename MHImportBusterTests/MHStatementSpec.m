@@ -22,13 +22,13 @@ static NSArray *MHLOCTestTokens = nil;
         MHLOCTestTokens = @[
                             [PKToken tokenWithTokenType:PKTokenTypeWord
                                             stringValue:@"#import"
-                                             floatValue:0],
+                                             doubleValue:0],
                             [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                             stringValue:@"\""
-                                             floatValue:0],
+                                             doubleValue:0],
                             [PKToken tokenWithTokenType:PKTokenTypeSymbol
                                             stringValue:@"\""
-                                             floatValue:0],
+                                             doubleValue:0],
                             ];
     }
     return MHLOCTestTokens;
@@ -40,7 +40,7 @@ SPEC_BEGIN(MHStatementSpec)
 
 describe(@"MHStatement", ^{
 
-    __block PKToken *token = [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"#import" floatValue:0];
+    __block PKToken *token = [PKToken tokenWithTokenType:PKTokenTypeWord stringValue:@"#import" doubleValue:0];
     __block MHStatement *statement = nil;
     
     beforeEach(^{

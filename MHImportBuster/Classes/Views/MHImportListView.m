@@ -47,17 +47,22 @@
     NSString *currentString = [self.dataSource searchStringForImportList:self];
 
     if (self.numberOfRows > 0) {
-        NSString *header =  [self.dataSource importList:self stringForRow:row];
-        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:header];
+        NSString *header          = [self.dataSource importList:self stringForRow:row];
+        NSString *formattedHeader = [self.dataSource importList:self formattedStringForRow:row];
+        
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:formattedHeader];
         
         // invert black->white for selected row
         if (tableView.selectedRow == row) {
-            [string addAttributes:[self whiteForegroundTextAttribute] range:NSMakeRange(0, header.length)];
+            [string addAttributes:[self whiteForegroundTextAttribute] range:NSMakeRange(0, formattedHeader.length)];
         }
 
         // highlight matched substring
         if (currentString.length > 0) {
+            // modify range to exclude leading "#import"
             NSRange range = [header rangeOfString:currentString options:NSCaseInsensitiveSearch];
+            range.location += [formattedHeader rangeOfString:header].location;
+            
             [string addAttributes:[self highlightedTextAttribute] range:range];
         }
 
@@ -123,6 +128,13 @@
             [self.delegate importListDidDismiss:self];
         }
     }
+    else if ((key.modifierFlags & NSDeviceIndependentModifierFlagsMask) == NSCommandKeyMask) {
+        // paste via command-v
+        if ([key.characters isEqualToString:@"v"]) {
+            currentString = [[NSPasteboard generalPasteboard] stringForType:NSPasteboardTypeString];
+            [self performSearch:currentString];
+        }
+    }
     else if ([self isValidKeyForSearching:key]) {
         currentString = [currentString stringByAppendingString:key.characters];
         [self performSearch:currentString];
@@ -137,7 +149,11 @@
     else if (key.keyCode == kVK_Escape) {
         [self.delegate importListDidDismiss:self];
     }
-    else if (key.keyCode == kVK_Return) {
+    else if (key.keyCode == kVK_Return ||
+		   key.keyCode == kVK_ANSI_KeypadEnter) {
+	    
+	 
+	    
         [self onSelectedRow:selectedRow];
     }
 }

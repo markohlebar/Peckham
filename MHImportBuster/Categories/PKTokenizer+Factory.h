@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Marko Hlebar. All rights reserved.
 //
 
-#import <ParseKit/PKTokenizer.h>
+#import <PEGKit/PKTokenizer.h>
 
 @interface PKTokenizer (Factory)
 + (PKTokenizer *)defaultTokenizer;

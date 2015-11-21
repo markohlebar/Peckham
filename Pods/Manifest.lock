@@ -1,20 +1,16 @@
 PODS:
-  - Kiwi/ARC (2.2.3)
-  - Kiwi/NonARC (2.2.3)
-  - Kiwi/XCTest (2.2.3):
-    - Kiwi/ARC
-    - Kiwi/NonARC
-  - ParseKit (0.7)
-  - XcodeEditor (1.6)
+  - Kiwi (2.4.0)
+  - PEGKit (0.4.2)
+  - XcodeEditor (1.6.2)
 
 DEPENDENCIES:
-  - Kiwi/XCTest
-  - ParseKit
+  - Kiwi
+  - PEGKit
   - XcodeEditor
 
 SPEC CHECKSUMS:
-  Kiwi: 7b9bc7294de746357213067a1df49cc0a59384e8
-  ParseKit: 227201c416a547ce6f3bc6b279b6ae69a2e28c35
-  XcodeEditor: 0214318e7bece3c9b1db81d128b84d1decb0dd63
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  PEGKit: 9563952b2f19f5f0c979ecf635c8410369bfe3e9
+  XcodeEditor: 0d21967dd71a16262c7121c7723179f6ae2b11c3
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.39.0.beta.4

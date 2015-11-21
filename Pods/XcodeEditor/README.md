@@ -94,6 +94,34 @@ subProjectDefinition = [XCSubProjectDefinition withName:@"mySubproject" projPath
 [group removeSubProject:subProjectDefinition];  //TODO: project should be able to remove itself from parent.
 ```
 
+### Configuring targets
+
+We can add/update linker flags, header search paths, C-flags, etc to a target.  Here we'll add header search paths: 
+
+```objective-c
+XCTarget* target = [_project targetWithName:_projectName];
+for (NSString* configName in [target configurations])
+{
+    XCBuildConfiguration* configuration = [target configurationWithName:configName];
+    NSMutableArray* headerPaths = [[NSMutableArray alloc] init];
+    [headerPaths addObject:@"$(inherited)"];
+    [headerPaths addObject:@"$(SRCROOT)/include"];        
+    [configuration addOrReplaceSetting:headerPaths forKey:@"HEADER_SEARCH_PATHS"];
+}
+```
+
+. . . these settings are added by key, as they would appear in a make file. (Xcode provides more human friendly descriptions). To find the key for a given build setting, consult the compiler docs. Common settings are: 
+
+* HEADER_SEARCH_PATHS
+* OTHER_LD_FLAGS
+* CLANG_CXX_LANGUAGE_STANDARD
+* CODE_SIGN_IDENTITY
+* GCC_C_LANGUAGE_STANDARD
+* INFOPLIST_FILE 
+* LIBRARY_SEARCH_PATHS
+* PRODUCT_NAME
+* PROVISIONING_PROFILE
+
 ### File write behavior
 
 ```objective-c
@@ -115,42 +143,11 @@ subProjectDefinition = [XCSubProjectDefinition withName:@"mySubproject" projPath
 [definition setFileOperationStyle:FileOperationStyleReferenceOnly]; 
 ```
 
-# Docs
-
-You've just read them! The Source/Tests folder contains further usasge examples. A good starting point is to run the test target in Xcode.
-This will extract a test project to the /tmp directory, where you'll be able to see the outcome for yourself. 
-
-* <a href="https://github.com/jasperblues/XcodeEditor/wiki">Wiki</a>
-* <a href="http://jasperblues.github.com/XcodeEditor/api/index.html">API</a>
-* <a href="http://jasperblues.github.com/XcodeEditor/coverage/index.html">Coverage Reports</a>
 
 # Building 
 
-## Just the Framework
+Open the project in XCode and choose Product/Build. Alternatively install with CocoaPods. 
 
-Open the project in XCode and choose Product/Build. 
-
-## Command-line Build
-
-Includes Unit Tests, Integration Tests, Code Coverge and API reports installed to Xcode. 
-
-### Requirements (one time only)
-
-In addition to Xcode, requires the Appledoc and lcov packages. A nice way to install these is with <a href="http://www.macports.org/install.php">MacPorts</a>.
-
-```sh
-git clone https://github.com/tomaz/appledoc.git
-sudo install-appledoc.sh
-sudo port install lcov
-```
-
-NB: Xcode 4.3+ requires command-line tools to be installed separately. 
-
-### Running the build (every other time)
-
-```sh
-ant 
-```
 # Feature Requests and Contributions
 
 . . . are very welcome. 
@@ -165,10 +162,13 @@ If you're using the API shoot me an email and tell me what you're doing with it.
 
 # Who's using it? 
 
-* <a href="http://www.expanz.com">expanz</a>: A RAD framework that enables .NET developers in producing cross-platform and cloud apps. 
-* <a href="http://www.lesspainful.com">Less Painful</a>: The Calabash automated functional testing for mobile applications. 
+* <a href="http://www.apportable.com">Apportable</a> : Develop Android applications using Xcode, Objective-C and Cocoa APIs
+* <a href="https://github.com/calabash/calabash-ios">Xamarin</a>: The Calabash automated functional testing for mobile applications. 
+* <a href="https://github.com/markohlebar/Peckham">Peckham</a> : A great plugin for managing Xcode imports
 * <a href="http://www.levelhelper.org">Level Helper</a>: A RAD framework for developing 2D games on iOS & Android. 
 * <a href="http://macromates.com/">Text Mate</a>: The missing Text Editor for OSX.
+
+
 
 # Authors
 
@@ -186,6 +186,7 @@ If you're using the API shoot me an email and tell me what you're doing with it.
 * Vladislav Alekseev 
 * Felix Schneider - bug fixes. 
 * Isak Sky - mutable XCSourceFiles. 
+* <a href="https://github.com/hartman">Derk-Jan Hartman</a> : Adding folder references, by-file compiler flags. 
 
 Thanks! 
 
@@ -194,5 +195,7 @@ Thanks!
 Apache License, Version 2.0, January 2004, http://www.apache.org/licenses/
 
 * © 2011 - 2012 Jasper Blues and contributors.
+
+
 
 

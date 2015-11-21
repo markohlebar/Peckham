@@ -1,15 +1,17 @@
 Peckham
 =======
 
+[![CI Status](https://travis-ci.org/markohlebar/Peckham.svg)](https://travis-ci.org/markohlebar/Peckham)
+
 Xcode plugin that simplifies adding #import-s. 
 
-![Peckham.gif](https://raw.githubusercontent.com/markohlebar/Peckham/develop/Misc/Peckham.gif)
+![Peckham.gif](/Misc/Peckham.gif)
 
 ### Installation Guide
 
 #### Alcatraz
 
-- install [Alcatraz](https://github.com/supermarin/Alcatraz) and search for **Peckham** 
+- install [Alcatraz](https://github.com/alcatraz/Alcatraz) and search for **Peckham** 
 
 #### Manual Labour
 
@@ -21,7 +23,7 @@ Xcode plugin that simplifies adding #import-s.
 ### User guide
 
 - **⌘ + ctrl + P** to invoke the popup
-- start typing the keyword of your import
+- start typing or paste the keyword of your import
 - use **↑** or **↓** keys to navigate
 - press **↵** or double click to add an import
 
@@ -51,8 +53,8 @@ There are several things that are to be added to the project
 
 ### Dependencies
 
-- **XcodeEditor** https://github.com/jasperblues/XcodeEditor
-- **ParseKit** https://github.com/itod/parsekit
+- **XcodeEditor** https://github.com/appsquickly/XcodeEditor
+- **PegKit** https://github.com/itod/pegkit
 
 ### License
 

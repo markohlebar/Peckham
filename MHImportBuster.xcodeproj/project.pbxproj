@@ -20,7 +20,7 @@
 		961C7DCF191F6ED200031FAD /* XCBuildSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C7DCD191F6ED200031FAD /* XCBuildSettings.m */; };
 		961C7DD2191F6F9000031FAD /* XCTarget+XCProject.h in Headers */ = {isa = PBXBuildFile; fileRef = 961C7DD0191F6F9000031FAD /* XCTarget+XCProject.h */; };
 		961C7DD3191F6F9000031FAD /* XCTarget+XCProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 961C7DD1191F6F9000031FAD /* XCTarget+XCProject.m */; };
-		9623786F1895374B0012DEF1 /* MHImportBuster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; };
+		9623786F1895374B0012DEF1 /* MHImportBuster.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AD6A1FBC1876B5BD00E4137F /* MHImportBuster.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9628390718A63A11007EE520 /* DVTSourceTextStorage+Operations.h in Headers */ = {isa = PBXBuildFile; fileRef = 9628390518A63A11007EE520 /* DVTSourceTextStorage+Operations.h */; };
 		9628390818A63A11007EE520 /* DVTSourceTextStorage+Operations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390618A63A11007EE520 /* DVTSourceTextStorage+Operations.m */; };
 		9628390C18A63D35007EE520 /* DVTSourceTextStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */; };
@@ -174,6 +174,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		59B330821B6D2BCE00135030 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD6A1FB31876B5BD00E4137F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96872B0719163A6D0068AF7A;
+			remoteInfo = MHImportBusterApp;
+		};
 		AD6A1FD71876B5BD00E4137F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD6A1FB31876B5BD00E4137F /* Project object */;
@@ -198,7 +205,9 @@
 
 /* Begin PBXFileReference section */
 		1E6C46054B3049289C35CE1F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C3352BDD35D0A6C792BE45 /* Pods-MHImportBuster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBuster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHImportBuster/Pods-MHImportBuster.debug.xcconfig"; sourceTree = "<group>"; };
 		50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHImportBusterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81BCBA1C1D69FAA484D1A98A /* Pods-MHImportBusterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBusterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHImportBusterTests/Pods-MHImportBusterTests.release.xcconfig"; sourceTree = "<group>"; };
 		96067BEF192C80F20095AEFF /* Bug_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bug_1.m; sourceTree = "<group>"; };
 		96067BF0192C80F20095AEFF /* Bug_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bug_2.m; sourceTree = "<group>"; };
 		96067BF1192C80F20095AEFF /* FileHandleInsertTestFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = FileHandleInsertTestFile; sourceTree = "<group>"; };
@@ -382,10 +391,9 @@
 		ADB1CF871876C0B000D935C7 /* MHImportBusterPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHImportBusterPlugin.h; sourceTree = "<group>"; };
 		ADB1CF881876C0B000D935C7 /* MHImportBusterPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHImportBusterPlugin.m; sourceTree = "<group>"; };
 		ADB1CF8A1876C0B000D935C7 /* MHImportBusterPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MHImportBusterPlugin-Prefix.pch"; sourceTree = "<group>"; };
-		B2B4EF003AF34CC69EAEF205 /* Pods-MHImportBusterTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBusterTests.xcconfig"; path = "Pods/Pods-MHImportBusterTests.xcconfig"; sourceTree = "<group>"; };
+		CAD4AC6DD582B92C92C5774C /* Pods-MHImportBusterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBusterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHImportBusterTests/Pods-MHImportBusterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC86188A4B074F55AA6C93E6 /* libPods-MHImportBuster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHImportBuster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0FACE9357C24C5DAC2071C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBuster.xcconfig"; path = "Pods/Pods-MHImportBuster.xcconfig"; sourceTree = "<group>"; };
+		E19CF76BE066C808B18BD0F7 /* Pods-MHImportBuster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBuster.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHImportBuster/Pods-MHImportBuster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +448,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E2BEC1AB81B8B16F2B9D786 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37C3352BDD35D0A6C792BE45 /* Pods-MHImportBuster.debug.xcconfig */,
+				E19CF76BE066C808B18BD0F7 /* Pods-MHImportBuster.release.xcconfig */,
+				CAD4AC6DD582B92C92C5774C /* Pods-MHImportBusterTests.debug.xcconfig */,
+				81BCBA1C1D69FAA484D1A98A /* Pods-MHImportBusterTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		96067BEE192C80F20095AEFF /* TestFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,9 +815,7 @@
 				96872B0A19163A6D0068AF7A /* MHImportBusterApp */,
 				AD6A1FBE1876B5BD00E4137F /* Frameworks */,
 				AD6A1FBD1876B5BD00E4137F /* Products */,
-				E0FACE9357C24C5DAC2071C3 /* Pods.xcconfig */,
-				B2B4EF003AF34CC69EAEF205 /* Pods-MHImportBusterTests.xcconfig */,
-				E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */,
+				1E2BEC1AB81B8B16F2B9D786 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1075,6 +1092,7 @@
 			);
 			dependencies = (
 				AD6A1FD81876B5BD00E4137F /* PBXTargetDependency */,
+				59B330831B6D2BCE00135030 /* PBXTargetDependency */,
 			);
 			name = MHImportBusterTests;
 			productName = MHImportBusterTests;
@@ -1105,11 +1123,11 @@
 		AD6A1FB31876B5BD00E4137F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Marko Hlebar";
 				TargetAttributes = {
 					AD6A1FD21876B5BD00E4137F = {
-						TestTargetID = AD6A1FBB1876B5BD00E4137F;
+						TestTargetID = 96872B0719163A6D0068AF7A;
 					};
 				};
 			};
@@ -1286,7 +1304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MHImportBusterTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHImportBusterTests/Pods-MHImportBusterTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91F8557A81DF432F8CB0BB89 /* Check Pods Manifest.lock */ = {
@@ -1330,8 +1348,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MHImportBuster-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHImportBuster/Pods-MHImportBuster-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1446,6 +1463,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		59B330831B6D2BCE00135030 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96872B0719163A6D0068AF7A /* MHImportBusterApp */;
+			targetProxy = 59B330821B6D2BCE00135030 /* PBXContainerItemProxy */;
+		};
 		AD6A1FD81876B5BD00E4137F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AD6A1FBB1876B5BD00E4137F /* MHImportBuster */;
@@ -1511,19 +1533,26 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBusterApp/MHImportBusterApp-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(TOOLCHAIN_DIR)/usr/include",
 					"$(SRCROOT)/MHImportBuster/Classes/Views/",
 				);
 				INFOPLIST_FILE = "MHImportBusterApp/MHImportBusterApp-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1535,15 +1564,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBusterApp/MHImportBusterApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(TOOLCHAIN_DIR)/usr/include",
 					"$(SRCROOT)/MHImportBuster/Classes/Views/",
 				);
 				INFOPLIST_FILE = "MHImportBusterApp/MHImportBusterApp-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1565,9 +1602,12 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1619,18 +1659,20 @@
 		};
 		AD6A1FE51876B5BD00E4137F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */;
+			baseConfigurationReference = 37C3352BDD35D0A6C792BE45 /* Pods-MHImportBuster.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
 					"$(PROJECT_DIR)/MHImportBuster/External",
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../SharedFrameworks",
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
@@ -1639,10 +1681,8 @@
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
 				INSTALL_PATH = "@rpath";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/mhlebar/Documents/GitHub/CSSocial/CSSocial/External/GooglePlus/lib,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1651,30 +1691,30 @@
 		};
 		AD6A1FE61876B5BD00E4137F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E830DA8195DC4C83B75558FC /* Pods-MHImportBuster.xcconfig */;
+			baseConfigurationReference = E19CF76BE066C808B18BD0F7 /* Pods-MHImportBuster.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = /;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_TESTABILITY = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
 					"$(PROJECT_DIR)/MHImportBuster/External",
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../SharedFrameworks",
 				);
 				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
 				INSTALL_PATH = "@rpath";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/mhlebar/Documents/GitHub/CSSocial/CSSocial/External/GooglePlus/lib,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1683,42 +1723,48 @@
 		};
 		AD6A1FE81876B5BD00E4137F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2B4EF003AF34CC69EAEF205 /* Pods-MHImportBusterTests.xcconfig */;
+			baseConfigurationReference = CAD4AC6DD582B92C92C5774C /* Pods-MHImportBusterTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MHImportBuster.framework/Versions/A/MHImportBuster";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				INFOPLIST_FILE = "MHImportBusterTests/MHImportBusterTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MHImportBusterApp.app/Contents/MacOS/MHImportBusterApp";
+				TREAT_MISSING_BASELINES_AS_TEST_FAILURES = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
 		AD6A1FE91876B5BD00E4137F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2B4EF003AF34CC69EAEF205 /* Pods-MHImportBusterTests.xcconfig */;
+			baseConfigurationReference = 81BCBA1C1D69FAA484D1A98A /* Pods-MHImportBusterTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MHImportBuster.framework/Versions/A/MHImportBuster";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBusterTests/MHImportBusterTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MHImportBusterApp.app/Contents/MacOS/MHImportBusterApp";
+				TREAT_MISSING_BASELINES_AS_TEST_FAILURES = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -1729,12 +1775,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
+				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
-					/Users/Applications/Xcode.app/Contents/Frameworks,
-					/Users/Applications/Xcode.app/Contents/SharedFrameworks,
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../Frameworks",
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../SharedFrameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBusterPlugin/MHImportBusterPlugin-Prefix.pch";
@@ -1745,6 +1790,9 @@
 				INFOPLIST_FILE = "MHImportBusterPlugin/MHImportBusterPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LIBTOOLFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -1758,16 +1806,17 @@
 				DSTROOT = "$(HOME)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
-					/Users/Applications/Xcode.app/Contents/Frameworks,
-					/Users/Applications/Xcode.app/Contents/SharedFrameworks,
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../Frameworks",
+					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../SharedFrameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBusterPlugin/MHImportBusterPlugin-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBusterPlugin/MHImportBusterPlugin-Info.plist";
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LIBTOOLFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.markohlebar.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xcplugin;
 			};

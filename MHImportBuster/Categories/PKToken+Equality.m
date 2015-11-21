@@ -21,7 +21,7 @@
 }
 
 - (BOOL)isPlaceholder {
-    return ([self->stringValue isEqualToString:kMHTokenPlaceholderValue]);
+    return ([[self stringValue] isEqualToString:kMHTokenPlaceholderValue]);
 }
 
 @end
