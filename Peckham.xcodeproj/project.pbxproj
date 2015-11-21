@@ -11,7 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 9666E4D8196BCB2B0076C1F2 /* Build configuration list for PBXAggregateTarget "Peckham" */;
 			buildPhases = (
-				9666E4D9196BCB4E0076C1F2 /* ShellScript */,
+				9666E4D9196BCB4E0076C1F2 /* Build Peckham */,
 			);
 			dependencies = (
 			);
@@ -52,13 +52,14 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9666E4D9196BCB4E0076C1F2 /* ShellScript */ = {
+		9666E4D9196BCB4E0076C1F2 /* Build Peckham */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Build Peckham";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
