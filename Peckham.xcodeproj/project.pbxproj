@@ -13,6 +13,7 @@
 			buildPhases = (
 				9666E4D9196BCB4E0076C1F2 /* Build Peckham */,
 				596095E51C00CE7F00647E39 /* Remove code coverage files (.gcno) */,
+				596095E61C00D0FE00647E39 /* Remove code coverage files (.gcda) */,
 			);
 			dependencies = (
 			);
@@ -66,6 +67,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "find . -type f -depth 1 -name '*.gcno' -delete";
+		};
+		596095E61C00D0FE00647E39 /* Remove code coverage files (.gcda) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Remove code coverage files (.gcda)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "find . -type f -depth 1 -name '*.gcda' -delete";
 		};
 		9666E4D9196BCB4E0076C1F2 /* Build Peckham */ = {
 			isa = PBXShellScriptBuildPhase;
