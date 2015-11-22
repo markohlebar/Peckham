@@ -11,7 +11,9 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 9666E4D8196BCB2B0076C1F2 /* Build configuration list for PBXAggregateTarget "Peckham" */;
 			buildPhases = (
-				9666E4D9196BCB4E0076C1F2 /* ShellScript */,
+				9666E4D9196BCB4E0076C1F2 /* Build Peckham */,
+				596095E51C00CE7F00647E39 /* Remove code coverage files (.gcno) */,
+				596095E61C00D0FE00647E39 /* Remove code coverage files (.gcda) */,
 			);
 			dependencies = (
 			);
@@ -33,7 +35,7 @@
 		9666E4CF196BCAB40076C1F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 			};
 			buildConfigurationList = 9666E4D2196BCAB40076C1F2 /* Build configuration list for PBXProject "Peckham" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -52,13 +54,42 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9666E4D9196BCB4E0076C1F2 /* ShellScript */ = {
+		596095E51C00CE7F00647E39 /* Remove code coverage files (.gcno) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Remove code coverage files (.gcno)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "find . -type f -depth 1 -name '*.gcno' -delete";
+		};
+		596095E61C00D0FE00647E39 /* Remove code coverage files (.gcda) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Remove code coverage files (.gcda)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "find . -type f -depth 1 -name '*.gcda' -delete";
+		};
+		9666E4D9196BCB4E0076C1F2 /* Build Peckham */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Peckham";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +102,7 @@
 		9666E4D3196BCAB40076C1F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -78,12 +110,14 @@
 		9666E4D4196BCAB40076C1F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 			};
 			name = Release;
 		};
 		9666E4D6196BCB2B0076C1F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -91,6 +125,7 @@
 		9666E4D7196BCB2B0076C1F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
