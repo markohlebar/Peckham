@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ADB1CF7B1876C0AF00D935C7"
-               BuildableName = "Peckham.xcplugin"
-               BlueprintName = "Peckham"
-               ReferencedContainer = "container:MHImportBuster.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AD6A1FD21876B5BD00E4137F"
-               BuildableName = "MHImportBusterTests.xctest"
-               BlueprintName = "MHImportBusterTests"
+               BlueprintIdentifier = "96872B0719163A6D0068AF7A"
+               BuildableName = "MHImportBusterApp.app"
+               BlueprintName = "MHImportBusterApp"
                ReferencedContainer = "container:MHImportBuster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ADB1CF7B1876C0AF00D935C7"
-            BuildableName = "Peckham.xcplugin"
-            BlueprintName = "Peckham"
+            BlueprintIdentifier = "96872B0719163A6D0068AF7A"
+            BuildableName = "MHImportBusterApp.app"
+            BlueprintName = "MHImportBusterApp"
             ReferencedContainer = "container:MHImportBuster.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,19 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <PathRunnable
-         runnableDebuggingMode = "0"
-         FilePath = "/Applications/Xcode.app">
-      </PathRunnable>
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ADB1CF7B1876C0AF00D935C7"
-            BuildableName = "Peckham.xcplugin"
-            BlueprintName = "Peckham"
+            BlueprintIdentifier = "96872B0719163A6D0068AF7A"
+            BuildableName = "MHImportBusterApp.app"
+            BlueprintName = "MHImportBusterApp"
             ReferencedContainer = "container:MHImportBuster.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -97,18 +80,19 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ADB1CF7B1876C0AF00D935C7"
-            BuildableName = "Peckham.xcplugin"
-            BlueprintName = "Peckham"
+            BlueprintIdentifier = "96872B0719163A6D0068AF7A"
+            BuildableName = "MHImportBusterApp.app"
+            BlueprintName = "MHImportBusterApp"
             ReferencedContainer = "container:MHImportBuster.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Release">
+      buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"

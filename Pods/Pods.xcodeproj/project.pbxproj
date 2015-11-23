@@ -1365,7 +1365,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1585,6 +1585,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 560F599F377202645387B09CC2A9DE91 /* PEGKit.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
@@ -1602,6 +1603,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC1517F573CFE0220BF2CDD1B371FFC5 /* Pods-MHImportBuster.debug.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -1619,6 +1621,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 60166766B04C28DFAF1929021189C643 /* XcodeEditor.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREFIX_HEADER = "Target Support Files/XcodeEditor/XcodeEditor-prefix.pch";
@@ -1649,6 +1652,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1674,6 +1678,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 609EAE5724837BC38053B8F70632DE49 /* Kiwi.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
@@ -1691,6 +1696,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C55E08EE5F7FEC68D864B91BAF25A0E7 /* Pods-MHImportBusterTests.debug.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -1708,6 +1714,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 609EAE5724837BC38053B8F70632DE49 /* Kiwi.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREFIX_HEADER = "Target Support Files/Kiwi/Kiwi-prefix.pch";
@@ -1724,6 +1731,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 60166766B04C28DFAF1929021189C643 /* XcodeEditor.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
@@ -1775,6 +1783,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 560F599F377202645387B09CC2A9DE91 /* PEGKit.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREFIX_HEADER = "Target Support Files/PEGKit/PEGKit-prefix.pch";
@@ -1791,6 +1800,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06F8169231141C481FBB732A2C20A63C /* Pods-MHImportBuster.release.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;
@@ -1809,6 +1819,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 95DAD5D0F9757A31AC7381394B930BA0 /* Pods-MHImportBusterTests.release.xcconfig */;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXECUTABLE_PREFIX = lib;

@@ -174,6 +174,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		599EC6571C00FD430047B022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD6A1FB31876B5BD00E4137F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD6A1FBB1876B5BD00E4137F;
+			remoteInfo = MHImportBuster;
+		};
 		59B330821B6D2BCE00135030 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD6A1FB31876B5BD00E4137F /* Project object */;
@@ -1111,6 +1118,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				599EC6581C00FD430047B022 /* PBXTargetDependency */,
 			);
 			name = Peckham;
 			productName = MHImportBusterPlugin;
@@ -1463,6 +1471,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		599EC6581C00FD430047B022 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD6A1FBB1876B5BD00E4137F /* MHImportBuster */;
+			targetProxy = 599EC6571C00FD430047B022 /* PBXContainerItemProxy */;
+		};
 		59B330831B6D2BCE00135030 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 96872B0719163A6D0068AF7A /* MHImportBusterApp */;
@@ -1592,6 +1605,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1607,7 +1621,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1632,6 +1646,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
@@ -1646,6 +1661,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1675,8 +1691,8 @@
 					"$(PLATFORM_DEVELOPER_LIBRARY_DIR)/../../SharedFrameworks",
 				);
 				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
@@ -1708,7 +1724,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				INFOPLIST_FILE = "MHImportBuster/MHImportBuster-Info.plist";
@@ -1731,7 +1747,7 @@
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MHImportBuster/MHImportBuster-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
