@@ -2,6 +2,7 @@ language: objective-c
 osx_image: xcode7.2
 podfile: Podfile
 cache: cocoapods
+sudo: false
 before_install:
     - pod install
 xcode_workspace: MHImportBuster.xcworkspace
