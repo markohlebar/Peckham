@@ -33,7 +33,16 @@ static NSDictionary* NSDictionaryWithXCFileReferenceTypes()
             @"text.html"             : @(HTML),
             @"text"                  : @(TEXT),
             @"wrapper.pb-project"    : @(XcodeProject),
-            @"folder"                : @(Folder)
+            @"folder"                : @(Folder),
+            @"folder.assetcatalog"   : @(AssetCatalog),
+            @"sourcecode.swift"      : @(SourceCodeSwift),
+            @"wrapper.application"   : @(Application),
+            @"file.playground"       : @(Playground),
+            @"text.script.sh"        : @(ShellScript),
+            @"net.daringfireball.markdown" : @(Markdown),
+            @"text.plist.xml"        : @(XMLPropertyList),
+            @"file.storyboard"       : @(Storyboard),
+            @"text.xcconfig"         : @(XCConfig)
         };
     });
 
@@ -77,6 +86,10 @@ XcodeSourceFileType XCSourceFileTypeFromFileName(NSString* fileName)
     if ([fileName hasSuffix:@".cpp"])
     {
         return SourceCodeCPlusPlus;
+    }
+    if ([fileName hasSuffix:@".swift"])
+    {
+        return SourceCodeSwift;
     }
     return FileTypeNil;
 }

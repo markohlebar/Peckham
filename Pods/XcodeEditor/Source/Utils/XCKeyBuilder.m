@@ -10,15 +10,21 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #import "XCKeyBuilder.h"
+#import <CommonCrypto/CommonDigest.h>
+
+#if MD5_DIGEST_LENGTH != CC_MD5_DIGEST_LENGTH
+#error Digest length in XCKeyBuilder.h (MD5_DIGEST_LENGTH) disagress with CommonCrypto value (CC_MD5_DIGEST_LENGTH)
+#endif
 
 @implementation XCKeyBuilder
 
-/* ================================================= Class Methods ================================================== */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Class Methods
+//-------------------------------------------------------------------------------------------
+
 + (XCKeyBuilder*)forItemNamed:(NSString*)name
 {
-    NSData* data = [name dataUsingEncoding:NSUTF8StringEncoding];
-    return [[XCKeyBuilder alloc] initHashValueMD5HashWithBytes:[data bytes] length:[data length]];
-
+    return [self createUnique];
 }
 
 + (XCKeyBuilder*)createUnique
@@ -30,7 +36,10 @@
     return [[XCKeyBuilder alloc] initHashValueMD5HashWithBytes:&bytes length:sizeof(bytes)];
 }
 
-/* ================================================== Initializers ================================================== */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Initialization & Destruction
+//-------------------------------------------------------------------------------------------
+
 - (id)initHashValueMD5HashWithBytes:(const void*)bytes length:(NSUInteger)length
 {
     self = [super init];
@@ -41,7 +50,10 @@
     return self;
 }
 
-/* ================================================ Interface Methods =============================================== */
+//-------------------------------------------------------------------------------------------
+#pragma mark - Interface Methods
+//-------------------------------------------------------------------------------------------
+
 - (NSString*)build
 {
     NSInteger byteLength = sizeof(HashValueMD5Hash);

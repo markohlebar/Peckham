@@ -57,7 +57,7 @@ XCFrameworkDefinition* frameworkDefinition =
 [group addFramework:frameworkDefinition toTargets:[project targets]];
 [project save];
 ```
-Setting copyToDestination to YES, will cause the framework to be first copied to the group's directory within the 
+Setting copyToDestination to YES, will cause the framework to be first copied to the group's directory within the
 project, and subsequently linked from there. 
 
 ### Adding an Image Resource
@@ -67,6 +67,16 @@ project, and subsequently linked from there.
 XCSourceFileDefinition* sourceFileDefinition = [[XCSourceFileDefinition alloc]
     initWithName:@"MyImageFile.png" data:[NSData dataWithContentsOfFile:<your image file name>]
     type:ImageResourcePNG];
+
+[group addSourceFile:sourceFileDefinition];
+[project save];
+```
+
+### Adding Asset Catalog (ImageSet)
+
+```objective-c
+
+XCSourceFileDefinition* sourceFileDefinition = [XCSourceFileDefinition sourceDefinitionWithAssetCatalogName:<path to asset catalog>];
 
 [group addSourceFile:sourceFileDefinition];
 [project save];
@@ -122,6 +132,23 @@ for (NSString* configName in [target configurations])
 * PRODUCT_NAME
 * PROVISIONING_PROFILE
 
+###Adding a Library
+
+```objc
+XCSourceFile * libSourceFile = [project fileWithName:@"libAmazing.a"];
+
+XCTarget* target = [project targetWithName:self.mProject.projectName];
+[target addMember:libSourceFile];
+
+for (NSString* configName in [target configurations]) {
+    XCProjectBuildConfig* configuration = [target configurationWithName:configName];
+    NSMutableArray* headerPaths = [[NSMutableArray alloc] init];
+    [headerPaths addObject:@"$(inherited)"];
+    [headerPaths addObject:@"$(PROJECT_DIR)/Amazing"];
+    [configuration addOrReplaceSetting:headerPaths forKey:@"LIBRARY_SEARCH_PATHS"];
+}
+```
+
 ### File write behavior
 
 ```objective-c
@@ -172,7 +199,7 @@ If you're using the API shoot me an email and tell me what you're doing with it.
 
 # Authors
 
-* <a href="http://ph.linkedin.com/pub/jasper-blues/8/163/778">Jasper Blues</a> - <a href="mailto:jasper.blues@me.com?Subject=xcode-editor">jasper.blues@me.com</a>
+* <a href="http://ph.linkedin.com/pub/jasper-blues/8/163/778">Jasper Blues</a> - <a href="mailto:jasper@appsquick.ly?Subject=xcode-editor">jasper@appsquick.ly</a>
          
 ### With contributions from: 
 
@@ -187,6 +214,8 @@ If you're using the API shoot me an email and tell me what you're doing with it.
 * Felix Schneider - bug fixes. 
 * Isak Sky - mutable XCSourceFiles. 
 * <a href="https://github.com/hartman">Derk-Jan Hartman</a> : Adding folder references, by-file compiler flags. 
+* <a href="https://github.com/StoneSpb">StoneSpb</a> : Speed improvements
+* <a href="https://github.com/cezheng">Ce Zheng</a> : Fixes relating to Xcode 7, xcconfig support and others. 
 
 Thanks! 
 

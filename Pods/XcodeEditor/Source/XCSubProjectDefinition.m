@@ -79,7 +79,7 @@
     NSMutableArray *results = [NSMutableArray array];
     NSDictionary *objects = [_subProject objects];
     [objects enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSDictionary *obj, BOOL *stop) {
-        if ([[obj valueForKey:@"isa"] asMemberType] == PBXProjectType) {
+        if ([[obj valueForKey:@"isa"] xce_hasProjectType]) {
             NSString *productRefGroupKey = [obj valueForKey:@"productRefGroup"];
             NSDictionary *products = [objects valueForKey:productRefGroupKey];
             NSArray *children = [products valueForKey:@"children"];
@@ -115,7 +115,7 @@
 }
 
 // compares the given path to the filePath of the project, and returns a relative version. _fullProjectPath, which has
-// to hve been previously set, is the full path to the project *plus* the path to the xcodeproj's group, if any.
+// to hve been previously set, is the full path to the project *plus* the path to the xcodeproj's _group, if any.
 - (NSString *)pathRelativeToProjectRoot
 {
     if (_relativePath == nil) {
