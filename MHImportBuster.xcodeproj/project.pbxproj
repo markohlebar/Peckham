@@ -1094,6 +1094,7 @@
 				AD6A1FD11876B5BD00E4137F /* Resources */,
 				8D10B0C463784E8491566C69 /* Copy Pods Resources */,
 				AD6A20311876BB1F00E4137F /* Copy Test Files to Bundle */,
+				8F272B1DA6D3E1B587D5CC16 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1313,6 +1314,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHImportBusterTests/Pods-MHImportBusterTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F272B1DA6D3E1B587D5CC16 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MHImportBusterTests/Pods-MHImportBusterTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		91F8557A81DF432F8CB0BB89 /* Check Pods Manifest.lock */ = {
@@ -1741,6 +1757,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAD4AC6DD582B92C92C5774C /* Pods-MHImportBusterTests.debug.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1767,6 +1784,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81BCBA1C1D69FAA484D1A98A /* Pods-MHImportBusterTests.release.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
