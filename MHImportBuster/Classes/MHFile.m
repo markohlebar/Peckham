@@ -35,6 +35,12 @@
 	else {
 		//class remains nil if it is nor header nor implementation
 	}
+
+	if ([filePath containsIllegalCharacters])
+	{
+		class = Nil;
+	}
+
 	return [[class alloc] initWithFilePath:filePath];
 }
 
@@ -47,6 +53,12 @@
 }
 
 - (id)initWithFilePath:(NSString *)filePath {
+
+	if ([filePath containsIllegalCharacters])
+	{
+		return nil;
+	}
+
 	self = [super init];
 	if (self) {
 		_filePath = filePath.copy;

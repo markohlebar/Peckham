@@ -23,6 +23,8 @@
  */
 -(BOOL) isHeaderFilePath;
 
+- (BOOL) containsIllegalCharacters;
+
 /**
  *  Checks if file path is to an implementation file
  *

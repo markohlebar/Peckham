@@ -9,6 +9,19 @@
 #import "NSString+Files.h"
 
 @implementation NSString (Files)
+
++ (NSCharacterSet *) invalidCharacterSet
+{
+	static NSCharacterSet *_invalidCharacterSet = nil;
+
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		_invalidCharacterSet = [[NSCharacterSet characterSetWithRange: NSMakeRange(0, 256)] invertedSet];
+	});
+
+	return _invalidCharacterSet;
+}
+
 /**
  *  Checks if the file path provided is valid
  *
@@ -28,6 +41,11 @@
 -(BOOL) isHeaderFilePath {
     NSString *extension = [self pathExtension];
     return [extension isEqualToString:@"h"] || [extension isEqualToString:@"hh"];
+}
+
+- (BOOL) containsIllegalCharacters
+{
+	return [self rangeOfCharacterFromSet: [[self class] invalidCharacterSet]].location != NSNotFound;
 }
 
 /**
