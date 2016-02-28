@@ -1741,6 +1741,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAD4AC6DD582B92C92C5774C /* Pods-MHImportBusterTests.debug.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1767,6 +1768,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 81BCBA1C1D69FAA484D1A98A /* Pods-MHImportBusterTests.release.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
