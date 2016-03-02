@@ -10,16 +10,15 @@
 
 @implementation NSString (Files)
 
-+ (NSCharacterSet *) invalidCharacterSet
-{
-	static NSCharacterSet *_invalidCharacterSet = nil;
++ (NSCharacterSet *) invalidCharacterSet {
+    static NSCharacterSet *_invalidCharacterSet = nil;
 
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		_invalidCharacterSet = [[NSCharacterSet characterSetWithRange: NSMakeRange(0, 256)] invertedSet];
-	});
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _invalidCharacterSet = [[NSCharacterSet characterSetWithRange: NSMakeRange(0, 256)] invertedSet];
+    });
 
-	return _invalidCharacterSet;
+    return _invalidCharacterSet;
 }
 
 /**
@@ -43,9 +42,17 @@
     return [extension isEqualToString:@"h"] || [extension isEqualToString:@"hh"];
 }
 
-- (BOOL) containsIllegalCharacters
-{
-	return [self rangeOfCharacterFromSet: [[self class] invalidCharacterSet]].location != NSNotFound;
+/**
+ *  Checks if the string contains invalid characters/
+ *
+ *  @discussion Valid characters are the characters represented by the inverted `NSCharacterSet` of the set from range of location 0 and length 256.
+ *
+ *
+ *  @return YES if the lastPathComponent contains characters included in the invalid character set.
+ */
+- (BOOL) containsIllegalCharacters {
+    NSString *fileName = [self lastPathComponent];
+    return [fileName rangeOfCharacterFromSet: [[self class] invalidCharacterSet]].location != NSNotFound;
 }
 
 /**
