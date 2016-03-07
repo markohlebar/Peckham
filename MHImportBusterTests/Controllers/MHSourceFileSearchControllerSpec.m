@@ -107,7 +107,7 @@ describe(@"MHSourceFileSearchController", ^{
 
 		[[searchController.searchString should] equal:@""];
 		[[searchController.filteredSourceFiles should] equal:sourceFiles];
-		[[expectFutureValue(searchArray) shouldEventuallyBeforeTimingOutAfter(2)] beNil];
+		[[expectFutureValue(searchArray) shouldEventuallyBeforeTimingOutAfter(5)] beNil];
 
 	});
 });
