@@ -5,5 +5,7 @@ cache: cocoapods
 sudo: false
 before_install:
     - pod install
+script:
+  - xctool -workspace MHImportBuster.xcworkspace -scheme MHImportBusterTests build test
 xcode_workspace: MHImportBuster.xcworkspace
 xcode_scheme: MHImportBusterTests
