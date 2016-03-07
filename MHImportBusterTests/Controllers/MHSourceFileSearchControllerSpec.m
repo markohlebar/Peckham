@@ -95,6 +95,21 @@ describe(@"MHSourceFileSearchController", ^{
                      }];
         [[expectFutureValue(searchArray) shouldEventually] equal:sourceFiles];
     });
+
+	it(@"resets the search contents", ^{
+		__block NSArray *searchArray = nil;
+		[searchController search:@"importB"
+				   searchBlock:^(NSArray *array) {
+					   searchArray = array;
+				   }];
+
+		[searchController reset];
+
+		[[searchController.searchString should] equal:@""];
+		[[searchController.filteredSourceFiles should] equal:sourceFiles];
+		[[expectFutureValue(searchArray) shouldEventuallyBeforeTimingOutAfter(2)] beNil];
+
+	});
 });
 
 SPEC_END
