@@ -35,6 +35,9 @@
 
 - (void)search:(NSString *)searchString
    searchBlock:(MHArrayBlock)searchBlock {
+
+	MHLog(@"searching for %@", searchBlock);
+
     self.searchBlock = searchBlock;
     [self.searchQueue cancelAllOperations];
     
@@ -42,10 +45,16 @@
     self.searchString = searchString;
     
     if (![self.searchString mh_isWhitespaceOrNewline]) {
+
+	    MHLog(@"performing concurrent search");
+
         [self performConcurrentSearchWithSourceFiles:self.filteredSourceFiles
                                         searchString:self.searchString];
     }
     else {
+
+	    MHLog(@"else search");
+
         [self notifySearchResults:self.sourceFiles];
     }
 }
@@ -57,12 +66,18 @@
     [MHSearchArrayOperation operationWithSearchArray:sourceFiles
                                         searchString:searchString
                                   searchResultsBlock:^(NSArray *results){
+
+							    MHLog(@"done searching, will notify");
+
                                       [weakSelf notifySearchResults:results];
                                   }];
     [self.searchQueue addOperation:searchOperation];
 }
 
 - (void)reset {
+
+	MHLog(@"resetting the search controller");
+
     self.searchString = @"";
     self.filteredSourceFiles = self.sourceFiles;
     [self.searchQueue cancelAllOperations];
@@ -72,6 +87,9 @@
 
 - (void)notifySearchResults:(NSArray *)searchResults {
     self.filteredSourceFiles = searchResults;
+
+	MHLog(@"reaching out to the search block");
+
     self.searchBlock(self.filteredSourceFiles);
 }
 
