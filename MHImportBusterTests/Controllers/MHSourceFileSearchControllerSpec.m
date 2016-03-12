@@ -100,6 +100,7 @@ describe(@"MHSourceFileSearchController", ^{
 		__block NSArray *searchArray = nil;
 		[searchController search:@"importB"
 				   searchBlock:^(NSArray *array) {
+				           MHLog("TRAVISCI setting search array");
 					   searchArray = array;
 				   }];
 
