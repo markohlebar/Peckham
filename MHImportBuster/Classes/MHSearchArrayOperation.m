@@ -41,7 +41,7 @@
 
 - (void) notifyWithResults:(NSArray *)results {
     if (!self.isCancelled) {
-        MHLog(@"TRAVISCI executing notifyWithResults")
+        MHLog(@"TRAVISCI executing notifyWithResults");
         dispatch_async(dispatch_get_main_queue(), ^{
             self.searchResultsBlock(results);
         });
