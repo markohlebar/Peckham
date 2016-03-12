@@ -33,6 +33,7 @@
 }
 
 - (void) execute {
+    if (self.isCancelled) return;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"lastPathComponent CONTAINS[cd] %@", self.searchString];
     NSArray *results = [self.searchArray filteredArrayUsingPredicate:predicate];
     [self notifyWithResults:results];
@@ -40,9 +41,12 @@
 
 - (void) notifyWithResults:(NSArray *)results {
     if (!self.isCancelled) {
+        MHLog(@"TRAVISCI executing notifyWithResults")
         dispatch_async(dispatch_get_main_queue(), ^{
             self.searchResultsBlock(results);
         });
+    } else {
+        MHLog(@"TRAVISCI notifyWithResults was cancelled");
     }
 }
 
