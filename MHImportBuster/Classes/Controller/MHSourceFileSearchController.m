@@ -36,7 +36,7 @@
 - (void)search:(NSString *)searchString
    searchBlock:(MHArrayBlock)searchBlock {
 
-	MHLog(@"searching for %@", searchBlock);
+	MHLog(@"TRAVISCI searching for %@", searchBlock);
 
     self.searchBlock = searchBlock;
     [self.searchQueue cancelAllOperations];
@@ -46,14 +46,14 @@
     
     if (![self.searchString mh_isWhitespaceOrNewline]) {
 
-	    MHLog(@"performing concurrent search");
+	    MHLog(@"TRAVISCI performing concurrent search");
 
         [self performConcurrentSearchWithSourceFiles:self.filteredSourceFiles
                                         searchString:self.searchString];
     }
     else {
 
-	    MHLog(@"else search");
+	    MHLog(@"TRAVISCI else search");
 
         [self notifySearchResults:self.sourceFiles];
     }
@@ -67,7 +67,7 @@
                                         searchString:searchString
                                   searchResultsBlock:^(NSArray *results){
 
-							    MHLog(@"done searching, will notify");
+							    MHLog(@"TRAVISCI done searching, will notify");
 
                                       [weakSelf notifySearchResults:results];
                                   }];
@@ -76,7 +76,7 @@
 
 - (void)reset {
 
-	MHLog(@"resetting the search controller");
+	MHLog(@"TRAVISCI resetting the search controller");
 
     self.searchString = @"";
     self.filteredSourceFiles = self.sourceFiles;
@@ -88,7 +88,7 @@
 - (void)notifySearchResults:(NSArray *)searchResults {
     self.filteredSourceFiles = searchResults;
 
-	MHLog(@"reaching out to the search block");
+	MHLog(@"TRAVISCI reaching out to the search block");
 
     self.searchBlock(self.filteredSourceFiles);
 }
