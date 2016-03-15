@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "15D473FBC3853CC771A1BECE1024FA16"
+               BlueprintIdentifier = "A0EBCFA89571E90870B5FE6F110EF756"
                BuildableName = "libPods-MHImportBusterTests.a"
                BlueprintName = "Pods-MHImportBusterTests"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -56,10 +56,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AD6A1FD21876B5BD00E4137F"
-            BuildableName = "MHImportBusterTests.xctest"
-            BlueprintName = "MHImportBusterTests"
-            ReferencedContainer = "container:MHImportBuster.xcodeproj">
+            BlueprintIdentifier = "A0EBCFA89571E90870B5FE6F110EF756"
+            BuildableName = "libPods-MHImportBusterTests.a"
+            BlueprintName = "Pods-MHImportBusterTests"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -96,7 +96,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "15D473FBC3853CC771A1BECE1024FA16"
+            BlueprintIdentifier = "A0EBCFA89571E90870B5FE6F110EF756"
             BuildableName = "libPods-MHImportBusterTests.a"
             BlueprintName = "Pods-MHImportBusterTests"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">
