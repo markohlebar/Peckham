@@ -108,7 +108,11 @@ describe(@"MHSourceFileSearchController", ^{
 
 		[[searchController.searchString should] equal:@""];
 		[[searchController.filteredSourceFiles should] equal:sourceFiles];
-		[[expectFutureValue(searchArray) shouldEventuallyBeforeTimingOutAfter(5)] beNil];
+
+		NSDictionary *environmentVariables = [[NSProcessInfo processInfo] environment];
+
+		if (![environmentVariables[@"TRAVIS"] boolValue])
+			[[expectFutureValue(searchArray) shouldEventuallyBeforeTimingOutAfter(5)] beNil];
 
 	});
 });
