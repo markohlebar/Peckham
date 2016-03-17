@@ -9,6 +9,4 @@
     #import "MHBlocks.h"
     #import "MHImportBusterErrors.h"
 
-	#define MHLog(__FORMAT__, ...) NSLog((@"%s line %d $ " __FORMAT__), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-
 #endif
