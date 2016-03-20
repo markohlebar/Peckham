@@ -71,6 +71,28 @@ describe(@"Invalid file tests", ^{
     
 });
 
+describe(@"Invalid characters file test", ^{
+
+    __block MHFile *file = nil;
+
+    __block NSString *filePath = [[NSBundle bundleForClass: [self class]] pathForResource: @"dont—import—me" ofType: @"h"];
+
+    beforeAll(^{
+
+        file = fileBlock(filePath);
+
+    });
+
+    specify(^{
+
+        [[filePath should] beNonNil];
+
+        [[file should] beNil];
+
+    });
+
+});
+
 describe(@"Duplicate imports tests", ^{
 //    __block MHFile *file = nil;
 //    __block NSString *cannonicalFilePath = [[NSBundle bundleForClass:self.class] pathForResource:@"MyClass" ofType:@"h"];
