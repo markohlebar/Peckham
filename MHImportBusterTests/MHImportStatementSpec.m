@@ -45,7 +45,7 @@ describe(@"Project headers with no subpath", ^{
     });
 });
 
-describe(@"Headers with stange formatting", ^{
+describe(@"Headers with strange formatting", ^{
     __block MHImportStatement *statement = nil;
     beforeEach(^{
         statement = [MHProjectImportStatement statementWithString:@"    #    import         \"Header.h\""];
