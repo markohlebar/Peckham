@@ -214,6 +214,7 @@
 		1E6C46054B3049289C35CE1F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C3352BDD35D0A6C792BE45 /* Pods-MHImportBuster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBuster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHImportBuster/Pods-MHImportBuster.debug.xcconfig"; sourceTree = "<group>"; };
 		50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHImportBusterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59323EC01C9ECE5E009F5FDA /* dont—import—me.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dont—import—me.h"; sourceTree = "<group>"; };
 		81BCBA1C1D69FAA484D1A98A /* Pods-MHImportBusterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBusterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHImportBusterTests/Pods-MHImportBusterTests.release.xcconfig"; sourceTree = "<group>"; };
 		96067BEF192C80F20095AEFF /* Bug_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bug_1.m; sourceTree = "<group>"; };
 		96067BF0192C80F20095AEFF /* Bug_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bug_2.m; sourceTree = "<group>"; };
@@ -469,6 +470,7 @@
 		96067BEE192C80F20095AEFF /* TestFiles */ = {
 			isa = PBXGroup;
 			children = (
+				59323EC01C9ECE5E009F5FDA /* dont—import—me.h */,
 				96F29166194470A6008CC5AB /* Bugs */,
 				96067BF1192C80F20095AEFF /* FileHandleInsertTestFile */,
 				96067BF2192C80F20095AEFF /* FileHandleTestFile */,

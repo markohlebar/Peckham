@@ -44,6 +44,27 @@ describe(@"MHImportStatement+Construction", ^{
         [[statement.value should] beNil];
         
     });
+
+    it(@"Should return nil if the project header path contains illegal characters", ^{
+
+        NSString *headerPath = @"/Headers/this—is-a—header.h";
+
+        MHProjectImportStatement *statement = [MHProjectImportStatement statementWithHeaderPath:headerPath];
+
+        [[statement should] beNil];
+
+    });
+
+    it(@"Should return nil if the framework header path contains illegal characters", ^{
+
+        NSString *headerPath = @"aFramework.framework/Headers/this—is-a—header.h";
+
+        MHFrameworkImportStatement *statement = [MHFrameworkImportStatement statementWithFrameworkHeaderPath:headerPath];
+
+        [[statement should] beNil];
+        
+    });
+
 });
 
 SPEC_END
