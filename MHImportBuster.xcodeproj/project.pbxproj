@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D63FE4FF2BB4BD8A5050BF9 /* libPods-MHImportBuster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC86188A4B074F55AA6C93E6 /* libPods-MHImportBuster.a */; };
+		59323EC21C9ED2DB009F5FDA /* NSStringFilesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 59323EC11C9ED2DB009F5FDA /* NSStringFilesSpec.m */; };
 		71DA3DA040434EAFB76A3464 /* libPods-MHImportBusterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */; };
 		9611424118A6504400E03589 /* NSString+MHNSRange.h in Headers */ = {isa = PBXBuildFile; fileRef = 9611423F18A6504400E03589 /* NSString+MHNSRange.h */; };
 		9611424218A6504400E03589 /* NSString+MHNSRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611424018A6504400E03589 /* NSString+MHNSRange.m */; };
@@ -215,6 +216,7 @@
 		37C3352BDD35D0A6C792BE45 /* Pods-MHImportBuster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBuster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MHImportBuster/Pods-MHImportBuster.debug.xcconfig"; sourceTree = "<group>"; };
 		50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHImportBusterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59323EC01C9ECE5E009F5FDA /* dont—import—me.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dont—import—me.h"; sourceTree = "<group>"; };
+		59323EC11C9ED2DB009F5FDA /* NSStringFilesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringFilesSpec.m; path = Categories/NSStringFilesSpec.m; sourceTree = "<group>"; };
 		81BCBA1C1D69FAA484D1A98A /* Pods-MHImportBusterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBusterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHImportBusterTests/Pods-MHImportBusterTests.release.xcconfig"; sourceTree = "<group>"; };
 		96067BEF192C80F20095AEFF /* Bug_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bug_1.m; sourceTree = "<group>"; };
 		96067BF0192C80F20095AEFF /* Bug_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bug_2.m; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 				96C1BF341928BF56007A4699 /* MHImportStatement+ConstructionSpec.m */,
 				96D89E0018A7BEC20087D248 /* PKToken_FactorySpec.m */,
 				963282D818F966E30007699A /* PKToken+EqualitySpec.m */,
+				59323EC11C9ED2DB009F5FDA /* NSStringFilesSpec.m */,
 			);
 			name = "Category Tests";
 			sourceTree = "<group>";
@@ -1475,6 +1478,7 @@
 				96D89E0118A7BEC20087D248 /* PKToken_FactorySpec.m in Sources */,
 				963282E818F973640007699A /* MHPropertyQualifierStatementSpec.m in Sources */,
 				9628390C18A63D35007EE520 /* DVTSourceTextStorageSpec.m in Sources */,
+				59323EC21C9ED2DB009F5FDA /* NSStringFilesSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
