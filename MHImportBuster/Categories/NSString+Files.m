@@ -10,7 +10,7 @@
 
 @implementation NSString (Files)
 
-+ (NSCharacterSet *) invalidCharacterSet {
++(NSCharacterSet *) invalidCharacterSet {
     static NSCharacterSet *_invalidCharacterSet = nil;
 
     static dispatch_once_t onceToken;
@@ -50,7 +50,7 @@
  *
  *  @return YES if the lastPathComponent contains characters included in the invalid character set.
  */
-- (BOOL) containsIllegalCharacters {
+-(BOOL) containsIllegalCharacters {
     NSString *fileName = [self lastPathComponent];
     return [fileName rangeOfCharacterFromSet: [[self class] invalidCharacterSet]].location != NSNotFound;
 }

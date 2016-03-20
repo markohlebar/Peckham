@@ -31,7 +31,6 @@
  *
  *  @return YES if the lastPathComponent contains characters included in the invalid character set.
  */
-
 -(BOOL) containsIllegalCharacters;
 
 /**
