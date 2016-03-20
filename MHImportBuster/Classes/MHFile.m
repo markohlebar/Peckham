@@ -36,6 +36,10 @@
 		//class remains nil if it is nor header nor implementation
 	}
 
+    if ([filePath containsIllegalCharacters]) {
+        class = Nil;
+    }
+
 	return [[class alloc] initWithFilePath:filePath];
 }
 
