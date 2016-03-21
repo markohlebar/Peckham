@@ -12,7 +12,7 @@
 @implementation MHImportStatement (Construction)
 
 + (MHFrameworkImportStatement *)statementWithFrameworkHeaderPath:(NSString *)headerPath {
-    if (![headerPath isHeaderFilePath]) return nil;
+    if (![headerPath isHeaderFilePath] || [headerPath containsIllegalCharacters]) return nil;
     
     NSArray *pathComponents = [headerPath pathComponents];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@", @".framework"];
@@ -29,7 +29,7 @@
 }
 
 + (MHProjectImportStatement *)statementWithHeaderPath:(NSString *)headerPath {
-    if (![headerPath isHeaderFilePath]) return nil;
+    if (![headerPath isHeaderFilePath] || [headerPath containsIllegalCharacters]) return nil;
 
     NSString *header = [headerPath lastPathComponent];
     NSString *statementString = [NSString stringWithFormat:@"#import \"%@\"", header];

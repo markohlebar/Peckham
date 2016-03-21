@@ -24,6 +24,16 @@
 -(BOOL) isHeaderFilePath;
 
 /**
+ *  Checks if the string contains invalid characters/
+ *
+ *  @discussion Valid characters are the characters represented by the inverted `NSCharacterSet` of the set from range of location 0 and length 256.
+ *
+ *
+ *  @return YES if the lastPathComponent contains characters included in the invalid character set.
+ */
+-(BOOL) containsIllegalCharacters;
+
+/**
  *  Checks if file path is to an implementation file
  *
  *  @return YES if file path is to an implementation file
