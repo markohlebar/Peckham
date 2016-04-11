@@ -16,7 +16,7 @@
 
 - (BOOL)isEqual:(XCSourceFile *)other {
     return (other == self ||
-            (other.type == self.type && [other.name isEqualToString:self.name]));
+            (other.type == self.type && [other.name isEqualToString:self.name] && [self.key isEqualToString: other.key]));
 }
 
 - (NSString *)lastPathComponent {
