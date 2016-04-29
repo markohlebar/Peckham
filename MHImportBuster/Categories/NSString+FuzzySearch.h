@@ -6,7 +6,7 @@
 //  Copyright © 2016 Marko Hlebar. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 @interface NSString (FuzzySearch)
 - (NSString *) mh_fuzzifiedSearchString;
