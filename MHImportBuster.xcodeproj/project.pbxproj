@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D63FE4FF2BB4BD8A5050BF9 /* libPods-MHImportBuster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC86188A4B074F55AA6C93E6 /* libPods-MHImportBuster.a */; };
 		59323EC21C9ED2DB009F5FDA /* NSStringFilesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 59323EC11C9ED2DB009F5FDA /* NSStringFilesSpec.m */; };
+		59B693031CD3EC7700C67B34 /* NSString+FuzzySearchSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B693021CD3EC7700C67B34 /* NSString+FuzzySearchSpec.m */; };
 		59E3C9021CD3E94700DD68A3 /* NSString+FuzzySearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 59E3C9001CD3E94700DD68A3 /* NSString+FuzzySearch.h */; };
 		59E3C9031CD3E94700DD68A3 /* NSString+FuzzySearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E3C9011CD3E94700DD68A3 /* NSString+FuzzySearch.m */; };
 		71DA3DA040434EAFB76A3464 /* libPods-MHImportBusterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */; };
@@ -219,6 +220,7 @@
 		50CE69C5567A407486A7155C /* libPods-MHImportBusterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MHImportBusterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59323EC01C9ECE5E009F5FDA /* dont—import—me.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dont—import—me.h"; sourceTree = "<group>"; };
 		59323EC11C9ED2DB009F5FDA /* NSStringFilesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringFilesSpec.m; path = Categories/NSStringFilesSpec.m; sourceTree = "<group>"; };
+		59B693021CD3EC7700C67B34 /* NSString+FuzzySearchSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FuzzySearchSpec.m"; sourceTree = "<group>"; };
 		59E3C9001CD3E94700DD68A3 /* NSString+FuzzySearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FuzzySearch.h"; sourceTree = "<group>"; };
 		59E3C9011CD3E94700DD68A3 /* NSString+FuzzySearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FuzzySearch.m"; sourceTree = "<group>"; };
 		81BCBA1C1D69FAA484D1A98A /* Pods-MHImportBusterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MHImportBusterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MHImportBusterTests/Pods-MHImportBusterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 				96D89E0018A7BEC20087D248 /* PKToken_FactorySpec.m */,
 				963282D818F966E30007699A /* PKToken+EqualitySpec.m */,
 				59323EC11C9ED2DB009F5FDA /* NSStringFilesSpec.m */,
+				59B693021CD3EC7700C67B34 /* NSString+FuzzySearchSpec.m */,
 			);
 			name = "Category Tests";
 			sourceTree = "<group>";
@@ -1465,6 +1468,7 @@
 				9649770519711E53006EF60A /* MHSourceFileSearchControllerSpec.m in Sources */,
 				96E3D9BB192BF71D00600588 /* MHStringLiteralStatementSpec.m in Sources */,
 				AD6A202A1876B73200E4137F /* MHImportStatementSpec.m in Sources */,
+				59B693031CD3EC7700C67B34 /* NSString+FuzzySearchSpec.m in Sources */,
 				9683A67B18FAC062009E0232 /* MHMethodArgumentStatementSpec.m in Sources */,
 				96D89DE918A7A4980087D248 /* MHRemoveDuplicateImportsOperationSpec.m in Sources */,
 				96C1BF351928BF56007A4699 /* MHImportStatement+ConstructionSpec.m in Sources */,
