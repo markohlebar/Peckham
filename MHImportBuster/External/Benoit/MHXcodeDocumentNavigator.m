@@ -197,10 +197,16 @@ static NSString * const MHXCUserStatePathFormat = @"xcuserdata/%@.xcuserdatad/Us
 
 //TODO: this is hardcoded for performace purposes... Maybe move it to a plist or find a better way?
 + (NSArray *)frameworkRoots {
-    return @[
-             @"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/",
-             @"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/"
-             ];
+    static NSArray *_frameworkRoots = nil;
+    if(!_frameworkRoots) {
+        _frameworkRoots = @[
+                            @"/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/",
+                            @"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/",
+                            @"/Applications/Xcode.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS.sdk/System/Library/Frameworks/",
+                            @"/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/",
+                            ];
+    }
+    return _frameworkRoots;
 }
 
 + (NSString *)pathForFrameworkNamed:(NSString *)frameworkName {
