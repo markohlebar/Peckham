@@ -63,6 +63,7 @@
 		964CEC61191663360012C63D /* IDEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964CEC5D191663360012C63D /* IDEKit.framework */; };
 		964CEC62191663360012C63D /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964CEC5E191663360012C63D /* DVTFoundation.framework */; };
 		964CEC63191663360012C63D /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 964CEC5F191663360012C63D /* DVTKit.framework */; };
+		96546E761CD7712200801280 /* NSString+CamelCaseSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96546E751CD7712200801280 /* NSString+CamelCaseSpec.m */; };
 		96580BF8189D258B00466993 /* MHMethodStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96580BF7189D258B00466993 /* MHMethodStatementSpec.m */; };
 		96589FAE18FDDD6800654F2B /* NSArray+MHStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 96589FAC18FDDD6800654F2B /* NSArray+MHStatement.h */; };
 		96589FAF18FDDD6800654F2B /* NSArray+MHStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 96589FAD18FDDD6800654F2B /* NSArray+MHStatement.m */; };
@@ -108,6 +109,8 @@
 		96B64AC918DE0D8F007DFC26 /* NSFileManager+Headers.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B64AC518DE0D8F007DFC26 /* NSFileManager+Headers.m */; };
 		96B64ACA18DE0D8F007DFC26 /* NSString+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B64AC618DE0D8F007DFC26 /* NSString+Extensions.h */; };
 		96B64ACB18DE0D8F007DFC26 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B64AC718DE0D8F007DFC26 /* NSString+Extensions.m */; };
+		96B7D5A01CD793AC00687083 /* NSArray+MHSourceFileSorting.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B7D59E1CD793AC00687083 /* NSArray+MHSourceFileSorting.h */; };
+		96B7D5A11CD793AC00687083 /* NSArray+MHSourceFileSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B7D59F1CD793AC00687083 /* NSArray+MHSourceFileSorting.m */; };
 		96C1BF321928BF2E007A4699 /* MHImportStatement+Construction.h in Headers */ = {isa = PBXBuildFile; fileRef = 96C1BF301928BF2E007A4699 /* MHImportStatement+Construction.h */; };
 		96C1BF331928BF2E007A4699 /* MHImportStatement+Construction.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1BF311928BF2E007A4699 /* MHImportStatement+Construction.m */; };
 		96C1BF351928BF56007A4699 /* MHImportStatement+ConstructionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1BF341928BF56007A4699 /* MHImportStatement+ConstructionSpec.m */; };
@@ -127,6 +130,8 @@
 		96D89DFE18A7BE580087D248 /* PKToken+Factory.h in Headers */ = {isa = PBXBuildFile; fileRef = 96D89DFC18A7BE580087D248 /* PKToken+Factory.h */; };
 		96D89DFF18A7BE580087D248 /* PKToken+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89DFD18A7BE580087D248 /* PKToken+Factory.m */; };
 		96D89E0118A7BEC20087D248 /* PKToken_FactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D89E0018A7BEC20087D248 /* PKToken_FactorySpec.m */; };
+		96E249201CD76F9E00C0BA69 /* NSString+CamelCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 96E2491E1CD76F9E00C0BA69 /* NSString+CamelCase.h */; };
+		96E249211CD76F9E00C0BA69 /* NSString+CamelCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E2491F1CD76F9E00C0BA69 /* NSString+CamelCase.m */; };
 		96E3D9B8192BF5AE00600588 /* MHStringLiteralStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 96E3D9B6192BF5AE00600588 /* MHStringLiteralStatement.h */; };
 		96E3D9B9192BF5AE00600588 /* MHStringLiteralStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3D9B7192BF5AE00600588 /* MHStringLiteralStatement.m */; };
 		96E3D9BB192BF71D00600588 /* MHStringLiteralStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3D9BA192BF71D00600588 /* MHStringLiteralStatementSpec.m */; };
@@ -281,6 +286,7 @@
 		964CEC5D191663360012C63D /* IDEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEKit.framework; path = ../../../../Applications/Xcode.app/Contents/Frameworks/IDEKit.framework; sourceTree = "<group>"; };
 		964CEC5E191663360012C63D /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = ../../../../Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework; sourceTree = "<group>"; };
 		964CEC5F191663360012C63D /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = ../../../../Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework; sourceTree = "<group>"; };
+		96546E751CD7712200801280 /* NSString+CamelCaseSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+CamelCaseSpec.m"; path = "Categories/NSString+CamelCaseSpec.m"; sourceTree = "<group>"; };
 		96580BF7189D258B00466993 /* MHMethodStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMethodStatementSpec.m; sourceTree = "<group>"; };
 		96589FAC18FDDD6800654F2B /* NSArray+MHStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MHStatement.h"; sourceTree = "<group>"; };
 		96589FAD18FDDD6800654F2B /* NSArray+MHStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHStatement.m"; sourceTree = "<group>"; };
@@ -330,6 +336,8 @@
 		96B64AC518DE0D8F007DFC26 /* NSFileManager+Headers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Headers.m"; sourceTree = "<group>"; };
 		96B64AC618DE0D8F007DFC26 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
 		96B64AC718DE0D8F007DFC26 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		96B7D59E1CD793AC00687083 /* NSArray+MHSourceFileSorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MHSourceFileSorting.h"; sourceTree = "<group>"; };
+		96B7D59F1CD793AC00687083 /* NSArray+MHSourceFileSorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHSourceFileSorting.m"; sourceTree = "<group>"; };
 		96C1BF301928BF2E007A4699 /* MHImportStatement+Construction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MHImportStatement+Construction.h"; sourceTree = "<group>"; };
 		96C1BF311928BF2E007A4699 /* MHImportStatement+Construction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MHImportStatement+Construction.m"; sourceTree = "<group>"; };
 		96C1BF341928BF56007A4699 /* MHImportStatement+ConstructionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MHImportStatement+ConstructionSpec.m"; path = "Categories/MHImportStatement+ConstructionSpec.m"; sourceTree = "<group>"; };
@@ -347,6 +355,8 @@
 		96D89DFC18A7BE580087D248 /* PKToken+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PKToken+Factory.h"; sourceTree = "<group>"; };
 		96D89DFD18A7BE580087D248 /* PKToken+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PKToken+Factory.m"; sourceTree = "<group>"; };
 		96D89E0018A7BEC20087D248 /* PKToken_FactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKToken_FactorySpec.m; path = Categories/PKToken_FactorySpec.m; sourceTree = "<group>"; };
+		96E2491E1CD76F9E00C0BA69 /* NSString+CamelCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CamelCase.h"; sourceTree = "<group>"; };
+		96E2491F1CD76F9E00C0BA69 /* NSString+CamelCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CamelCase.m"; sourceTree = "<group>"; };
 		96E3D9B6192BF5AE00600588 /* MHStringLiteralStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHStringLiteralStatement.h; sourceTree = "<group>"; };
 		96E3D9B7192BF5AE00600588 /* MHStringLiteralStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHStringLiteralStatement.m; sourceTree = "<group>"; };
 		96E3D9BA192BF71D00600588 /* MHStringLiteralStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHStringLiteralStatementSpec.m; sourceTree = "<group>"; };
@@ -500,6 +510,7 @@
 				963282D818F966E30007699A /* PKToken+EqualitySpec.m */,
 				59323EC11C9ED2DB009F5FDA /* NSStringFilesSpec.m */,
 				59B693021CD3EC7700C67B34 /* NSString+FuzzySearchSpec.m */,
+				96546E751CD7712200801280 /* NSString+CamelCaseSpec.m */,
 			);
 			name = "Category Tests";
 			sourceTree = "<group>";
@@ -740,6 +751,10 @@
 				96A0953A19177ED400338093 /* NSTextView+Operations.m */,
 				96FDF3E819694EB600170DEB /* NSArray+Operations.h */,
 				96FDF3E919694EB600170DEB /* NSArray+Operations.m */,
+				96E2491E1CD76F9E00C0BA69 /* NSString+CamelCase.h */,
+				96E2491F1CD76F9E00C0BA69 /* NSString+CamelCase.m */,
+				96B7D59E1CD793AC00687083 /* NSArray+MHSourceFileSorting.h */,
+				96B7D59F1CD793AC00687083 /* NSArray+MHSourceFileSorting.m */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -1002,6 +1017,7 @@
 			files = (
 				96E3D9B8192BF5AE00600588 /* MHStringLiteralStatement.h in Headers */,
 				96B64ACA18DE0D8F007DFC26 /* NSString+Extensions.h in Headers */,
+				96E249201CD76F9E00C0BA69 /* NSString+CamelCase.h in Headers */,
 				96A0953719177B5D00338093 /* MHImportListViewController.h in Headers */,
 				9611424118A6504400E03589 /* NSString+MHNSRange.h in Headers */,
 				9683A66E18FAA402009E0232 /* MHMethodArgumentStatement.h in Headers */,
@@ -1013,6 +1029,7 @@
 				964B0A9718A79AD000E36C8E /* XCFXcodePrivate.h in Headers */,
 				96C21B84189CE00A00484D57 /* MHMethodStatement.h in Headers */,
 				96FB646A18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h in Headers */,
+				96B7D5A01CD793AC00687083 /* NSArray+MHSourceFileSorting.h in Headers */,
 				59E3C9021CD3E94700DD68A3 /* NSString+FuzzySearch.h in Headers */,
 				AD6A20151876B68D00E4137F /* MHStatementParser.h in Headers */,
 				AD6A20171876B68D00E4137F /* MHStatements.h in Headers */,
@@ -1406,6 +1423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				963282D018F933C50007699A /* MHInterfaceStatement.m in Sources */,
+				96B7D5A11CD793AC00687083 /* NSArray+MHSourceFileSorting.m in Sources */,
 				96FDF3EB19694EB600170DEB /* NSArray+Operations.m in Sources */,
 				964B0A9B18A79B8300E36C8E /* MHConcreteSourceOperation.m in Sources */,
 				96C1BF331928BF2E007A4699 /* MHImportStatement+Construction.m in Sources */,
@@ -1453,6 +1471,7 @@
 				968AD40F18986746009E6FE6 /* MHDocumentMethodLOCObserver.m in Sources */,
 				96C21B85189CE00A00484D57 /* MHMethodStatement.m in Sources */,
 				96B64AC118DE01F4007DFC26 /* MHHeaderCache.m in Sources */,
+				96E249211CD76F9E00C0BA69 /* NSString+CamelCase.m in Sources */,
 				AD6A20041876B68D00E4137F /* NSMutableIndexSet+NSArray.m in Sources */,
 				964B0A9618A79AD000E36C8E /* MHXcodeDocumentNavigator.m in Sources */,
 				963282DD18F96E9B0007699A /* MHPropertyStatement.m in Sources */,
@@ -1472,6 +1491,7 @@
 				9683A67B18FAC062009E0232 /* MHMethodArgumentStatementSpec.m in Sources */,
 				96D89DE918A7A4980087D248 /* MHRemoveDuplicateImportsOperationSpec.m in Sources */,
 				96C1BF351928BF56007A4699 /* MHImportStatement+ConstructionSpec.m in Sources */,
+				96546E761CD7712200801280 /* NSString+CamelCaseSpec.m in Sources */,
 				AD6A202E1876B73200E4137F /* MHStatementSpec.m in Sources */,
 				AD6A20271876B73200E4137F /* MHFileSpec.m in Sources */,
 				9611424518A650C100E03589 /* NSString_MHNSRangeSpec.m in Sources */,

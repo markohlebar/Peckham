@@ -18,11 +18,12 @@ describe(@"MHSourceFileSearchController", ^{
     __block MHSourceFileSearchController *searchController = nil;
     
     NSArray *sourceFiles = @[
+                             [MHConcreteSourceFile sourceFileWithName:@"ABInstanteniousA.h"],
                              [MHConcreteSourceFile sourceFileWithName:@"ABImport.h"],
                              [MHConcreteSourceFile sourceFileWithName:@"ABImportA.h"],
                              [MHConcreteSourceFile sourceFileWithName:@"ABImportExportA.h"],
                              [MHConcreteSourceFile sourceFileWithName:@"ABImportB.h"],
-                             [MHConcreteSourceFile sourceFileWithName:@"ABExportA.h"]
+                             [MHConcreteSourceFile sourceFileWithName:@"ABExportA.h"],
                              ];
     
     beforeEach(^{
@@ -88,8 +89,9 @@ describe(@"MHSourceFileSearchController", ^{
                      searchBlock:^(NSArray *array) {
                          searchArray = array;
                      }];
-        [[expectFutureValue(searchArray) shouldEventually] haveCountOf:1];
-        [[expectFutureValue([[searchArray firstObject] name]) shouldEventually] equal:@"ABImportExportA.h"];
+        [[expectFutureValue(searchArray) shouldEventually] haveCountOf:2];
+        [[expectFutureValue([searchArray[0] name]) shouldEventually] equal:@"ABImportExportA.h"];
+        [[expectFutureValue([searchArray[1] name]) shouldEventually] equal:@"ABInstanteniousA.h"];
     });
     
     xit(@"will return a whole array if search string is empty string", ^{

@@ -10,6 +10,7 @@
 #import "MHSearchArrayOperation.h"
 #import "NSString+Extensions.h"
 #import "MHSourceFile.h"
+#import "NSArray+MHSourceFileSorting.h"
 
 @interface MHSourceFileSearchController ()
 @property (nonatomic, strong) NSOperationQueue *searchQueue;
@@ -57,6 +58,7 @@
     [MHSearchArrayOperation operationWithSearchArray:sourceFiles
                                         searchString:searchString
                                   searchResultsBlock:^(NSArray *results){
+                                      results = [results mh_sortedResultsForSearchString:searchString];
                                       [weakSelf notifySearchResults:results];
                                   }];
     [self.searchQueue addOperation:searchOperation];

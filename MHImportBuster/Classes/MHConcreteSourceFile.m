@@ -7,6 +7,7 @@
 //
 
 #import "MHConcreteSourceFile.h"
+#import <XcodeEditor/XcodeSourceFileType.h>
 
 @interface MHConcreteSourceFile ()
 @property (nonatomic, copy) NSString *name;
@@ -39,6 +40,10 @@
 
 - (BOOL)isEqual:(MHConcreteSourceFile *)other {
     return (other == self || [other.name isEqualToString:self.name]);
+}
+
+- (XcodeSourceFileType)type {
+    return SourceCodeHeader;
 }
 
 @end
