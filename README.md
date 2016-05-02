@@ -27,6 +27,10 @@ Xcode plugin that simplifies adding #import-s.
 - use **↑** or **↓** keys to navigate
 - press **↵** or double click to add an import
 
+### Advanced
+- fuzzy search => type `mvc` to find a `ModelViewController`
+- copy paste => **⌘ + C** the class name and then **⌘ + P** after opening Peckham
+
 ### History
 
 Originally the plugin was supposed to handle adding / removing imports on the fly, which soon proved to be a more difficult task than I originally imagined, and took me on an exploration path of Clang libtooling and other cool stuff. I recently decided that I would instead make a GUI popup for adding an #import which seems to be a better approach to the problem in the first place. The code base contains a lot of parts that were originally meant to parse the code and make a tree (similar to Clang's AST) to find the #import statements in text. Due to performance reasons, this was dumped in favor of regex-es. 
