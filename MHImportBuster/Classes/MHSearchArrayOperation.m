@@ -9,6 +9,7 @@
 #import "MHSearchArrayOperation.h"
 #import "NSString+Extensions.h"
 #import "MHSourceFile.h"
+#import "NSString+FuzzySearch.h"
 
 @implementation MHSearchArrayOperation
 + (instancetype) operationWithSearchArray:(NSArray *) searchArray
@@ -33,7 +34,7 @@
 }
 
 - (void) execute {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"lastPathComponent CONTAINS[cd] %@", self.searchString];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"lastPathComponent LIKE[cd] %@", [self.searchString mh_fuzzifiedSearchString]];
     NSArray *results = [self.searchArray filteredArrayUsingPredicate:predicate];
     [self notifyWithResults:results];
 }
