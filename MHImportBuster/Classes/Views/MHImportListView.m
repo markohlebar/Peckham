@@ -9,6 +9,7 @@
 #import "MHImportListView.h"
 #import <Carbon/Carbon.h>
 #import "NSString+Extensions.h"
+#import "MHImportStringRenderer.h"
 
 @interface MHImportListView ()
 @property (weak) IBOutlet NSTableView *tableView;
@@ -47,35 +48,15 @@
     NSString *currentString = [self.dataSource searchStringForImportList:self];
 
     if (self.numberOfRows > 0) {
-        NSString *header          = [self.dataSource importList:self stringForRow:row];
         NSString *formattedHeader = [self.dataSource importList:self formattedStringForRow:row];
         
-        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:formattedHeader];
-        
-        // invert black->white for selected row
-        if (tableView.selectedRow == row) {
-            [string addAttributes:[self whiteForegroundTextAttribute] range:NSMakeRange(0, formattedHeader.length)];
-        }
-
-        // highlight matched substring
-        if (currentString.length > 0) {
-            // modify range to exclude leading "#import"
-            NSRange range = [header rangeOfString:currentString options:NSCaseInsensitiveSearch];
-            range.location += [formattedHeader rangeOfString:header].location;
-            
-            [string addAttributes:[self highlightedTextAttribute] range:range];
-        }
-
-        return string;
+        return [MHImportStringRenderer renderHighlightedStringForImport:formattedHeader
+                                                           searchString:currentString
+                                                               selected:tableView.selectedRow == row];
     }
     else {
         if (currentString > 0) {
-            NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:currentString];
-            NSRange range = NSMakeRange(0, currentString.length);
-            
-            [string addAttributes:[self whiteForegroundTextAttribute] range:range];
-
-            return string;
+            return [MHImportStringRenderer renderStringForSearchString:currentString];
         }
     }
     return nil;
@@ -172,27 +153,6 @@
     [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:row]
                 byExtendingSelection:NO];
     [self.tableView scrollRowToVisible:row];
-}
-
-
-#pragma mark - MHImportListView table text styles
-
-- (NSDictionary *)whiteForegroundTextAttribute {
-    static NSDictionary *_whiteForegroundTextAttribute = nil;
-    if(!_whiteForegroundTextAttribute) {
-        _whiteForegroundTextAttribute = @{NSForegroundColorAttributeName: [NSColor whiteColor]};
-    }
-    return _whiteForegroundTextAttribute;
-}
-
-- (NSDictionary *)highlightedTextAttribute {
-    static NSDictionary *_highlightedTextAttribute = nil;
-    if(!_highlightedTextAttribute) {
-        _highlightedTextAttribute = @{NSForegroundColorAttributeName: [NSColor blackColor],
-                                      NSBackgroundColorAttributeName: [NSColor colorWithRed:235/255.f green:222/255.f blue:184/255.f alpha:1.0f],
-                                      NSStrokeWidthAttributeName: @(-1)};
-    }
-    return _highlightedTextAttribute;
 }
 
 #pragma mark - Keystroke helpers
