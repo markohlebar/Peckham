@@ -109,6 +109,8 @@
 		96B64AC918DE0D8F007DFC26 /* NSFileManager+Headers.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B64AC518DE0D8F007DFC26 /* NSFileManager+Headers.m */; };
 		96B64ACA18DE0D8F007DFC26 /* NSString+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B64AC618DE0D8F007DFC26 /* NSString+Extensions.h */; };
 		96B64ACB18DE0D8F007DFC26 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B64AC718DE0D8F007DFC26 /* NSString+Extensions.m */; };
+		96B7D5A01CD793AC00687083 /* NSArray+MHSourceFileSorting.h in Headers */ = {isa = PBXBuildFile; fileRef = 96B7D59E1CD793AC00687083 /* NSArray+MHSourceFileSorting.h */; };
+		96B7D5A11CD793AC00687083 /* NSArray+MHSourceFileSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B7D59F1CD793AC00687083 /* NSArray+MHSourceFileSorting.m */; };
 		96C1BF321928BF2E007A4699 /* MHImportStatement+Construction.h in Headers */ = {isa = PBXBuildFile; fileRef = 96C1BF301928BF2E007A4699 /* MHImportStatement+Construction.h */; };
 		96C1BF331928BF2E007A4699 /* MHImportStatement+Construction.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1BF311928BF2E007A4699 /* MHImportStatement+Construction.m */; };
 		96C1BF351928BF56007A4699 /* MHImportStatement+ConstructionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1BF341928BF56007A4699 /* MHImportStatement+ConstructionSpec.m */; };
@@ -334,6 +336,8 @@
 		96B64AC518DE0D8F007DFC26 /* NSFileManager+Headers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Headers.m"; sourceTree = "<group>"; };
 		96B64AC618DE0D8F007DFC26 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
 		96B64AC718DE0D8F007DFC26 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		96B7D59E1CD793AC00687083 /* NSArray+MHSourceFileSorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MHSourceFileSorting.h"; sourceTree = "<group>"; };
+		96B7D59F1CD793AC00687083 /* NSArray+MHSourceFileSorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHSourceFileSorting.m"; sourceTree = "<group>"; };
 		96C1BF301928BF2E007A4699 /* MHImportStatement+Construction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MHImportStatement+Construction.h"; sourceTree = "<group>"; };
 		96C1BF311928BF2E007A4699 /* MHImportStatement+Construction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MHImportStatement+Construction.m"; sourceTree = "<group>"; };
 		96C1BF341928BF56007A4699 /* MHImportStatement+ConstructionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MHImportStatement+ConstructionSpec.m"; path = "Categories/MHImportStatement+ConstructionSpec.m"; sourceTree = "<group>"; };
@@ -749,6 +753,8 @@
 				96FDF3E919694EB600170DEB /* NSArray+Operations.m */,
 				96E2491E1CD76F9E00C0BA69 /* NSString+CamelCase.h */,
 				96E2491F1CD76F9E00C0BA69 /* NSString+CamelCase.m */,
+				96B7D59E1CD793AC00687083 /* NSArray+MHSourceFileSorting.h */,
+				96B7D59F1CD793AC00687083 /* NSArray+MHSourceFileSorting.m */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -1023,6 +1029,7 @@
 				964B0A9718A79AD000E36C8E /* XCFXcodePrivate.h in Headers */,
 				96C21B84189CE00A00484D57 /* MHMethodStatement.h in Headers */,
 				96FB646A18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h in Headers */,
+				96B7D5A01CD793AC00687083 /* NSArray+MHSourceFileSorting.h in Headers */,
 				59E3C9021CD3E94700DD68A3 /* NSString+FuzzySearch.h in Headers */,
 				AD6A20151876B68D00E4137F /* MHStatementParser.h in Headers */,
 				AD6A20171876B68D00E4137F /* MHStatements.h in Headers */,
@@ -1416,6 +1423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				963282D018F933C50007699A /* MHInterfaceStatement.m in Sources */,
+				96B7D5A11CD793AC00687083 /* NSArray+MHSourceFileSorting.m in Sources */,
 				96FDF3EB19694EB600170DEB /* NSArray+Operations.m in Sources */,
 				964B0A9B18A79B8300E36C8E /* MHConcreteSourceOperation.m in Sources */,
 				96C1BF331928BF2E007A4699 /* MHImportStatement+Construction.m in Sources */,
