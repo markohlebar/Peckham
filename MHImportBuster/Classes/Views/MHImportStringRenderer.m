@@ -39,18 +39,16 @@ static NSString * const kImportString = @"#import";
     
     __block NSRange previousRange = NSMakeRange(kImportString.length, import.length - kImportString.length);
     [searchString enumerateSubstringsInRange:NSMakeRange(0, searchString.length)
-                                     options:NSStringEnumerationByComposedCharacterSequences
+                                     options:NSStringEnumerationByComposedCharacterSequences | NSStringEnumerationReverse
                                   usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
                                       NSRange highlightRange = [import rangeOfString:substring
-                                                                             options:NSCaseInsensitiveSearch
+                                                                             options:NSCaseInsensitiveSearch | NSBackwardsSearch
                                                                                range:previousRange];
                                       
                                       if (highlightRange.location != NSNotFound) {
                                           NSValue *rangeValue = [NSValue valueWithRange:highlightRange];
                                           [ranges addObject:rangeValue];
-                                          
-                                          previousRange.location = highlightRange.location;
-                                          previousRange.length = import.length - previousRange.location;
+                                          previousRange.length = highlightRange.location - kImportString.length;
                                       }
                                   }];
     return ranges.copy;
