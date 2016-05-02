@@ -30,6 +30,8 @@
 		9628390C18A63D35007EE520 /* DVTSourceTextStorageSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */; };
 		9629DE721969399500BD3CA1 /* XCSourceFile+MHSourceFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 9629DE701969399500BD3CA1 /* XCSourceFile+MHSourceFile.h */; };
 		9629DE731969399500BD3CA1 /* XCSourceFile+MHSourceFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9629DE711969399500BD3CA1 /* XCSourceFile+MHSourceFile.m */; };
+		962FD9A91CD79FE30049C150 /* MHImportStringRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = 962FD9A71CD79FE30049C150 /* MHImportStringRenderer.h */; };
+		962FD9AA1CD79FE30049C150 /* MHImportStringRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 962FD9A81CD79FE30049C150 /* MHImportStringRenderer.m */; };
 		963282CF18F933C50007699A /* MHInterfaceStatement.h in Headers */ = {isa = PBXBuildFile; fileRef = 963282CD18F933C50007699A /* MHInterfaceStatement.h */; };
 		963282D018F933C50007699A /* MHInterfaceStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = 963282CE18F933C50007699A /* MHInterfaceStatement.m */; };
 		963282D218F961E80007699A /* MHInterfaceStatementSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 963282D118F961E80007699A /* MHInterfaceStatementSpec.m */; };
@@ -252,6 +254,8 @@
 		9628390B18A63D35007EE520 /* DVTSourceTextStorageSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVTSourceTextStorageSpec.m; sourceTree = "<group>"; };
 		9629DE701969399500BD3CA1 /* XCSourceFile+MHSourceFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "XCSourceFile+MHSourceFile.h"; path = "../External/XcodeEditor/Categories/XCSourceFile+MHSourceFile.h"; sourceTree = "<group>"; };
 		9629DE711969399500BD3CA1 /* XCSourceFile+MHSourceFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "XCSourceFile+MHSourceFile.m"; path = "../External/XcodeEditor/Categories/XCSourceFile+MHSourceFile.m"; sourceTree = "<group>"; };
+		962FD9A71CD79FE30049C150 /* MHImportStringRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHImportStringRenderer.h; sourceTree = "<group>"; };
+		962FD9A81CD79FE30049C150 /* MHImportStringRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHImportStringRenderer.m; sourceTree = "<group>"; };
 		963282CD18F933C50007699A /* MHInterfaceStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHInterfaceStatement.h; sourceTree = "<group>"; };
 		963282CE18F933C50007699A /* MHInterfaceStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHInterfaceStatement.m; sourceTree = "<group>"; };
 		963282D118F961E80007699A /* MHInterfaceStatementSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHInterfaceStatementSpec.m; sourceTree = "<group>"; };
@@ -708,6 +712,8 @@
 		96B22FA319167CC8001E643C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				962FD9A71CD79FE30049C150 /* MHImportStringRenderer.h */,
+				962FD9A81CD79FE30049C150 /* MHImportStringRenderer.m */,
 				96EA84C31916ACDD00CBEFE4 /* MHTableView.h */,
 				96EA84C41916ACDD00CBEFE4 /* MHTableView.m */,
 				96B22FA419167CC8001E643C /* MHImportListView.h */,
@@ -1060,6 +1066,7 @@
 				9699F6FB18954F7400AC7432 /* MHDocumentObserver.h in Headers */,
 				963282E018F971090007699A /* MHPropertyQualifierStatement.h in Headers */,
 				AD6A20131876B68D00E4137F /* MHStatement.h in Headers */,
+				962FD9A91CD79FE30049C150 /* MHImportStringRenderer.h in Headers */,
 				964561CC1895750000026306 /* MHDocumentLOCObserver.h in Headers */,
 				963282DC18F96E9B0007699A /* MHPropertyStatement.h in Headers */,
 				96D864D118A6343C0065CD9A /* NSView+Dumping.h in Headers */,
@@ -1461,6 +1468,7 @@
 				961C7DD3191F6F9000031FAD /* XCTarget+XCProject.m in Sources */,
 				9649770219711794006EF60A /* MHSourceFileSearchController.m in Sources */,
 				964B3F841949100C00B079BD /* MHOperation.m in Sources */,
+				962FD9AA1CD79FE30049C150 /* MHImportStringRenderer.m in Sources */,
 				96B64ACB18DE0D8F007DFC26 /* NSString+Extensions.m in Sources */,
 				9699F6FC18954F7400AC7432 /* MHDocumentObserver.m in Sources */,
 				9683A67418FAAF5E009E0232 /* MHMethodReturnStatement.m in Sources */,

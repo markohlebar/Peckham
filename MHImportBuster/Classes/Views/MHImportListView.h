@@ -21,7 +21,6 @@
 - (void)importList:(MHImportListView *)importList
      performSearch:(NSString *)searchString;
 - (NSString *)searchStringForImportList:(MHImportListView *)importList;
-- (NSString *)importList:(MHImportListView *)importList stringForRow:(NSUInteger)row;
 - (NSString *)importList:(MHImportListView *)importList formattedStringForRow:(NSUInteger)row;
 @end
 
