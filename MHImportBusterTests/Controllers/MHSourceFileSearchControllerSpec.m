@@ -73,13 +73,23 @@ describe(@"MHSourceFileSearchController", ^{
                          searchArray = array;
                      }];
         
-        [searchController search:@"importA"
+        [searchController search:@"importexportA"
                      searchBlock:^(NSArray *array) {
                          searchArray = array;
                      }];
         
         [[expectFutureValue(searchArray) shouldEventually] haveCountOf:1];
-        [[expectFutureValue([[searchArray firstObject] name]) shouldEventually] equal:@"ABImportA.h"];
+        [[expectFutureValue([[searchArray firstObject] name]) shouldEventually] equal:@"ABImportExportA.h"];
+    });
+    
+    it(@"Supports fuzzy search", ^{
+        __block NSArray *searchArray = nil;
+        [searchController search:@"iea"
+                     searchBlock:^(NSArray *array) {
+                         searchArray = array;
+                     }];
+        [[expectFutureValue(searchArray) shouldEventually] haveCountOf:1];
+        [[expectFutureValue([[searchArray firstObject] name]) shouldEventually] equal:@"ABImportExportA.h"];
     });
     
     xit(@"will return a whole array if search string is empty string", ^{
