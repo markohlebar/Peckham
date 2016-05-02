@@ -10,6 +10,7 @@
 #import "NSString+Extensions.h"
 #import "MHSourceFile.h"
 #import "NSString+FuzzySearch.h"
+#import "NSString+CamelCase.h"
 
 @implementation MHSearchArrayOperation
 + (instancetype) operationWithSearchArray:(NSArray *) searchArray
@@ -36,7 +37,25 @@
 - (void) execute {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"lastPathComponent LIKE[cd] %@", [self.searchString mh_fuzzifiedSearchString]];
     NSArray *results = [self.searchArray filteredArrayUsingPredicate:predicate];
+    results = [self resultsSortedByCapitalizedResultsMatches:results];
     [self notifyWithResults:results];
+}
+
+- (NSArray *)resultsSortedByCapitalizedResultsMatches:(NSArray *)results {
+    NSArray *sorted = [results sortedArrayUsingComparator:^NSComparisonResult(id <MHSourceFile> _Nonnull obj1, id <MHSourceFile> _Nonnull obj2) {
+        BOOL matchCamelCase1 = [obj1.name.mh_camelCaseInitials.lowercaseString containsString:_searchString];
+        BOOL matchCamelCase2 = [obj2.name.mh_camelCaseInitials.lowercaseString containsString:_searchString];
+        
+        if (matchCamelCase1 && matchCamelCase2) {
+            return NSOrderedSame;
+        }
+        else if (matchCamelCase1) {
+            return NSOrderedAscending;
+        }
+        
+        return NSOrderedDescending;
+    }];
+    return sorted;
 }
 
 - (void) notifyWithResults:(NSArray *)results {
