@@ -178,13 +178,21 @@
 #pragma mark - MHImportListView table text styles
 
 - (NSDictionary *)whiteForegroundTextAttribute {
-    return @{NSForegroundColorAttributeName: [NSColor whiteColor]};
+    static NSDictionary *_whiteForegroundTextAttribute = nil;
+    if(!_whiteForegroundTextAttribute) {
+        _whiteForegroundTextAttribute = @{NSForegroundColorAttributeName: [NSColor whiteColor]};
+    }
+    return _whiteForegroundTextAttribute;
 }
 
 - (NSDictionary *)highlightedTextAttribute {
-    return @{NSForegroundColorAttributeName: [NSColor blackColor],
-             NSBackgroundColorAttributeName: [NSColor colorWithRed:235/255.f green:222/255.f blue:184/255.f alpha:1.0f],
-             NSStrokeWidthAttributeName: @(-1)};
+    static NSDictionary *_highlightedTextAttribute = nil;
+    if(!_highlightedTextAttribute) {
+        _highlightedTextAttribute = @{NSForegroundColorAttributeName: [NSColor blackColor],
+                                      NSBackgroundColorAttributeName: [NSColor colorWithRed:235/255.f green:222/255.f blue:184/255.f alpha:1.0f],
+                                      NSStrokeWidthAttributeName: @(-1)};
+    }
+    return _highlightedTextAttribute;
 }
 
 #pragma mark - Keystroke helpers
