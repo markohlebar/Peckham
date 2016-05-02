@@ -11,6 +11,7 @@
 #import "MHSourceFile.h"
 #import "NSString+FuzzySearch.h"
 #import "NSString+CamelCase.h"
+#import "MHHeaderCache.h"
 
 @implementation MHSearchArrayOperation
 + (instancetype) operationWithSearchArray:(NSArray *) searchArray
@@ -38,6 +39,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"lastPathComponent LIKE[cd] %@", [self.searchString mh_fuzzifiedSearchString]];
     NSArray *results = [self.searchArray filteredArrayUsingPredicate:predicate];
     results = [self resultsSortedByCapitalizedResultsMatches:results];
+    results = [self resultsSortedByFrameworksMatches:results];
     [self notifyWithResults:results];
 }
 
@@ -49,11 +51,30 @@
         if (matchCamelCase1 && matchCamelCase2) {
             return NSOrderedSame;
         }
-        else if (matchCamelCase1) {
-            return NSOrderedAscending;
+        else if (matchCamelCase2) {
+            return NSOrderedDescending;
         }
         
-        return NSOrderedDescending;
+        return NSOrderedAscending;
+    }];
+    return sorted;
+}
+
+- (NSArray *)resultsSortedByFrameworksMatches:(NSArray *)results {
+    MHHeaderCache *cache = [MHHeaderCache sharedCache];
+    
+    NSArray *sorted = [results sortedArrayUsingComparator:^NSComparisonResult(id <MHSourceFile> _Nonnull obj1, id <MHSourceFile> _Nonnull obj2) {
+        BOOL isFramework1 = [cache isFrameworkHeader:obj1];
+        BOOL isFramework2 = [cache isFrameworkHeader:obj2];
+        
+        if (isFramework1 && isFramework2) {
+            return NSOrderedSame;
+        }
+        else if (isFramework1) {
+            return NSOrderedDescending;
+        }
+        
+        return NSOrderedAscending;
     }];
     return sorted;
 }

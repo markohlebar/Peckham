@@ -12,4 +12,5 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *lastPathComponent;
 @property (nonatomic, readonly) NSString *extension;
+@property (nonatomic, readonly) NSInteger type;
 @end
