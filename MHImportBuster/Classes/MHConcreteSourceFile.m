@@ -11,6 +11,8 @@
 
 @interface MHConcreteSourceFile ()
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *lastPathComponent;
+
 @end
 
 @implementation MHConcreteSourceFile
@@ -22,12 +24,9 @@
     self = [super init];
     if (self) {
         _name = name.copy;
+        _lastPathComponent = [self.name lastPathComponent];
     }
     return self;
-}
-
-- (NSString *)lastPathComponent {
-    return [self.name lastPathComponent];
 }
 
 - (NSString *)extension {
@@ -42,8 +41,12 @@
     return (other == self || [other.name isEqualToString:self.name]);
 }
 
-- (XcodeSourceFileType)type {
+- (NSInteger)type {
     return SourceCodeHeader;
+}
+
+- (NSString *)description {
+    return self.lastPathComponent;
 }
 
 @end
