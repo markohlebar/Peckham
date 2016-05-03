@@ -88,6 +88,9 @@
 		96872B1D19163A6E0068AF7A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96872B1C19163A6E0068AF7A /* Images.xcassets */; };
 		968AD40E18986746009E6FE6 /* MHDocumentMethodLOCObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 968AD40C18986746009E6FE6 /* MHDocumentMethodLOCObserver.h */; };
 		968AD40F18986746009E6FE6 /* MHDocumentMethodLOCObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 968AD40D18986746009E6FE6 /* MHDocumentMethodLOCObserver.m */; };
+		968E64E91CD917E200D54E7C /* MHCreateSearchDictionaryOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 968E64E71CD917E200D54E7C /* MHCreateSearchDictionaryOperation.h */; };
+		968E64EA1CD917E200D54E7C /* MHCreateSearchDictionaryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 968E64E81CD917E200D54E7C /* MHCreateSearchDictionaryOperation.m */; };
+		968E64EC1CD9198E00D54E7C /* MHCreateSearchDictionaryOperationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 968E64EB1CD9198E00D54E7C /* MHCreateSearchDictionaryOperationSpec.m */; };
 		9691A4B51947B0C3005407A1 /* XCProject+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 9691A4B31947B0C3005407A1 /* XCProject+Extensions.h */; };
 		9691A4B61947B0C3005407A1 /* XCProject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9691A4B41947B0C3005407A1 /* XCProject+Extensions.m */; };
 		9699F6FB18954F7400AC7432 /* MHDocumentObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 9699F6F918954F7400AC7432 /* MHDocumentObserver.h */; };
@@ -318,6 +321,9 @@
 		96872B1C19163A6E0068AF7A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		968AD40C18986746009E6FE6 /* MHDocumentMethodLOCObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDocumentMethodLOCObserver.h; sourceTree = "<group>"; };
 		968AD40D18986746009E6FE6 /* MHDocumentMethodLOCObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDocumentMethodLOCObserver.m; sourceTree = "<group>"; };
+		968E64E71CD917E200D54E7C /* MHCreateSearchDictionaryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHCreateSearchDictionaryOperation.h; sourceTree = "<group>"; };
+		968E64E81CD917E200D54E7C /* MHCreateSearchDictionaryOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHCreateSearchDictionaryOperation.m; sourceTree = "<group>"; };
+		968E64EB1CD9198E00D54E7C /* MHCreateSearchDictionaryOperationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHCreateSearchDictionaryOperationSpec.m; sourceTree = "<group>"; };
 		9691A4B31947B0C3005407A1 /* XCProject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCProject+Extensions.h"; sourceTree = "<group>"; };
 		9691A4B41947B0C3005407A1 /* XCProject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCProject+Extensions.m"; sourceTree = "<group>"; };
 		9699F6F918954F7400AC7432 /* MHDocumentObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDocumentObserver.h; sourceTree = "<group>"; };
@@ -619,6 +625,8 @@
 				96D89DEE18A7AD720087D248 /* MHSortImportsAlphabeticallyOperation.m */,
 				969A558918DDA3890040EB6C /* MHAddImportOperation.h */,
 				969A558A18DDA3890040EB6C /* MHAddImportOperation.m */,
+				968E64E71CD917E200D54E7C /* MHCreateSearchDictionaryOperation.h */,
+				968E64E81CD917E200D54E7C /* MHCreateSearchDictionaryOperation.m */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -730,6 +738,7 @@
 				96D89DE818A7A4980087D248 /* MHRemoveDuplicateImportsOperationSpec.m */,
 				96D89DF118A7AD8F0087D248 /* MHSortImportsAlphabeticallyOperationSpec.m */,
 				969A558D18DDA3C20040EB6C /* MHAddImportOperationSpec.m */,
+				968E64EB1CD9198E00D54E7C /* MHCreateSearchDictionaryOperationSpec.m */,
 			);
 			name = "Operations Tests";
 			sourceTree = "<group>";
@@ -1032,6 +1041,7 @@
 				96FDF3DD19694C0100170DEB /* MHConcreteSourceFile.h in Headers */,
 				96D89DFE18A7BE580087D248 /* PKToken+Factory.h in Headers */,
 				96A0953B19177ED400338093 /* NSTextView+Operations.h in Headers */,
+				968E64E91CD917E200D54E7C /* MHCreateSearchDictionaryOperation.h in Headers */,
 				964B0A9718A79AD000E36C8E /* XCFXcodePrivate.h in Headers */,
 				96C21B84189CE00A00484D57 /* MHMethodStatement.h in Headers */,
 				96FB646A18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.h in Headers */,
@@ -1475,6 +1485,7 @@
 				AD6A20081876B68D00E4137F /* MHFile.m in Sources */,
 				AD6A20061876B68D00E4137F /* NSString+Files.m in Sources */,
 				963282D618F964930007699A /* PKToken+Equality.m in Sources */,
+				968E64EA1CD917E200D54E7C /* MHCreateSearchDictionaryOperation.m in Sources */,
 				96FB646B18A7A11600A8BDFE /* MHRemoveDuplicateImportsOperation.m in Sources */,
 				968AD40F18986746009E6FE6 /* MHDocumentMethodLOCObserver.m in Sources */,
 				96C21B85189CE00A00484D57 /* MHMethodStatement.m in Sources */,
@@ -1507,6 +1518,7 @@
 				963282E618F9733A0007699A /* MHPropertyStatementSpec.m in Sources */,
 				96B64AC318DE099B007DFC26 /* MHHeaderCacheSpec.m in Sources */,
 				969A558E18DDA3C20040EB6C /* MHAddImportOperationSpec.m in Sources */,
+				968E64EC1CD9198E00D54E7C /* MHCreateSearchDictionaryOperationSpec.m in Sources */,
 				964561C8189554E100026306 /* MHDocumentObserverSpec.m in Sources */,
 				963282D218F961E80007699A /* MHInterfaceStatementSpec.m in Sources */,
 				96580BF8189D258B00466993 /* MHMethodStatementSpec.m in Sources */,
