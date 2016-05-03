@@ -12,5 +12,6 @@
 typedef void(^MHVoidBlock)(void);
 typedef void(^MHErrorBlock)(NSError* error);
 typedef void(^MHArrayBlock)(NSArray* array);
+typedef void(^MHDictionaryBlock)(NSDictionary* array);
 
 #endif
