@@ -14,14 +14,37 @@
  *
  *  @return YES if file exists at path
  */
--(BOOL) isValidFilePath;
+- (BOOL)isValidFilePath;
 
 /**
  *  Checks if file path is to a header file
  *
  *  @return YES if file path is to a header file
  */
--(BOOL) isHeaderFilePath;
+- (BOOL)isHeaderFilePath;
+
+/**
+ *  Checks if file path is a CPP header file. 
+ *  This will check if the extension is .hpp / .hxx
+ *  and will also check if there is an associated .c / .cpp file in the project
+ *
+ *  @return YES if is file a CPP header
+ */
+- (BOOL)isCPPHeaderFilePath;
+
+/**
+ *  Checks if file path is to an implementation file
+ *
+ *  @return YES if file path is to an implementation file
+ */
+- (BOOL)isImplementationFilePath;
+
+/**
+ *  Checks if file path is to an implementation file with .c / .cpp extension
+ *
+ *  @return YES if file path is to an implementation file
+ */
+- (BOOL)isCPPImplementationFilePath;
 
 /**
  *  Checks if the string contains invalid characters/
@@ -31,14 +54,7 @@
  *
  *  @return YES if the lastPathComponent contains characters included in the invalid character set.
  */
--(BOOL) containsIllegalCharacters;
-
-/**
- *  Checks if file path is to an implementation file
- *
- *  @return YES if file path is to an implementation file
- */
--(BOOL) isImplementationFilePath;
+- (BOOL)containsIllegalCharacters;
 
 /**
  *  Adds a suffix to the file path, respecting the file extension.

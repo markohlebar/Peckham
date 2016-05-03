@@ -39,7 +39,8 @@
  */
 -(BOOL) isHeaderFilePath {
     NSString *extension = [self pathExtension];
-    return [extension isEqualToString:@"h"] || [extension isEqualToString:@"hh"];
+    return [extension isEqualToString:@"h"] ||
+           [extension isEqualToString:@"hh"];
 }
 
 /**
