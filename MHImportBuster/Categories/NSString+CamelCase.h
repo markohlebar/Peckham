@@ -10,4 +10,5 @@
 
 @interface NSString (CamelCase)
 - (NSString *)mh_camelCaseInitials;
+- (NSArray *)mh_componentsSeparatedByCamelCase;
 @end
