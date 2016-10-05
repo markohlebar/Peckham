@@ -8,8 +8,7 @@ Xcode plugin that simplifies adding #import-s.
 ### Important
 
 Xcode plugins are no longer supported since Xcode 8. If you're looking for an Xcode App Extension, check out 
-####[Import☝️](https://github.com/markohlebar/Import)
-
+### [Import☝️](https://github.com/markohlebar/Import)
 
 ![Peckham.gif](/Misc/Peckham.gif)
 
